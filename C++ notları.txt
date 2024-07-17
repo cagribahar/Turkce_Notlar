@@ -1,5 +1,5 @@
 
-18 Ekim 2020
+
 
 
 1- std::cout standart output stream nesnedisir
