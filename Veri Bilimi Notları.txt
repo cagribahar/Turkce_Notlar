@@ -1,0 +1,1172 @@
+
+
+1- Betimleyici analitik : Veriye bakıp ne olmuş sorusuna cevap arar. Genel olarak bir çıkarım yapmak gerektirmez
+
+2- Teşhis Tanı analitiği : Neden olmuş sorusuna cevap arar. Çıkarım yapar. Neden sonuç bağlamında sorgulama yapılır
+
+3- Tahminsel veri analitiği : Ne olacak sorusuna yanıt aranır. Gelecek ile ilgili tahminler için kullanılır İstatistiksel modellemeler Olasılık modellemeleri ve makine
+			      öğrenmesi modelleri burada kullanılır
+
+4- Yönergeli Analitik : Nasıl olmalı ne olmalı sorusuna yanıt arar. Ne yaparsam verim artar tarzında bir soru da bu kısma girer. 
+
+
+
+
+
+5- CRISP-DM modeli : Çok çeşitli iş uygulamaları ve endüstrilerde veri madenciliğinin kullanımını artırmayı ve doğru sonuçları elde etmeyi amaçlayan bir süreçtir. 
+	             CRISP-DM, veri madenciliği projelerinde başarılı bir sonuç elde etmek için altı adımdan oluşan bir süreçtir.
+
+
+	Adım 1: İş Anlayışı : Problemi Anlamak ve Tanımlamak
+	Adım 2: Veriyi Anlamak 
+	Adım 3: Veriyi Hazırlamak 
+	Adım 4: Modelleme
+	Adım 5: Değerlendirme
+	Adım 6: Kullanıma Sokmak
+
+-------------------------Veri Okuryazarlığı--------------------------------------
+
+6- Önemli tanımlar ;
+   Popülasyon : İlgilendiğimiz hedef birimdir
+   Örneklem : Popülasyondan seçilen ve popülasyonu temsil eden alt kümedir. Yansız ve temsil etme özellikleri iyi olmalıdır
+	      Olasılıklı ve olasılıksız olarak ikiye ayrılır. Olasılıklı rastgele seçilmiş anlamına gelir
+   Örneklem dağılımı : Birden fazla örneklem alındığında bu örneklemlerin dağılımı ile ilgilidir
+   Merkezi Limit Teoremi : Bağımsız ve aynı dağılıma sahip rassal değişkenlerin toplamı ya da aritmetik ortalaması yaklaşık olarak normal dağılmaktadır
+   Gözlem birimi : Araştırmada incelediğimi birimdir. Örneklem kümesinin her bir elemanıdır
+   Güven aralığı : Anakütle parametresinin tahmini değerini kapsayabilecek iki sayıdan oluşan bir aralık bulunmasıdır. Ölçünün hassasiyetinin göstergesidir
+		   Formül : ortalama +/- ZtabloDeğeri * x * (standartSapma / kökN)  n= örneklem sayısı x= güven aralığı değerleri 
+		   Not: güven aralığı yüzde 5 alındığında genel olarak Ztablodeğeri olarak 1.96 kullanılır
+   Değişken : Birimden birime farklı değer alan niceliktir
+	Sayısal Değişkenler : Nicel-Kantitatif  (Maaş değişkenindeki sayısal değer)
+	Kategorik Değişkenler : Nitel-Kalitatif	(Cinsiyet değişkeninde Kadın Erkek)
+  
+
+7- Değişkenlerde Ölçek Türleri : 
+
+	Sayısal Değişkenlerde : Aralık ve Oran
+		Aralık : Başlangıç değeri sıfır olmayan sayısal değişkenlerin türü Aralıktır
+		Oran : Başlangıç noktassı sıfır olan sayısal değişkenler ise Oran ölçeği ile ölçülmüştür
+	
+	Kategorik Değişkenlerde : Nominal Ve Ordinal
+		Nominal : Kategori Sınıfları arasında fark olmadığında oluşan ölçekleme türüdür (Kadın,Erkek)
+		Ordinal : Kategori Sınıfları arasında fark olduğu durumdur (Albay>Binbaşı>Yüzbaşı vs Veya Eğitim Durumu)
+
+8- Merkezi Eğilim Ölçüleri :
+
+	Aritmetik ortalama : Bütün değerlerin toplanıp birim sayısına bölünmesi ile ulaşılan sonuçtur
+	Medyan : Bir seriyi büyükten küçüğe veya küçükten büyüğe sıraladığımızda seriyi tam ortadan 2 eşit parçaya bölen değerdir
+		 Seri tek ise sorun olmadan orta noktayı bulabiliriz Örnek : (5 elemanda 3. eleman)
+		 Ama eğer çift ise orta nokta eleman sayısının yarısı ile bir sonraki elemanın ortalamasıdır (6 elemanda 3+4.eleman /2)
+	Mod: Bir seride en çok tekrar eden değerdir
+	Kartiller : Bir seriyi 4 eşit parçaya ayıran 3 değerdir Formül for 1. kartil = 1/4.(n+1).terim
+		    q3 için 3/4.n+1.terim,
+		    q2 = medyan
+
+
+9- Dağılım Ölçüleri :
+
+	Değişim Aralığı : Serideki Maksimum Değerin Minimum değerden farkıdır
+	Standart Sapma : Ortalamadan olan sapmaların genel ölçüsüdür Formül : Kök içinde (1/2 . (HerDeğeriçin Xdeğeri - Ortalama)'nın karesi)
+	Varyans : Standart Sapmanın karesidir. Ya da Standart sapmanın dışındaki kök kalkar. Ortalama etrafındaki dağılımdır
+	Çarpıklık : Bir değişkenin dağılımının simetrik olamayışıdır Katsayı Formülü: 3(ortalama - medyan)/standart sapma
+		    eğer sonuç 0'dan küçük ise negatif(soldan) çarpık büyük ise pozitif(sağdan) çarpıktır 0 ise simetriktir 
+	Basıklık : Elimizdeki değişkenin sivri veya basık olmasıdır Katsayı Formülü : (terimlerin ortalamadan olan uzaklığının 4. kuvveti / terim sayısı)/standart sapmanın 4. kuvveti
+		   eğer sonuç 3'den küçük ise dağılım basık , büyük ise sivri , 3'e eşit ise standart normal dağılım vardır
+	Kovaryans : İki değişken arasındaki ilişkinin değişkenlik ölçüsüdür.
+	Kolerasyon : İki değişken arasındaki ilişkiyi , ilişkinin anlamlı olup olmadığını , ilişkinin şiddeti ve yönünü ifade eden istatistiksek bir tekniktir
+
+10- İstatistiksel Düşünce Modelleri
+
+	Mooney Modelleri : Verinin Tanımlanması -> Verinin organize edilmesi ve indirgenmesi -> Veri gösterimi -> Veri Analiz edilmesi ve Yorumlanması
+
+	İstatistiksel düşünce düzeyleri : Veri okuryazarlığı seviyeleri
+					1- Kişiye Özgülük(Seviye 1) : Veri setlerine bakıp değişkenleri ve yorumlamaları yapamaz
+					2- Geçici (Seviye 2) : Nicel düşünmenin önemi farkedilir. Veri üzerindeki bakış açısı tek yönlü Bağlantı zayıf
+					3- Nicel(Seviye 3) : Merkezi eğilim ve yayılım ölçüleri anlaşılır. Bağlam ve Veri arasındaki ilişki kurulur
+					4- Analitik(Seviye 4) : Veriyi analiz etmede tamamen analitik yaklaşım uygulanır. Gerçek hayatla ilişki kurulur
+
+
+
+11- Olasılık :
+
+	 Rassal Değişken : Değerlerini bir deneyin sonuçlarından alan değişkene rassal değişlen denir
+ 	 Dağılım : Evrendeki olaylar ya da durumların sayısal karşılıklarının ortaya çıkardığı değerdir
+	 Olasılık Dağılımı : Bir rassal olaya ait değerler ve bu değerlerin gerçekleşme olasılıklarının bir arada ifade edilmesine denir
+			 Kesikli olasılık dağılımı : Bernolli , Binom, Poisson dağılım örnekleridir
+			 Sürekli olasılık dağılımı : Normal , üniform, üstel dağılım örnekleridir
+	 Oalsılık fonksiyonu : Bir değişkenin herhangi bir değeri alması olasılığını hesaplayan fonksiyondur
+
+
+12- Bernolli Dağılımı : Başarılı-Başarısız , Olumlu-Olumsuz şeklinde iki sonuçlu olaylar ile ilgilendiğimizde kullandığımız dağılımdır
+
+	E(X) = p :Beklenen değer 
+	Var(X) = pq = p(1-p) : Varyansı verir
+
+13- Büyük sayılar yasası : Bir rassal değişkenin uzun vadeli kararlılığını tanımlayan bir olasılık teoremidir. Deney sayısı arttıkça beklenen oranın kendini ortaya çıkarma durumduur
+	
+
+14- Binom Dağılımı : Bağımsız n deneme sonucu k başarılı olma olasılığı ile ilginelildiğinde kullanılan dağılımdır. Bernolli'den farkı deneme sayısının da işin içine girmesidir
+
+	E(X)=np
+	Var(X) = np(1-p)
+
+15- Poisson Dağılımı : Belirli bir zaman aralığında belirli bir alanda nadiren rastlanan olayların olasılıklarını hesaplamak için kullanılır
+
+	E(X)= Lambda
+	Var(X)=Lambda
+
+	Not: Dağılım formüllerine internetten bak
+	Not: Kullanılabilecek yer örnekleri : 10 bin kelimeden oluşan bir kitaptaki hatalı kelime sayısı,4000 öğrencili okulda not girişinde hatalı giriş yapılması
+					      Bir iş gününde çağrı merkezine gelen takdir sayısı,Kredi kartı işlemlerindeki sahtekarlık sayısı,Uçak rötara düşme sayısı
+
+	Not: Bir durumun nadir sayılabilmesi için n>50 , n*p<5 olmalıdır
+	Not: Rassal denemeler iki sonuçlu olmalıdır. Aynı koşullar altında gerçekleştirilmelidir. Rassal denemeler birbirinden bağımsız olmalıdır
+
+16- Normal Dağılım : Normal dağıldığı bilinen sürekli Rassal değişkenler için kullanılır
+
+	Sürekli değişkenlerde oluşan fark 2'den fazla olasılık olduğu için integral ile alan hesaplamaıs yapıldığıdır
+
+17- Hipotez Testi : Bir inanışı(savı,tahmini vs) test etmek için kullanılan istatistiksel bir tekniktir
+
+	A. Hipotezler Ve Türleri : H0 ve H1 hipotezi olarak 2'ye ayrılır
+			H0 : Parametrelere belirli değerler vererek kurulan hipotezlere denir (Ör : H0  mü = 50) (Ör : Yönlü H0 mü <= 50)
+			H1 : Alternatif hipotezdir (Ör : H1 mü != 50) (Ör : Yönlü H1 mü>50)
+	
+		Not: Teoriler H0'a göre test edilir
+
+	B. Hata Tipleri :
+			Gerçek->H0 Doğru & HT sonucu Karar->H0 reddedilmedi : Doğru Karar (1-a) --> Güven düzeyi
+			H0 Doğru & H0 reddedildi : 1. Tip Hata --> a
+			H0 Yanlış & H0 reddedilmedi : 2. tip Hata --> beta
+			H0 Yanlış & H0 reddedildi : Doğru Karar (1-Beta) --> Testin gücü
+
+	C. P Value: Hipotez Testlerinin sonuçlarını değerlendirmek üzere programlar tarafından P Value değeri verilir. Bu değer üzerinden kolayca yorum yapabiliriz. p<0.05 ise ilgili H0 hipotezini reddederiz
+			Not: a varsayılan kabul edilebilir hata miktarıdır. Default değeri 0.05'tir
+			Not: Dağılım testlerinde H0 reddedilmek istenilmez. Çünkü H0 "örnek dağılımı ile teorik dağılımı arasında fark yoktur" der
+			Not: P value H0 hipotezimiz doğru olsaydı bu bulgulara ulaşma ihtimalimizi ifade eder
+
+	D. Hipotez Testi Adımları :
+			Adım1 : Hipotezlerim kurulması ve yönlerinin belirlenmesi
+			Adım2 : Anlamlılık düzeyinin ve tablo değerinin bulunmasıdır --> alfa değerinin bulunmasıdır (0.05 olan)
+			Adım3 : Test istatistiğinin belirlenmesi ve test istatistiğinin hesaplanması . Odaklanmış olduğumuz hipotez testine göre değişecektir
+			Adım4 : Hesaplanan test istatistiği ile alfa'ya karşılık gelen tablo değerinin karşılaştırılması
+			Adım5 : Yorumlama
+		Eğer : Test İstatistiği (Zh) > Tablo değeri (Zt) ise H0 Red
+		       -Zh < -Zt ise H0 Red
+
+
+18- Tek Örneklem T testi : Popüşasyon ortalaması ile varsayımsal değer arasında istatistiksel olarak anlamlı bir farklılık olup olmadığını test etmek için kullanılan parametrik bir testtir
+
+		A.
+			Hipotez örnekleri 17.A 'daki örnekler ile aynıdır
+		Not: t veya z dağılımları kullanılabilir
+			1. Anakütle Standart sapması biliniyorsa z istatistiği kullanılır
+			2. Anakütle standart sapması bilinmiyorsa ve n > 30 ise z istatistiği kullanılır
+			3. Anakütle standart sapması bilinmiyor ve n < 30 ise t istatistiği kullanılır	
+		Not : n büyüdükçe t z'ye yaklaşır
+		Normal Dağılım : Varsayılan ön koşullar sağlanmıyorsa parametrik değil nonparametrik testler kullanılır
+	
+
+		B. Varsayım Testi : Normallik varsayımı iki türlü gerçekleştirilebilir. 
+			1. Grafik yöntemler (Histogram, qqplot) --> Python Notları madde 62. ve df.plot.hist fonksiyonu
+			2. Test yöntemler (Shapiro Wilks testi)--> 17.C'de bahsedilen test budur H0 Reddedilmek istenmez reddedilirse örneklem uygun değildir --> Python Notları Madde 63
+
+		C. Test uygulanması : Varsayım testinden geçtiyse uygulanır
+
+			Python Notları Madde 64
+
+		D. Nonparametrik Tek Örneklem Testi Uygulanması : Varsayım testinden geçmediyse uygulanır
+			
+			Python Notları Madde 65
+
+		E. Tek örneklem oran testi : Oransal bir ifade test edilmek istenildiğinde kullanılır. Z üzerinden bir hesaplama gerçekleştirilir p0 sınamak istediğimiz değerdir
+			Not: Örneklem 30'dan büyük ise gerçekleştirilebilir
+
+			Python Notları Madde 66 
+
+19- Bağımsız İki örneklem T testi (AB Testi) : İki grup ortalaması arasında karşılaştırma yapılmak istenildiğinde kullanılır
+
+	H0 : mü1 = mü2 , mü1<=mü2 , mü1>=mü2
+	H1 : mü1 != mü2, mü1>mü2, mü1<mü2
+
+	A.Test istatistikleri : t testi uygulanır. formülüne internetten bak. Test formülleri örnek sayıları aynı/farklı varyanslar homojen/değil durumuna göre 3 şekilde incelenir
+
+	B.Varsayımlar,Koşullar : Normallik ve Varyans Homojenliğidir
+	
+	C. Test Veri Hazırlanması
+		
+		Python Notları Madde 67	
+
+	D. Varsayım Kontrolü 
+
+		Python Notları Madde 68	
+	
+	E. Testin uygulanması
+
+		Python Notları Madde 69
+
+	F. Nonparametrik Bağımsız iki örneklem T testi uygulanması
+	
+		python Notları Madde 70
+
+20- Bağımlı İki Örneklem T testi : Bağımlı iki grup ortalaması arasında karşılaştırma yapmak istenildiğinde kullanılır ( Bağımlı = aynı kitleye ve örneğe farklı iki işlem yapıldığında alınan sonuçlar denebilir)
+
+	H0 : MÜö = MÜs,MÜö <= MÜs,MÜö >= MÜs
+	H1 : MÜö != MÜs,MÜö > MÜs,MÜö < MÜs          ö = öncesi , s= sonrası
+
+	A. t testi uygulanır formüle bakarsın
+
+	B. Varsayımlar : Normallik ve Varyans Homojenliğidir Python Madde 68 ,62 ve 63   
+
+		Not: Eğer homojenlik testi reddediliyorsa sadece bu konuda gözardı edilebilir
+
+	C. Testin uygulanması 
+
+		python notları madde 71 
+
+	D. Nonparametrik Bağımlı İki Örneklem T testi uygulanması
+
+		python notları madde 72
+
+	E. İki örneklem oransal testi : iki oran arasında karşılaştırma yapmak için kullanılır. Z üzerinden yapılır. Varsayımlar n1,n2>30
+
+		H0 : p1=p2 ,p1<=p2 ,p1>=p2
+		H1 : p1!=p2 ,p1>p2 ,p1<p2
+		
+		python notları madde 73  
+
+21- Varyans Analizi : İki veya daha fazla grup ortalaması arasında istatistiksel olarak anlamlı farklılık olup olmadığı öğrenilmek istenildiğinde kullanılır. F istatistiği olarak da geçer
+
+		H0 : mü1=mü2=mü3
+		H1 : Eşit değillerdir (en az birisi farklıdır)
+
+
+
+	A. Varsayımlar : 
+	
+		1. Gözlemlerin birbirinden bağımsız olması veriye bakıp anlaşılmalıdır 
+		2. Normal Dağılım pythondan bak
+		3. Varyans homojenliği (Mutlaka karşılanmalıdır) pythondan bak
+
+	B. Testin uygulanması 
+
+		python notları madde 74
+	
+	C. Nonparametrik Test 
+		
+		python notları madde 75
+
+
+22- Kolerasyon Analizi : Değişkenler arasındaki ilişki , bu ilişkinin yönü ve şiddeti ile ilgili bilgi sağlayan istatistiksel bir yöntemdir. Değişkenler arasındaki Katsayıdır
+
+	H0 : p=0 değişkenler arasında kolerasyon yoktur
+	H1 : p!=0 vardır
+
+	Seviyeler :
+			1 : Mükemmel Pozitif Kolerasyon
+			0.9 : Yüksek Pozitif Kolerasyon
+			0.5 : Düşük Pozitif Kolerasyon
+			0 : Kolerasyon Yok 
+			-0.5 : Düşük Negatif Kolerasyon
+			-0.9 : Yüksek Negatif Kolerasyon
+			-1 : Mükemmel Negatif Kolerasyon
+
+			0.9>x>0.5 ise anlamlı olarak değerlendirilir
+
+	A. Varsayım Kontrolü : Normallik varsayımıdır
+
+	B. Kolerasyon Testinin uygulanması
+
+		Python notları madde 76
+
+	C. Nonparametrik Kolaresyon Testi 
+
+		Python notları madde 77
+
+
+			
+Önemli Not: Eğer mü değeri eşittir veya değildir sorusuna cevap arıyorsa alfa/2 eğer yönlü ise alfa değeri olduğu gibi kullanılır
+
+
+23- Veri Ön İşleme : 
+
+	
+	A. Data Cleaning  : Gürültülü Veri,Eksik Veri Analizi, Aykırı Veriler üzerinde yapılan düzeltmedir
+
+	B. Veri Standardizasyonu : 0-1 dönüşümü , z-skoruna dönüştürme , logaritmik dönüşüm gibi yapılan dönüşümlerdir
+
+	C. Veri İndirgeme : Gözlem sayısının azaltılması, Değişken sayısınının azaltılması gibi yapılan azaltmalardır
+
+	D. Değişken Dönüşümleri : Sürekli değişkenlerde dönüşümler , kategorik değişkenlerde dönüşümlerdir
+
+
+24- Aykırı Gözlem : Veride genel eğilimin oldukça dışında çıkan ya da diğer gözlemlerden oldukça farklı olan gözlemlere denir
+
+	Aykırı değer : Aykırılığı ifade eden nümerik değerdir
+
+	Genellenebilirlik kaygısı ile oluşturulan kural setlerini ya da fonksiyonları yanıltır. Yanlılığa sebep olur
+
+	A. Aykırı Gözlem Nasıl Tanımlanır
+
+		1. Sektör Bilgisi Ör : 1000 metrekare evi modellemeye almamak
+
+		2. Standart Sapma Yaklışımı : Bir değişken ortalamasının üzerine aynı değişkenin standart sapması hesaplanarak eklenir
+					      1,2 ya da 3 standart sapma değeri ortalama üzerine eklenerek ortaya çıkan bu değer eşik değer olarak düşünülür
+				              Bu değerden yukarıda ya da aşağıda olan değerler aykırı değer olarak tanımlanır
+
+		3. Z skoru yaklaşımı : Standart Sapma yöntemine benzer şekilde çalışır . Değişken standart normal dağılıma uyarlanır. Yani standartlaştırılır
+				       Sonrasında örneğin dağılımın sağından solundan +/- 2.5 değerine göre eşik değer konulur ve bu değerin üzerinden ya da altında olan değerler aykırı olarak işaretlenir
+
+		4. Boxplot yöntemi : En sık kullanılan yöntemlerden biridir. Değişkenin değerleri küçükten büyüğe sıralanır. Çeyrekliklerine yani Q1,Q3 değerlerine karşılık gelen değerler üzerinden eşik değer
+				     hesaplanır ve bu eşik değere göre aykırı tanımı yapılır
+	
+			Formül : IQR = 1.5 * (Q3-Q1) --> Alt eşik değer = Q1-IQR --> Üst eşik değer = Q3+IQR
+
+
+	B. Aykırı Değer Yakalamak
+
+		Python Notları Madde 78
+
+	C. Aykırı Değer Problemini Çözmek :
+
+		Python notları madde 79
+
+	D. Çok Değişkenli Aykırı Gözlem Analizi
+
+		Local Outer Factor : Gözlemleri bulundlukları konumda yoğunluk tabanlı skorlayarak buna göre aykırı değer olabilecek değerleri tanımlayabilmemize imkan sağlıyor
+				     Bir noktanın local yoğunluğu bu noktanın komşuları ile karşılaştırılıyor. Eğer bir nokta komşularının yoğunluğundan anlamlı şekilde düşük ise bu noktada
+				     komşularından daha seyrek bir bölgede  bulunuyordur yorumu yapılabiliyor. Dolayısı ile burada bir komşuluk yapısı söz konusu. Bir değerin çevresi yoğun değilse demek ki bu değer aykırı değerdir şeklinde değerlendirilir	
+
+		python notları madde 80
+
+25- Eksik Veri Analizi : 
+
+	Eksik Veriyi Direkt Silmenin Zararları : Eksik değere sahip gözlemlerin veri setinden direkt çıkarılması ve rassallığın incelenmemesi yapılacak istatistiksek çıkarımların ve modellemenin güvenirliliğini düşürür
+						 Eksik gözlemlerin direkt veri setinden çıkarılabilmesi için veri setindeki eksikliğin bazı durumlarda kısmen bazı durumlarda tamamen rastlantısal olarak oluşmuş olması gerekmektedir
+						 Eğer eksiklikler değişkenler ile ilişkili olarak ortaya çıkan yapısal problemler ile meydana gelmiş ise bu durumda yapılacak silme işlemleri ciddi yanlılıklara sebep olabilecektir
+
+	
+	Akılda Tutulması gerekenler :
+		
+		1- Veri setindeki eksikliğin yapısal olup olmadığının bilinmesi gerekir
+
+		2- NA her zaman eksiklik anlamına gelmez
+
+		3- Bilgi kaybı olup olmadığını iyi değerlendir
+
+	Eksik Veri Türleri :
+
+		Tümüyle Rastlanstısal Kayıp : Diğer değişkenlerden ya da yapısal bir problemden kaynaklanmayan tamamen rastgele oluşan gözlemler
+
+		Rastlantısal Kayıp : Diğer değişkenlere bağlı olarak oluşabilen eksiklik türü
+
+		Rastlantısal Olmayan Kayıp : Göz ardı edilemeyecek olan ve yapısal problemlerle ortaya çıkan eksiklik türüdür
+
+	Eksik Veri Rassallığı Testi : Görsel Teknikler Bağımsız iki örneklem T testi Kolerasyon testi Little'ın MCAR testi
+
+	
+	Giderilme Yöntemleri :
+
+		Silme Yöntemleri : Gözlem ya da değişken silme , liste bazında silme, çiftler bazında silme
+
+		Değer atama yöntemler : En benzer birime atama, OrtancaOrtalamaMedyan, Dış Kaynaklı Atama
+	
+		Tahmine Dayalı Yöntemler : Makine Öğrenmesi, EM , Çoklu atama Yöntemi - python notları madde 82
+
+
+		Not: Kategorik değişkenlerde genellikle değişkenin modu nan değerlere yerleştirilir
+	
+	Eksik Veri Görselleştirmesi :
+
+		Python notları madde 81		 
+	
+26- Değişken Standartizasyonu : Değişken yapısı ve özütü bozulmadan yapılan standartlaştırma işlemi
+
+	Standardizasyon : Bütün değişkenleri -3 +3 arasına sıkıştırır yapı bozulmaz
+
+		python notları madde 83
+	
+	
+	Normalizasyon : Değerleri 0 ile 1 arasına sıkıştırır
+
+		python notları madde 83
+
+	Min-Max dönüşümü : Değerleri Belirli aralığa sokar
+
+27- Değişken Dönüşümü : Verinin yapısını ve diğer bazı durumlarını bozabilir
+
+	0-1 Dönüşümü : 
+
+		python notları madde 84
+
+	1 ve diğerleri (0) dönüşümü :
+
+		python notları madde 84
+
+	Çok sınıflı Dönüşüm : 
+
+		python notlarım madde 84 
+
+------------------------------------------------------Makine Öğrenmesi--------------------------------------------------------
+
+	
+1- Teorik Genel formül : y = b0+b1x1+b2x2+b3x3....+bpxp+e : Basit Doğrusal bir fonksiyon
+
+	b0 : sabittir
+	b1,b2 : Değişken ağırlıkları,katsayılarıdır
+	x1,x2 : Değişken değerleri
+	e : Hata Terimi
+
+
+2- Temel Kavramlar
+
+	Bağımlı Değişken : Makine Öğrenmesi probleminde tahmin etmek için hedeflediğimiz ana değişkendir	
+	Bağımsız Değişken : Bağımlı değişkeni oluşturan diğer değişkenlerdir
+
+	Gözetimli Öğrenme : Bağımlı değişken ve bağımlı değişkeni meydana getiren bağımsız dedğişkenler bir arada ise bu duruma Gözetimli Öğrenme denir
+	Gözetimsiz Öğrenme : Bağımlı değişkenin çalışma içerisinde olmadığı öğrenme türüdür Amaç gözlem birimlerini birbirine benzer özelliklerine göre bir araya getirmektir
+
+	Regresyon : Bağımlı değişken sayısal/sürekli bir değişken ise bu bir regresyon problemidir
+	Sınıflandırma : Bağımlı değişkenimiz kategorik bir değişken ise bu bir sınıflandırma problemidir
+
+	Not : değişken seçimi önemlidir amacımız en az değişkenle en fazla açıklanabilirliği yakalamaya çalışmaktır
+	
+	Model Seçimi : Oluşabilecek değişken kombinasyonları ile oluşturulan modeller arasından en iyi modelin seçilmesi
+
+		       Kurulan birbirinden farkllı modeller arasından model seçimi
+
+		Neye göre Seçilir :
+			
+			- Regresyon ile açıklanabilirlik oranı ve RMSE türevi bir değer
+
+			- Sınıflandırma için doğru sınıfandırma oranı türevi bir değer
+
+	Overfitting : Veri setinin kendisine verilen veri setinin yapısını çok iyi öğrenip ezberlemesi ve yeni veriler geldiğinde başarısız olmasıdır
+
+	Deterministik Modeller : Değişkenler arsında kesin bir ilişki olduğunu varsayan modellerdir
+
+	Stokastik Modeller : Olasılıksal modellerdir. Hatayı değerlendirmeye alır
+
+	Doğrusal Modeller : Bir doğru ile ifade edilebilen modellerdir
+	
+	Doğrusal Olmayan Modeller : Bir eğri ile ifade edilebilen modellerdir. DOğrusal olmayan çoğu şey
+
+3- Model Doğrulama Yöntemleri 
+
+	Holdout Yöntemi : Orjinal veri setini 2'ye bölüp eğitim seti ile eğitip test seti ile de performansı test etmek adımlarını izler
+
+	K Katlı Çapraz Doğrulama Yöntemi : Veri seti K adet parçaya ayrılır. Bu parçalardan bir tanesi dışarıda bırakılır. Elde kalanlar ile model oluşturulur. Model dışarıda bırakılan parça ile test edilir. Bu işlem her iterasyonda devam eder
+
+	Leave One Out Yöntemi : K Katlı çapraz doğrulamanın özelleşmiş halidir. K küme sayısı n örnek sayısına eşittir. Veri setinde 1 tane dışarıda bırakılıp diğerleri ile eğitilip 1 değer ile test edilir ve bu her k grubu için n kere tekrar eder	
+
+	Bootstrap Yöntemi : Orjinal veri setindeki gözlem sayısından az gözlemler rastgele alınır ve 10,100,1000 tane bootstrap ile model eğitilip overfitting'in önüne geçilmeye çalışılır
+
+4- Model Başarı Değerlendirme :
+
+	Regresyon :
+
+		MSE : Hata kareleri ortalaması : formül = 1/n * (herİiçin(yi-yTahmin)^2)
+	
+		RMSE : Hata kareler ortalamasının karekök değeri 
+
+		MAE : Hataların mutlak değeri toplamlarının n'e bölümü
+
+		
+	Sınıflandırma :
+
+		TP : True Positive , TN : True Negative , FP : False Positive , FN : False Negative
+	
+		Not: İlk kelime tahmin doğru mu yanlış mı İkinci Kelime Tahminimizi ifade Eder Yani FP için positif bir tahminde bulunmuşuzdur ama tahminimiz false'dur
+		
+		Başarılı olanlar TP ve TN , Başarısız olanlar FN ve FP
+
+		Doğruluk : (TP+TN)/hepsi
+
+		Hata Oranı : (FN+FP) / Hepsi
+	
+		Kesinlik : TP / (TP+FP)
+
+		Anma : TP / (TP+FN)
+
+		Tabloya internetten bak
+
+
+	Roc Eğrisi : Doğru değerler ile tahmin değerleri arasında bir alan oluşturur alanın büyüklüğü ile de başarıyı gözleriz. Alan Büyüdükçe Modelin başarısı artacaktır
+
+
+
+
+
+
+
+5- Model Tahmin Performasını Arttırmak 
+
+	Parametre : Veriden Öğrenilen Parametreler , Ağırlıklar , Katsayılardır
+
+	Hiperparametre: Kullanıcı tarafından belirlenen ve veri ile optimize edilen parametrelerdir. Veriden elde edilemez, Dışarıdan verilir
+
+	Parametre Tuning : 
+
+	Model Tuning : Model optimizasyonudur
+
+
+
+
+6- Basit Doğrusal Regresyon : Bir tane bağımsız değişkenden oluşan model demektir. Temel amaç bağımlı veya bağımsız değişken arasındaki ilişkiyi ifade eden doğrusal fonksiyonu bulmaktır
+
+	Formül : yi = b0+b1xi 
+
+	Model Oluşturma :
+
+		Python notları madde 85
+
+	Model Tahmin :
+
+		python notları madde 86
+
+	Artıklar :
+
+		RMSE
+		MSE
+
+7- Çoklu Doğrusal Regresyon : Temel amaç bağımlı veya bağımsız değişkenLER arasındaki ilişkiyi ifade eden doğrusal fonksiyonu bulmaktır
+
+	
+	Formül : y = b0+b1x1+b2x2+b3x3....+bpxp+e
+
+	Varsayımlar :
+
+		- Hatalar normal dağılır
+		- Hatalar birbirinden bağımsızdır ve aralarında otokolerasyon yoktur
+		- Her bir gözlem için hata terimleri varyansları sabittir
+		- Değişkenler ile hata terimi arasında ilişki yoktur
+		- Bağımsız değişkenler arasında çoklu doğrusal ilişki problemi yoktur
+
+	Önemli not : Aykırı değerler regresyonu büyük ölçüde etkileyebilir kontrol edilmelidir.
+
+	Kukla değişken denkleme etkisi : kukla değişkenler kategorik değişkenleri farklı sütunlar olarak oluşturup
+				         0 ve 1 olarak değiştirdiği için denklemimize şu şekilde etki eder
+			
+			y= b1*x1+b2*x2+..... b4*d1 + b5*d2
+		
+		d1 ve d2 burada kategorik değişkenimizin farklı sınıflarıdır. her sınıf için ayrı katsayı bulunup doldurulur.
+		
+		Kukla Tuzağı : Kukla değişkenler oluşturulurken referans için 1 tanesi çıkarılır. Bu değişkenler arasında bağlantı kurmamak içindir.
+			       Çıkarılan bu değişken sabite eklenir.
+			
+			Detaylı açıklaması : 
+
+				The dummy variable trap refers to a situation where there is perfect multicollinearity among the predictors in a regression model due to the inclusion of all categories of a categorical variable as dummy variables.
+
+				This trap occurs when you include all categories of a categorical variable without excluding one category as a reference.
+
+
+				To understand the dummy variable trap, let's consider an example where we have a categorical variable called "Color" with three categories: Red, Green, and Blue. If we were to use dummy encoding without excluding a reference category, we would create three dummy variables: "Red," "Green," and "Blue."
+
+				The problem arises when we include all three dummy variables in the regression model. The sum of these three dummy variables will always be equal to 1 for each observation, as an observation can only belong to one category. For example, if an observation is red, the dummy variables would be encoded as "Red = 1," "Green = 0," and "Blue = 0." The sum of these dummy variables would be 1.
+
+				Now, if we include all three dummy variables in the regression model, we would have perfect multicollinearity because the sum of the three dummy variables is constant. This perfect multicollinearity makes it impossible for the regression model to estimate unique coefficients for each dummy variable. It becomes mathematically impossible to separate the effects of each category because they are perfectly correlated.
+
+				To avoid the dummy variable trap, we need to exclude one category as a reference. For example, we could exclude the "Red" category and create two dummy variables: "Green" and "Blue." If an observation is green, the dummy variables would be encoded as "Green = 1" and "Blue = 0." This approach avoids perfect multicollinearity, as the sum of the dummy variables will not be constant.
+
+
+
+				By excluding one category as a reference, we can interpret the coefficients of the remaining dummy variables as the difference in the outcome variable compared to the reference category. In our example, the coefficient for the "Green" dummy variable would represent the difference in the outcome variable between the green and red categories.
+
+	Modelleme :
+
+		python notları madde 87
+	
+
+8- Ridge Regresyon Modeli : Amaç hata kareler toplamını minimize eden katsayıları , bu katsayılara bir ceza uygulayarak bulmaktır
+
+	Özellikleri :
+
+		- Aşırı Öğrenmeye karşı dirençli 
+		- Yanlıdır fakat varyansı düşüktür (bazen yanlı modelleri daha çok tercih ederiz)
+		- Çok fazla parametre olduğunda EKK'ya(normal regresyona) göre daha iyidir
+		- Çok boyutluluk lanetine çözüm sunar (katsayıların gözlemden fazla olma durumu)
+		- Çoklu doğrusal bağlantı problemi olduğunda etkilidir (bağımsız değişkenler arasında yüksek kolerasyon olması)
+		- Tüm değişkenler ile model kurar , ilgisiz değişkenleri modelden çıkarmaz. Katsayılarını sıfıra yaklaştırır 
+		- Lambda kritik roldedir. İki terimin (formüldeki) göreceli etkilerini kontrol etmeyi sağlar (Formüle internetten bakarsın )
+		- Lambda için iyi bir değer bulunması önemlidir. Bunun için cross validation yöntemi kullanılır
+		- Lambdanın sıfır olduğu yer EKK'dır. Hata kareler toplamını minimum yapan lambdayı arıyoruz
+		- Lambda için belirli değerler içeren bir küme seçilir ve her birisi için cross validation test hatası hesaplanır
+		- EN küçük cv hatasını veren lambda ayar parametresi olarak seçilir
+		- Son olarak seçilen bu lambda ile model yeniden tüm gözlemlere fit edilir
+			not : lambda = ayar parametresi (kullanıcı tarafından verilir)
+
+	Uygulama :
+		python notları madde 89 
+
+10- Lasso Regresyon : Amaç hata kareler toplamını minimize eden katsayıları bu katsayılara bir ceza uygulayarak bulmaktır
+
+	Not : rigde regresyon ile amaçlar aynı olsa da aradaki fark lambdadan sonra cezalandırmak için ridge bj^2 alırken lasso |bj| almaktadır
+
+	Özellikler :
+		- Ridge regresyonun ilgili-ilgisiz tüm değişkenleri modelde bırakma dezavantajını gidermek için önerilmiştir
+		- Lasso'da katsayıları sıfıra yaklaştırır
+		- Fakat L1 formu lambda yeteri kadar büyük olduğunda bazı katsayıları 0 yapar. Değişken seçimi böyle olur
+		- Lambdanın doğru seçilmesi çok önemlidir. burada da CV kullanılır
+		-Ridge ve Lasso yöntemleri birbirinden üstün değildir
+		- Lambdanın sıfır olduğu yer EKK'dır. Hata kareler toplamını minimum yapan lambdayı arıyoruz
+		- Lambda için belirli değerler içeren bir küme seçilir ve her birisi için cross validation test hatası hesaplanır
+		- EN küçük cv hatasını veren lambda ayar parametresi olarak seçilir
+		- Son olarak seçilen bu lambda ile model yeniden tüm gözlemlere fit edilir
+
+	Uygulama : 
+		Python notları madde 90 
+
+11- ElasticNet regresyon : Amaç hata kareler toplamını minimize eden katsayıları bu katsayılara bir ceza uygulayarak bulmaktır
+
+	Not: ElasticNet L1 ve L2 yaklaşımlarını birleştirir. Ridge tarzı cezalandırma Lasso tarzı değişken seçimi . Aşırı öğrenmeye dayanıklıdır
+
+	Model ve Tahmin :
+
+		python notları madde 91
+
+
+12- Doğrusal Olmayan Regresyon Modelleri
+
+
+13- K En Yakın Komşu Modeli : Gözlemleri birbirlerine olan benzerlikleri üzerinden tahmin yapılır. Sınıflandırma ve Regresyon problemlerinde kullanılabilen algoritmadır. Parametrik olmayan bir öğrenme türüdür
+			      Büyük veri setlerinde performansı iyi değildir
+	Özellikler:
+		- Öklid ya da başka bir uzunluk hesabı ile her bir gözleme uzaklık hesaplanır
+		- Bulunan değerlere göre k adet komşu bulunur . K değeri kullanıcı tarafından verilir
+		- En yakın k adet gözlemin ortalaması alınır
+
+	Basamaklar :
+		- Komşu sayısını belirle
+		- Bilinmeyen nokta ile diğer tüm noktalar ile arasındaki uzaklığı hesapla
+		- Uzaklıkları sırala ve belirnenen k sayısına göre en yakın k gözlemi seç
+		- Sınıflandırma ise en sık sınıf , regresyon ise ortalama değeri tahmin değeri olarak ver 
+
+	Tahmin :
+
+		python notları madde 92 
+
+14- Destek Vektör Regresyonu (SVR): Amaç bir marjin aralığına maksimum noktayı en küçük hata ile alabileccek şekilde doğru ya da eğriyi belirlemektir
+
+	Özellikler :
+		-Güçlü ve esnek modelleme tekniklerinden biridir. 
+		-Sınıflandırma ve regresyon için kullanılabilir. 
+		-Dayanıklı (Robust) bir regresyon modelleme tekniğidir
+		- Regresyon Eğrisinin üstüne +e ve -e eğrileri çizilir.
+		- Bu eğrilerin altında veya üstünde kalan aykırı değerler asıl doğruyu oluşturan ana etkenlerdir
+
+	Tahmin : 
+
+		python notları madde 93
+
+15- Yapay Sinir Ağları: Amaç en küçük hata ile tahmin yapılabilecek katsayılara erişmektir
+	
+	Tanım : İnsan beyninin bilgi işleme şeklini referans alan sınıflandırma ve regresyon problemleri için kullanılabilen
+		kuvvetli makine öğrenmesi algoritmalarından birisidır
+
+
+	Yapay sinir ağının kısımları :
+
+		Not: Bütün sinir hücreleri birbiri ile ilişki içerisindedir
+
+		Delta öğrenme kuralı : Kabul edilebilir bir hata miktarı elde edilebilene kadar . Ağ çıktı ile gerçek çıktı arasındaki fark minimize edilmeye çalışılır
+				       Bunun içinse değişkenlerin ağırlıkları değiştirilir.
+
+		Input : 
+		Hidden : Ara katmandır bu katmanın içinde birden fazla yer alabilir. Giriş katmanından gelen bilgileri işler ve diğer katmanlara iletir.
+		Output :
+
+	Adımlar :
+	
+		- Örnek veriseti toplanır
+		- Ağın topolojik yapısına karar verilir
+		- Ağda bulunan ağırlıklara başlangıç değeri atanır
+		- Örnek veri seti ağa sunulur
+		- İleri hesaplama işlemleri yapılır
+		- Gerçek çıktılar ile tahmin çıktıları karşılaştırılır. Öğrenmenin tamamlanması basamakları gerçekleştirir
+
+	Tahmin :
+
+		Python notları madde 94
+
+16-CART modeli (Classification and Regression Tree) : Amaç veri seti içerisindeki karmaşık yapıları basit karar yapılarına dönüştürmektir
+					              Heterojen veri setleri belirlenmiş bir hedef değişkene göre homojen alt gruplara ayrılır
+
+	-Aşırı öğrenmeye meyillidir
+	- Daha karmaşık problemlerde daha büyük veri setlerinde başarı performansı diğerlerine göre biraz aşağıdadır
+
+	Önemli Not : Burada görülen her bir sonuç sayısı , yaprağın bulunduğu bölgeye karşılık gelen yanıt değişkeninin ortalamasıdır
+
+	Tahmin : 
+
+		python notları madde 95
+
+		
+17- Random Forests : 
+
+	Topluluk Öğrenme Yöntemleri : Birden fazla algoritmanın ya da birden fazla ağacın bir araya gelerek toplu bir şekilde öğrenmesi ve tahmin etmeye çalışmasıdır
+
+	Bagging : Temeli bootstrap yöntemi ile oluşturulan birden fazla karar ağacının ürettiği tahminlerin bir araya getirilerek değerlendirilmesine dayanır. m gözlem sayısı için T adet ağaçta n adet gözlem alınarak uygulanır (n<m)
+		  Kilit noktası boostrap rastgele örnekleme işlemidir
+
+	Aşırı öğrenme problemi --> Budama çözümü : Çok yeterli gelmedi bu yüzden bagging geldi
+
+	Özellikler (Bagging):
+		-Hata kareler ortalamasının karekök değerini düşürürü
+		-Doğru sınıflandırma oranını arttırır
+		-Varyansı düşürür ve ezberlemeye dayanıklıdır
+
+	Random Forests : Temeli birden çok karar ağacının ürettiği tahminlerin bir araya getirilerek değerlendirilmesine dayanır
+
+	Özellikler :
+		-Bagging ve Random Subspace yöntemlerinin birleşimi ile oluşmuştur : RF'nin baggingden farkı RS ile değişken seçme yöntemlerine de rassallık katma isteğidir 
+		-Ağaçlar için gözlemler bootstrao rastgele örnek seçim yöntemi ile , değişkenler Random Subspace yöntemi ile seçilir
+		- Karar ağacının her bir düğümünde en iyi dallara ayırıcı değişken tüm değişkenler arasından rastgele seçilen daha az sayıda değişken arasından seçilir
+		- Ağaç oluşturmada veri setinin 2/3'ü kullanılır. Dışarıda kalan veri ağaçların değerlendirimesi ve değişken öneminin belirlenmesi için kullanılır
+		- Her düğüm noktasında rastgele değişken seçimi yapılır (regresyonda p/3 , sınıflandırmada karekök p)
+
+	Modelleme :
+
+		pyhton notları madde 96 
+
+18- Gradient Boosting Machines (GBM) : AdaBoost'un sınıflandırma ve regresyon problemlerine kolayca uyarlayanabilen genelleştirilmiş verisyonudur
+				       Artıklar üzerine tek bir tahminsel model formunda olan modeller serisi kurulur
+
+	Boosting Yöntemleri : Zayıf Öğrenicileri bir araya getirip güçlü bir öğrenici ortaya çıkarmak fikrine dayanır
+
+	AdaBoost : Zayıf sınırlandırıcıların bir araya gelerek güçlü bir sınıflandırıcı oluşturması fikrini hayata geçiren algoritmadır
+
+	GBM Özellikler :
+
+		- Gradient boosting tek bir tahminsel model formunda olan modeller serisi oluşturur
+		- Seri içerisindeki bir model serideki bir önceki modelin tahmin artık/hatalarının üzerine kurularak oluşturulur fit edilir
+		- GBM diferansiyellenebilen herhangi bir kayıp fonksiyonunu optimize edebilen Gradient descent algoritmasını kullanmakta
+		- GB bir çok öğrenici tipi (base learner type) kullanabilir (Trees,Linear Terms,Splines)
+		- Cost fonksiyonları ve link fonksiyonları modifiye edilebilirdir.
+		- Boosting + Gradient Descent
+
+	Modelleme :
+		
+		python notları madde 97 
+
+18- XGBoost : GBM'in hız ve tatmin performansını arttırmak üzere optimize edilmiş . Ölçeklenebilir ve farklı platformlara entegre edilebilir halidir
+
+	Özellikler :
+		- R, Python , Hadoop , Scala, Julia ile kullanılabilir
+		- Ölçeklenebilir
+		- Hızlıdır
+	 	- Tahmin Başarısı yüksektir
+		- Bir çok kaggle yarışmasında başarısını kanıtlamıştır
+
+	Modelleme : 
+		Python notları madde 98
+
+19- LightGBM : XGBoost'un eğitim süresi performasını arttırmaya yönelik geliştirilen bir diğer GBM türüdür
+
+	Özellikler :
+		-Daha Performanslı
+		- Level-wise büyüme stratejisisi yerine leaf-wise büyüme stratejisi
+		-Breadth-first search yerine depth_first search
+
+	Modelleme : 
+
+		python notları madde 99
+
+20 - CatBoost : Kategorik Değişkenler ile otomatik olarak mücadele edebilen , hızlı , başarılı bir diğer GBM türevidir
+
+	Özellikler :
+		-Kategorik değişken desteği
+		-Hızlı ve ölçeklenebilir GPU
+		-Daha başarılı tahminler
+		-Hızlı train ve tahmin		
+		-Rusyanın ilk açık kaynak kodlu başarılı ML çalışması
+		
+
+	Modelleme :
+
+ 		python notları madde 100 
+	
+
+
+21- Sınıflandırma modelleri
+
+
+22- Lojistik Regresyon : Amaç sınıflandırma problemi için bağımlı ve bağımsız değişkenler arasındaki ilişkiyi tanımlayan doğrusal bir model kurmaktır
+		 
+	Özellikler :
+		- Bağımlı değişken kategoriktir
+		- Adını bağımlı değişkene uygulanan logit dönüşümden alır
+		- Doğrusal regresyonda aranan varsayımlar burada aranmadığı için daha esnek kullanılabilirliği vardır
+		- Bağımlı değişkenin 1 olarak tanımlanan değerinin gerçekleşme olasılığı hesaplanır. Dolayısıyla bağımlı değişkenin alacağı değer ile ilgilenilmez
+		- Lojistik fonksiyonu sayesinde üretilen değerler 0-1 arasında olur
+
+	Modelleme : 
+		python notları madde 101
+
+23- K En Yakın Komşu Sınıflandırma : Gözlemlerin benzerlikleri üzerinden tahmin yapar
+
+	- Öklid veya benzeri bir uzaklık hesabı ile her bir gözleme uzaklık hesaplanır
+	- En yakın K Adet gözlmein değerlerinin en sık gözlenen frekansı tahmin edilen sınıf olur
+
+	Modelleme : 
+
+		python notları madde 102
+
+24- Destek Vektör Makineleri (SVR) Sınıflandırma : Amaç iki sınıf arasındaki ayrımın optimum olmasını sağlayacak hiper düzlemi bulmaktır
+
+	Kernel Trick : mü ve sigma değerleri değiştikçe gözlemleri değiştirme imkanı buluyoruz
+
+	- Bir doğru çizilir ve iki sınıfı tamamen ayıracak şekilde doğrunun +/- yönlerine doğru maksimum marjinler çekilir
+
+
+	Modelleme :
+		python notları madde 103
+
+25- Yapay Sinir Ağları Sınıflandırma : Regresyon kısmı ile amaç aynıdır sadece aktivasyon fonksiyonumuz değişecek
+
+	- En çok kullanılan aktivasyon fonksyionu sigmoiddir
+	Not: Homojen setler yapay sinir ağlarında, heterojen setler ağaç yöntemlerinde daha iyi çalışır
+
+	Modelleme : 
+
+		python notları madde 104
+
+
+26- CART modeli Sınıflandırma : Amaç veri seti içerisindeki karmaşık yapıları basit karar yapılarına dönüştürmektir
+				Heterojen veri setleri belirlenmiş bir hedef değişkene göre homojen alt gruplara ayrılır
+
+	Modelleme : 
+
+		python notları madde 105
+
+
+
+27- Random Forests Sınıflandırma : Temeli birden çok karar ağacının ürettiği tahminlerin bir araya getirilerek değerlendirilmesine dayanır
+
+	Bagging: Bagging : Temeli bootstrap yöntemi ile oluşturulan birden fazla karar ağacının ürettiği tahminlerin bir araya getirilerek değerlendirilmesine dayanır. m gözlem sayısı için T adet ağaçta n adet gözlem alınarak uygulanır (n<m)
+		  Kilit noktası boostrap rastgele örnekleme işlemidir
+	
+	Madde 17 bilgilerini oku
+
+	Not: Bagging gözlem seçiminde Random Forest ise değişken seçimi ile ilgilenir
+
+	Modelleme: 
+		python notları madde 106
+
+
+
+28- Gradient Boosting Machines ile Sınıflandırma :  AdaBoost'un sınıflandırma ve regresyon problemlerine kolayca uyarlayanabilen genelleştirilmiş verisyonudur
+				       Artıklar üzerine tek bir tahminsel model formunda olan modeller serisi kurulur
+
+
+		Modelleme : 
+
+			python notları madde 107
+
+
+29- XGBoost ile Sınıflandırma : GBM'im hız ve tahmin performansını arttırmak üzere optimize edilmiş ölçeklenebilir ve farklı platformlara entegre edilebilir halidir
+
+		Modelleme :
+		
+			python notları madde 108 
+
+
+30- Light GBM ile Sınıflandırma : XGBoost'un eğitim süresi performansını arttırmaya yönelik geliştirilen bir diğer GBM türüdür
+
+	Özellikler Yukarıda
+
+	Modelleme : 
+
+			python notları madde 109 
+
+31- CatBoost ile Sınıflandırma : Kategorik değişkenler ile otomatik olarak mücadele edebilen , hızlı başarılı bir diğer GBM türevi.
+
+	Özellikler Yukarıda
+
+	Modelleme :
+
+		-python notları madde 110
+
+
+
+32- Denetimsiz Öğrenme : Elimizdeki veri setinde bağımlı değişken olmadığında yani baığmsız değişkenler
+			 belirli bir çıktı ile ilişkilendirilmediğinde oluşan veri setleri üzerinde yapılan öğrenme işlemleridir
+
+
+33- K-Means : Amaç gözlemleri birbirlerine olan benzerliklerine göre kümelere ayırmaktır
+
+	Not : Kümele yöntemlerinin amacı benzerlik matrislerini kullanarak , gözlemleri ya da değişkenleri kümelemeye çalışmaktır 
+	      Oluşturulmaya çalışılan kümelerin kendi içinde homojen birbirleri arasında heterojen olması beklenir
+
+	Adım 1 : Küme sayısı belirlenir
+	Adım 2 : Rastgele k merkez seçilir
+	Adım 3 : Her gözlem için k merkezlere uzaklık hesaplanır
+	Adım 4 : HEr gözlem en yakın olduğu merkeze yani kümeye atanır
+	Adım 5 : Atama işlemlerinden sonra oluşan kümeler için tekrar merkez hesaplama işlemi yapılır
+	Adım 6 : Bu işlem belirlenen bir iterasyon adedince tekrar edilir ve küme içi hata kareler toplamlarının toplamının (total within-cluster variation) 
+		 minimum olduğu durumdaki gözlemlerin kümelenme yapısı nihai kümelenme olarak seçilir
+
+	Uygulama : 
+
+		python notları madde 111
+
+34- Hiyerarşik Kümeleme : Amaç gözlemleri birbirlerine olan benzerliklerine göre kümelere ayırmaktır
+
+ 	-Gözlemler daha fazla sayıda alt kümeye ayrılmak isteniyorsa bu durumda hiyerarşik kümeleme yöntemleri kullanılabilir
+	- K-Means yönteminde sadece belirli sayıda kümeye ayırabiliyoruz.
+	  Hiyerarşik kümelemede ise hem belirli sayıda kümeye ayırabilir hem de oluşan yeni kümelerin altında da yeni kümelere ayırabiliriz
+
+	Birleştirici Kümeleme :
+		-Aşağıdan yukarı
+		-Başlangıçta gözlem sayısı kadar küme vardır
+		Adım 1: Beri setinde birbirine en yakın olan 2 gözlem bulunur
+		Adım 2: Bu iki nokta bir araya getirilerek yeni bir gözlem oluşturulur. Yani artık veri seti ilk birleşimdeki gözlemlerden oluşmaktadır
+		Adım 3: Aynı işlem tekrarlanarak yukarı doğru çıkılır. Yani iki kümenin birleşiminden oluşan bu yeni kümeler aynı şekilde birbirlerine benzerliklerine göre yeniden birleştirilir
+			Bu işlem tüm gözlemler tek bir kümede toplanana kadar devam eder
+
+		Not: Birbirine yakın noktalar uzaklık ölçüleri kullanılarak belirlenir. Öklit , manhattan , kolerasyon vs
+
+	Bölümleyici Kümeleme : 
+		- Yukarıdan aşağı
+		- Başlangıçta bir tane küme vardır. O da tüm veri setidir
+		Adım 1 : Tüm gözlemlerin bir arada olduğu küme iki alt kümeye ayrılır
+		Adım 2 : Oluşan kümeler birbirlerine benzemeyen alt kümelere ayrılır
+		Adım 3 : Aynı işlem gözlem sayısı kadar küme elde edilinceye kadar tekrar edilir
+
+	Kümeleme Yöntemleri ile Karar Ağaçlarının Karşılaştırılması :
+		-Hiyerarşik yöntemlerde küme sayısına dendrogram sonuçlarına bakılarak karar verilirken. Hiyerarşik olmayan yöntemlerde küme sayısı uygulama yapılmadan önce belirlenir
+		-Hiyerarşik kümele yöntemlerinde veri seti gözlemler ya da değişkenler bazında kümeleme işlemine sokulabilirken
+		 Hiyerarşik olmayan yöntemlerde sadece gözlemlerin kümelenmesi mümkündür
+		-Karar ağaçlarından farkı; karar ağaçlarında ayırma işlemi hedef değişkene göre yapılırken burada bağımlı değişken olmadığı için gözlemler bağımsız değişkenler üzerinden yapılan uzaklık hesaplarına göre ayrılır
+
+	Uygulama : 
+
+		-python notları madde 112 
+
+35- Temel Bileşen Analizi (PCA) : Temel fikir , çok değişkenli verinin ana özelliklerini daha az sayıda değişken/bileşen ile temsil etmektir
+				  Küçük miktarda bilgi kaybını göze alıp değişken boyutunu azaltmaktır
+
+	- Eğer elinizdeki 100 değişkenden ve gözlem birimlerinden oluşan veri setini kümele yöntemi ile kümeledikten sonra
+	  kümeleri görselleştirmek istiyorsanız, veri setinizi temel bileşenler analizi ile iki boyuta indirgeyip kümeleme yaklaşımını görselleştirebilirsiniz
+
+	-Temel bileşenler analizi genel olarak, görüntü işleme ve regresyon modellerinde ortaya çıkan bazı problemlerde kullanılmaktadır. Özellikle regresyon modellerinde veri setinde çok fazla değişken olduğunda
+	 değişkenlerden bazıları birbiri ile ilişkili ise ortaya çoklu doğrusal bağlantı problemi çıkmaktadır
+	
+	-Çoklu Doğrusal bağlantı probleminden kurtulmak için bir PCA uygulandığında değişkenler arasındaki çoklı doğrusal bağlantı ortadan kaldırılabilir
+	 indirgeme işleminde sonra ortaya çıkan bileşenler arasında kolerasyon yoktur!
+
+	-değişken gruplarının varyanslarını ifade eden öz değerler ile veri setindeki değişkenler gruplandırılı. Gruplar arasında en fazla varyansa sahip gruplar en önemli gruplar oluyor	
+
+	Uygulama: 
+		python notları madde 113
+
+36- Büyük Veri : Geleneksel yöntemlerle işlenemeyen verilere büyük veri denir. Veri işlemeye yeni bir vizyon. 
+	         Geleneksel yöntemlerle işlenememe durumu bazen verinin boyutu, bazen verinin türü ve bazen de verinin hızlı bir şekilde değişebiliyor olmasıdır	
+
+	- Bu problemin çözümü birden fazla bilgisayarın bir araya gelerek tek bir bilgisayar gibi hareket etmesidir. Yani bir işi yapmak için birden fazla bilgisayarın tek bir bilgisayar gibi davranmasıdır
+
+	- Bu problemin çözülmesi bize veri analitği alanında yeni ufuklar açtı, hesaplama gücünün artması ile makine öğrenmesi algoritmalarının performansları arttı.
+	  Daha büyük miktar ve çeşitteki verilerin kullanılması ile veriden faydalı bilgi çıkarma süreci için çok önemli bir kaynak/araç sağlanmış oldu
+
+	Büyük Verinin Bileşenleri :
+
+		-Ortaya çıkan veri işleme güçlüğü verinin hacmi,çeşitliliği ve hız ile alakalıdır	
+		- Büyük veriyi ifade eden özellikler hacim,çeşitlilik ve hızdır (Volume, Variety, Velocity)
+		- Çok yaygın bir yanılgı bu özelliklerin birlikte olduğunda ancak veriye büyük veri denilebileceğidir
+		- Büyük veri araçları veriden faydalı bilgi çıkarma süreçleri için çok güçlü bir araçtır
+
+
+37- Apache Hadoop : Apache Hadoop açık kaynak kodlu , güvenilir ,ölçeklenebilir paralel hesaplama yazılımı projesidir
+
+	- Büyük veri teknolojilerinin temelini oluşturur
+ 	- Geleneksel yöntemler ile etkin olarak işlenmesi mümkün olmayan verilerin işlenebilmesine olanak sağlamaktadır
+	- Bir bilgisayar kümesinin belirli bir işi yapmak için tek bir bilgisayar gibi birlikte hareket etmesini sağlamaktadır
+
+	Bileşenleri :
+		-Hadoop Common : Büyük veri teknolojileri , diğer bir ifadesi ile tüm hadoop modüllerini destekleyen ortak gereksinimlerdir
+		-Hadoop Dağıtık Dosya Sistemi(HDFS) : Yerel dosya sistemleri olan FAT32 ve NTFS gibi bir dosya sistemidir. Bu sistemlerden farkı büyük boyutlardaki veriyi dağıtık şekilde depolamaya ve kontrol etmeye imkan sağlamaktadır
+		-Hadoop YARN : Kaynak Yönetimi ve iş planlaması için kullanılan Apache Hadoop'un daha etkin bir şekilde kullanılmasına olanak sağlayan bir bileşendir
+		-Hadoop MapReduce : Büyük veri dünyasının fonksiyonel anlamda temelini oluşturan bileşendir. Aynı ağdaki dağıtık bilgisayar kümeleri üzerinde büyük veri analizi yapılabilmesi için geliştirilmiş bir programlama modelidir
+		
+
+	MapReduce : 
+
+		- Bölümler : Input -> Splitting -> Mapping -> Shuffling -> Reducing> Merged
+		- Mapping aşamasının görevi HDFS üzerindeki girdi verilerini işlemektir
+		- Shuffle ve REduce aşamalarının görevi Map aşamasından gelen veriyi işlemek ve indirgemektir
+
+	Apache Hadoop Faydaları :
+
+		-Veri Saklama ve İşleme Gücü
+		-Açık Kaynak
+		-Hız
+		-Esneklik
+		-Ölçeklenebilirlik
+		-Hata Toleransı
+
+	Hadoop Yeterli Mi :
+		-Disk Tabanlı çalışan bir modeldir
+		-Her MapReduce görevinde diskten okuma ve diske yazma işlemi yapılır
+		-İteratif işlemler zaman alır ve kaynakları meşgul eder
+
+38- Apache Spark : Apache Spark küme üzerinde hızlı ve genel amaçlı bilgi işleme sistemidir
+
+	-MapReduce programlama modelinin alternatifidir
+	-MapReduce modelinde yer alan disk bazlı çalışma sisteminin yarattığı maliyetlerden dolayı ortaya çıkmıştır
+	-Apache Hadoop'a göre 100 kat daha hızlı çalışmaktadır
+	-Java, Scala, Python ve R gibi uygulama geliştirilebilir
+	-Genelleştiricidir. Spark SQL , Spark MLlib, Spark Streaming, GraphX aynı uygulamada kullanılabilir
+
+	Bileşenler :
+		-Spark Core ve RDD's : Hafıza yönetimi, Görevlerin Dağıtılması, Hata Kurtarma, Dosya Sistemlerine Erişim. RDD'S MapReduce'un alternatifidir. Apache Spark'ın programlama modeli verinin bellek içi tutularak paralel işlenmesini ifade etmektedir ve bu da RDD'S dir
+		-Spark SQL : SQL veya bir DataFrame API kullanılarak Spark programlarında yapılandırılmış veriyi sorgulama imkanı sağlar
+		-Spark MLlib : Apache Spark'ın ölçeklenebilir makine öğrenmesi kütüphanesidir. Apache Sparkın bellek içi çalışma mantığından dolayı iteratif işlemler barındıran makine öğrenmesi gibi işlemlerde bize çözüm sunmaktadır
+		-Spark Streaming : Akan verinin ölçeklenebilir, yüksek hacimli ve hata toleranslı bir şekilde işlenmesine olanak sağlayan temel Spark API'sine ait bir Spark uzantısıdır
+		-GraphX : Paralel grafik tabanlı hesaplama işlemleri için kullanılan bir kütüphanedir
+
+	RDD's : Dayanıklı Dağıtık Data Setler :
+
+		- RDD'de yapılan işlem veriyi RAM'e taşımak. RAM üzerinde dönüşüm işlemlerini ve iteratif işlemleri yapmak ve en son işlemler bittikten sonra veriyi tekrar diske yazmaktır
+
+		Aşama 1 : RDD'sler oluşturulur
+		Aşama 2 : Dönüştürme
+		Aşama 3 : Aksiyon
+
+		Önemli Not : Aksiyon Basamağı gerçekleşmeden uygulama işlemi (execution) gerçekleşmemektedir
+
+39- Ekosistemin Bazı Diğer Üyeleri :
+
+	-Apache Ambari : Apache Hadoop kümelerinin kurulumu  yönetimi ve gözetimi için geliştirilmiştir
+	-Apache Drill : Arkaplanda sql kodlarını MapReduce kodlarına çeviren uygulamadır
+	-Storm ve Kafka : Büyük veri akışını küçük bir gecikme ile gerçek zamanlı sağlayabilen ve işleme imkanı sunan bir araçtır
+	-Mahout ve MLlib : Machine Learning için kullanılan kütüphanelerdir. Mahout'un gelişimi durdurulmuştur
+	-Pig : Scripting görevlerini yerine getirir
+	-HBase : NoSQL veri tabanı sistemidir
+	-Oozie : İş planlama için kullanılır
+	-Solr ve Lucene : Arama ve İndexleme için kullanılır
+	-Sqoop : Excel tablolarına benzer yapılardan hadoop ortamına veri aktarmak için kullanılır
+	-PySpark : Spark kullanmak için kullanılan python kütüphanesidir
+		
+	
+40- Spark uygulamaları : 
+
+	Python notları madde 114 
+
+
+Önemli Not : Algoritmaya veri bulmaya çalışma , Veriye algoritma bul
+
+Projeye başlamadan önce sorman gereken sorular : 
+
+	-İlgili iş birimlerinin veya iş yerinin ihtiyacı nedir ? 
+	-Bu proje ile hangi problemi çözeceğiz (Tersten Gidiş)
+	-Attığımız taş ürküttüğümüz kurbağaya değecek mi ?
+	-Bu işin somut çıktısı ve işe katkısı nedir ?
+	-Neyi ölçmek istiyoruz ?
+	-Neyi tahmin etmek istiyoruz ?
+	-Bu modeli ya da tahmini kim kullanacak ?
+	-Projenin başarı metriği nedir ?
+	-Bu işin doğrulamasından ve kontrolünden kim sorumlu olacak ?
+	-Bu proje ne kadar sürecek ?
+	-Hangi departmanlar hangi seviyelerden işin içinde olacak ?
+	
+41- CRISP-DM notları :
+
+	İş Anlayışı-Problemi :
+	
+		-Problemin Apaçık Tanımlanması	
+		-Proje Beklenti Yönetimi
+		-Projenin Başarı Metriğinin Ne Olacağının Belirlenmesi
+		-Literatür Taraması ve En İyi Uygulamaların Araştırılması
+
+	Veriyi Anlamak :
+		
+		-Veri Tabanlarında iz sürmek 
+		-Verinin oluşma şeklini anlamak
+		-Verinin hayat döngüsünü anlamak
+		-Verinin ilgili proje için uygunluğunun anlaşılması
+		-Analitik olarak veriyi değerlendirmek
+
+	Verinin Hazırlanması :
+	
+		-Eksik aykırı ve modellemeye uygun veriler ile ilgili işlemler yapılır
+
+	Modelleme : 
+		-İlgili veri üzerinden bir model oluşturulur.
+
+	Değerlendirme :
+		-Modelin başarısı tahmin edilir
+
+
+	Kullanıma Sokmak : 
+
+		-Modellemenin excel'e sql tablolarına vs dökülmesi kısmıdır
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+Not: Yapılabilecekler Listesi :	
+			-Değişken Türetme / Değişken Mühendisliği
+			-Değişken Seçme
+			-Otomatik ML kütüphaneleri	
+			-Model deployment
+
+
+
+
+	------------------------------------Yapay Zeka--------------------------------------------
+
+1-Yapay zeka geçmişten beri 4 tür altında incelenir :
+
+	
+	a. Acting Humanly : Turing tesi bunun en başlıca örneğidir
+	
+	b. Thinking Humanly : Psikoloji Sosyoloji Mantık ve Felsefe gibi bilim dallarını içeren büyük bir alandır
+			      İnsan psikolojisini anlamak bu konuda büyük bir sorundur
+			      Bilişsel modeldir. Problemleri insanlar nasıl çözüyorsa öyle çözer
+	
+	c. Acting rationally : Doğru şeyin yapay zeka tarafından yapılması
+	d. Thinking rationally (Laws Of Thought) : Mantığın kullanılması ve çıkarım yapılması. Yapılan şeylerin mantık altında kanıtının yapılabilmesi
+	
+	Not: İnsanın yaptığı şeyler rasyonel değildir. humanly/rational ayrımı budur
+	Not: Problemlerin nasıl modellendiği ve bu modelden neler çıkarıldığı thinking kısmıdır
+	     Acting kısmı ise sadece bunu dış dünyaya yansıtmak ve dışarıdan aldığı şeyler ile ilgilir
+
+2- Yapay zeka seviyeleri
+
+	a. Wisdom : Yapay zekanın ulaşamayacağı düşünülen kısımdır. Felsefi çıkarımlar yapılan kısımdır.
+	b. Knowledge : İnsan düşünmesine yakın olan kısımdır. Planlama öğrenme tarzındaki terimleri içelir
+	c. Information : Datalar işlenerek yapılan şeylerdir. Yaş ortalaması bulma maaş bulma tarzında veritabanından çıkabilecek sonuçlardır
+	d. Data : Hiçbir şey anlatmayan ham dijital değerlerdir.
+
+
+Veri Bilimi Proje örnekleri :
+
+1- Sosyal medya arkadaş önerileri
+2- Otomatik fotoğraf etiketlemeleri
+3-JHedefli içerik pazarlama
+4-Otomatik mesaj tamamlama
+5-Hedefli ürün pazarlama
+6-Tavsiye sistemleri
+7- Otonom araçlar
+8- Nesne tanıma/takip uygulamaları
+9-Sahte videolar
+10-Eski resimlerin canlandırılması
+11-Var olmayan kişilerin resminin var olabilmesi
+12-Robotlar
+13- Müşteri segmentasyonu
+14-Kanser/hastalık teşhisi
+15-Şirket gelirlerinin tahmini ile strateji belirlenmesi
+16-Başvuru değerlendirme sistemleri
+17-Akıllı portföy yönetimi
+18-Doğal afet modelleme çalışmaları
+19- E-spor analitiği

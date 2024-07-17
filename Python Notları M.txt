@@ -1,0 +1,2017 @@
+
+
+Not: dir methodu ile veri tiplerinin veya listlerin... methodlarını listeleyebiliriz
+
+1- Veri Tipleri :
+
+  a. İnteger
+  b. Float
+  c. Bool
+  d. String
+ 
+
+2- Matematiksel Operatörler :
+
+  + = toplama
+  - = çıkarma
+  * = çarpma
+  / = bölme
+  ** = üs alma
+  % = mod
+  // = tam bölme
+
+
+!Not: Pythonda değişken tanımlarken bu değişkene değer verilmesi zorunludur
+
+3- Veri tipi dönüşümleri :
+
+	Not: input fonksiyonu default olarak string tipinde değer alır o yüzden
+	     eğer bunlar ile sayısal işlem yapılmaz
+   
+   a. int() : içine verilen değeri integer'a çevirir //Sayısal değer zorunludur
+   b. float() : içine girilen değeri float'a çevirir  // Sayısal değer zorunludur
+   c. str() : içine girilen değeri string'e çevirir
+
+	Not: bool tipini int'e çevirirsek 1 ve 0 olarak sayısal değer alır
+
+
+4- Stringler :
+
+   Stringler karakter dizileri olduğu için index numaraları vardır. Bu index numarası baştan sıfır
+   sondan ise -1 olarak başlar
+  
+   Örnek:
+		print(x[2:5]) = 2. indexten 5. index'e kadar olan karakterleri yazdırır
+		print(x[3:] = 3. indexten başlayıp sona kadar gider
+		print(x[:15] = baştan başlayıp 15. index'e kadar gider
+		print(x[2:40:3]= 2. indexten 40. index'e kadar 3'er atlayarak gider		
+
+
+5- String formatlama
+		
+	Örnek: print("My name is {}".format(x)) methodu bizim string'e değişken eklememizi sağlar
+	       print("My name is {} {}".format(x,y)) şeklinde birden fazla da kullanılabilir
+	       print("My name is {1} {0}".format(x,y)) der isek çıktımız My name is y x olarak gelir
+	       print("My name is {b} {a}".format(a=x,b=y)) kullanımı da bir üstteki ile aynı sonucu verir yani biz index numaraları ve yeni değişken isimleri ile değerleri çağırabiliriz
+
+	Örnek: result = 200/700
+	       print("result is {r:1.4}".format(r=result)) kullanımı ise floatlarda virgülden sonra kaç basamak alınacağını ayarlar noktanın solu tam kısmı sağı ise virgüllü kısmın sayısını temsil eder
+
+	Örnek : Format methodunu kullanmadan aynı işi halletmek için fstring'leri kullanırız
+		print(f"My name is {name} {surname}") dediğimizde süslü parantezler içine direkt olarak değişkenleri verip aynı etkiyi alabiliriz
+
+6- String methodları :
+
+	upper() = stringdeki bütün karakterleri büyük harf yapar
+	lower() = stringdeki bütün karakterleri küçük harf yapar
+	title() = strindeki bütün kelimelerin baş harfini büyük yapar
+	capitalize() = stringin ilk kelimesinin ilk harfini büyük yapar
+	strip() = stringin başındaki veya sonundaki boşlukları siler
+	split() = stringi belirli noktalardan ayırır. default olarak boşluktur
+	find() = verilen karakterin veya kelimenin indexini verir eğer kelime verilir ise kelimenin ilk harfinin indexini verir 
+	startswith() = stringdeki kelimelerin ilk harflerini kontrol eder true veya false döndürür
+	endswith() = stringdeki kelimelerin son harflerini kontrol eder true veya false döndürür
+	replace() = birinci parametrede verilen şeyi ikinci parametre olarak verilen şeye dönüştürür
+	center() = içine aldığı değer ile bir placeholder oluşturup stringi ortalar placeholder içinde
+
+ 	Not: Eğer split ile ayırdığımız stringi yeniden birleştirmek istersek join methodunu kullanırız
+		Örnek = message.split()--> message= " ".join(message) dersek eski haline döner
+	
+		
+7- Listeler (Diziler) :
+
+	Not: Stringler karakter dizisidir
+	Not2: Python tip güvenlikli olmadığı için dizilerde farklı veri tiplerini tutabiliriz
+	Not3: Diziler kendi içlerinde toplanabilir (Çıkarılabilir?)
+	Not4: Liste içerisinde liste de tutulabilir
+	Not5: Listeler içinde "in" operatörü içinde var mı sorusunu cevaplayan fonksiyondur
+	Not6: Listelerin içinden eleman silmek için pop dışında "del" index şeklinde bir kullanım da yapabiliriz
+
+8- Liste methodları:
+
+	min(list)= minimum sayısal değeri veya alfabetik değer olarak minimum değeri alır
+	max(list)= maximum sayısal değeri veya alfabetik değeri yazdırır
+	append() = içine eklenen value'yu listeye ekler
+	insert() = belirtilen index numarasından önce istenilen değeri ekler
+	pop() = içine eklenen indexteki değeri siler. default olarak sonuncuyu siler
+	remove() = içine eklenen değeri siler
+	sort() = sayısal veya alfabetik olarak sıralar
+	reverse() = listeyi ters çevirir.
+	count() = içine girilen değerden kaç tane olduğunu söyler
+	clear() = diziyi boşaltır
+
+9- Tuple : Tuple normal parantezlerle tanımlanır(Paranten olmadan da kullnılabilir)
+		
+		Not: Tuple'da yine index kullanımı vardır
+		Not2:Tuple'daki değerler sonradan değiştirilemez sadece üstüne yazılabilir. Listede değiştirilebilir
+		Not3: Sonradan silme ekleme gibi işlemler tuple'da yapılamıyor
+
+10- Dictionary : Key- Value şeklinde çalışan liste tipidir.
+
+		Kullanım : dİsmi = {key : value, key : value}
+		Kullanım : print(dİsmi[key])-->value çıktısını verir
+
+		Not: Sonradan ekleme yapmak için ise dİsmi[yeniKey]= yeniValue yaparsak dictionary'e ekleme yapılmış olur
+		Not: Aynı şekilde var olan bir key'in de value'su değiştirilebilir
+		Not: dictionry içinde dictionary tanımlanabilir
+		Örnek: users{"sadikturan":{"age":2,"phone":05349386290}} şeklinde kullanılır
+		Not: Dictionary yapısında update methodunu kullanarak dinamik bir güncelleme sağlanabilir
+
+11- Set Listeleri : Kullanım = fruits = {"orange","apple"}
+
+			Not: Tanımlama açısından dictionary'ye benzer ama key-value ilişkisi yoktur
+			Not: İndexlenemez bir liste tipidir. Değerlerini çağırmak için döngüler kullanılabilir
+			Not: Sıralanamazlar. Aynı eleman iki defa eklenemez
+			Not: set() methodu ile tekrarlanan elemanlar listeden çıkarılır
+			Not: indexlenemediği için pop methodu rastgele değerleri silebilir. Veya yeni eklenen elemanlar rastgele yerleşebilir
+
+12- Değer ve Referans tipleri :
+
+	javadaki heap olayları. Adres eşitleme ve değer eşitleme farkı vardır referans tipleri ve değer tipleri arasında
+				Referans tipleri = list,class(,string?)
+
+13- Atama örnekleri :
+
+	Not1: x=5 \n y=10 \n z=20 olarak 3 satırda tanımlamak yerine x,y,z = 5,10,20 diyebiliriz
+	Not2: x,y=y,z yapmak değerlerini değiştirir
+	Not3: += , -= , *= , /= ,... operatörleri atama deyimleri ile aynı işlevi sağlar
+	Not4: x,y,z=values şeklinde bir tuple veya dizinin değerlerini sırası ile aktarabiliriz. (değişken sayısı ile eşit sayıda eleman sayısı olmalıdır)
+	Not5: Eğer bir bu atamayı x,y,*z = values şeklinde yaparsak fazla olan bütün değerleri z'de bir dizi olarak tutar
+
+14- Mantıksal operatörler :
+ 	
+	1: Mantıksal operatörler kelime olarak "and" ,"or","not" olarak kullanılır
+	2: and ve anlamı taşır
+	3: or veya anlamı taşır
+	4: not operatörü sorulan sorunun tersini alır (false-> true, true->false)
+
+15- İdentity ve membership operatörleri :
+		
+		is operatörü : Adresler aynı mı onun karşılaştırmasını yapar. Değerler aynı olsa bile is operatörü false döner
+		in operatörü : istenilen değer onun içinde var mı sorusunu sorar
+		Not: is not veya not in şeklinde bir birleşim yapılabilir
+
+16- if elif ve else
+	
+	1- Koşullar yine tanımlanır koşullardan sonra : işareti konup bir tab içeriden yazılmaya devam edilir
+	
+
+17- DateTime modülü : İçinde tarihler ve zamanlar ile ilgili birçok fonksiyon bulunan modüldür
+
+18- For döngüsü : Normal kullanımı foreach kullanımı gibidir. kullanım = for i in liste (listedeki her elemanı i değişkenine tanımlar)
+		  range ile kullanılırsa normal for döngüsü gibi kullanılabilir
+		  Eğer iki tane değer varsa yani list içinde list tarzında bir durumda for a,b in list tarzında bir kullanımla listenin içindeki elemanları alabiliriz(liste içindeki liste 2 elemanlı ise)
+		  Eğer dictionary kullanmak istiyor isek dictionary.items ile dizi içinde 2 elemanlı dizi tarzında bir şey oluşturup yukarıdaki kullanımla hem hkey hem value tutabilirz
+
+19- While döngüsü : Normal for kullanımını while ile yapaniliriz pythonda
+	
+			1-değişken tanımla		
+			2- while içinde koşul ver
+			3- döngü sonunda değişkeni manipüle et
+
+20- Break ve continue :
+	
+	break: Belirli bir noktada döngüyü durdurur.
+	continue: belirli noktaları görmezden gelmek için kullanılır. O anki tek döngüyü iptal eder
+
+21- Döngü methodları :
+	
+	range() : döngülerde kullanımı sayıların aralıklarını belirtmeye yarar.
+		  range'den çıkan sayıları bir listeye veeya değişkene tanımlayabiliriz
+
+	enumerate() : içine koyulan nesneyi key-value şeklinde saklar stringlerde key olarak indexleri kullanır Örnek: for i,e in enumarate(dizi) : i indexi e değeri saklar
+			start parametresi ile kaçtan başlayacağını söyleyebiliriz
+
+	zip() :  iki listeyi aynı anda dolaşmaya yarar örnek: for a,b in zip(list1,list2) her listenin elemanlarını farklı değişken dolaşır
+
+22- List comprehensions : Örnek: numbers= [x for x in range(10)] bu kullanım liste değerlerini otomatik olarak tanımlar içindeki range'e göre bu değerleri teker teker x'e atar
+				 numbers= [x**2 for x in range(10)] burada ise her x değerinin karesini alığ listeye atar 
+				 [x**2 for x in range(10) if x%3==0] burada ise değer atama yapılırken koşulları da kullanabildiğimizi görüyoruz
+				 [x if x%2==0 else 'TEK' for x in range(1,10)] şeklinde de kullanımı  vardır
+				 [(x,y) for x in range(3) for y in range(3)]
+
+23- Method ve Fonksiyon : Methodlar sınıfların sahip olduğu yapılabilen işlemlerdir
+			  Fonksiyon methodlar gibi işlev görse de classlar içinde tanımlanmaz
+
+
+24- Fonksiyon kullanımı : "def" anahtar kelimesi ile oluşturulur
+
+	Örnek: def fonkİsmi() :  	def fonkİsmi(name) :  	def fonkİsmi(name='user') : -> default bir değer oluşturur
+
+	Not: return anahtar kelimesi ile değer döndürülebilir veya void olarak işlem yaptırılabilir
+			 	
+
+Not: help() fonksiyonu içine aldığı fonksiyonlar hakkında detaylı bilgi verir
+
+25- Fonksiyonda parametreler :
+	
+	Not1: Value tiplerinin değeri fonksiyonlardaki local değişkenler kullanılarak değiştirilemez
+	Not2: Referans tiplerin değeri fonksiyonlardaki local değişkenler kullanılarak değiştirilebilir
+	Not3: Fonksiyonlara istediğimiz kadar değer göndermek için *params şeklinde bir parametre kullanırız
+	Not4: Fonksiyona dictionary geleceğini belirtmek için **params şeklinde bir kullanım yaparız
+
+26- Lambda expressions :
+
+	Not1: map() methodu içine verilen fonksiyonun ismi ile bir liste alır. İçine aldığı listedeki her değer için listeyi çalıştırır.
+	      Örnek: list(map(square,list))
+	
+	Not2: anonymous fonksiyonlara lambda fonksiyon denir. Kullanımı lambda değişken : returnİfadesi şeklindedir
+	      Yukarıdaki map örneğini yeniden canlandırır isek list(map(lambda num : num**2,list)) şeklinde öncesinde fonksiyon tanımlamadan çalıştırırız
+	Not3: lambda fonksiyona isim verebiliriz square=lambda num:num**2
+
+	Not4: filter fonksiyonu map gibi işlem yapar ve liste içindeki true döndüren değerleri filtreleyip sunar
+		örnek: result= list(filter(lambda num: num%2==0,list)) şeklinde kullanarak listedeki sadece çift sayıları filtreleyebiliriz
+
+27- local ve global değişkenler : 
+	
+	Not: local değişkenler belirli kısımlarda belirli değerler alan değişkenlerdir. Global>Local şeklinde bir hiyerarşi vardır.
+	Not: Global değişkenler kod boyunca değiştirilmediği sürece aynı şekilde kullanılabilecek değişkenlerdir
+	Not: Öncelik hiyerarşisi ise local>globaldir.
+	Not: Eğer local değişkenler yerine globaller üzerinde çalışmak istersek global anahtar kelimesi ile bir tanımlama yaparız. localde yapılan bütün değişikliklerin global'i de etkilemesini sağlar
+		Örnek: x=50 def test(): global x x=100 print(x)->100
+
+28- OOP :
+	
+	class: sınıf oluşturmak için "class" keyword'u kullanılır. PascalCase kullanılır. "pass" keyword'u ile boş class tanımlanabilir
+		Örnek: class Person: pass	person1=Person() şeklinde nesne tanımlanıp atanır
+	
+	constructor: def __init__ methodu ile tanımlanır : def__init__(self,att1,att2,att3) \n self.att1=att1
+		     self için bir değer girmemize gerek kalmaz python self yerine oluşturmak istediğimiz nesneyi koyup constructor'dan gelen değerleri otomatik olarak atar
+	
+	Not: Object attribute'ları constructor'da tanımlanabilir. 
+	
+	Not: Class attribute'lar ise constructor dışında tanımlanan attribute'lardır
+
+	Class Methodları : yine def ile tanımlanıp kullanılabilir !!Methodların parametresi self olarak kullanmazsak method içinde obje değerlerine ulaşamayabilirz
+
+29- OOP-İnheritance : Miras olaylarıdır
+
+	Not: Bir nesneyi superclass'dan extend etmek için : class Student(Person) veya class Teacher(Person) şeklinde inherit işlemlerini sağlayabiliriz
+
+30- Nesneye özel methodlar
+
+	__init__ : constructor oluşturur
+	__str__ : str fonksiyonu yazdırılmaya çalışıldığında yazılacak şeyi ayarlarız burada
+	__len__ : len fonksiyonu çalıştığında ne döndüreceğini ayarlarız
+	__del__ : del fonksiyonu çalıştığında ne döndüreceğini ayarlarız
+				
+
+31- Modüller : Programı yönetmeyi kolaylaştırmak için parçalara ayırırız. Her parça bir modüldür
+	      
+	a. Kendi hazırladığımız modüller
+	b. Hazır modüller
+	b1. Standart Kütüphane modülleri
+	b2. Üçüncü Şahıs modülleri  --> pip install package-name
+
+32- Math Modülü : Matematiksel işlemler için kullanılır. import keyword'u ile dahil edilir
+
+Not: import math as x kullanımı modüllere takma isim verir ve x üzerinden fonksiyonları çağırırız	
+Not: from math import * kullanımı ise modül üzerinden çağırmaya gerek kalmadan bütün fonksiyonları kendi içine alır
+
+33- Random modülü : Rastgele sayı üretmek için kullanılır
+
+	shuffle() : liste içindeki elemanları karıştırır
+	choice() : bir listeden rastgele değer seçer
+	sample() : bir listeden rastgele istenilen kadar değer getirir
+
+34- Modül oluşturma : İstenilen sayfayı yazmayı bitirip dosya ismi ile diğer sayfalarda import et
+		      Bir dosyayı import ettiğinde içindeki çalıştırılabilir olan kodları çalıştıracaktır Dikkat et!!
+
+
+35- Hata ve Yönetimi : try bloğu ile hata yönetimini yaparız
+	
+	Kullanım: try: .... 
+		  except (ZeroDivision)Error: ...
+
+	Kullanım2: try: .... 
+		  except (ZeroDivision)Error as e: ... ---> hata ismini e değişkeninde tutar
+
+	Kullanım3: try: .... 
+		   except: ...
+
+	
+	Kullanım4: try: .... 
+		   except: ...
+		   else: ...             ---> try'dan sonra except kısmına düşmezse else çalışır. döngüleri durdurmak için kullanılabilir
+
+
+	Kullanım3: try: .... 
+		   except: ...	
+		   else:...
+		   finally:... -----> Finally bloğu her zaman çalışır. Dosya kapama vs burada yapılabilir	
+				
+
+36- Exception oluşturma : "raise" anahtar kelimesi ile yeni hata oluşturulur
+
+		Kullanım if ... :
+				raise Exception(" Hata mesajı ")
+
+37- Dosya işlemleri:
+	
+	a. Dosya açmak ve oluşturmak için open() fonksiyonu kullanılır
+	   Kullanım : open(dosyaAdı,dosyaErişmeModu)
+	
+	b. Dosya erişme modu : dosyayı hangi amaçla açtığımızı belirtir.
+			       "w" : (Write) Yazma modu. Dosya konumda yoksa oluşturur
+			       "a" : (Append) ekleme. Dosya konumda yoksa oluşturur."w" ile farkı w dosyadaki veriyi siler "a" üstüne yazar
+			       "x" : (Create) oluşturma. Dosya zaten konumda varsa hata verir
+			       "r" : (Read) okuma. Dosya konumda yoksa hata verir
+	
+	Not: Dosya ile işimiz bitince dDeğişkeni.close() methodu ile dosyayı kapatmalıyız
+	Not: dosyaAdı kısmına dizin de belirtip dosyayı istediğimiz yerde açabiliriz
+
+38-Dosyaya yazma : dosyaDeğişkeni.write() methodu ile yazılır "w" her şeyi silip üstüne yazar unutma.
+
+39-Dosyaya ekleme : dosyaDeğişkeni.write() ile yazılır yine. Dosyadaki veriler üzerine ekleme yapar
+
+40- Dosyayı okuma : dosya işlemleri default olarak "r" alır.
+	
+	a. for ile okuma : for i in file. : print(i) ---> her satırı ayrı bir eleman olarak alır
+
+	b. read() fonksiyonu ile okuma : değişken=file.read print(değişken)---> bütün içeriği değişkene atar
+					 read fonksiyonu içine karakter sayısı verebiliriz. Bu ise istenilen sayıda karakterin okunmasını sağlar
+
+
+	Not: readline() fonksiyonu : her seferinde bir satır okur.Okunacak satır yoksa boşluk bırakır.
+	Not: readlines() fonksiyonu : Bütün satırları okur. Bu sayede her satırı bir dizide saklayabilirz
+	Not: Ard arda iki defa okuma işlemi yapılırsa dosya kapatılmadan. İmleç en altta olduğu için ikinci seferde dosyadaki verileri okumayacaktır
+	Not: With komutu bir blok oluşturur ve dosya işlemlerini burada yaparız bloktan çıkınca editör otomatik olarak close fonksyionunu çağırır
+		Kullanım: with open("newfile.txt","r") as file : ....
+	
+	Not: file.tell() komutu bize imlecin kaçıncı byte/karakterde olduğunu söyler
+	Not: file.seek(index) komutu bize imleci istediğimiz yere taşır
+
+41- Dosya güncelleme :
+
+	Not: dosyaokuma biçimi olarak "r+" verirsek bu hem okuma hem de yazma anlamına gelir.
+
+Not: writelines() methoduna liste vererek for döngüsü kullanmadan birden fazla satır verebiliriz
+
+Not: Fonksiyon içinde fonksiyon oluşturduğumuzda içerideki fonksiyona dışarıdan ulaşılmaz. Bu encapsulation'dır.
+
+Not: Fonksiyon isimleri değişkenlere atanabilir. yani a=pow ---> a(2,3) şeklinde bir kullanım mevcuttur
+
+Not: Fonksiyonlara parametre olarak fonksiyon gönderilebilir
+
+42- Decorator Fonksiyon : Bir fonksiyona özellik eklemek için kullanılır
+	
+	Not: AOP'ye benzer bir decorator fonksiyon tanımlarsın.
+	     O fonksiynoa bir inner fonksiyon verip içinde fonksiyonun öncesi ve sonrasında yapacağın işlmeleri yapıp sonra fonksiyonu çalıştırısın.ve inner fonksiyonu return edersin
+	     kendi fonksiyonunu decator'ın referansına eşitleyip sonra kendi fonksiyonunu parametre olarak gönderirsin
+
+	Önemli Not!!!!: @decaratorFonc \n def fonk şeklinde bir kullanım yaparsan decarator'a parametre olarak fonksiyonu rahatlıkla gönderebilirsin
+
+43- Python Iterator: Iterable bir obje(ör. list) içindeki değerleri teker teker dolaşabileceğimiz tiplerdir
+		     iterator oluşturmak için iter(iobje) şeklinde oluştururuz
+		     iteratoru next() methodu ile her çalıştırdığımızda listedeki değerleri döndürür
+		     foreach bunları bizim için otomatik olarak yapar.
+
+	Not: Kendi iterimizi oluşturmak için class'a __iter__ methodunu tanımlayıp method içinde self'i return etmeliyiz
+	Not: next methodunu da oluştururuz. __next__ self şeklinde
+
+44- Python Generator: Generator bizim için bellekte yer işgal etmeyin bir iterator oluşturur.
+
+	Not: yield anahtar kelimesi ile kullanılır 
+	
+		Kullanım : def cube() : for i in range(5): yield i**3 şeklinde bir kullanım yaparsak bize i**3 değerini üretir ve anında kullanılır ve bellekte saklamaz
+	Not: Bir yerde saklanmadığı için de iterator oluşturup değerlerini gezmemiz gerekir. 
+	
+		Kullaım while True: try: iter şeysi.. except: break
+
+	Önemli not: İterator üretmeye gerek yok generator kendi iteratorunu oluşturur sadece next ile değerini de döndürebiliriz veya for veya while
+
+
+	Önemli not :  numbers= [x for x in range(10)] bu örneği -->  numbers= (x for x in range(10)) buna çevirirsek bize liste değil generator verir
+
+
+45- DateTime modülü :
+
+	datetime.now() : saat ve tarih bilgisini verir
+	datetime.now.year/month/day/hour/minute/second şeklinde oradan ayrı ayrı verileri alabiliriz
+	datetime.today() : bugünün detaylarını verir
+	datetime.ctime(datetimeObject) : daha detaylı string verir
+	datetime.strftime(dateTimeObject,formatbilgisi) : yine veri çekmeye yarar. format bilgisine internetten bak
+	datetime.strptime(dateiçerenString,stringdekiFormat): Tarih içeren stringi belirli formatları belirterek çözümlemesini sağlarız
+	datetime.timestamp() : nesnedeki veriyi timestamp'e çevirir
+	datetime.fromtimestamp() : timestamp verisini normal tarihe çevririr
+	
+	Not: timedelta nesnesi saatler veya tarihler arasında işlem yaparken kullanılan nesnedir
+
+46- OS modülü : İşletim sistemi ve dosyalarla alakalı işlemleri halleder
+
+	os.name : işletim sistemini verir
+	os.getcwd() : dosyanın dizinini verir
+	os.mkdir("...") : yeni dizin açar
+	os.chdir("  ") : dizin değiştirmeye yarar. (.. -> bir üst dizine geçer)
+	os.makedirs("../..") : iç içe klasörler açtırmaya yarar
+	os.listdir() : etkin dizindeki dosyaları söyler. İçine dizin verilirse orayı verir. for döngüsü ile kullanılırsa güzel şeyler çıkabilir filtre vs
+	os.stat(dosyaİsmi) : dosyanın bilgilerini verir.
+	os.system("uygulamaİsmi"): uygulama çalıştırır.
+	os.rename("dosyaismi","dosyaYeniisim"): Belirtilen dosyanın ismini değiştirir
+	os.rmdir("dizin"): dizini siler
+	os.rmdirs("içiçe dizin"): iç içe dizinleri siler.
+	os.path.abspath("dosyaismi"): dosyanın tam yolunu verir:
+	os.path.dirname("yol") : Dizini almamızı sağlar  abspath() ile içe içe kullanılabilir.
+	os.path.exists("dosya veya yol"): orada var mı yok mu onu gösterir
+	os.path.isdir("yol") : orada bir dosya veya kalsör var mı onı söyler:
+	os.path.isfile("yol") : oradaki şey dosya mı onu söyler
+	os.path.split/splittext/join : split verilen yoldaki dizinleri ayırır, splittext verilen dosyanın uzantısını ve ismini ayırır. join ise dizinleri birleştirir
+
+
+47- re modülü (Regex) : Bir arama sonucunda sonuç döndürür.
+
+      re modül :
+		re.finadall("aranacakİfade,regex"): arancak şeyi bulup true/false döndürür ve len ile kaç tane bulduğunu buluruz
+		re.split(" ",değişken) : bulduğu değişkenden böler ve listeye atayabiliriz
+		re.sub(" ","-",değişken) : 1.yi gördüğü yere 2.yi koyar
+		re.search(değişken) : Bulduğu yer hakkında bilgi verir. iki defa bulursa ilkini verir
+		re.span() : nerede bulduğunu söyler
+		re.start/end : bulduğu yerin indexleri
+		
+	regex : Köşeli parantez arasına yazılan şeyleri arar
+		[a-e]: [abcde]
+		[1-5]: [12345]
+		[0-39]:[01239]
+		[^abc]: abc olmayan karakterleri arar
+		[^1-9]: rakam olmayan karakterleri arar 
+		[.] : tek bir karakteri arar
+		[..] : iki karakter arar a-> no match abcd-> 2 match
+		[^a]: bu karakterle başlıyor mu sorusunu sorar a-> 1 match abc-> 1 match bcd-> No match		
+		[a$] : bu karakterle bitiyor mu sorsunu sorar
+		[*] : bir karakterin sıfır veya daha fazla olup olmamasını sorar 
+			Örnek: ma*n -> mn -> 1 
+				       man -> 1
+					maaan -> 1
+					main -> no match (a'dan sonra i var) 
+		[+] : bir karakterin bir ya da daha fazla sayıda olmasını kontrol eder
+			Örnek: ma+n -> mn -> no match 
+				       man -> 1
+					maaan -> 1
+					main -> no match (a'dan sonra n gelmiyor)
+		[?] : bir karakterin bir ya da 0 kez olmasını kontrol eder
+		{} : karakter sayısını kontrol eder.
+			Örnek: al{2} -> a'dan sonra l iki kez gelmeli
+				al{2,3} -> a'dan sonra l en az iki en fazla üç kere gelmeli
+				[0-9]{2,4} -> en az 2 en çok 4 basamaklı sayılar
+		| : alternatif seçeneklerden birinin gerçekleşmesini sağlar
+		() : gruplamak için kullanılır. Örnek : (a|b|c)xz -> abc karakterlerinden birinden sonra xz gelmelidir
+		\ : özel karakterleri arar örnek: \$ -> dolar işareti arar
+		\A : sonrasındaki karakter en başta mı
+		\Z : öncesindeki karakter en sonda mı 
+		\b : başında ya da sonunda mı (yerine göre birini sorar)
+		\B : yukarıdakinin tam tersi olmayanları gönderir
+		\d : rakam arar
+		\D : rakam olmmayanları arar
+		\s : boşluk arar
+		\S : boşluk dışındakileri arar
+		\w : alfabetik karakterler rakamlar ve altçizgi
+		\W : tam tersi
+
+48- Json modülü : Cihazlar arasında ortak veri taşımak için kullanılır.
+
+	json veri tipine dönüştürmek için dönüşmesini istediğimiz şeyi string yapmalıyız
+	
+	json.loads(veri): şeklinde bir kullanım json dosyasından veriyi kullanabileceğimiz duruma getirir
+	json.dumps(veri): içine koyulan veriyi json için kullanılabilir hale getirir(String yapar)
+	
+	
+49- Requests Modülü : Bu modül ile HTTP sayfalarına istek gönderebiliyoruz
+
+	requests.get("url"): Response döndürüyor. Buradan .text ile json bilgiyi alabiliriz
+			     Json'dan gelen string bilgiyi kullanılabilecek bir şeye çevirmeliyiz kullanmadan önce json.load ile dönüştürürüz
+	
+	requests.post("url"): içine json bilgi gönderiririz post işlemi yapar.
+	content : html kodlarını döndürür
+Not: Her site bize json veri ya da api göndermez. Biz bu bilgileri HTML dosyalarından çıkartırız buna da web scraping denir
+Not: json gelen veriyi kullanmak için direkt sonuna .json diyebiliriz
+
+
+50- BeautifulSoap : HTML dosyasından veri çekmek için kullanılır
+
+		1- BeautifulSoap() nesnesi oluşturup içine parametre olarak htmlDökümanı ve parser modu veririz
+		   parser modu ise html için 'html.parser' dir
+		
+		soup=beatufiulsoup nesnesi
+		soup.pretify(): Dökümanı düzeltir ve daha toplu bir şekle döndürür
+		soup.title() : title kısmını verir
+		soup.head() : head kısmını verir
+		soup.body() : body kısmını verir
+		soup.etiket.name : elementin adını verir
+		soup.etiket.string: içindeki string veriyi verir
+		soup.find_all('etiket'): bulduğu bütün etiketleri liste olarak döndürür
+		soup.etiket.findChildren : bir etiketin sahip olduğu bütün alt etiketleri getirir
+		soup.etiket.findNextSibling: Bir etiketin ilk değil bir sonraki verisini getirir
+		soup.etiket.findPreviousSibling : Bir etiketin bir önceki verisini getirir
+		soup.a.get('href'): Bir etiketten attribute almak için get methodu içine attribute ismini veririz
+
+	Not: bir etiketten birden fazla varsa sadece ilk gördüğü etiketi ve içindeki bilgileri döndürür
+
+
+
+
+51- Selenium : Selenium bir web otomasyon kütüphanesidir. Bir websitesini  ziyaret edip etkileşim kurabilir
+
+	1- from selenium import webdriver ile import ediyoruz
+	2- bir değişkene webdriver.Chrome() şeklinde atama yapıyoruz veya diğer arama motorları
+	3- bir url değişkenine link ver : (driver)
+	
+	driver.get(url) : verilen linki açar
+	driver.title : ziyaret edilen sayfanın title'ını verir
+	driver.close() : sayfayı kapatır
+	driver.maximize_window() : açılan sayfayı tam pencere yapar
+	driver.save_screenshot("isim"): scrrenshot'u belirtilen isimde kaydeder
+	driver.back() : bir önceki sayfaya gider
+	driver.forward() : bir sonraki sayfaya gider
+	driver.find_element_by_id("id"): belirtilen css id'sine ulaşır
+	driver.find_element_by_name("name"): isimden ulaşır
+	driver.find_element_by_link_text("name"): a etiketlerinin textlerine göre ulaşır	
+	driver.find_element_by_tag_name("h1"): belirtilen html etiketine göre ulaşır
+	driver.find_element_by_class_name("name"): belirtilen class ismine göre ulaşır
+	driver.find_element_by_css_selector("p.content"): class'ı p olan elemente ulaşır. Css selectorlara göre filtreler
+	driver.ulaşılanElement.send_keys("rastgele"): belirtilen yere input gönderimi sağlar
+	driver.ulaşılanElement.send_keys(Keys.ENTER): enter tuşuna basar inputta
+	driver.page_source : gidilen yerin kaynak kodunu alır
+
+
+	Not: from selenium.webdriver.common.keys import Keys ile belirtilen tuşlara basılmasını sağlayan kütüphaneyi alabiliriz
+	Not: Eğer bir inputa gitmek istiyorsak sağ tıklayıp incele deyip copy xpath'i alırsak deirekt bununla selenium'a gönderebiliriz
+	Not: selenium scrollbar kullanımı : webdriver.ActionChains(browserUrl) şeklinde bir kullanımla direkt olarak siteye tuş kombinasyonu gönderebilir
+				    Devamı: .key_down(Keys.//).key_up(Keys.//).perform
+
+	Not: Chrome için dil ayarı  : webdriver.ChromeOptions().add_experimental_option('prefs',{'intl.accept_languages':'en,en_US'})
+	     sonrasında webdriver.Chrome('chromedriver.exe',chrome_options=yukarıdaAtadığımız değişken)
+
+	Not: selenium ile javascript kodu çalıştırmak için browser.execute_script("js code") şeklinde bir kullanım yaparız
+
+52-Numpy : Veri analizinde kullanılan popüler kütüphanelerdendir.
+	
+	numpy.any(condition) : içine verilen koşula uyan her hangi bir değer varsa true veya false döndürür axis verilirse boolean list döndürür
+	numpy.all(condition): içine verilen koşul bütün elemanlara uyuyor mu ona bakar True/False döndürür axis değerleri verince satır veya sütun olara vakıp bize boolean list döndürür
+	numpy.split(item,[start,end]) : verilen start indexinden başlayıp end indexine kadar olan kısımları ayırıp numoy arrayı olarak böler (vsplit ve hsplit methodları da vardır)
+	numpy.concatenate([a,b]) : a ve b array'ını birleştirir içine list de verebiliriz boyutları farklı olursa hata verir
+	numoy.eye(shape) : birim matrisi yaratır belirtilen shape ile genelde kare olarak görülür
+	numpy.full(shape,karakter) : Zeros ve ones ' ile çok benzerdir 0 ve 1 yerine bizim girdiğimiz karakterle oldurur array'i
+	numpy.array(liste): içine gönderilen listeyi numpy Array'a çevirir
+	numpy.array(*).reshape(3,3) : 3'e 3'lük bir matrise böler verileri.
+	numpy.array(*).ndim : Array'in kaç boyutlu olduğunu söyler
+	numpy.array(*).shape: Array'in kaça kaçlık olduğunu söyler
+	numpy.array(*).size : Arrayin toplam eleman sayısını verir
+	numpy.array(*).dtype : Veri tipini verir
+	numoy.arange(start,end,*atlamaSayısı): range methodu gibi çalışır içine sayı verilir ve bunları array yapar
+	numpy.zeros(sayi): içine verilen sayı kadar 0 içeren bir array oluşturur
+	numpy.ones(sayi): içine  verilen sayı kadar 1 içeren bir array oluşturur
+	numpy.linspace(baş,son,bölüm): içine verilen başlangıç ve son arasındaki sayıları 5'e böler 
+					numpy.linspace(0,100,5)-->0 20 50 75 100
+	numpy.random().*: random methodları ile içine random sayı atanabilir diziye
+	numpy.array(*).sum(axis=1 veya 0): Arrayin satır veya sütun toplamını bulur 1-> Satırları 0-> Sütunları
+	numpy.array(*).max()= Arraydaki en büyük değeri verir
+	numpy.array(*).min() = Arraydaki en küçük değeri verir
+	numpy.array(*).mean() = Arraydaki sayıların ortalamasını verir
+	numpy.array(*).argmax()= Arraydaki en büyük sayının index'ini verir
+	numpy.array(*).argmin()= Arraydaki en küçük sayının index'ini verir
+	numpy.array(*).copy()= Referans kopyalaması yapmadan verileri atamak için kullanılır. Sadece verileri kopyaladığı için adres kopyalaması olmaz
+	numpy.vstack((arr1,arr2)): içine verilen iki array'i dikey olarak birleştirir	
+	numpy.hstack((arr1,arr2)): içine verilen iki array'i yatay olarak birleştirir
+	numpy.random.normal(ortalama,standartSapma,shape) : Bize istenilen isterler doğrultusunda array oluşturur
+	numpy.array(*).sort() : Arrayı sıralar ve kaydeder
+	numpy.random.choice(a=seçilecekYer,size=kaçSeçim) : örneklem çekme işlemlerinde bize yardımcı olur
+	numpy.random.seed(int) : random sayı çekme işlemlerinde aynı base üzerinde sonuç almak için kullanılır
+	numpy.sort(array) : Arrayı sıralar ama veri setinin orjinal yapısını bozmaz	(iki boyut için axis verilebilir)
+	numpy.linalg.solve(a,b) : ikinci dereceden denklem çözebilir. a array'ına katsayıları b arrayına ise eşitliği verip katsayıların önündeki değeri alırız	
+	Not: array>=5 şeklinde bir sorgu her değer için true ve false değeri döndürüp bir arraya atar
+	Not: Eğer true ve false değerlere göre veri çekmek istersek bunu arr[arr>=5] dersek bize sadece sorguya true cevao verenleri döndürür
+	
+	Not: 2 array toplanabilir,çıkarılabilir,çarpılabilir,bölünebilir. Bir array ile tam sayı toplanabilir,çıkarılabilir,Çarpılabilir,bölünebilir.
+	Not: Bir arrayin sinüsü(numpy.sin()) kosinüsü(numpy.cos()) karekökü (numpy.sqrt()) ve logaritması(numpy.log(array)) şeklinde alınabilir (np.absolute Mutlak değerler için kullnoılan fonksiyondur)
+
+
+	Not:Arraylerdeki değerlere yine index numaraları üzerinden ulaşabiliriz
+	Not: Çok boyutlu arraylerde değere ulaşmak için array[0,2] dersek bu bizi 0. satırın 2. elemanına götürür. Bu şekilde bir gidiş sağlayabiliriz
+
+
+	Not: Fancy indexing kullanımı : v[1],v[3]... şeklinde kullanım yerine al_getir=[1,3,5,7,9] --> v[al_getir] bize yine istenilen değerlerin tümünü getirir	
+
+53- Pandas : Numpy kütüphanesine benzerdir. Numpy'da biz sayılarla uğraşırken Pandas'da veri setleri ile çalışırız
+
+	A. Seriler
+		1- Önce bir dataset bulup onu pandas ile okumalıyız : df=pandas.read_csv/json/excel("datasets/nba.csv") gibi. 
+		Not: sadece csv değil json xlsx veya db uzantılı dosyalardan da veri çekebiliriz
+
+		pandas.Series(list/eleman/dict,[indexBilgisi]) : pandas serisi oluşturur. Seriler içerisine farklı tipte veriler verebiliriz
+			  Her bir elemana index numarası verir otomatik olarak. Eğer içine dict gönderirsek indexler yerine keyleri kullanır
+		
+
+		seri.axes = İndexler hakkında bilgi verir
+		seri.dtype = serinin tipi hakkında bilgi verir
+		seri.size = eleman sayısı hakkında bilgi verir
+		seri.ndim = kaç boyutlu olduğunu söyler
+		seri.values = np array olarak değerleri döndürür
+		seri.keys , seri.index : index bilgilerini döndürür
+		seri.values : sadece değerleri döndürür
+
+
+
+		Not: Eğer index bilgilerini değiştirirsek yine de normal index numaraları ile serilerden veri çekebiliriz : pandas_series[0] şeklinde
+	     		Ayrıca key bilgisi üzerinden de veri çekebiliriz : pandas_series=pandas.Series([10,20,30],['a','b','c']) ---> pandas_series['a'] şeklinde
+	     		Ve yine ayrıca pandas_series['a'] şeklinde bir kullanım yerine birden fazla veri çekmek için pandas_series[['a','b']] şeklinde bir kullanım ile 2 tane veri çekebiliriz
+	
+
+		Not: Numpy üzerindeki çoğu fonksiyonu Pandas üzerinde de kullanabiliriz
+	
+
+	B. DataFrame: Pandas Serilerin birleşmiş hali gibidir
+
+		pandas.DataFrame(data,*columns=[columnisimleri]) : bir DataFrame nesnesi oluşturur
+
+		Not : DataFrame'den belirli columnları almak : df["columnİsmi"] şeklinde key ismi yerine column ismi de vererek veri alabiliriz
+		Not: Birden fazla column seçmek için df.[["column1","column2"]]
+		Not: satır vermek için df.loc["index/row",column*] şeklinde bir tane satırı verebiliriz yanına sütun parametresini de ekleyerek bir tane elemanı arayabiliriz Not: slicingde son parametreyi de içine alır
+		NOt: İndexle satır çağırmak için df.iloc[] methodunu kullanırız içine integer değer verebiliriz : slicing mantığı normaldir son değeri almaz
+		Not: İloc row isimleri ne olursa olsun normal index kullanırken loc fonksiyonunda row isimleri ne ise onlarla çağırırız. İloc'a row veya column ismi veremeyiz
+		NOt: Yeni bir satır eklemek için df["yeniColİsmi"] = pd.Series() şeklinde bir seri vererek kullanabiliriz
+		NOt: df.drop("name",axis=0/1,inplace=True/False) methodu ile belirli satır ve sütunları silebiliriz. Sütun silecek isek axis 1 satır silecek isek axis 0 olmalıdır
+		    inplace parametresi yapılan değişikliğin orjinal df üzerinde etkisini etkiler. default olarak false değer alır ve değişiklikler orijinal datayı etkilemez. True ise tam tersi işi yapar
+
+		df.columns : Bize dataframe'deki columnları verir sonrasında eşittir ile yeniden isimlendirme yapabiliriz
+		df.head(sayı) : içine girilen sayı kadar satırı bize verir. default'u 5'tir
+		df.tail(sayı) : içine girilen sayı kadar satırı bize sondan verir
+		df.Columnİsmi.head(): şeklinde bir kullanım ile belirli verileri çekeriz
+		df.isnull().sum() : df içindeki null verileri sayıp döndürür
+
+
+		Not: df'i istediğimiz türden değişkenlere göre bölebiliriz. Eğer bunu categorik değişkenker için yapacak isek -> kat_df = df.select_dtypes(include=["object"])
+	
+		Not: Eğer bir değişkenin türünü categoric yapmak istersek Yapmamız gereken işlem -> df.degisken = pd.Categorical(df.degisken)		
+		Not: numpy'da olduğu gibi filtreleme işlemlerini true ve false olarak döndürecek bir olayımız var
+		     Ayrıca df.query("koşullar") şeklinde bir kullanım da aynı olayı sağlar
+		NOt: and için & or için | işareti kullanılır
+
+	C. GroupBy: Bize gelen dataları belirli şekilde gruplandırmak ve sonrasında işlem yapmak için kullanılan methoddur
+
+		df.groupby("column/s") : şeklinde kullanılır ve bize bir obje döndürür ve biz bunu for döngüsünde kullanabiliriz
+			Not: 2 eleman oluşur : group ismi ve elemanları şeklinde	
+		df.groupby(*).groups : oluşan gruplar hakkında bilgi verir
+	Örnek: df.groupyby("Semt").get_group("Kadıköy") şeklinde bir kullanım ile tek bir grubu alabiliriz
+		.agg() methodu içine yazılan farklı fonksiyonları çalıştırıp kolon olarak döndürür Ör. df.groupby("Departman")[Maaş].agg([numpy.sum,numpy.mean,numpy.max,numpy.min])	
+
+		df.reindex(yeniİndexler): indexleri değiştirmek istediğimizde kullanılır
+	D. Bozuk verileri temizleme :
+		
+		df.isnull() : bize dolu olan alanları false boş olanları true verir
+		df.notnull() : dolu olan alanları true boş olanları false verir
+		df.dropna() : default olarak axis'i 0'dır içinde NaN değer olan satırları siler. Axis'i 1 yaparsaak sütun siler
+			Not: dropna methodunun how parametresi vardır eğer "any" dersek 1 tane NaN değer görürse siler
+			     "all" dersek bütün satır NaN ise siler
+			Not: dropna methodunun subset parametresi vardır içine column/lar veririz
+			     ve temizleme işleminde bu column'larda NaN gördüğünde siler
+			Not: thresh parametresi bizden veri beklenildiğini söyler eğer içine 2 dersek bit satırda
+			    kaç tane NaN olursa olsun eğer toplam veri 2'den fazla ise o satırı silmez
+		df.fillna(value=): NaN değerler yerine koyulacak şeyleri ayarlar value'ye istediğimiz tipi verebiliriz
+
+	Not: df.apply(lambda x : x.fillna(x.mean())) : Şeklinde bir kullanım ile de df'deki bütün nanları dolaşabilirix
+	Not: df.where(pd.notna(df),df.mean(),axis="columns") : şeklinde bir kullanımda bütün nanları dolaşır
+	Not: Kategorik değişkenlere bağlı atama da yapılmalıdır. UNUTMA!!!!!
+
+	Önemli Not: df.str sonrasında bütün string methodlarını df üzerinde kullanabiliriz
+
+	E. Join ve Merge :
+	
+		pd.merge(df1,df2,how="yöntem") : 2 tabloyu birleştirmeye yarayan methoddur. How parametresi içine inner left outer veya right şeklinde yöntem belirtiriz
+		pd.concat([df1,df2..]) : 2 Dataframe'yi birleştirir axis parametresi alır
+
+	Dataframe Methodlar:
+		
+		df[column].unique() : tekrar etmeyen değerleri getirir 
+		df[column].nunique() : tekrar etmeyen değerlerin sayısını getirir  veya bunun için df[column].value_counts().count() kullanılabilir
+		df[column].value_counts() : her bir elemanın frekansını (kaç tane olduğunu) söyler
+		df[column].value_counts().plot.barh() : bar grafiği hazırlar
+		df[column].apply(fonksiyon) : içindeki her bir eleman için fonksiyonu çalıştırır
+		df.sort_values("column"): içideki kolona göre sıralama yapar sayısalsa sayısal harfsel ise harfsel
+		df.pivot_table(index,columns,values) : her bir parametreye verileni columnlardaki değerlerle değiştirir  
+		df[categoryColumn].astype("category").cat.as_ordered() : String değerleri integer'lar üzerinden değerlendirmeye yarar
+		df.mean() : Ortalama getirir
+		df.count() : İçindeki değerleri sayar
+		df.min()/max() : Min/ MAx getirir
+		df.sum() : içindeki değerleri toplar
+		df.std() : standart sapma getirir
+		df.var() : Varyansı getirir
+		df.describe() : Yukarıdaki fonksiyonların tümünü uygulayıp çıktısını verir. Sonuna .T konulursa satır sütun yer değiştirip öyle verir
+		df.aggregate(["min",max,np.median...]) : içine koyulan Aggregate fonksiyonlarını çalıştırır. İçine sözlük verilerek belirli columnlar için fakrlı işlemler yapılabilir
+		df.filter(fonksiyon) : İçine kendimiz yazdığımız fonksiyonu verip filtreleme yaparız . Fonksiyon true false döndürür ve güzelcene süzeriz
+		df.transform(fonksiyon) : İçine yazdığımız fonksiyon belirli verileri başka verilere transform etmek için kullanılır
+		df.pivot_table(önemliCol,index=Column2,columns=digerCol) : Bize elimizdeki tablodan yeni bir tablo çıkarmak için hazırlanmış bir fonksiyondur
+		df.cut(column,kesişYeri) : belirtilen noktalardan sütunu keser Örnek : age= df.cut(titanic["age"],[0,18,90])
+		df[[ikiDeğişken]].cov() : iki değişkenin kovaryansını verir
+		df[[ikiDeğişken]].corr() : İki değişkenin kolerasyonu hakkında bilgi verir
+			Not: df[Catcolumn].cat.codes ile int değerlere ulaşırız
+			Not: sıralamayı ise df[Catcolumn].cat.set_categories([order]) olarak verirsek rastgele yapmaktan çıkar
+
+	!!!!!!!!!!!!!!!!!NOT: Ordinal sıralama yapmak için :  from pandas.api.types import CategoricalDtype -> df.column.astype(CategoricalDtype(categories=[sıralama Küçük,Büyük],ordered=True)) 
+			      Bu işlem sütunu ordinal bir sıralama içine alır ama bu rastgeledir
+
+
+54- Matplotlib : Analiz ettiğimiz verileri grafiklere dökmek veya daah anlamlı hale getirmek için kullanılan kütüphanedir
+
+
+	
+
+	plt.plot(x,y,*color="",*linewidth=,label="") : içine koyduğumuz değerlerle bir grafik çizgisi oluşturur
+	plt.axis([0,6,0,7]) : X ve Y eksenlerinin hangi değerden başlayıp hangi değerde biteceğini ayarlatır. ilk 2 değer x son 2 değer y içine gider
+	plt.title("name") : Grafik ismini ayarlatır
+	plt.xlabel("x label") : x eksenine başlık verir
+	plt.ylabel("y label") : y eksenine başlık verir	
+	plt.legend() : plotların içine verdiğimiz labelları grafiğin sol üst köşesinde gösterir
+	plt.subplots(sayi) :Verilen sayı kadar grafik oluşturur sayfada Grafiklerin düzlemini ve kaçıncı grafik olduğunu belirtir. İlk sayı satırı, ikinci sayı sütunu, üçüncü sayı ise kaçıncı grafik olduğunu ifade eder.
+			    bize 2 tane değer döndürür bunlar figür ve axes 'dir
+	axes*.set_title("") : Oluşan grafiklere başlık set eder. set_xlabel ve set_ylabel methodları da kullanılabilir
+	plt.figure() : bir tane figür oluşturur sonrasında ise biz buna figure.add_axes([konum]) şeklinde içine axes ekleyebiliriz
+	plt.tight_layout() : başlıklar birbirine girmesin diye kullanılır
+	figure.save("asdf.png vs vs") : oluşturulan grafiği png veya başka bir uzantı ile kaydeder
+
+
+	
+
+ Diğer Grafik Türleri :
+
+	StackPlot:
+		
+		plt.plot([],[],color=,label=) : şeklinde kaç tane veri alancaksa o kadar plot verilir
+		plt.stackplot(veri1,plotsayısıKadarveri,color,label) şeklinde de içi boş olan veriler doldurulur
+
+	Pasta :
+		plt.pie(VeriListesi) : pasta grafiği oluşturur verileri oranlayıp
+	
+
+	Bar :  Kategorik değişkenleri sınıflandırmak için kullanılır
+ 		
+		
+		df[column].value_counts().plot.barh() : Bar grafiği oluşturur
+		df[column].value_counts().plot.barh().set_title("title") : Grafiğe başlık ekler
+		plt.bar([veri1],[veri2]) : bar grafiği oluşturur.
+	
+
+	Histogram: Grupların sayılması için kullanılır. Sayısal değişkenler için kullanılır
+		
+		
+		plt.hist() : histogram grafiği oluşturur
+
+
+	Boxplot grafiği : Sayısal değişkenler için kullanılır. histogram kadar değerlidir, Box dışında kalan değerleri aşırı değer olarak görür
+
+			sns.boxplot(x=column,y,data,*orient="v/h"*) : boxplot grafiğini oluşturur, orient ile yönünü ayarlarız
+
+	Violin Grafiği : Box plota benzerdir dağılım ile ilgili bilgi sunar
+
+			sns.catplot(x*,y,hue*,kind="violin",data=df) : Violin grafiğini oluşturur
+
+	Korelasyon Grafiği: Değişkenler arasındaki ilişkiyi takip etmek için kullanılır
+		ScatterPLot: Sayısal değişkenler arasındaki ilişkiyi incelenir. Saçılım grafiğidir
+				sns.scatterplot(x=sayısalD,y=sayısalD,data=df,size*,style*) :  Scatter plot'u oluşturur
+
+		Doğrusal ifade ediş : 
+				sns.lmplot(x,y,data...)  : Linear Model oluşturur
+				Not: Aynı işlem kind="reg" argümanı ile de eklenebilir plotlara
+		
+		Matris oluşturma : sns.pairplot(df) : bütün değişkenler için scatterplot oluşturur
+
+
+		Not: görselleştirmede col argümanı ile değişken verdiğimizde değişkenin parametre sayısı kadar grafik oluşturur
+		
+
+	Isı haritası Grafiği : sns.heatmap(df) : Isı grafiği oluşturur. Ama bizden bir zaman serisi beklediği için vermez isek hata alacağız. Bunu ise pivot table ile row columnlara zamanları vererek hallederis
+
+
+	Çizgi Grafiği : sns.lineplot(x,y,data)  : Grafiği oluşturur
+
+	Not: Eğer bir indexi date olarak belirtmek istiyor isek bunu Seri.index = pd.DatetimeIndex(seri.index) şeklinde yaparız
+
+
+	Not: Kategorikler için en önemli plot barplot, sayısallar için ise histogram ve boxplottur Bunlar dağılım grafikleridir ve tek bir değişken üzerinden ilerler
+	     Korelasyon grafikleri ise değişkenleri birlikte değerlendirebileceğimiz bir yer
+	     Çizgi grafiği ise daja yapısal ve mekanik veri setleri için uygundur
+	
+	diğer görselleştirme kütüphaneleri :
+
+		a. Pandas :
+
+		b. Seaborn :
+			sns.FacetGrid(df,hue=column,height??,xlim=xsınırı).map(sns.kdeplot,anacolumn,shade).add_legend() : boyut eklemek için kullanılır. legend eklersek bilgi açısından güzel okur 
+			sns.distplot(column,kde=False/True,bins=int,hist=true/false) : Dağılım görselleştirme için kullanılır, kde yoğunluk ekleme için kullanılır, bins kaç tane sütun olacağını ayarlar, hist= histogram grafiğini açıp kapar
+			sns.catplot(x=col1,y=col2,*hue=col3*,data=df) = bize iki değişkeni çaprazlayıp grafiği öyle sunar. Aynı argümanlar barplotta da kullanılabilir hue argümanı 3.boyutu ekler ve y ekseni ortalama üzerine döner
+			sns.barplot(x,y,data) : Bar grafiği oluşturur Örnek : sns.barplot(x= "column", y=df.column.index,data=df)
+			sns.kdeplot(column,shade=true/false) : yoğunluk grafiği oluşturur shade arka tarafını doldurup doldurmaz
+			
+		c. ggplot :
+
+		d. Bokeh :
+
+		e. Plot.ly :
+
+55- DataBase Bağlantısı : import mysql.connector kütüphesini kullanırız
+
+	mydb=mysql.connector.connect(host="localhost",user="username",password="password",*database="HangiDBise") : Bağlantıyı kurar
+	mycursor=mydb.cursor() --> mycursor.execute("CREATE DATABASE databse2"/query) : Database üzerinden query Execute eder
+	connection.commit() : sorguyu çalıştırır. Execute ise sorguyu hazırlar
+	connection.close() : database bağlantısını kapatır. Her bağlantı açıldıktna sonra yapılmalıdır
+	cursor.rowcount : kaç ürün eklendiğini söyler
+	cursor.lastrowid : son satırın id'sini verir
+	cursor.executemany(sorgu,değer) : bu kullanım ile değere liste vererek aynı sorguyu birden fazla ürün için çalıştırabiliriz
+
+	INSERT QUERY : "INSERT INTO table*(değişkenler:name,surname,descripton..) VALUES(sırasıyla Valueler)" ---> cursor.execute(query,values)
+
+
+	READ QUERY : "SELECT * FROM table*" --> cursor.fetchall() : bütün kayıtları getiren methodtur
+						cursor.fetchone() : ilk gördüğü kaydı getiren methodtur
+
+			WHERE -> sonrasında gelen şartlara göre filtreleme yapar
+			LIKE -> sonrasında gelen '%string%' in içinde geçtiği şeyleri arar
+			ORDER BY -> sonrasında gelen şeye göre sıralama yapar sıralama yönünü değiştirmek için sonuna DESC eklenir
+			LIMIT -> gelecek veriyi sınırlandırır
+		        "SELECT COUNT(*) FROM table*" : satırları sayar
+			"SELECT AVG(sütun) FROM table*" : alınan sütunun ortalamasını alır
+			"SELECT SUM(sütun) FROM table*" : toplar
+			"SELECT MAX(*) FROM table*" : maximum'u verir
+			"SELECT MIN(*) FROM table*" : Minimum'u verir
+			"SELECT name FROM table* Where price= (SELECT MAX(price) FROM table*)"	: şeklinde iç içe kullanım yapılabilir
+
+	UPDATE QUERY : UPDATE table* SET ör: name="samsun s10",price=.. where id=5 şeklinde bir query ile yapılır
+			Commit edilir fetch edilmez
+
+
+
+	DELETE QUERY : DELETE from table* where sorgusu şeklinde yapılır commit edilir.
+	Not: İşlem Yaparken Try Catch içinde kullanmayı unutma		
+
+
+	ONE TO MANY SCRİPT : alter table tableName-> nereye bağlaaycak isek
+			     ADD CONSTRAINT fkName -> foreign key ismi // Bu satırı yazmaz isek db kendi kendine atar opsiyenel satırdır
+			     FOREIGN KEY(Categoryid?) REFERANCES table(column) -> Bağlantı kurulması
+
+	INNER JOİN SCRİPT : Select FROM Prıducts inner join Categories on Categories.id=Products.Categoryid
+
+
+
+56- PyQt5 Modülü : QtWidgets import edilir. Ve QtWidgets'tan QAppli ve QMainWindow import eedilir
+
+		1- QApplication() nesnesi türetilir. İçine ise sys.argv verilir komut satırından veri alması için
+		2- QMainWindow nesnesi türetilir içine parametre almaz
+		3- win.show() ile uygulama gösterilir
+		4- sys.exit(app.exec_()) ile de çarpı ikonuna tıklandığında uygulama kapatılır
+	
+		win.setWindowTitle : uygulamanın başlığını değiştirir
+		win.setGeometry(1,2,3,4) : 1 ve 2. kısımda ekrandan kaç piksel uzakta olacağını seçilir 3 ve 4'de ise de pencere büyüklüğü verilir içine piksel türünden veri alır
+		win.setWindowIcon(QIcon("foto.png")) : app ikonunu değiştirir QICon PyQt5.QtGui'den import ediliir
+		win.setToolTip("") : Mouse bir süre üstünde kalırsa ne yazı çıkar onu gösterir
+
+		QLabel(window): İçinde yazı ile ilgili methodlar barındıran sınıftır
+		QComboBox:
+		QCheckBox:
+		QRadioButton:
+		QPushButton: Normal buton oluşturur. buton.clicked.connect(method) ile butona tıklanınca ne oalcak onu ayarlarız içine bir fonksiyon vererek
+		QTableWidget:
+		QLineEdit: İçine input alınacak bir textbox oluşturur
+		QSlider:
+		QProgressBar:
+		
+
+
+
+
+
+
+Not: Designer'dan gelen xml'i py dosyay-sı yapmak için konsola pyuic5 ****.ui -o newDosyaismi.py
+
+
+57-Django : Web geliştirme için kullanılan kütüphanedir
+
+	django-admin help : komutu ile terminalden kullanılabilecek komutları görürüz
+	django-admin startproject projeİsmi : proje başlatır
+	python dosya runserver : projeyi çalıştırır
+	python dosya startapp pages : projeye app ekler pages uygulama ismidir
+
+
+
+Not: REcursive fonksiyonlar içinde kendisinden daha küçük fonksiyonu çağıran fonksiyonlardır :
+
+	Örnek: def factorial(x):
+		if x==1:
+			return 1
+		return x*factorial(x-1)
+			
+
+
+Not: @staticmethod anatasyonu üzerine konulduğu fonksiyonu instance yapmaz
+Not: Stringlerin boş hali false dolu hali true olarak görülür
+Not: execute'a sql ve value değerlerini gönderirken eğer tek veri göndereceksen (id,) şeklinde vermeyi unutma
+Not: getattr(class,attr) fonksiyonu attribute ismini string olarak verseniz bile size class'ın verisini getirecektir
+
+
+
+
+58- Seaborn kütüphanesi : İçinde örnek dataset içeren kütüphanedir
+
+	1- sns.load_dataset("name") : bize dataset getirir bunu da direkt olarak dataframe oalrak kullanabiliriz
+
+
+59- Researchpy Kütüphanesi : 
+
+	rp.summary_cont(df[[sayısalDeğişkenler]]) : Sayısal değişkenler hakkında detaylı bilgi verir.
+	rp.summary_cat(df[[kategorikDeğişkenler]]) : Kategoril değişkenler hakkında detaylı bilgi verir.
+
+60- statmodels kütüphanesi 
+	
+	import statmodels.stats.api --> sms.DescStatsW(örneklem).tconfint_mean() : Güven aralığını verir Yüzde 95 default olarak alınır
+
+61- Scipy kütüphanesi 
+
+	from scipy.stats import bernoulli --> p=oran --> rv= bernoulli(p) --> rv.pmf(k=1/0) : Bize bernoulli dağılımını gösterir k'ya verilen değer odaklanılan durumdur
+	from scipy.stats import binom --> p=oran n=denemeSayısı --> rv=binom(n,p) rv.pmf(görülmekİstenilenDeğer) : Bize binom dağılımını gösterir Örnek: 100 kişiye gösterilen reklamda 1 kişinin tıklamasında n=100, rv.pmf(1) dir
+	from scipy.stats import poisson --> rv=poisson(mu=lambda) rv.pmf(k)--> Poisson dağılımını gösterir k başarı sayısıdır
+	from scipy.stats import norm --> 1-norm.cdf(beklenenDeğer,Ortalama,StandartSapma) : Bize normal dağılımı gösterir. 1'den çıkarılma sebebi ise bir şeyden büyük olma olasılığını bulmak içindir, Küçük olma olasılığını bulmak istersek 1'den çıkarmayız
+	import scipy.stats as stats --> stats.describe(array,df..) : Bize sayısal değerler hakkında bilgi verir
+
+62- Veri Bilimi normallik varsayım kontrolü qqplot testi kullanımı : 
+
+	import scipy.stats as stats+import pylab -> stats.probplot(örneklem,dist="norm",plot=pylab)-> pylab.show : Bize normallik varsayımı hakkında bilgi verir istediğimiz şey noktaların ortadaki kırmızı çizgi etrafında toplanmasıdır
+
+63- Veri bilimi normallik varsayım kontolü shapiro testi kullanımı
+
+	from scipy.stats import shapiro --> shapiro(örneklem) : 2 değerli çıktı verir soldaki değer test istatiğidir sağdaki değer ise P value'dur P value 0.05'den büyük ise örneklem uygundur 
+
+64- Veri Bilimi Tek Örneklem T testi uygulanması
+
+	 import scipy.stats as stats --> stats.ttest_1samp(örneklem,popmean=h0değeri) : 2 değer verir ilki T istatistik değeri ikincisi ise P value değeridir. P value değerinden kontrol sağlanır   h0 = mü değerindeki test etmek istediğimiz ortalama değer
+
+65- Veri Bilimi için Nonparametrik T testi
+	
+	Not: Bu testler birden fazladır biz sadece sign testini uygulayacağız
+
+	from statsmodels.stats.descriptivestats import sign_test --> sign_test(örneklem,mü) : 2 değer verir ilki T istatistik değeri ikincisi ise P value değeridir. P value değerinden kontrol sağlanır. Medyan değeri üzerinden kontrol sağlanır. Merkezi eğilime yöneliktir
+
+66- Veri Bilimi için Tek örneklem oran testinin uygulanması
+	
+	from statsmodels.stats.proportion import proportions_ztest --> a=başarı , b=gözlemBirimSAyısı, c=TestEdilenDeğer -->
+								       proportions_ztest(a,b,c) : Bize 2 değer verir Birinci istatistik testi sonucu ikinci ise P value değeridir
+67- Veri Bilimi için Bağımsız iki örneklem T testi veri hazırlanması
+
+	!!!!NOT :  gönderilim şekli için grup isimleri ikincil sütun olarak rowlara verilmeli ve öyle birleştirilmelidir ya da yapılabiliyorsa direkt concat edilmeli
+		   Bu gereklilik durumu fonksiyondan fonksiyona değişmektedir
+		Örnek kod : a ve b df'si elimizde. 
+			    grup_a=np.arange(a)
+			    grup_a=pd.Dataframe(grup_a) ----> Aynısı b içinde yapılır ve iki df axis=0 olacak şekilde birleştirilir
+			    grup_a[:] = "A"
+			    a = pd.concat([a,grup_a], axis=1)
+
+68- Veri bilimi için Bağımsız İki Örneklem T testi varsayım kontrolü : Normallik ve Varyans homojenliği kontrol edilir
+
+	Normallik kontrolü : Madde 63 shapiro testi veya Madde 62 qqplot
+			Not: Elimizde 2 tane birleşmiş veri seti olacaktır (Madde 67). Shapiroya böyle gönderilemeyeceği için bu kontrolü grup col'unun kendi içlerinde birleşmemeiş halleri ile uygulamak daha makuldur	
+
+	Varyans homojenliği varsayım kontrolü : H0 homojendir H1 homojen değildir
+		Levene Testi:	import scipy.stats as stats --> stats.levene(A_B.A,A_B.B) : bize istatsitik ve p value değerlerini verir. İçine koyulan df A ve B veri kümesini concat edilmiş haline göre alınmıştır
+			
+
+69- Veri Bilimi için Bağımsız İki örneklem T testi uygulanması
+
+	import scipy.stats as stats --> stats.ttest_ind(A_B["A"],A_B["B"],equal_var=T/F) : equal_var varyans homojenliğini sorgular Bize yine 2 değer döndürür istatistik sonucu ve p value
+
+70- Veri bilimi için Bağımsız iki Örneklem T testi nonparametrik testin uygulanması
+
+	import scipy.stats as stats --> stats.mannwhitneyu(A_B["A"],A_B["B"]) : istatistik ve p value değerini verir. Yukarıdaki testler olumsuz gelirse kullanılır
+
+71- Veri bilimi için Bağımlı iki Örneklem T testi uygulanması
+
+	import scipy.stats as stats--> stats.ttest_rel(Acol,Bcol) : 2 değer verir istatistik ve p value
+
+	Not: Eğer p value e'li gelirse kullanılabilecek şey
+		testSonuc,pvalue=tats.ttest_rel(Acol,Bcol)	
+		print("p value = %.4f"% (pvalue))
+
+72- Veri bilimi için Bağımlı iki örneklem T testinin nonparametrik kısmı
+
+	import scipy.stats as stats --> stats.wilcoxon(Acol,Bcol) şeklinde yapılacaktır alınacak değerler yukarıdaki ike aynıdır
+		
+73- Veri bilimi için İki örneklem oransal testi uygulanması
+
+	from statsmodels.stats.proportion import proportions_ztest--> basarıSayısı=[basarı1,basarı2], gozlem = [gözlem1,gözlem2] --> proportions_ztest(count=basarıSayısı,nobs=gozlem)
+
+
+74- Veri bilimi için Varyans Analizi Hipotez Testi uygulanması
+
+
+	from scipy.stats import f_oneway --> f_oneway(col1,col2,col3...) : Yine istatistik ve p value değeri verir
+
+75- Veri bilimi için Varyans Analizi Nonparametrik test uygulanması
+
+	from scipy.stats import kruskal --> kruskal(col1,col2,col3...) : Aynısı işte p value'ya bak
+
+76- Veri bilimi için Kolerasyon Analizi uygulanması
+
+	Kolerasyon Katsayısı almak : df[col].corr(df[col2]) -> Varsayımlar sağlanıyorsa kullanılabilir
+				     df[col].corr(df[col2],method="spearman") --> Varsayımlar sağlanmıyorsa kullanılır
+
+	Anlamlılık Testi : from scipy.stats import pearsonr --> pearsonr(col1,col2) : Klasik sonuçlar reddedersen ilişki anlamlı vardır
+
+77- Veri bilimi için Kolerasyon Nonparametrik Testi
+
+	stats.spearmanr(col1,col2) : Kolerasyon Katsayısı ve P value verir reddedilirse anlamlı ilişki vardır
+	stats.kendalltau(col1,col2) : Yine aynı şeyi test eder kolerasyon katsayısına daha temkinli yaklaşır düşük çıkabilir
+
+
+
+78- Veri Bilimi için Veri önişleme Aykırı değer yakalama
+
+	Q1 değeri = df_table.quantile(0.25) : Tablodaki veriler küçükten büyüğe sıralandığında bize birinci çeyrek verisini verir
+	Q3 değeri = df_table.quantile(0.75) : Tablodaki veriler küçükten büyüğe sıralandığında bize üçüncü çeyrek verisini verir
+	IQR değeri = Q3-Q1
+
+	AltSınır = Q1-1.5*IQR
+	ÜstSınır= Q3+1.5*IQR
+
+	df_table<AltSınır | df_table>ÜstSınır ile aykırı veriler incelenir
+
+79- Veri Bilimi için Aykırı değer Problemini Çözmek:
+
+	Silme yaklaşımı : Eğer tablo seri ise dataframe'e çevrilir.
+
+			  temi_df=df_table[~((df_table<AltSınıf) | (df_table>ÜstSınır)).any(axis=1)] şeklinde temiz veriler çekilir. ~ = değil işareti ile aynıdır
+
+	Ortalama ile doldurma : df_table[aykırı_tf]= df_table.mean()
+
+	Baskılama Yöntemi : Aykırılar yakalandıktan sonra üst sınırdan yüksek ise üst sınıra alt sınırdan az ise alt sınıra eşitlenir
+
+80- Veri bilimi için Çok değişkenli aykırı gözlem analizi Ç
+		
+	1- import numpy -> from sklearn.neighbors import LocalOutlierFactor
+	2- clf = LocalOutlierFactor(n_neighbors=20,contamination=0.1) -> sayılar değişebilir
+	3- clf.fit_predict(df) : HEr bir gözlem birimi için skor oluşturur
+	4- df_scores = clf.negative_outlier_factor_
+	5- np.sort(df_scores)
+	6- Eşik değer belirle skor değişimlere göre eşikdeğer=sayi
+	7- aykırı_tf = df_scores>esikdeger 
+	8- yeni_df = df[df_scores>esikdeğer]
+
+	Baskılama Yöntemi : eşik değer olarak aldığımız col'daki değerleri eşik değerden az olan bütün collara aktarırız
+	
+		Not: index sorunları çıkacağı için df'i arrayleştirip atama yapıp sonrasında geri çeviririz
+	
+		1- res = aykırılar.to_records(index=False) : İndexlerden kurtulur
+		2- res[:] = baskı_deger.to_records(index=False) : Atama işlemi yapar
+		3- df[aykırı_tf] = pd.DataFrame(res,index=df[aykırı_tf]) : indexleri de ayarlayıp yeniden df yapar
+
+81- Veri bilimi için Eksik değer görselleştirme
+
+	import missingno as msno --> msno.bar(df) : Eksiklik ile ilgili bilgi verir
+
+				     msno.matrix(df) : Eksikliğin rassallığı üzerine bilgi verir	
+
+				     msno.heatmap(df) : Eksikliği değerlendirmek bit yöntemdir. Bize değişkenler arasındaki boşluk kolerasyonunu nümerik oalrak verri 
+	
+	
+
+
+82- Veri bilimi için eksik değerlerde tahmine dayalı doldurma
+
+	1- Not: Sayısal Değişkeni Arraya çevirip sonra yeniden df'e çevir
+	   from ycimpute.imputer import knnimput 
+	   dff = knnimput.KNN(k=4).complete(df) : k komşuluk sayısıdır
+
+	2- Random Forest : 
+		from ycimpute.imputer import iterforest
+		dff= iterforest.IterImput().complete(df)
+
+	3- EM  :
+		from ycimput.imputer import EM 
+		dff=EM().complete(df)
+
+83- Veri bilimi için Değişken Standardizasyonu :
+
+	from sklearn import preprocessing --> preprocessing.scale(df) : Standardizasyonu yapar
+					  --> preprocessing.normalize(df) : Normalizasyonu yapar 
+					  --> scaler=preprocessing.MinMaxScaler(feature_range=(a,b)) --> scaler.fit_transform(df) : Min Max dönüşümünü yapar
+
+84- Veri bilimi için Değişken DÖnüşümü :
+
+	0-1 Dönüşümü : from sklearn.preprocessing import LabelEncoder --> lbe=LabelEncoder()
+		       lbe.fit_transform(column) : dönüşümü yapar inplace yoktur. Değişimi kendimiz yaparız
+
+	1 Ve Diğerleri(0) Dönüşümü : np.where(col.str.contains(".."),1,0) : where koşulu ile girilen değere 1 kalanlarına 0 verir
+
+	Çok sınıflı dönüşüm :lbe.fit_transform(col) : çoklu dönüşümü yapar nominal durumu bozabilir algoritmaları şaşırtır
+		
+		Düzeltilmesi : One-Hot Dönüşümü : df_one_hot = pd.get_dummies(df_one_hot,columns=cols,prefix=?) : Değişkenin sınıf sayısı kadar yeni değişken oluşturur ve sorguları öyle anlatır. Ör: sex için sex_male=1,sex_female=0 veya sex_male=0,sex_female=1 gibi
+		
+		Dummy değişken tuzağı : Dönüşüm sonrasında oluşan yeni değişkenler birbirleri üzerinden oluşturulabiliyorsa oluşan tuzaktır
+
+		 	Kontrol edilmesi : Kategorik değişkenin sınıf sayısından daha az değişken oluşmalı. Değişkenin orjinali df'de bulunmamalı. Kategorik sınıf sayısı arttıkça bu tuzağın tehlikesi azalır
+			
+		
+		
+85- Veri bilimi için basit doğrusal regresyon modeli oluşturma
+
+	from sklearn.linear_model import LinearRegression -->
+	x= df[[bağımsız]] -> y = df[[bağımlı]]
+	reg = LinearRegression()
+	model = reg.fit(x,y)
+	model.intercepy_ : b0 değerini verir
+	model.coef_ : b1 değerini veriri
+	model.score(x,y) : r^2 değerini verir
+
+
+86- Veri bilimi için basit doğrusal regresyon modeli tahmin :
+
+	model.predict([[bağımsızDğşknDeğeri]]) : tahmin eder
+
+87- Veri bilimi için çoklu doğrusal regresyon modeli oluşturma :
+
+	1- x ve y olarak iki değişkene ayır df'i x'e bağımsız değişkenleri koy . y'ye de bağımlıyı
+
+	A. Statsmodels : 
+
+		import statsmodels.api as sm -->
+		lm=sm.OLS(y,x) : Model nesnesi oluşturulur
+		model = lm.fit()
+		model.summary : Model hakkında bilgi verir
+
+	B. Scikit-Learn :
+
+		from sklearn.linear_model import LinearRegression -->
+		lm=LinearRegression()
+		model=lm.fit(x,y)
+		model.intercept_ : b0 hakkında bilgi verir
+		model.coef_ : katsayıları verir
+
+		Tahmin : 
+			yeni_veri = [[x1],[x2]..]
+			yeni_veri = pd.DataFrame(yeni_veri).T
+			model.predict(yeni_veri)
+
+		Başarı Ölçme :
+
+			from sklearn.metrics import mean_squared_error
+			mean_squared_error(y,yŞapka(model.predict(X)))
+		Not: RMSE için sqrt :)	
+
+
+		Model Tuning (Model Doğrulama) : 
+		
+			A. Sınama Seti :
+
+				from sklearn.model_selection import train_test_split
+				x_train, x_test, y_train, y_test = train_test_split(x,y,test_size=0.20,random_state=int)
+				lm=LinearRegression()
+				model=lm.fit(x_train,y_train)
+				train_error = np.sqrt(mean_squared_error(y_train, model.predict(x_train)))
+				test_error = np.sqrt(mean_squared_error(y_test, model.predict(x_test)))
+
+			
+			B. K-Katlı çapraz doğrulama :
+	
+				from sklearn.model_selection import cross_val_score
+				cross_val_score(model,x_train,y_train,cv=int(parça sayısı),scoring="neg_mean_squared_error"->MSEalır) : Aynısını test seti için de yapıp karşılaştırma yapmalıyız
+
+			Not: test seti her zaman dışarıda kalıp sadece kontroller için kullanılır
+
+!!NOT : genel import edilecek kütüphaneler (maddelerde yer verilmeyecek)
+
+		import numpy as np
+		import pandas as pd
+		from sklearn.linear_model import Ridge
+		from sklearn.metrics import mean_squarred_error,r2_score
+		from sklearn.model_selection import train_test_split
+		from sklearn import model_selection
+		import matplotlib.pyplot as plt
+		from sklearn.linear_model import RidgeCV
+
+89- Ridge regresyon model işlemleri
+
+	Oluşturma : 
+			x_train,x_test,y_train,y_test = train_test_split
+			ridge_model=Ridge(alpha=0.1).fit(x_train,y_train) : alpha = lambda
+			ridge_model.coef_ : biliyorsun artık
+			lambdalar=10**np.linspace(10,-2,100)*0.5 : Rastgele lambdalar seçtik
+			ridge_model = Ridge()
+			katsayılar =[]
+			for i in lambdalar :
+				ridge_model.set_params(alpha=i)
+				ridge_model.fit(x_train,y_train)
+				katsayılar.append(ridge_model.coef_)
+			ax=plt.gca()
+			ax.plot(lambdalar,katsayılar)
+			ax.set_xscale("log")  : Son 3 satır görselleştirme
+	
+	Tahmin :
+		ridge_model = Ridge().fit(x_train,y_train)
+		y_pred  =  ridge_model.predict(x_train)
+		RMSE=np.sqrt(mean_squared_error(y_train,y_pred))
+		np.sqrt(np.mean(-cross_val_score(ridge_model,x_train,y_train,cv=10,scoring="neg_mean_squared_error")))
+	
+		--> test hatasını önce predict et sonra hataları hesapla yukarıdakilerin parametleri değişecek sadece
+
+	Not: Cv kullanmayı unutma
+
+	Model Tuning :
+
+		rastgele sayılardan oluşan array tanımla
+		ridgecv=RidgeCV(alphas=lambdalar,scoring="neg_mean_squared_error",cv=10,normalize=True)		
+		ridgecv.fit(x_train,y_train)
+		ridgecv.alpha_ : Bize optimum alpha değerini verir
+-->Final modeli oluştur Ridge(alpha=ridgecv.alpha_).fit(x_train,y_train)
+
+
+
+
+90- Veri bilimi için Lasso regresyon işlemleri :
+
+	Yeni kütüphaneler: from sklearn.linear_model import Lasso
+				   from sklearn.linear_modek import LassoCV
+
+		1- Veriyi hazırla train,test datalarını ayır 
+
+		lasso_model=Lasso().fit(x_train,y_train)
+		lasso_model.intercept_,coef_ : :)
+		lasso= Lasso()
+		coefs=[]
+		for a in alphaArray: 
+			lasso.set_params(alpha=a)
+			lasso.fit(x_train,y_train)
+			coefs.append(lasso.coef_)
+
+		->İstersen görselleştir
+
+	Tahmin :
+
+		  lasso_model.predict(x_train)
+		  devamı aynı bir üst madde ile RMSE alıyoruz
+		  r2_score(y_test,y_pred) : r^2 değerini alıyoruz. değişikliğin ifade edilebilme yüzdesidir
+--> CVileOptimize lasso_cv_model= LassoCV(alphas=alphasArray,cv=10,max_iter=1000).fit(x_train,y_train)
+		  lasso_tuned = Lasso(alpha=lasso_cv_model.alpha_).fit(x_train,y_train)
+		  sonra yeniden hata hesapla
+
+91- Veri bilimi için ElasticNet regresyonu uygulama:
+
+	farklı kütüphaneler : 	   from sklearn.linear_model import ElasticNet
+				   from sklearn.linear_modek import ElasticNetCV
+
+	1- Veri seti hazırla ve trin testleri ayır
+
+	enet_model = ElasticNet().fit(x_train,y_train)
+	enet_model.intercept_,coef_ : :)
+	y_pred=enet_model.predict(x_test)
+	np.sqrt(mean_squared_error(y_test,y_pred))
+	r2_score(y_test,y_pred)
+
+	Tuning:
+
+	enet_cv_model = ElasticNetCV(cv=10).fit(x_train,y_train) : Eğer alpha değeri boş bırakılırsa CV kendi bulacaktır
+
+-> Final modeli oluştur. enet_tuned=ElasticNet(alpha=enet_cv_model.alpha_).fit(x_train,y_train)
+			 y_pred=enet_tuned.predict(x_test) 
+		 	np.sqrt(mean_squared_error(y_test,y_pred))
+
+	NOT: ElasticNet() l1_ratio parametresi içerir ön tanımlı değeri 0.5'tir . 0 olduğunda l2 , 1 olduğunda ise l1 cezası uygulanır. Bu parametreye de liste verilebilir. bu listedeki her değer için farklı lambda değeri aranır
+		
+	
+	
+		
+
+ 92- Veri bilimi ile K En Yakın Komşu Modeli uygulamaları
+
+Not Sonraki notlar için kullanılacak olan kütüphaneler:
+
+	import numpy as np
+	import pandas as pd
+	from sklearn.model_selection import train_test_split,GridSearchCV
+	from sklearn.metrics import mean_squared_error, r2_score
+	import matplotlib.pyplot as plt
+	from sklearn.preprocessing import scale
+	from sklearn.preprocessing import StandardScaler
+	from sklearn import model_selection
+	from sklearn.linear_model import LinearRegression
+	from sklearn.tree import DecisionTreeRegressor
+	from sklearn.neighbors import KNeighborsRegressor
+	from sklearn.neural_network import MLPRegressor
+	from sklearn.ensemble import RandomForestRegressor
+	from sklearn.ensemble import GradientBoostingRegressor
+	from sklearn import neighbors
+	from sklearn.svm import SVR	
+	from warnings import filterwarnings // uyarılar için filterwarnings("ignore")
+
+	Model oluşturma :
+
+		-x train y train testleri ayır 
+
+  	--> Boş model   knn_model = KNeighborsRegressor().fit(x_train,y_train)
+			knn_model.n_neighbors :  Komşu sayısını verir
+			knn_model.metric : Modelin metriğini verir
+			dir(knn_model) : modelin işlemleri hakkında bilgi verir
+			knn_model.predict(x_test) : Tahmin etme işlemini yapar
+
+	Model Tuning:
+
+		RMSE = []
+		for i in range(10) :
+			i = i+1
+			knn_model=KNrighborsRegressor(n_neighbors=i).fit(x_train,y_train)
+			y_pred = knn_model.predict(x_test)
+			rmse= np.sqrt(mean_squared_error(y_test,y_pred))
+			RMSE.append(rmse)
+		  
+		--> farklı komşu sayıları için hata durumu gözleriz
+	
+		Not: Aynı şey için gridsearchcv de kullanılabilir
+
+		knn_params={"n_neighbors":np.arange(int,int)} : aranacak eleman ve değer aranacak olan liste
+		knn= KNeighborsRegressor()
+		knn_cv_model = GridSearchCV(knn,knn_params,cv=int).fit(x_train,y_train)
+		knn_cv_model.best_params_ : En iyi parametreyi verir
+	
+		Sonra bu değer ile final model oluşturulur
+	
+		knn_tuned= KNeighborsRegressor(n_neighbors= knn_cv_model.best_params["n_neighbors"]).fit(x_train,y_train)
+		
+		Sonra bunun da hatasına bakılır
+
+93- Veri bilimi için Destek Vektör Regresyonu :
+
+	Model oluşturma :
+		-Seti train teste ayır
+		svr_model = SVR("linear").fit(x_train,y_train): C parametresi ceza parametresidir.
+		svr_model.predict(x_test) : tahminleme işlemi
+		svr_model.intercept_,coef_ : :)
+		Hata görme işlemlerini uygulama kısmı aynı
+
+	Model Tuning :
+	
+		GridSearch ve CV ile Ceza Kat SAyısı aranır
+		svr_params={"C": [sayılar]}
+		svr_cv_model=GridSearchCv(svr_model,svr_params,cv=int,verbose=2Rapor, n_jobs=-1İşlemciPerformas).fit(x_train,y_train) : Değerleri arar istenen parametre için
+		svr_cv_model.best_params_ : en iyi sonucu verir
+		-Final modeli oluştur sonra hata hesapla
+
+
+
+
+94- Veri bilimi için yapay sinir ağı işlemleri : 
+
+	Model oluşturma :
+		- Datayı böldün
+		- Datayı standartlaştırmak gerekir
+		scaler = StandardScaler()
+		scaler.fit(x_train)
+		x_train_scaled=scaler.transform(x_train)
+		x_test_scaled=scaler.transform(x_test) --> sadece eğitim için kullanıalcak değerler standartlaştırılır. Y'ler için gerek yokttur
+		mlp_model = MLPRegressor().fit(x_train_scaled,y_train)
+		mlp_model.predict(x_test_scaled) : Tahmin eder
+		
+	Model Tuning :
+
+		GridSearch :)
+		mlp_params = {"alpha": [sayılar],
+			      "hidden_layer_sizes":[(10,20),(5,5),(100,100)]}
+
+		mlp_cv_model = GridSearchCV(mlp_model,mlp_params,cv=int,verbose=2,n_jobs=-1).fit(x_train,y_train)
+		mlp_cv_model.best_params_
+--->Final Model:mlp_tuned=MLPRegserror(alpha=bestAlpha,hidden_layer_sizes(best1,best2)).fit(x_train_scaled,y_train)
+		mlp_tuned.predict(x_test_scaled)	 
+		Hatalara bak
+
+95- Veri bilimi için CART modeli ile ilgili işlemler :
+	
+	Model oluşturma :
+
+		-Dataları ayırdın 
+
+		cart_model = DecisionTreeRegressor(max_leaf_nodes=int) : Sınırları kontrol eden parametredir leaf değeri.
+		cart_model.fit(x_train,y_train)
+ 		cart_model.predict(x_test)
+
+	-->Hataya bak
+
+	
+	Model Tuning :
+
+		
+		Grid search uygulamaları (kullanılan parametreler : max_depth,min_samples_split)
+		cv model oluştur 
+		fit et
+		best paramlara bak ve final modeli oluştur
+		Hataları karşılaştır
+		
+
+96- Veri bilimi için Random Forest modeli uygulamaları
+
+	Model oluşturma :
+		- Veri setini ayırdın (kategorik değişkenleri getdummies ettin,x ve y leri ayırıp sonra split ettin)
+		rf_model = RandomForestRegressor().fit(x_train,y_train) : n_estimators -> ağaç sayısı parametresi
+		sonraki işlemler aynı predict yap hata hesapla
+
+	Model Tuning :
+
+		n_estimators , min_samples_split , max_depth , max_features en etkili parametreler
+		Grid Search :)
+		rf_params ={"max_depth":[sayılar],
+			    "max_features":[sayılar],
+			    "n_estimators":[sayılar],
+			    "min_samples_split":[sayılar]}
+		rf_cv_model = GridSearchCv(rf_model,rf_params,cv=10,n_jobs=-1,verbose=2).fit(x_train,y_train)
+		rf_cv_model.bes_params_  : best parametleri aldın
+ -->FinalMOdel  rf_tuned = RandomForestRegressor(best_params).fit(x_train,y_train)
+		Hataları karşılaştır
+
+	Değişken Önem Düzeyi : 
+
+		Importance = pd.DataFrame({"Importance":rf_tuned.feature_importances_*100},index=x_train.columns)
+		Importance.sort_values(by="Importance", axis=0,ascending=True).plot(kind="barh",color="r")
+		plt.xlabel("Variable Importance")
+		plt.gca().legend_ = None
+
+
+
+97- Veri bilimi için Gradient Boosting Machine uygulamaları :
+
+	Model oluşturma  :
+		- Data kısımları aynı
+		gbm_model = GradientBoostingRegressor().fit(x_train,y_train)
+		ilkel test hatasını hesapla
+		y_pred=gbm_model.predict(x_test)
+		np.sqrt(mean_squared_error(y_test,y_pred))
+
+	Model Tuning: 
+
+		Önemli Parametreler : criterion, learning_rate, loss , max_depth , max_features, n_estimators , subsample 
+	
+		gbm_params={"learning_rate" : [sayılar],
+			    "max_depth" : [sayılar],
+			    "n_estimators : [sayılar],
+		            "subsample": [0-1 arası sayılar],
+			    "loss" : ['ls','lad','huber','quantile']}
+		gbm_cv_model = GridSearchCV(gbm_model,gbm_params,cv=10,n_jobs=-1,verbose=2) 
+		gbm_cv_model.best_params_ 
+-->FinalModel   gbm_tuned = GradientBoostingRegressor(best_params).fit(x_train,y_train)
+		Hata hesapla ve ilkel olanla karşılaştır
+
+
+98- Veri bilimi için XGBoost modeli uygulamaları :
+
+	Model Oluşturma:	
+		pip install xgboost
+		import xgboost
+		from xgboost import XGBRegressor
+		xgb= XGBRegressor().fit(x_train,y_train)
+		ilkel test hatasına bak
+
+	Model Tuning :
+
+		xgb_params{"learning_rate":[sayılar(0-1)],
+			   "max_depth" : [sayılar],
+			   "n_estimators" : [sayılar],
+			   "colsample_bytree" : [sayılar(0-1)]}
+		xgb_cv_model = GridSearchCV(xgb_model,xgb_params,cv=10,n_jobs=-1,verbose=2)
+-->Final model  xgb_cv_model.best_params_
+		xgb_tuned= XGBRegressor(best_params).fit(x_train,y_train)
+		Hata değeri hesapla 
+
+99- Veri bilimi için LightGBM modeli uygulamaları :
+
+	
+	Modelleme : 
+		pip install lightgbm
+		from lightgbm import LGBMRegressor
+		lgb_model = LGBMRegressor().fit(x_train,y_train)
+		tahmin et ve hata hesapla
+
+	Model Tuning: 
+		grid search'de  kullanılan paramlar : learning_rate(0.01,0.1,0.5,1), n_estimators(20,40,100,200,500,100)
+					              max_depth(range(10))
+
+		
+
+100- Veri bilimi için CatBoost modeli uygulamaları :
+
+	
+	Modelleme :
+		pip install catboost
+		from catboost import CatBoostRegressor
+		catb_model = CatBoostRegressor().fit(x_train,y_train)
+		ilkel test hatasına da bakalım
+	
+
+	Model Tuning:
+		Not: Parametreleri az bırakmaya çalış çünkü en uzun süren GBM modelidir
+		paramlar : iterations : (200,500,1000..), learning_rate(0.01,0.1,0.5,..), depth : (3,6,8)
+		
+		catb_cv_model oluşturuldu
+		gridsearchcv kullanıldı
+		best_params_ alınıp bununla yeni model kuruldu
+		yeni hata değerine baktık
+		
+	
+		
+101- Veri bilimi için sınıflandırma Lojistik Regresyon Uygulamaları :
+
+Not: Küpüthanaler
+
+	import numpy as np
+	import pandas as pd
+	import statsmodels.api as sm
+	import seaborn as sns
+	import matplotlib.pyplot as plt
+	from sklearn.preprocessing import scale, StandardScaler
+	from sklearn.model_selection import train_test_split,GridSearchCV,cross_val_score
+	from sklearn.metrics import confusion_matrix,accuracy_score,mean_squared_error,r2_score,roc_auc_score,roc_curve,classification_report
+	from sklearn.linear_model import LogisticRegression
+	from sklearn.neighbors import KNeighborsClassifier
+	from sklearn.svm import SVC
+	from sklearn.neural_network import MLPClassifier
+	from sklearn.tree import DesicisonTreeClassifier
+	from sklearn.ensemble import RandomForestClassifier
+	from sklearn.ensemble import GradientBoostingClassifier	
+	
+		Model Oluşturma :
+					Not: Test Train ayrılmalı ama başlangıç için ayırlmadı
+			y=df[bağımlı]
+			x=df.drop([bağımlı],axis=1)
+			loj_model = LogisticRegression(solver="liblinear").fit(x,y)
+			loj_model.intercept_,coef_ : Katsayıların bilgilerini verir
+			loj_model.predixt(x) : tahmin eder
+			y_pred = loj_model.predict(x)
+			confusion_matrix(y,y_pred) : Karmaşıklık matrisini verir
+			accuracy_score(y,y_pred) : Doğruluk skorunu verir
+			print(classification_report(y,y_pred)) : Detaylı sınıflandırma raporu verir
+			loj_model.predict_proba(x) : burada 0-1 değil olasılık üzerinden tahminleme yapar
+
+		Roc Eğrisi kodları :
+			logit_roc_auc = roc_auc_score(y,loj_model.predict(x))
+			fpr,tpr,thresholds = roc_curve(y,loj_model.predict_proba(x)[:,1])
+			plt.figure()
+			plt.plot(fpr,tpr,label='AUC (area= %0.2f)'% logit_roc_auc)
+			plt.plot([0,1],[0,1],'r--')
+			plt.xlim([0.0,1.0])
+			plt.ylim([0.0,1.05])
+			plt.xlabel('False Positive Rate')
+			plt.ylabel('True Positive Rate')
+			plt.title('Receiver operating characteristic')
+			plt.legend(loc="lower right")
+			plt.savefig('Log_ROC')
+			plt.show()
+
+		Model Tuning: 
+			x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.30,random_state=int)
+			loj_model = loj_model = LogisticRegression(solver="liblinear").fit(x_train,y_train)
+			İlkel hatayı hesapla -> y_pred=loj_model.predict(x_test)->accuracy_score(y_test,y_pred)
+			cross_val_score(loj_model,x_test,y_test,cv=10) : CV ile daha doğru bir test hatası verir
+	
+102- Veri bilimi için K en yakın komşu modeli Sınıflandırma uygulamaları
+
+	
+	Model Oluşturma :
+		- Veriyi train test olarak ayır
+		knn_model = KNeighborsClassifier().fit(x_train,y_train)
+		y_pred = knn_model.predict(x_test)
+		accuracy_score(y_test,y_pred)  : İlkel test hatasını verir
+		print(classification_report(y_test,y_pred)) : detaylı bilgi verir
+
+	Model Tuning :
+
+		knn_params{"n_neighbors": [sayılar,array]}
+		knn_cv_model=GridSearchCV(knn_model,knn_params,cv=10).fit(x_train,y_train)
+		knn_cv_model.best_score_ : en iyi skoru verir
+		knn_cv_model.best_params_ : En iyi parametleri verir
+		knn_tuned = KNeighborsClassifier(n_neighbors=best).fit(x_train,y_train)
+		y_pred=knn_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+
+		knn_tuned.score(x_test,y_test) : Bize accuracy score'u verir
+
+
+103- Veri bilimi için Sınıflandırma Destek Vektör Makineleri : 
+
+	Doğrusal yapı :
+
+		Model oluşturma :
+			-Datayı ayır
+			svm_model= SVC(kernel="linear").fit(x_train,y_train) : linear doğrusal yapı için kullanılır rbf ise doğrusal olmayan yapı için
+			y_pred=svm_model.predict(x_test)
+			accuracy_score(y_test,y_pred)
+
+	Model Tuning:
+		svm_params{"C" : [sayılar], "kernel": ["linear","rbf"]}
+		svm_cv_model = GridSearchCV(svm_model,svm_params,cv=10,n_jobs=-1,verbose=2).fit(x_train,y_train)
+		svm_cv_model.best_params_,score_ : parametreleri al
+		svm_tuned = SVC(best).fit(x_train,y_train)
+		y_pred= svm_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+			
+		
+
+
+
+		
+104- Veri bilimi için Yapay Sinir Ağları ile sınıflandırma uygulamaları:
+
+	Model Kurma :
+		Aktivasyonlar : "relu"->Regresyon, "identity" , "tanh" , "logistic" -> Sınıflandırma
+		Solver : "lbfgs" --> küçük setler , "sgd" , "adam" -> büyük setler
+		- Datayı train test split ettin
+		scaler=StandardScaler()
+		scaler.fit(x_train)
+		x_train=scaler.transform(x_train)
+		scaler.fit(x_test)
+		x_test=scaler.transform(x_test)
+		mlpc_model = MLPClassifier().fit(x_train,y_train)
+		mlpc_model.coefs_ 
+		y_pred=mlpc_model.predict(x_test)
+		accuracy_score(y_test,y_pred) --> ilkel test hatasını aldık
+
+	Not: Veriyi standartlaştırmak önemlidir çoğu model bundan sonra daha performslı çalışacaktır
+
+	Model Tuning :
+		mlpc_params ={"alpha" : [1,5,0.01,0.1,0.03,0.005,0.001],
+			      "hidden_layer_sizes" : [(10,10),(100,100,100),(100,100),(3,5)]}
+		mlpc= MLPClassifier(solver="lbfgs",activation="logistic")
+		mlpc_cv_model= GridSearchCV(mlpc,mlpc_params,cv=10,n_jobs=-1,verbose=2).fit(x_train,y_train)
+		mlpc_cv_model.best_params_
+		mlpc_tuned = MLPClassifier(bestparams)
+		y_pred=mlpc_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+		
+
+
+105 - Veri bilimi için CART modeli ile sınıflandırma işlemleri 
+		
+	Model oluşturma :
+		- Data ayrıldı
+		cart_model = DecisionTreeClassifier().fit(x_train,y_train)
+		y_pred=cart_model.predict(x_test)
+		accuraccy_score(y_test,y_pred)
+
+	Model tuning : 
+
+		cart = DecisionTreeClassifier
+		cart_params={"max_depth" : [1,3,5,8,10],
+			     "min_samples_split" : [1,3,5,10,20,50,100]}
+		cart_cv_model = GridSearchCV(cart,cart_params,cv=10,n_jobs=-1,verbose=2)
+		cart_cv_model.best_params_
+		cart_tuned=DecisionTreeClassifier(max_depth=best,min_samples_split=best).fit(x_train,y_train)
+		y_pred= cart_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+
+106- Veri bilimi için Random Forest ile sınıflandırma işlemleri :
+
+	Model Oluşturma :
+
+		rf_model = RandomForestClassifier().fit(x_train,y_train)
+		y_pred=rf_model.predict(x_test)
+		accuracy_score(y_test,y_pred)
+	
+
+	Not: EN önemlisi kaç tane değişken ile bölüneceği ve kaç ağaç oalcağı
+
+
+	Model Tuning : 
+		rf_params={"n_estimators" : [100,200,500,1000],
+			   "max_features": [3,5,7<cols],
+			   "min_samples_split" : [2,5,10,20]}
+		rf_cv_model= GridSearchCV(rf_model_rf_params,cv=10,n_jobs=-1,verbose=2)
+		rf_cv_model.best_params_
+		rf_tuned = RandomForestClassifier(paramlar)
+		y_pred=rf_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+	Not: Çok dallanma overfitting'e sebep olur budama için max_depth ve min_samples_split parametrelri kullanılır
+	
+	Değişken Önem Grafiği Kodları:
+
+		feature_imp = pd.Series(rf_tuned.feature_importances_, index= x_train.columns).sort_values(ascending=False)
+		sns.barplot(x=feature_imp, y= feature_imp.index)
+		plt.xlabel('Değişken Önem Skorları')
+		plt.ylabel('Değişkenler')
+		plt.title("Değişken Önem Düzeyleri")
+		plt.show()
+
+
+
+107- Veri bilimi için GBM sınıflandırma uygulamaları :
+
+	Model Kurma : 
+		-Datayı ayırıdn
+		gbm_model = GradientBoostingClassifier().fit(x_train,y_train)
+		y_pred=gbm_model.predict(x_test)
+		accuracy_score(y_test,y_pred)
+
+
+	Model Tuning : 
+		gbm=GradientBoostingClassifier()
+		gbm_params ={"learning_rate" : [0.1,0.01,0.001,0.05],
+			     "n_estimators" : [100,300,500,1000],
+			     "max_depth" :[2,3,5,8]}
+		gbm_cv_model = GridSearchCV(gbm, gbm_params, cv=10 ,verbose=2,n_jobs=-1)
+		gbm_cv_model.best_params_
+		gbm_tuned= GradientBoostingClassifier(bestparams).fit(x_train,y_train)
+		y_pred= gbm_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+
+108- Veri bilimi için XGBoost ile sınıflandırma :
+
+	Model Oluşturma :
+		from xgboost import XGBClassifier
+		xgb_model = XGBClassifier().fit(x_train,y_train)
+		y_pred=xgb_model.predict(x_test) 
+		accuracy_score(y_test,y_pred)
+
+	Model Tuning : 
+		xgb_params ={"n_estimators": [100,500,1000,2000],
+			     "subsample" : [0.6,0.8,1],
+			     "max_depth" : [3,5,7],
+			     "learning_rate" : [0.1,0.01,0.001]}
+		xgb_cv_model = GridSearchCV(xgb_model,xgb_params,cv=10,n_jobs=-1,verbose=2).fit(x_train,y_train)
+		xgb_cv_model.best_params_
+		xgb_tuned = XGBClassifier(bestparams).fit(x_train,y_train)
+		y_pred = xgb_tuned.predict(x_test)
+		accuracy_score(y_test,y_pred)
+	Değişken önem Düzeylerine de bak
+
+
+109- Veri bilimi için LightGBM ile sınıflandırma işlemleri :
+
+		Model oluşturma : 
+
+			from lightgbm import LGBMClassifier
+			lgbm_model = LGBMClassifier().fit(x_train,y_train)
+			y_pred=lgbm_model.predict(x_test)
+			accuracy_score(y_test,y_pred)
+
+		Model Tuning : sadece paramları yazıcam kalanları kendin yap
+
+			learning_rate , n_estimators , max_depth
+			GridSearch <--
+
+110-Veri bilimi için CatBoost ile sınırlandırma işlmeleri :
+
+	MOdel Oluşturma :
+
+
+		from catboost import CatBoostClassifier
+		catb_model=CatBoostClassifier().fit(x_train,y_train)
+		y_pred=catb_model.predict(x_test)
+		accuracy_score(y_test,y_pred)
+
+	Model Tuning :
+		parametreler : iterations=ağaçsayısı=n_estimators
+			       learning_rate
+			       depth
+		Sonra GridSearchCV
+
+
+111- Veri bilimi için K-Means ile denetimsiz öğrenme :
+		
+	import numpy as np
+	import pandas as pd
+	import seaborn as sns
+	import matplotlib.pyplot as plt
+	from sklearn.cluster import KMeans
+	
+	Model oluşturma :
+		kmeans = KMeans(n_clusters=int)
+		k_fit = kmeans.fit(df)
+		k_fit.n_clusters : cluster sayısını verir
+		k_fit.cluster_centers_ : Merkezleri verir
+		k_fit.labels_ : Hangi clusterlara verildiğini söyler
+		
+	Kümelerin Görselleştirilmesi :
+	
+		- İki değişken seçilip kümelenme gösterilir
+		k_means = KMeans(n_clusters=2).fit(df)
+		kumeler=k_means.labels_
+		plt.scatter(df.iloc[:,0],df.iloc[:,1], c=kumeler, s= 50 , cmap="viridis")
+		merkezler =k_means.cluster_centers_
+		plt.scatter(merkezler[:,0],merkezler[:,1],c="black", s=200, alpha=0.5)
+
+	Optimum Küme Sayısının Belirlenmesi : 
+		
+		Not: Her zaman optimum küme sayısını algoritma ile belirlemek iyi olmayabilir. İş bilgisi ile çoğunlulka k parametresi belli olacaktır
+
+
+		-Elbow yöntemi :
+			
+			ssd=[] --> Hata değerlerini saklamak için kullanılır
+
+			K = range(1,30)
+			for k in K :
+				kmeans=KMeans(n_cluster=k).fit(df)
+				ssd.append(kmeans.inertia_) --> gözlemlerin uzaklaklıklarını verir
+			plt.plot(K,ssd,"bx-")
+			plt.xlabel("Farklı K Değerlerine Karşılık Uzaklık Artık Toplamları")
+			plt.title("Optimum Küme sayısı için Elbow Yöntemi")  --> Kırılımın en sert olacağı kısım K değeri olarak seçilir
+
+	
+		-pip install yellowbrick
+			from yellowbrick.cluster import KElbowVisualizer
+			kmeans = KMeans()
+			visu = KElbowVisualizer(kmeans, k =(2,20))
+			visu.fit(df)
+			visu.poof()   
+
+		Not: Yukarıdaki kodlar bize ELbow yöntemini otomatik gerçekleştirecektir
+		
+			-Final model : kmeans=KMeans(n_clusters=best).fit(df)
+			
+		-Yeni DF oluşturma : 
+
+			kumeler = kmeans.labels_
+			pd.DataFrame({"Eyaletler" : df.index, "Kumeler" : kumeler})
+			df["Kume_No"] = kumeler
+
+112- Veri bilimi için Hiyerarşik Kümeleme yöntemi ile denetimsiz öğrenme :
+		
+	from scipy.cluster.hierarchy import linkage
+	from scipy.cluster.hierarchy import dendrogram	
+
+	hc_complete = linkage(df,"complete")
+	hc_average = linkage(df,"average") -> küme ve uzaklıklar değişir
+	plt.figure(figsize=(10,5))
+	plt.title("Hiyerarşik Kümeleme Dendogramı")
+	plt.xlabel("Gözlem birimleri")
+	plt.ylabel("Uzaklıklar")
+	dendrogram(hc_complete, leaf_font_size=10/int,truncate_mode="lastp",p=kümesayısı, show_contracted=True/False->KaçelemanVarGöster)			
+		
+
+113- Veri bilimi için Temel bileşen analizi uygulamaları :
+
+	-Önce standartlaştırma yapılır
+	from sklearn.preprocessing import StandardScaler
+	df=StandardScaler().fit_transform(df)
+	
+	from sklearn.decomposition import PCA 
+	pca = PCA(n_components=2/bileşenSAyısı)
+	pca_fit = pca.fit_transform(df)
+	bilesen_df = pd.DataFrame(data=pca_fit,columns=["bileşen1","bileşen2"])
+
+	pca.explanied_variance_ratio_ : Varyans oranlarını verir
+	pca.components_[:] : tüm bileşenleri verir
+
+	Optimum Bileşen Sayısı :
+
+		pca = PCA().fit(df)
+		plt.plot(np.cumsum(pca.explanied_varience_ratio_))
+		plt.xlabel("Bileşen sayısı")
+		plt.ylabel("Kümülatif Varyans Oranı") --> Taşınan bilgi
+
+
+	   Buradaki grafiğe bakılıp final model oluşturulur
+
+114- Veri bilimi için Spark Uygulamaları :
+
+
+	FindSpark Kullanımı : 
+		import findspark
+		findspark.init("C:\Spark")
+
+	Spark Uygulamasının başlatılması :
+
+		import pyspark
+		from pyspark.sql import SparkSession
+		from pyspark.conf import SparkConf
+	
+		spark = SparkSession.builder \ .master("local") \ .appName("uygulamaİsmi") \ .getOrCreate()
+		sc=spark.sparkContext --> Bize açılabilir bir UI verir
+
+		Not: sc.stop() kodunu çalıştırmadan bilgisayarı kapatma veya yeni bir uygulama açma
+
+	Temel DataFrame işlemleri
+
+
+		spark_df = spark.read.csv("dosya yolu",header=True,inferSchema=True)
+		spark_df.printSchema() : Veri setindeki değişkenleri listeler
+		spark_df.cache() : Veriyi cacheler
+		spark_df.head() : İlk gözlemi verir pandastaki yapıdan farklıdır
+		spark_df.dtypes : Değişkenlerin türlerini verir
+		spark_df.show(int, truncate=True) : head fonksiyonunun sparkdaki kısmı 
+		spark_df.count() : gözlem sayısını verir
+		spark_df.columns : Değişken isimleri verir
+		spark_df.describe("değişken").show() : Verilerin betimsel istatistikleri getirir. describe içine değişken verirsek sadece onun istatistiğini verir. Boş bırakırsak hepsigelir
+						       show() ile beraber kullanılmasının sebebi görüntü durumları
+		spark_df.select("değişken","değişken2").show() : belirli değişkenleri almamızı sağlar
+		spark_df.filter(spark_df.Age > 40).count() : Belirli filtreleme işlemlerini yapar
+		spark_df.groupby("değişken").count().show() : Gruplama işleminden sonra frekansları gösterir
+		spark_df.groupby("değişken").agg({"Age" : "mean"}) : Gruplama işleminden sonra aggragation işlemlerini ypar. Verilen örnekte her frekans için Age değişkeninin ortalamasını alıp
+
+
+		Not: spark_df ve pandas_df aynı değildir. İçlerinde kullanılan fonksiyonların bazıları da farklıdır.
+
+
+	SqL işlemleri :
+
+		spark_df.createOrReplaceTempView("tbl_df") : spark df'i geçici sql tablosuna çevirir
+		spark.sql("show databases").show() : sql fonksiyonu içine gönderdiğimiz query'i çalıştırır ve show fonksiyonu ile bunları listeler
+		spark.sql("show tables").show() : Tanloları gösteren queryYi çalıştırır
+		spark.sql("select Age from tbl_df").show() : değişken seçip listeleyenquery'yi çalıştırır
+		spark.sql("select Churn, mean(Age) from tbl_df group by Churn").show() : Query'yi çalıştırır
+
+
+	Veri Görselleştirme :
+
+
+		import matlotlib.pyplot as plt
+		import seaborn as sns
+
+		sns.barplot(x=değişken, y=spark_df.değişken.index, data=spark_df) : Bu kod çalışmayacaktır. Çünkü görselleştirme fonksiyonları pandas dataframe'i üzerinden çalışır öndesince bir dönüştürme yapmamız gerekir
+		sdf=spark_df.toPandas() : spark_df'i pandas df'ine çevirir. Veri büyük olduğunda bu işlem yorucu ve verimsiz olacağı için öncesinde gerekli indirgeme ve sonra dönüştürme işlemi yapılır (sql sorguları vs)
+		sns.barplot(x=değişken, y=sdf.değişken.index, data=sdf) : BU kod ise rahatça çalışacaktır
+		a=spark_df.groupby("değişken").count().toPandas() : Bu kullanımı görselleştirmek daha verimli olacaktır
+
+	Modelleme :
+
+		spark_df = spark_df.toDF(*[c.lower() for c in spark_df.columns]) : Bu kullanım ile df üzerinde for döngülerini kullanabiliriz
+		spark_df.withColumnRenamed("değişken", "değişkeninyeniismi") : değişken ismi değiştirir
+		spark_df.select("değişken1", "değişken2",...).describe().toPandas().transpose() : Bu kullanım ile de değişkenlerin bilgilerini alabiliriz
+		spark_df.dropna() : Eksik gözlemleri siler
+		spark_df.withColumn("değişken","değişkeninNeredenAlındığı") :Yeni değişken oluşturmak için kullanılır. Örnek : 	spark_df.withColumn("age_kare","spark_df.age**2")
+		
+
+	 	Bağımlı değişkeni belirtme :
+
+			from pyspark.ml.feature import StringIndexer
+			stringIndexer = StringIndexer(inputCol="bağımlıDeğişken", outputCol="label") : String kategorik değişken olan bağımlı değişkenimizi int gibi görmesi için yaptığımız işlemlerdir. OutputCol label olmalıdır
+			mod = stringIndexer.fit(spark_df) : İşlemleri spark_df'e uygular 
+			indexed = mod.transform(spark_df)
+			spark_df = indexed.withColumn("label", indexed["label"].cast("integer")) : Veriyi ayrı bir column olarak ekledik		
+
+
+		Bağımsız Değişkeni belirtme : 
+
+			from pyspark.ml.feature import VectorAssembler 
+
+			bagimsiz_degisenler = ["bağımsız1","bağımsız2"....]
+			vectorAssembler = VectorAssembler(inputCols=bagimsiz_degiskenler, outputCol("features")) : Tüm değişkenleri sanki tek bir vektörmüşcesine dönüştüren nesnedir.
+			va_df = vectorAssembler.transform(spark_df) : Veri df'e uyguladık
+			final_df = va_df.select["features","label"] : son df için gerekli olan değişkenleri aldık
+		
+		Test-Train :
+			splits= final_df.randomSplit([0.70,0.30]) : Veriyi 70'e 30 ayırır
+			train_df = splits[0]
+			test_df=splits[1]
+
+		Model Oluturma (GBM) :
+
+			from pyspark.ml.classification import GBTClassifier
+			gbm = GBTClassifier(maxIter=int/10, featuresCol = "features", labelCol = "label") : Modeli kurar
+			gbm_model.fit(train_df)
+			y_pred=gbm_model.transform(test_df) : Tahmin etme işlemini yapar. içinde olasılıklar gerçek değerler tahmin edilenler gibi bir çok değer barındırır
+			ac= y_pred.select("label","prediction") : Sadece ihtiyacımız olan değişkenleri seçtik
+			ac.filter(ac.label==ac.prediction).count()/ac.count() : Accuracy Scoru'u veren matematiksel hesabı yapar
+		
+		Model Tuning :
+
+			from pyspark.ml.evaluation import BinaryClassificaitonEvaluator
+			from pyspark.ml.tuning import ParamGridBuilder, CrossValidator
+
+			evaluator = BinaryClassificationEvaluator()
+			
+			paramGrid = (ParamGridBuilder().addGrid(gbm.maxDepth, [2,4,6]).addGrid(gbm.maxBins , [20,30]).addGrid(gbm.maxIter , [10,20]).build())
+
+			cv= CrossValidator(estimator = gbm/tahminci , estimatorParamMaps= paramsGrid/aranacakDeğişkenler , evaluator=evaluator/değerlendirici, numFolds=int/cvSAyısı)
+			cvModel = cv.fit(train_df) : modeli fit eder. SparkUI'dan işlem kontrol edilebilir
+			y_pred = cvModel.transform(test_df) : tahminleme yapar
+			ac= y_pred.select("label","prediction") : Sadece ihtiyacımız olan değişkenleri seçtik
+			ac.filter(ac.label==ac.prediction).count()/ac.count() : Accuracy Scoru'u veren matematiksel hesabı yapar
+
+
+
+
+			Yeni Veriler Gelince Ne Yapacağız ? :
+			
+			- elinde pandas df var
+			yeni_sdf = spark.createDataFrame(yeni_veri) : pandas df'i spark df yaptık 
+			yeni_veri = vectorAssembler.transform(yeni_sdf) : Modelin istediği tipe çevirdi
+			results = cvModel.transform(yeni_veri) : Tahminleme yaptı
+			
+
+
+
+
+
+
+
+
+
+
+
+
+------------------------Veri---------------------------
+
+RMSE : Tahmin ve gerçek değer arasındaki değerin karesini alan bu sayede -/+ nötrlemesini engelleyen error methodudur.
+
+RMSLE : Tahmin ve gerçek değerin logaritmaları farkı alır bu da oransal bir error yakalamayı sağlar 
+
+	Not: RMSLE için gerçek:10 tahmin:9 ile gerçek:1000 tahmin:900 aynıdır ama RMSE için aralarındaki çok fark vardır
+	
+	Not: RMSLE gerçek değerden düşük tahminlere daha fazla error verir. Kullanılacak yerde düşük tahmin verilmesi istemediğimiz bir durum olmadığında bunu seçmek mantıklıdır
+
+R^2 : İki modeli karşılaştırmak için değerleri birbirine bölerek kullanılır. Üst tarafta bizim modelimiz altta ise referans alınan model alınır. Ve bütün sonuç birden çıkarılır
+
+	Not: Bu karşılaştırmanın maksimumu 1 iken minimumu -sonsuzdur
+
+
+
+

@@ -1,0 +1,439 @@
+
+18 Ekim 2020
+
+
+1- std::cout standart output stream nesnedisir
+ -ekrana çıktı verir 
+ -std:: "namespace"in adını gösterir "using" kullanılırsa yazılması gerekmez
+
+2- << 
+ - stream ekleme operatörüdür
+ - sağındaki değeri "output stream"e gönderir.
+ - std:: cout << "Welcome to C++!\n"; kodu buna örnektir
+
+3- bir satırın sonuna endl; getirmek ile \n koymanın bir farkı yoktur ikisi de alt satıra geçirir
+
+4-Kaçış satırları
+
+a: \n yeni satır açar imleci yeni satırın başına taşır
+b: \t yatay tab. imleçi bir sonraki tab noktasına taşır
+c: \r imleci satırın başına taşır ama yeni satır açmaz ve aynı satırdaki şeyi siler  
+d: \a beep sesi çıkartır
+e: \\ "\" karakterini yazdırır
+f: \" çift tırnak işaretini yazdırır
+
+5- system("pause"); ve return 0; parametreleri programı durdurur
+
+6-Karşılaştırma operatörleri
+a: x > y   x y'den büyüktür
+b: x < y   x y'den küçüktür
+c: x >= y  x y'den büyük veya eşittir
+d: x <= y  x y'den küçük veya eşittir
+e: x == y  x y'ye eşittir
+f: x != y  x y'ye eşit değildir
+
+7-if komutu bir deyim atayarak onun olup olma durumuna göre bizi algoritmanın diğer adımlarına götürür
+ 
+Örnek: if(a>2)
+       {
+       cout<<"Girdiğiniz değer 2'den büyük"<<endl;
+       } 
+
+       else if (a==2)
+       {
+       cout<<"Girdiğiniz değer 2'ye eşittir"<<endl;
+       }
+
+       else 
+       {
+       cout<<"Girdiğiniz değer 2'den küçüktür"<<endl;
+       }
+
+NOT: Birden fazla if kullanımı gerektiren durumlarda birden fazla if parametresi kullanamayacağımız için else if parametresi ile devam ederiz. Program if ile başlamalı else ile bitmelidir
+
+
+
+8-Yorum satırları "//" işaretleri ile kullanılır eğer yorum satırını çok satırlı kullanmak istersek de:
+
+"/*" komutunu verip istediğimiz sayıda satırı yorum satırı olarak kullanabiliriz ve en son yorum satırını kapatmak için "*/" komutunu verip kod yazmaya devam edebiliriz
+
+9-Data tipleri
+  
+  Char:Character or small integer
+  short int: short integer(sayı)
+  int:integer(sayı)
+  long int:long integer(sayı)   Bu 3 terimin farkı alabileceği değer aralığıdır
+  Bool:Boolean value .It can take one of two values: true or false
+  Float:Floating point number
+  Double:Double precision floating point number
+  Long Double:Long double precision floating number
+  wchar_t:Wide character
+  string:Kelime atamaları için kullanılır kullanmak için başa #include <string> komutu girilmelidir
+
+10-Türkçe karater kullanımı:
+  
+  Normal bir İde sizin yazdığınız türkçe karakterleri kabul etmeyecektir
+  ama #include <locale.h> kütüphanesi bu konuda bize yardımcı olabilir
+
+Örnek: #include <iostream>
+       #include <locale.h>
+       using namespace std;
+       int main()
+      {
+        setlocale(LC_ALL,"turkish");
+          . 
+          . 
+          . 
+      }
+         parametresi programımızda türkçe karakter kullanımına izin verecektir
+       
+11-Değişken atamaları: Bilgisayar yazdığımız kodları yukarıdan aşağıya doğru okur
+                       bu yüzden;
+
+      Örnek: .
+             . 
+             .
+              int a;
+                a=10 //dedikten sonra birkaç işlem yapalım bu işlemlerde a 10dur
+                a=20 // dediğimizde a'nın değeri artık 20'dir 10 değeri silinir ama önceki işlemlerde a 10 olarak işlem görmüştür ve bu değişmez
+                   .
+                   . //buradan sonraki işlemlerde a 20 olarak değer alır ve öyle işlem görür
+
+12-Değişken atamaları 2: değişkenlere değer vermenin kısa yollarından biri de int a,b,c=10,d=20,e; gibi bir tarzda direkt değişkeni tanımlayıp değer verebiliriz
+
+13- ? kullanımı: bir programda yapılan değerlendirmenin sonuna ? koyduğumuzda eğer komut true ise ilk false ise 2. seçeneği yazdırır
+     
+         Örnek: int a;
+                   a=10;
+                 cout<<((a<=8) ? 1:0) doğru ise 1 yanlış ise 0 yazdırır veya  ? "a 8'den küçük":"a 8'den büyük"; kullanımı da olabilir
+
+     NOT:Bütün parametreyi parantez içine almaz isek ? kısmından sonrasını almayacaktır
+
+14: Ve , Veya kullanımı: 
+                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+                         a      b       &&     ||
+                       doğru   doğru  doğru  doğru
+                       doğru   yanlış yanlış doğru
+                       yanlış  doğru  yanlış doğru
+                       yanlış  yanlış yanlış yanlış
+                    !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!   
+
+          Örnek:  
+                  int a=8,b=10;
+                  cout<< ((a<=b)==(b<6) && (a!=7))
+
+ kodunda ilk karşılaştırma doğru ikinci ise yanlıştır  "doğru=yanlış" durumu yanlış olduğu için orasının tümünü yanlış alırız
+    üçüncü karşılaştırma ise doğru olduğu için elimizde yanlış&&doğru kaldı bu durum ise yanlış olduğu için elimize 0 çıktısı geçer
+
+                     int a=8,b=10;
+                  cout<< ((a<=b)==(b<6) || (a!=7))
+
+aynı kodu veya ile yazarsak elimizde yanlış||doğru kalır bu durum ise doğru sayılır ve elimize 1 çıktısı geçer
+
+
+
+15-Biliyoruz ki string kütüphanesi ve string parametresi ile değişken atadığımızda tek kelime kullanabiliriz çoklu kelime gruplarını yazdırmak veya değişken olarak almak için:
+  
+      #include <sstream> kütüphanesini ekleyip getline(cin,atadığımız değişken) komutları buna izin verecektir 
+ 
+      NOT: getline(cin,atadığımız değişken) komutundan sonra tekrar cin>>atadığımız değişken kullanmak yanlış olacaktır. Sadece getline komutu kullanıcıdan input almaya yeter
+                                   
+             
+                    
+16-Değişken tanımlamanın başka bir yolu #define :Bu komut int main() komutunun üstünde kütüphanalerin olduğu kısımda kullanılır normal bir değişken kod içinde değiştirilebilirken
+                                                 #define ile atadığımız değişkenler kod içinde asla değişmez ve sanırım string ile kullanamıyorum
+
+
+17-İf ile ilgili not: Eğer if(200>x>100) tarzında bir deyim atayacak isek bilgisayar bunu anlamayacaktır bunu if(200>x && x>100) komutu ile bilgisayara anlatmalıyız
+                      Ve , Veya kullanımına dikkat edilmelidir
+
+18-While komutu: bir döngü oluşturmak için kullanılır if ile bir program yazıp onu tekrar sorgulatmak için goto x; kalıbını kullanırız ya da kapatıp yeniden açarız
+                ama while komutu ile bir döngü oluşturur ve döngü içine almak istediğimiz durumu atarsak goto kalbına gerek kalmadan döngü oluşturabiliriz
+
+         Örnek:  
+                while(true)
+                {
+                  string a;
+                   cout<<"Lütfen adınızı giriniz"<<endl; 
+                   cin>>a;
+                    cout<<"Hoşgeldiniz MR."<<a<<endl;
+                } 
+                       komutu bize sürekli soru soracak cevap isteyecek ve cevabı yazdıracaktır
+
+
+19-While kullanım örneği: 
+
+#include <iostream>
+#include <locale.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main()
+    {
+	setlocale(LC_ALL, "turkish");
+
+	double ogrenci_notu, toplam_not = 0;
+	int sayac = 0;
+	int ogrenci_sayısı;
+
+	cout << "Öğrenci sayısını giriniz :" << endl;
+	cin >> ogrenci_sayısı;
+
+	while (sayac <= ogrenci_sayısı)
+	{
+		cout << "Öğrenci notunu giriniz" << endl;
+		cin >> ogrenci_notu;
+		sayac = sayac + 1;
+		toplam_not = toplam_not + ogrenci_notu;
+
+	}
+
+	if ((toplam_not / ogrenci_sayısı) < 60)
+	{
+		cout << "Sınfın ortalaması : " << toplam_not / ogrenci_sayısı << endl;
+		cout << "Sınıfın ortalaması 60'dan küçüktür : VASAT SINIF" << endl;
+
+	}
+
+	else
+	{
+		cout <<"Sınfın ortalaması : "<< toplam_not / ogrenci_sayısı << endl;
+		cout << "Sınıfın ortalaması 60'dan büyüktür : NORMAL SINIF" << endl;
+	}
+	system("pause");
+     }
+
+
+20-For döngüsü: While ile benzer bir kullanımı vardır fark olarak ise değişken atar durum atar ve en son da her döngü sonunda ne yapılacağını yazarız
+
+        Örnek: for(int a=11; a>0 ; a=a-1)
+               {
+                 cout<<a<<endl;                       kodu bize alt alta 11 10 9 8 7 6 5 4 3 2 1 yazdırır 0a geldiğinde durur
+               }
+
+
+21-do-while döngüsü : kullanım açısından while döngüsü ile arasında çok fark yoktur
+                 
+              Örnek:do
+                      { . 
+                        .                         şeklinde kullanılır.
+                        . 
+                        .  
+                        .
+                      }while(...);
+
+
+22-dowhile- while döngü farkları
+
+            while                                                                                         dowhile
+a:    baştan kontrol edilir eğer durum yanlış ise hiç çalıştırmaz                      sondan kontrol edilir durum yanlış ise bile en az bir kere çalışır
+b:    durum önemli olduğu durumlarda kullanılır                                            süreç önemli olduğu durumlarda kullanılır 
+c:     sonunda ";" yoktur                                                                   sonunda ";" vardır
+
+
+
+
+
+23-SwitchCase : kullanımı if komutuna çok benzer burda da bir durum sorgulanır ve buna göre bir seçenek girilir kullanımı ve örneği şu şekildedir
+
+           Örnek:
+
+
+#include <iostream>
+#include <locale.h>
+#include <string>
+#include <sstream>
+
+using namespace std;
+
+int main()
+{
+	setlocale(LC_ALL, "turkish");
+
+	char d, x;
+	while (true)
+	{
+		cout << "Hangi diziyi seversiniz ?" << endl;
+		cout << "A)   Breaking Bad\nB)   Teen Wolf\nC)   Vikings" << endl;
+			cin >> d;
+			switch (d) 
+			{
+			case 'A': cout << "Say my name !!\n" << endl;
+				break;
+			case 'B': cout << "Ergen dizisi !!\n"<<endl;
+				break;
+			case 'C':cout << "Ragnar ölüyormuş ben de spoiler yedim !!\n" << endl;
+				break;
+			default: cout << "Bu seçenek yoktur bulunan bir seçenek giriniz\n" << endl;
+			}
+	}
+}
+            
+24-Diziler:
+ 1 boyutlu diziler:Bir sınıfta öğrenci notu kaydedilmesi veya ekonomik parametreler, devletlerin yıllık enflasyon oranları vs
+ 2 boyutlu diziler: günlük hayattaki tablolar veya matematikteki matrisler bu alana girer.
+ 3 boyutlu diziler: x y z koordinatlarına bağlı verileri sağlamak ve onlarla işlem yapmak için kullanılır
+ 4 boyutlu diziler: x y z ve t bilgisini içerir ve onlarla işlem yapar
+
+Tanım: Dizi bilgisayar belleğinde aynı isim altında genellikle aynı tipten çok sayıda veriyi bir arada saklayan veri yapısıdır(data structure)
+   
+Not: Dizinin bir adı ve dizi içerisindeki bir elemanın dizinin kaçıncı elemanı olduğunu belirten bir indisi mevcuttur 
+
+!!!! Dizinin indisi daima köşeli parantez ile belirtilir "x[3]"
+
+-Bir dizide ilk elemanın indisi her zaman 0'dır .Son elemanın indisi ise diziye ayrılan  yer sayısının 1 eksiğidir.
+-Bir diziyi tanıtmak için önce tipini sonra ismini sonra ise [eleman sayısını] yazarız= int x[6] 
+
+Diziler ne için gereklidir: Dizi yapısına aynı türden bir veri grubunu tümüyle bellekte saklı tutmanın gerekli olduğu 
+                            uygulamalarda ihtiyaç duyulur.Örneğin verilerin sıralanması bir veri grubuna ait bazı istatiksiksel
+                            verilerin hesaplanması(standart sapma vs.) gibi uygulamalar bu türde uygulamalardır.
+
+-Not: Arrayların bir faydası da atanılan deyimlerde bir değişkenin yerine başka bir sayı atandığında ilk sayı silinir
+      Arraylar bu sayıları hafızada tutmak için güzel bir imkandır.
+
+Örnek kod: 
+
+
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+	float sayi[5],t;
+	int i;
+	t=0;
+	for(i=0;i<=5;i++)
+	{
+		cout<<"\nBir sayi giriniz..\n"<<endl;
+		cin>> sayi[i];
+		t=t+sayi[i];
+		
+	}
+	cout<<"Toplam ="<<t<<endl;
+	bas:cin>>i;
+	cout<<"Sayi="<<sayi[i]<<endl;
+	
+	goto bas;
+
+}                          (bu program kendisine verilen 6 tane sayıyı toplar ayrıca sonda yazdığımız komutlar ile atanan değerleri indislerini vererek öğrenebiliriz)
+	
+
+25-Dizilere başlangıç değeri atanması: 
+  
+  Örneğin dizilere değerleri sonradan atamak yerine int x[4]={3,-2,1,4,11}; şeklinde tanımlanabilir.
+
+Örnek kod:
+
+#include <iostream>
+ using namespace std;
+ #define limit 5
+ int main()
+ {
+ 	int t , sayi[limit]={2,1,5,3,6};
+ 	int i;
+ 	t=0;
+ 	for(i=0;i<limit;i++)
+ 	{
+ 		t=t+sayi[i];
+	}
+	cout<<"Toplam ="<<t<<endl;
+ }
+
+Not: Oluşturulan dizideki eleman sayısından eksik eleman atanır ise kalan elemanlara 0 değeri atanır.
+     Diğer bir durum olarak fazla eleman atanır ise kod hata verecektir.
+
+
+Not: Bir diziye string veya karakter ataması örneğin karakter ataması char x[6]={'a','Y','M','c'...'\0'} şeklinde atanabilir
+     \0 her karakter veya string atamalarının son elemanıdır.Koymak zorunludur.Derleyici bunu otomatik koyacaktır
+
+Not:Bir diğer atama şekli ise char ad[6]="sinan"; bu tür bir atamada ad dizisinin son elemanı olarak \0 otomatik yerleşecektir
+     x[0]="a" ataması hata verecektir.Çünkü " karateri string atamalarında kullanıldığ için bilgisayar bunu 'a' ve '\0' olarak görür
+     tek karakter ayrılan yere 2 karakter atamaya çalışmak ise hataya sebep olacaktır.
+
+Örnek kod: 
+
+#include <iostream>
+#include <math.h>
+ using namespace std;
+ 
+ int main()
+ {
+ 	int notlar[30];
+ 	int i;
+ 	for(int sayi=0;sayi<30;sayi++)
+ 	{
+ 		cout<<"Not giriniz : "<<endl;
+ 		cin>>i;
+ 		notlar[sayi]=i;
+ 		
+ 		
+	}
+	for(int a=0;a<30;a++)
+	{
+		cout<<"notlar ["<<a<<"] ="<<notlar[a]<<endl;
+	}
+	
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+26-
+isalpha; değerin harf olup olmadığını kontrol etmek için kullanılan fonksiyon.
+isdigit; değerin sayı olup olmadığını kontrol etmek için kullanılan fonksiyon.
+isalnum; değerin harf veya sayı olup olmadığını kontrol etmek için kullanılan fonksiyon.
+
+Örnek Kod : 	char a;
+		cout << "Lutfen bir karakter giriniz" << endl;
+		cin >> a;
+
+		if (isdigit(a))
+		{
+			cout << "Girdiginiz karakter bir rakamdir" << endl;
+		}
+		else if (isalpha(a))
+		{
+			cout << "Girdiginiz karakter bir harftir" << endl;
+
+		}
+		else
+		{
+			cout << "Girdiginiz karakter ozel bir karakterdir" << endl;
+		}
+	
+27- cstring kütüphanesinin paratmereleri:
+
+   gets(değişken) parametresi string tanımlamaları almak için kullanılır ve bunları atar
+   puts(değişken) parametresi ise bu alınan stringi ekrana yazar
+
+28-Diğer parametreler 
+  Buradaki dizi kelimesi karakter dizisi anlamındadır!!
+   
+   strlen(değişken)=alınan dizinin uzunluğunu verir
+   strcopy(dizi1,dizi2) veya (dizi1,"Cümle")= bu parametre ikinci diziyi veya cümleyi diğer dizinin üzerine yazar
+   strcat(dizi1,dizi2)=İkinci dizinin içeriğini birinci dizinin devamına yazar
+   strcmp(dizi1,dizi2)=karakterlerin ASCII kodlarını karşılaştırır ve eğer iki dizi aynı ise 0 değerini döndürür (kullanıcı şifre isteme vs)
+
+
+------Pointer-----
+
+!!!!NOT: pointer kavramının en büyük kullanım amacı class yapısında bir değer çağırıldığında 
+         kodun o class'ın kopyasını oluşturması ve bu durumun hem alan hem de zaman konusunda eksi bir yönde dönmesi üzerine
+         bir fonksiyonu pointer ile çağırırız bu hem zaman hem de alan olarak bizi rahatlatır.

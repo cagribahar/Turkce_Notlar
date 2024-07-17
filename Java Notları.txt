@@ -1,0 +1,389 @@
+21.04.2021
+
+1- Yorum Satırları // şeklinde verilir
+
+2- Ekrana çıktı vermek için kullanılan komut System.out.println() komutudur
+
+  Önemli Not: System.out yapısı classification için kullanılır yani fonksiyonları gruplandırır.
+  Önemli Not2: Bir printline içinde birden fazla veri çıkartmak için System.out.println("a"+b) tarzında bir tanımlama yapabiliriz
+
+  Not: C++'da olduğu gibi her satır sonuna ; konmalıdır yoksa kod hata verir
+
+3- 0 ile 255 arasındaki sayılara byte veri tipi verilebilir
+
+4- büyük veriler için long veya küçükler için short kullanılabilir
+
+5-Array ataması : String[] krediler= {"Msb Kredisi","Mutlu emeklilik kredisi","Konut Kredisi"}; Şeklinde yapılır.
+
+6-Foreach loop'u her bir değer için ... yap şeklinde çalışır 
+ 
+ Örnek:  for(String kredi: krediler) {
+    	System.out.println(kredi);
+    	
+    }
+
+ Buradaki kod dizideki her bir eleman için ekrana çıktı verme kararını verir ve çıkarır.
+
+1- Veri tipleri tutma ve saklama Açısından 3'e ayrılıyor
+
+  a.İlkel(Primitive) Veri Tipleri
+  b. Referans Tipleri
+  c. Null tipi
+
+a. = İlkel veri tipleri
+  
+   Byte= -128 ve 127 arasında değer alır (8 bit yer kaplar)
+   Short= -32768 ve 32767 arasında değer alır (16 bit yer kaplar)
+   Integer= Orta uzunluktaki verileri tutar. En fazla kullanılandır.( 32 bit yer kaplar)
+   Long=Çok uzun sayıları tutmak için kullanılır (64 bit yer kaplar)
+   Float=Virgülden sonra 7 haneye kadar değer alır (32 bit yer kaplar)
+   Double=Virgülden sonra 17 hane yer kaplar (64 bit yer kaplar)
+   Char=Javada karakterleri temsil eder (16 bit yer kaplar)
+   Boolean=Sadece true veya false değerini alabilir
+
+b. = Referans tipleri 
+
+   Class= Ortak özellikleri belirlenmiş topluluk adıdır. Soyut bir veri tipidir.
+   İnterface=Class ile benzer tanımlaması vardır.Farklı olarak statik değişkenleri vardır.Dillere esneklik katar
+   Array=Aynı tipten veri tanımlamak için kullanılır
+
+c. = Null veri tipi: Herhangi bir değere sahip olmayan verilerdir.
+
+8- Dinamik değişkenler = Sınıf içinde bildirimi yapılan ve static deyimi olmayan değişkenlerdir.
+			*Nesne yaratılırken her işlem için bellekte yer açılır
+                        *Nesne yok olunca silinir
+ 			*Her dinamik değişkene her nesne içinde yer açılır
+			*Anlık değişkene erişim,ait olduğu sınıfın izinlerine bağlıdır.
+
+9- Statik değişkenler = Sınıf tanımında bildirimi yapılan ve static deyimi olan değişkenlerdir
+		       *Program başladığında değişkenler için bellekte yer açılır.
+		       *Açılan yerler program sonlandığından silinirler.
+		       *Değişkenler, program çalıştığı sürece 1 kez yaratılırlar.
+		       *Değişkene erişim, ait olduğu sınıfın iznine bağlıdır.
+
+10-Sabit değişken tanımlama olayı için C dilindeki define gibi bir komut yok maalesef
+   Ama bu işlev için kullanılan final deyimi vardır
+ 
+  Örnek: static final float PI = 3.1416;
+ 
+ Not: Bu değişkenler program boyunca değişmeden kalır. Gelenek olarak bütün harfleri büyük yazılır.
+
+11-Kullanıcıdan input almak için önce scanner classına yeni bir öğe veriyoruz ve onu sonraki girilen değere tanımlıyoruz.
+    
+  Örnek: int x;
+
+	Scanner reader= new Scanner(System.in);
+         x= reader.nextInt();
+
+12-İf ,Switch,while,for,do while döngüleri C++'daki ile aynıdır oradaki notlara bakabilirsin.
+
+13-Switch case'de 2 case'in aynı değeri döndürmesini istiyor isek iki case'i alt alta yazıp halledebiliriz
+ 
+     Örnek: case "B":
+	    case "C":
+	     System.out.println("Ortalama : Geçtiniz");
+		break;
+		.
+		.
+		.
+
+14- For döngüsü Not: For döngüsünde tanımladığımız i değişkeni sadece o blokta geçerlidir yani tekrardan i kullanmak için onu yeniden tanımlamak gerekir.
+
+15- For each döngüsü diziler üzerinde çalışan ve dizideki her bir elemanı kullanacak olan bir döngüdür.
+
+
+---------Dizilere Giriş-----------
+
+1-Dizi tanımlaması diziTipi[] değişkenİsmi = new diziTipi[n]; (n= eleman sayisi) şeklinde tanımlanır.
+
+ Not: dizi.length komutu dizinin eleman sayısın tutan değeri verir.
+
+2- Çok boyutlu diziler diziTipi[satır][sütun] değişkenİsmi şeklinde tanımlanır
+
+---Stringler----
+
+1-Stringler char dizileridir.
+
+2-Stringlerde bir harfe ulaşmak için değişkenİsmi.charAt(n) n=Kaçıncı eleman olduğu  komutu kullanılabilir 
+
+3-Stringleri birleştirmek için değişkenİsmi.concat("Herhangi bir yazı") komutu ile parantez içindeki yazıyı değişkende tanımlı string ile
+  değiştiririz. Bu komut yeni bir string tanımlar yani reusable değildir. Bir değişkene tanımlanıp yeniden çağrılmalıdır.
+
+
+4- dİsmi.starsWith() ve dİsmi.endsWith() komutları string bu değerle mi başlıyor ve bitiyor sorusuna cevap verir. sadece true false döndürür
+
+5-getChars : Bu komur bir stringden karakterleri alır ve oluşturulan bir char array'e tanımlar kullanım:getxhars(srcBegin , srcEnd,gideceğiArray, dstBegin)
+
+ Örnek: mesaj="Merhaba Dünya";
+	char[] letters=new char[5];
+        mesaj.getChars(*srcBegin=*0,*srcEnd=*4,letters,*dstBegin=*0) (** arasındaki ifadeler otomatik atanır elle yazılmaz)
+
+  srcBegin:Kaçıncı elemandan almaya başlayacağı
+  srcEnd:Kaçıncı elemanda bitireceği +1 (1den sayıyormuş gibi düşün)
+  dstBegin:Diziye kaçıncı elemandan atamaya başlayacağı
+
+	Not:Bu komut println içinde kullanılamaz
+
+6- dİsmi.indexOf ve dİsmi.lastIndexOf : Bu komutlar içine verilen karakterin/lerin stringde kaçıncı indexte olduğunu söyler
+                                        last adından da bilindiği gibi sondan normal olan ise baştan tarayarak gider  ama lastOf index numarasını yine baştan kaçıncı eleman olduğuna bakarak verir
+
+
+7- dİsmi.replace() : Bu komut stringteki değeri/leri değiştirmek için kullanılır 
+                     dİsmi.replace(oldChar,newChar) şeklinde tanımlanır içine 2 tane char değeri girilir.
+
+
+8-dİsmi.substring(): Bu komut belirli bir indeksten sonra kalan yeri yazdırmak veya iki indeks arasını yazdırmak için kullanılır. 
+                     dİsmi.substring(2) veya .substring(2,5) şeklinde tanımlanır. İlk verilen sayıdaki indeksten başlar ama son sayıdaki indeksi saymaz
+
+
+
+9-dİsmi.split() : bu komut stringi herhangi bir noktadan ayırmak ve bu değerleri bir dizide saklamak için kullanılır. Örneğin kelime kelime ayırmak için boşluk değeri verilmelidir.
+                  Kullanmadan önce yeni bir String dizisi tanımlamak gerekir.
+
+
+
+10-dİsmi.toLowerCase ve .toUpperCase : Bu komutlar verilen stringteki bütün harfleri büyük ve küçük yapar
+
+11-dİsmi.trim : Bu komut String başında ve sonunda fazladan boşluk varsa onları kaldırır.
+
+
+----Metodlar(fonksiyonlar)------
+
+1-Fonksiyonlar veri tipleri ile tanımlanır.Ve bu veri tipinin bir değer döndürmesi beklenir.
+  Bu konuya tek istisna olan veri tipi 'void' veri tipidir. Bu tipin bir değer döndürmesi beklenmez ve sadece içindekileri yapar
+
+2-Fonksiyonlar tanımlanırken parametre isteyen ve istemeyen olarak tanımlanabilir
+  
+ Java tanımlaması:1- public static int/double/void.. (){  
+
+			çalıştırılacak kodlar
+				
+		
+		   }
+
+--------------------------------------------
+		2- public static int/double/void.. (parametre1,parametre2...){
+
+			çalıştırılacak kodlar
+				
+			opsiyonel döndürülecek değer (return ..;)
+		   }
+
+3- Return ile değer döndüren fonksiyonların değeri bir değişkene tanımlanmalıdır(ekrana da yazdırılabilir) yoksa o fonksiyon gereken işlevi yerine getirmeyecektir
+
+
+
+
+4- Fonksiyonlara istediğimiz kadar veri göndermek buraya kadar bilmediğimiz bir noktaydı elimizle veri sayısını girdik ve çalıştırdık
+   Ama tanımlama yaparken Ör: public static int topla(int... sayilar) şeklinde 3 nokta koyup tanımlarsak girdiğimiz bütün değerleri içine alıp çalışacaktır
+
+  Not: Arka planda bu uygulamanın yaptığı şey girdiğimiz verileri array'a çevirmek oluyor
+
+
+
+
+------Classlar-----
+
+1-Classlarda metod sınıflandırmayı yapabilmek çok önemlidir
+  Classlar public/.. class isim şeklinde tanımlanır ve içine metodlarımızı sıralarız
+
+
+2- Class'ı koda tanımalamak için önce classİsmi değişken = new classİsmi(); yapılır sonrasında ise
+                                                            değişken.fonksiyon(); ile metodlar kullanılır
+
+
+
+3- Yeni tanımlanan bir nesne heap'de oluşur ve stackteki değişken ile birbirine referans numarası ile bağlanır
+   Eğer bir nesneye bağlı olan değişken yoksa bu nesne bir süre sonra silinir.(Pointer mantığı adresler etc.)
+
+ 4- Değer ve referans tipleri : Değer tipler birbirlerine bağlı değildir bir eşitleme söz konusu olduğunda işlem bittiği gibi aralarında bağ kopar ve birbirlerini etkilemezler
+				(Değer tipler stack'de tanımlanır heap ile alakası yoktur bu yüzden referans ile ayrılır.)				
+
+
+				Referans tiplerde bu durum böyle işlemez (Ör:Arraylar) bir eşitleme söz konusu olsa bile sonrasındaki değişimler birbirlerini etkileyecek ve aralarındaki bağ kopmayacaktır
+				(referans değerler heap'de oluşur bir eşitleme söz konusu olduğunda adresler eşitlendiği için aralarındaki bağ asla kopmaz ve bir önceki değişen değer kaybolur.)
+
+			Ör: int sayi1=10;
+			    int sayi2=20; ---> bu kod sonucunda sayi2 20 sayi1 50 olacaktır
+			    sayi2=sayi1;
+			    sayi1=50;
+
+			
+			Ör: int[] sayilar={10,20,30,40,50};
+			    int[] sayilar2={1,2,3,4,5};
+			    sayilar=sayilar2       ---> Önceki mantık ile bakarsak ilk dizideki değer 1 ikinci dizideki değer 100 olur
+			    sayilar2[0]=100;                  Ama burada aralarındaki bağ kopmadığı için ilk dizideki değerler 2. dizideki ile aynı olur. Yani ilk dizi ilk değer=100;
+
+
+-----OOP-----
+
+1- Kullanışlı olmadığı için diziler OOP'de kullanılmaz. Onun yerine objelerle çalışılır.
+2- Sınıf isimlendirmeler her zaman PascalCasing sistemi ile yapılır.
+
+3-Nesnelere id vererek özelleştirme ve birbirinden ayırma yapılır. Kimlik verme durumu gibidir.Karışıklık olmamasını sağlar
+
+4-Nesne isimleri ile dizi de tanımlanabilir...
+
+5-classİsmi değişken = new classİsmi(); yaptıktan sonra o nesne içinde tanımladığımız değişkenlere main içinde değer verebilir. Ve birden fazla özelliğe sahip bir nesne oluşturabiliriz
+
+6-Nesneleri atadığımız dizileri foreach döngüsü ile rahatlıkla kullanabiliriz
+
+ Not: int,double,String nasıl veri tipiyse nesneler de veri tipidir ve bunlarla DEĞİŞKEN tanımlanabilir.
+      
+     Ör: for(Product product : products){ System.out.println(product.name); } gibi bir kullanımın da varlığını unutmamamız gerek 
+
+
+	Ör: Product product1= new Product();
+  		product1.name="Lenovo 14";
+		product1.id=1;
+		product1.price=5200.4;
+
+	*Bu tarz bir tanımlama ile içinde bir sürü değer barındıran nesneler üretebiliriz.
+	* Bu tanımlamayı farklı olarak Product product1= new Product("Lenovo 14",1,5200.4); Şeklinde tanımlanabilir
+	  metodlarla sınıfların içine constructorlar eklenir ve bu görev arkada yaptırılır.
+
+
+7-Nesneler constructor yapısında ise bir şey tutması değil çalıştırması istenir.Tanımlaması yukarıdaki Class sekmesindeki gibidir.
+
+
+8- this. constructor tanımlamalarında kullanılır imza kısmından veri çekip eşitlemeye yardımcı olur. 
+
+
+-----------------------------------------------------
+	Ör: public Product(int id,String name,double unitPrice,String detail){
+		
+		this.id=id;
+		this.name=name;
+		this.unitPrice=unitPrice;               ----> Meal : this.'dan sonra yazılan değişken bu class içindeki
+		this.detail=detail;			      o değişken bu imzadan alınan şeye eşitlensin demek.
+
+		}
+	 int id;
+	 String name;
+	 double unitPrice;
+	 String detail; 
+------------------------------------------------------ 
+
+Not: this(); komutu o class'da bulunan parametresiz bir constructor'ı çalıştırabiliriz
+
+9-Aynı şeyi tanımlamak için 2'den fazla constructor varsa en fazla 1 tanesi çalışır.
+
+
+
+10- Class'ların türleri:
+
+	a.Field veya attribute yapıları : Bilgi tutan kısımdır
+	b. Constructor : işlem yapan kısımdır.
+
+
+
+
+
+11- Bir class'a veya değişkene private vermek o şeyi sadece tanımladığı blokta geçerlidir demek
+   ve bazı değişkenleri dışarıdan değil de bilgisayarın bulmasını istersek o değişkenleri read only yapmalıyız
+
+
+12-Encapsulation herhangi bir nesnenin metotlarını, verilerini ve değiskenlerini diğer nesnelerden saklayarak ve bunlara erişimini sınırlandırarak yanlış kullanımlardan koruyan bir konsepttir. 
+	Kontrolsüz veri girişini ve kötü amaçlı kullanımı önler.
+
+	Türleri: Public: Öğenin kod içerisinde herhangi bir yerden erişilebilir olduğunu belirtir. Herhangi bir kısıtlama vs. bulunmamaktadır.
+
+		 Private: Öğenin sadece tanımladığı sınıf içerisinde erişilebilir olduğunu belirtir.
+
+		 Protected: Öğenin tanımlandığı sınıf içerisinde ve o sınıftan türeyen sınıflardan erişilebilir olduğunu belirtir.
+
+		 Internal: Öğenin tanımlandığı assembly içerisinde erişilebilir olduğunu belirtir. O .dll içerisinde öğeye erişim konusunda kısıtlama yoktur fakat dışarıdan bu öğeye erişilemez.
+
+
+
+13-Getter ve Setter : Private yaptığımız değerlere dışarıdan ulaşmak için o class içinde public vTipi getId,getName...(){} tarzında bir tanımlama ile içeriden onu return ederek kullanabiliriz.
+		      Bu getter ile aldığımız değerler değiştirilemez ve sadece okunabilirler çağrıldıkları yerde.
+
+	Setter: Bu parametre ise private olan değerin kurulmasını , set edilmesini sağlar. o class içinde public void setId(int id){this.id=id;} tarzında bir tanımlama ile içindeki değer set edilebilir.
+		
+		Not: this. kullanmak yerine değerlerin karışmaması için field değşikeni başlarına "_" koyulabilir
+
+   Not: Getter okumak için Setter ise yazmak için kullanılır
+
+14-Constructorlar : Default olarak zaten bulunur. Tanımlaması class'ın kendi ismi ile yapılır
+ 
+   Ör: public Educator() {
+		
+	}
+   	 public Educator(int id,String name) {
+		
+    	
+    		this.id=id;			  	---> Bu yapıda newlerken değerleri veririz
+		this.name=name;
+
+
+	Not: Eğer iki constructor'ı da aynı anda kullanırsak buna overloading denir.
+
+15- Method overloading : farklı uygulamalarla aynı adda birden çok işlev oluşturma yeteneğidir. 
+ 			 Aynı isimde iki tane method oluşturulursa ve çalışmak için istedikleri değerler farklı olursa bu kod hata vermez
+			 Buna overloading denir ve hata vermemesinin sebebi parametre imzalarının farklı olmasıdır. Yani biri 2 değişken isterken biri 3 tane isteyebilir
+			 Veya bir tanesi int int int değer isterken diğeri int int string değer ister ve bu farkdan dolayı da method isimleri aynı olsa bile hata almayız
+
+
+
+16-Final ifadesi elemanların dışarıdan erişimini kısıtlar ve sadece constructor'da set edilebilir der koda. Yani setter ile set edilemez
+   Private ifadesi ile yine dışarıdan erişim kısıtlanır ama setter ile de set edilebilir.
+
+
+
+
+
+17-İnheritance: İki adet sınıfta bazı operasyonlar ortak ise kullanılır. super veya base class olarak da adlandırılır 
+		İki classda ortak olan değerler ve operasyonlar bir üst sınıfta toplanır
+		Tanımlaması ise Ör: public class IndivitualCustomer extends Customer {} şeklinde tanımlarız
+    				    public class CorporateCustomer extends Customer {}	 şeklinde iki sınıfa bir superiour class tanımladık ve ortak özelliklerini
+				    (id,costumerNumber,...) bu üst class'a tanımladık
+
+18-Polimorfizm dediğimiz olay methodlarda parametre olarak base/super class'dan değer istemek oluyor. Çalışma sebebi ise alt sınıflara extends edilen sınıf alt class'ların referansını tutabilir.
+
+
+
+19-Method overriding : Bir methodun üstüne yazmak demektir
+----Genel notlar----
+1-İsimlendirme ingilizce yapılmalı
+2-Değişken tanımlama yapılırken camelCase yapısı kullanılır.(Her kelimenin ilk harbi büyük sadece ilk kelimenin küçük.)
+3-Kodların tekrar ediyorsa o kod hatalıdır.
+4-Yazılan bir kod birçok yerde kullanılabileceği için o kod basit sade ve tek bir işe odaklı olmalıdır.          
+5-Solid isimlendirmesi yazılım prensibidir. 
+6-Koda yeni bir özellik geldiğinde eski kodu asla ama asla değiştiremezsin . Kodun yeniliğe açık olmalıdır.
+7-Bir iş yapan sınıf başka bir iş yapan sınıfı kullanacaksa asla ama asla somut(iş yapan sınıf) sınıftan gidilmez
+  Üst sınıf tanımlanır ve üst sınıflar tanımlanır
+
+ Not: String veri tipi Char dizisidir
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+1-Kullanıcıya seçenek sundu 
+2-Kullanıcıdan değer aldı 
+3-ilk seçenekle sorunsuz bir şekilde müşteri ekledi 
+4-İkinci seçenekle önceden girilen müşteri bilgilerini döndürüp ekrana çıkartacak
+5-Müşteri silme seçeneği ile de girilen herhangi bir müşterinin verilerini silecek

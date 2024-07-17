@@ -1,0 +1,378 @@
+
+
+1-Kurumsal mimariler için veritabanı yönetimi en az kodlamadaki solid'e uymak kadar önemlidir
+
+2-Sırf işimizi kolaylaştırmak için birbirine benzeyen iki nesneyi aynı tabloda atamak gelecekte veri bütünlüğünü bozar
+
+3- Ve veriyi yönetmek için de bütün ilişkileri koparıp ayrı ayrı yazmak da sıkıntıdır.
+
+4-Tablo isimleri çoğul olmalıdır ve İsimlendirme Pascal casing iledir
+
+5-Her tablonun bir id'si olmalıdır ve her yeni elemanda bir bir artmasını istediğimiz değişkenleri  ayarlayabiliriz
+
+6-Primary key o tablonun kimliğini tutan özel değerdir.Bir tablodaki değerleri diğer değerlerden ayıyır ve tekrarlanmamasını sağlar
+  Bir tabloda sadece bir tane primary key olmalıdır. 
+
+7-Foreign key başka bir tablonun birincil anahtarının bir diğer tablo içerisinde yer almasıdır.
+
+8-Primary key tablolar foerign key tablolar hakkında bilgi tutmaz
+
+9-Unique key primaryKey'e benzeyen ve bir datanın bir daha asla tekrarlanamayacak bir değer tutmak için kullanılır
+
+10- One to many ilişkisi bir varlığın bir şeye fazla sayıda sahip olabileceğini ancak o şeyin sadece tek kişiye ait olabileceğini gösteren ilişkidir
+
+11- Many to many ilişki :  Bir yazının birden fazla etiketi olabilir. Mesela bu yazıyı göz önüne alalım. Hep veritabanı, hem de yazılım ile etiketleyebilirim. Yani bir yazının birden fazla etiketi var. 
+			   Benzer şekilde her etiketinin mesela yazılım etiketinin içinde birden fazla yazı var. Yani karşılıklı olarak bire çok ilişki olduğu zaman tüm bunları tek bir çoğa çok ManyToMany ilişki olarak ele alabiliyoruz.
+	
+		
+
+----SQL Sorguları----
+
+1- Where kısıtlamalar için kullanılır 
+
+2- Select hangi sütunların getirileceğini seçer
+
+3- From ise nereden getirileceğini seçer
+
+4- and ve or terimleri 've' 'veya' işlemleri için kullanılır
+
+5- CRUD = Create=insert , Read=select , Update=update , Delete=delete olarak kullanılır
+
+6- insert kullanılımı : Ör: insert into city (Name,CountryCode,Population) values('Ankara','TUR',500000')
+
+7- update kullanımı : Ör : update city set Population=600000 where name='Ankara'  
+
+	Not: update kullanımı bütün veriyi etkileyebileceği için sql uyarı verir Biz Query olarak SET SQL_SAFE_UPDATES=0; şeklinde bu query'nin çalışmasını sağlayabiliriz
+
+8- delete kullanımı : Ör : delete from city where id= 4080
+
+9- Between operatörü hangi aralıkta seçeceğimi söyler Örnek : Select * from table Where column Between int1 And int2 == Where column>= int1 And column <= int2
+
+10- In operatörü içinde bulunması için kullanılır Örnek: Select * from table Where column In (data,data2,data3) == WHere column = data Or column=data2 or column=data3
+
+11- LIKE -> sonrasında gelen '%string%' in içinde geçtiği şeyleri arar --> % işareti boşluk koyulacağı yeri seçer Eğer Like M% dersek baş harfi M olanları getirir
+														  Eğer Like %M dersek son harfi M olanları getirir
+														  Eğer Like M%m dersek hem baş hem son harfi m olanları getirir Ortası önemsizdir
+12- ILIKE --> Like operatöründe büyük küçük harf önemli olmamaıs için kullanılır
+
+	Not: Eğer % işaretinii kullanmak istemiyorsak ve sadece tek bir karakter için yer tutmak istiyorsak _ işaretini kullanılırız
+
+		Örnek : Where column LIKE 'B_lal' şeklinde kullanılır 
+
+	Not: ~~ ifadesi LIKE anahtar kelimesine denktir
+
+	Not: ~~* ifadesi ILIKE anahtar kelimesine denktir
+
+13- DISTINCT -> Birbirinden benzersiz unique değerleri görmek için kullanılır Örnek : SELECT DISTINCT column* from table : O kolondaki birbirinden farklı değerleri sıralar
+
+14- Count ->  "SELECT COUNT(*) FROM table*" şeklinde kullanılır sorgudan sonra dönen satırları sayar
+
+15- ORDER BY -> sonrasında gelen şeye göre sıralama yapar sıralama yönünü değiştirmek için sonuna DESC eklenir ÖRNEK : ORDER BY length : Sorgunun sonuna yazılır
+
+16- LIMIT -> gelecek veriyi sınırlandırır Sorgunun en en sonuna yazılır
+
+17- OFFSET -> Veriyi görmezden gelecek sınırı ayarlar Örnek : OFFSET 5 : İlk 5 veriyi geçip sonrasını sıralar
+
+18-"SELECT AVG(sütun) FROM table*" : alınan sütunun ortalamasını alır
+			
+19-"SELECT SUM(sütun) FROM table*" : toplar
+			
+20-"SELECT MAX(*) FROM table*" : maximum'u verir
+			
+21-"SELECT MIN(*) FROM table*" : Minimum'u verir
+		
+Örnek: "SELECT name FROM table* Where price= (SELECT MAX(price) FROM table*)"	: şeklinde iç içe kullanım yapılabilir
+
+22- ROUND : İçine aldığımız değerin yanına int değer vererek float sayılarda virgül sonrası basamak sayısını kontrol edebiliriz
+
+	Örnek : SELECT ROUND(AVG(length),3) FROM film şeklinde yaparsaak virgülden sonra 3 basamak verecektir
+
+
+
+23- GROUP BY --> Bir değişkene göre gruplandırmak için kullanılır Örnek:SELECT first_name,COUNT(*) FROM actor GROUP BY first_name; Şeklinde bir kullanım ile isimleri aynı olan kişileri bir gruba sokarız
+
+	NOT: Eğer aggregate fonksiyonla beraber kullanıyorsak SELECTten sonra sadece groupBy 'da kullandığımız değişkeni gösterebiliriz
+
+	NOT: GROUP BY ile birden fazla değişken üzerinden gruplandırma yapabiliriz bu gruplandırdığı şeyler içinde bir tane daha gruplandırma yapacaktır
+
+24- HAVING --> gruplanmış verilere koşul sunmak için kullanılır ÖRNEK : SELECT replacement_cost,rental_rate,MIN(length) FROM film GROUP BY replacement_cost,rental_rate HAVING MIN(length) >50
+
+
+	NOT: WHERE satır bazlı filtre uygularken HAVING grup bazlı filtre uygulamak için kullanılır
+
+25- AS --> Takma isim vermek için kullanılır ÖRNEK: SELECT first_name AS isim, last_name AS soyisim FROM customer 
+
+	NOT: Birden fazla kelime verilecekse tırnak içinde kullanılır
+
+	NOT: AGG fonksiyonlarına AS ile değişken verilebilir
+
+26-> CONCAT() --> içine alınan sütun veya stringleri bir tabloya toplar ÖRNEK : CONCAT(sütun1," ",sütun2)
+
+27- MOD() ---> İçine koyulan 2 değerin modunu alır Örnek : MOD(5,2) bize 5'in 2 ile olan modunu verir =1
+
+---------------------------------VERİ TABANI CRUD-----------
+
+1- Tablo oluşturmak :
+
+	CREATE TABLE <tablo_adı> (
+    		<sütun_adı> <veri_tip> (kısıtlama_adı>,
+   		 <sütun_adı> <veri_tip> (kısıtlama_adı>,
+   		....
+		);
+
+	ÖRNek : CREATE TABLE author (
+  			id SERIAL PRIMARY KEY,
+ 			first_name VARCHAR(50) NOT NULL,
+ 		 	last_name VARCHAR(50) NOT NULL,
+ 		 	email VARCHAR(100)
+ 		 	birthday DATE
+		);
+
+
+	NOT: İki tablonun benzer yapıda olması için kullanılan söz dizimi CREATE TABLE table1 (LIKE table2)
+	NOT: İKi tablonun aynı verilerle kopyalanması için kullanılan söz dimizi CREATE TABLE table1 AS SELECT * FROM table2
+
+2- Tablo Silmek 
+
+	DROP TABLE (IF EXISTS) <tablo_adı>;  : Burada IF EXISTS yapısını kullanarak yanlış tablo ismi yazımı durumunda hata mesajı almayı önleriz.
+
+3- UPDATE DATA :
+
+	UPDATE <tablo_adı>
+		SET <sütun_adı> = değer, 
+   		<sütun_adı> = değer,
+   		 ----
+		WHERE <koşul_adı>;
+
+	ÖRNEK : UPDATE my_apps
+		SET name = 'Mayak',
+			price = '$5.22'
+		WHERE id = 2
+		RETURNING * ;
+
+	NOT : Query'den sonra değişikliği hemen görmek istersek RETURNING anahyar kelimesini kullanabiliriz
+	      RETURNING * bütün satırı getirir
+4- DELETE DATA :
+
+	DELETE FROM <tablo_adı>
+	WHERE <koşul_adı>;
+
+   Örnek:
+ 	DELETE FROM my_apps
+	WHERE name = 'Tresom';
+
+-----PK FK ---------------
+
+1- Foreign Key oluşturma
+
+	Örnek :
+	CREATE TABLE author (
+  			id SERIAL PRIMARY KEY,
+ 			first_name VARCHAR(50) NOT NULL,
+ 		 	last_name VARCHAR(50) NOT NULL,
+ 		 	email VARCHAR(100)
+ 		 	birthday DATE
+			book_id INTEGER REFERANCES book(id) şeklinde bir kullanımla arada ilişki kurulabilir
+		);
+
+
+
+2- ALTER komutu : ALTER anahtar kelimesini varolan bir tabloda değişiklik yapmak için kullanılır. Aşağıdaki senaryoda bir sütuna NOT NULL kısıtlaması vermek için aşağıdaki
+söz dizimi yapısı kullanılır.
+
+ Örnek:	ALTER TABLE <tablo_adı>
+	ALTER COLUMN <sütun_adı>
+	SET NOT NULL;
+
+  NOT : ALTER ile UNIQUE 
+	ALTER TABLE <tablo_adı>
+	ADD UNIQUE <sütun_adı> 
+
+
+3- CHECK komutu : Tablo oluştururken belirli kurallar koymaya yarar
+
+	Kullanım 1: 	CREATE TABLE Employees (
+   			 ---
+   			 age INTEGER CHECK (age>=18)
+    			----
+		    	);
+
+	
+
+	Kullanım2 :	ALTER TABLE <tablo_adı>
+			ADD CHECK (age>=18)
+
+
+4- INNER JOIN : İki tablodaki verilerin kesişim kümesidir. Herhangi bir tabloda diğerinin karşılığı olmayan veri gelmez
+
+	Kullanım: SELECT column_name(s)
+		  FROM table1
+		  INNER JOIN table2
+		  ON table1.column_name=table2.column_name;
+
+	Not: JOIN komutu deafult olarak INNER JOIN yapar 	
+
+
+
+       Örnek :  SELECT book.title, author.first_name, author.last_name
+		FROM book
+		JOIN author ON author.id = book.author_id;
+
+5- LEFT JOIN : söz dizimi INNER ile aynıdır. Kesişimleri ile beraber sol(ilk tablo FROM olan) taraftaki bütün verileri getirir
+
+6- RIGHT JOIN : söz dizimi INNER ile aynıdır. LEFT ile tek farkı sağ tarafa (RIGHT JOINden sonraki tabloya) öncelik tanıyıp sonra kesişimleri getirir
+
+7- FULL JOIN : söz dizimi yine aynı . Kesişim gözetmeksizin iki tablodaki hem kesişen hem de ayrı verilerin iki tablodaki hepsini getirir
+
+8- UNION sorgusu : Birden fazla sorgunun verisini aynı anda göstermeye yarar
+
+	Kullanım : (
+		   SELECT * 
+		   FROM book
+		   ORDER BY title
+		   LIMIT 5
+		   )
+		   UNION
+		   (
+		   SELECT * 
+		   FROM book
+		   ORDER BY page_number DESC
+		   LIMIT 5
+		   );
+
+ 	NOT : UNION sorgularında kesişimdeki verilerden sadece 1 tanesi gösterilir kaç kez tekrar ediyorsa hepsini görmek istiyorsak UNION ALL anahtar kelimesini kullanılır
+	NOT!!!!! : UNION sorgularında sütun sayıları aynı olmalıdır (Satır değil :))
+	NOT!!!: UNION sorgularında WHERE sorgularından dönen değer aynı tipte olmalıdır int-int varchar-varchar ...
+
+9- INTERSECT : Birden fazla yapılan WHERE sorgularından dönen ortak verileri getirir
+
+	NOT: Tekrar edenleri göstermez INSERSECT ALL ile bütün sonuçları görürüz
+
+Kullanım:SELECT <sütun_adı>, <sütun_adı>...
+	 FROM <table1>
+	 INTERSECT
+	 SELECT <sütun_adı>, <sütun_adı>...
+	 FROM <table2>
+
+	NOT: UNIONdaki kurallar geçerli
+
+
+10- EXCEPT : 2 tane yapılan sorguda birinci sorguda olan verileri ikinci sorguda göstermez. Yani kesişimleri haricini gösterir
+
+ Örnek:	SELECT <sütun_adı>, <sütun_adı>...
+	FROM <table1>
+	EXCEPT
+	SELECT <sütun_adı>, <sütun_adı>...
+	FROM <table2>
+
+
+	NOT: UNIONdaki kurallar geçerli
+
+11- ANY operatörü : Alt sorgudan gelen herhangi bir değer koşulu sağlaması durumunda TRUE olarak ilgili değerin koşu sağlamasını sağlar.
+
+	Örnek: 	SELECT first_name, last_name
+		FROM author
+		WHERE id = ANY
+		(
+ 		 SELECT id
+ 		 FROM book
+  		WHERE title = 'Abe Lincoln in Illinois' OR title = 'Saving Shiloh'
+		)
+
+		Not: Yukarıda görmüş olduğunuz gibi alt sorgudan gelebilecek potansiye iki id değeri var, bu id değerinin her ikisi de birbirinden bağımsız olarak ana sorgudaki
+	             id sütununda bulunan değerler ile eşleştiği için sorgu sonucunda oluşan sana tabloda id değeri 4 ve 5 olan yazarlara ait first_name ve last_name değerlerini
+		     göreceğiz.
+
+12- ALL operatörü :Alt sorgudan gelen tüm değerlerin koşulu sağlaması durumunda TRUE olarak döner.
+
+	Örnek : SELECT first_name, last_name
+		FROM author
+		WHERE id = ALL
+		(
+  		SELECT id
+  		FROM book
+  		WHERE title = 'Abe Lincoln in Illinois' OR title = 'Saving Shiloh'
+		)
+
+		Not: Burada ne söylemiştik alt sorgu tarafından 4 ve 5 id leri gelecek burada eştlik olduğu için aynı anda 4 ve 5 in bu şulu sağlaması olanaksız olduğu için
+		      herhangi bir değer dönülmeyecektir.
+
+NOT : JOINLER ard arda kullanılıp birden fazla tablo bağlanabilir
+
+
+
+Not: FROM yazılmadan kullanılan SELECT cümleciği print yapısına döner
+
+
+
+
+
+
+
+
+     -----Veri tabanına Bağlanma-----
+
+
+1- static bir string içine username password ve url tanımlanır
+
+2- Connection class'ından bir nesne çağırılır ve başlangıç değerine null verilir
+
+3- try içinde connection = DriverManager.getConnection(dburl,username,password); değerleri verilir
+   catch içinde sqlexception bulunur
+   finally içinde de connection.close bulunur
+
+4- Genel anlamda bir class'ın içinde Connection tipinde bir metodun içinde kullanılır
+
+
+5-Sorgu kodlarının javada çalıştırılması : 
+
+	a. Statement class'ından nesne çağır
+	b. ResultSet class'ından nesne çağır
+	c. statement değerini connection'dan gelen .createStatement() metoduna eşitle
+	d. resultset değerini statement'dan gelen değişkenin statement.executeQuery(Sorguyu ver) metoduna eşitle
+	e. while döngüsü içinde resultset.next() metodu ile satırları kontrol ettir
+	f. while içinde istediğin değerleri yazdır
+
+6- Resultsetin nesnelere tanımlanması
+
+	a. Nesne tanımla
+	b. Field'larını ver
+	c. Nesne türünde bir Arraylist tanımla
+	d. Liste içine değer eklerken yeni veriyi listeİsmi.add(new Nesne(resultset.getString(Value),resultset.getString(value))) şeklinde aktar
+	e. Arraylist'i while dışında tanımladığından emin ol
+
+7- Insert çalıştırma :
+
+	a. connection oluştur
+	b. PreparedStatement class'ından nesne çağır
+	c. pstatement değerini connection'dan gelen .prepareStatement(insert sorgusu) metoduna eşitle
+	d. statement.executeUpdate() metodunu çalıştır
+	e. Eğer values'i ? olarak bırakırsan kullanıcıdan aldığın değerler ile doldurabilirsin
+	f. statement.setString(kaçıncı?,değer) olarak ver (setInt tarzında diğer veri tipleri de vardır)
+
+8- Update çalıştırma :
+	
+	a. Bir stringe query'ni ver
+	b. preparedstatement'a aktar
+	c. statementexecuteUpdate() ile çalıştır
+	
+	
+9- Delete çalıştırma :
+
+	a. Bir stringe query'ni ver
+	b. preparedstatement'a aktar
+	c. statementexecuteUpdate() ile çalıştır
+	
+		
+
+
+Not : OLTP veri tabanlarına bak
+Not : Bir kolon ya nullable ya da değildir
+
+
+
+----------------------------SQL PYTHON--------------------
+
+
+
+

@@ -1,0 +1,247 @@
+-- 8 Mayıs 2021 --
+
+1-Spring initializr ile projeleri oluşturuyoruz
+
+2-anatasyonlar:
+
+3- grpc
+
+
+
+-----Core------
+
+  -----Bean-------
+1-Context ayarlarını resource kısmında bir xml dosyası içinde hallediyoruz bean configuration file ile 
+
+
+2-@Configuration anatasyonu ile bir class'ı içine bean koyduğumuz konfigürasyon dosyasına çevirebiliyoruz
+
+  Bir method yazıp bu meotodun return'unde dönmesini istediğimiz class'ı veriyoruz ve başına @Bean koyduktan sonra ise bunu kullanabiliyoruz
+
+
+    Main içinde : ConfigurableApplicationContext dManager = new AnnotationConfigApplicationContext(AppConfig.class);
+		
+		DatabaseManager dManager2 = dManager.getBean(DatabaseManager.class);
+		
+		dManager2.closeConnection();
+		
+		
+		dManager.close(); 
+-------------------------------------------
+	Class İçinde: @Configuration
+	public class AppConfig {
+
+		@Bean
+		public DatabaseManager databaseManager() {
+		
+		DatabaseManager databaseManager2 = new DatabaseManager();
+		return databaseManager2;
+		}
+	}
+
+
+	Not: Büyük projelerde nesne yönetimini kolaylaştırmak için kullanılır
+
+3- Bean Factory ile nesne oluşturmak için kullandığımız base ve abstract classlar :
+   Ben Factory,AbstractApplicationcontext,ApplicationContext ve ConfigruableApplicationContext(En çok kullanılandır) dir.
+   Oluşturmalar diğerleri ile benzerlik gösterir
+
+ 	Örnek :  AbstractApplicationContext applicationContext = new ClassPathXmlApplicationContext("applicationContext.xml");
+	    	 DatabaseManager databaseManager2 = configurableApplicationContext.getBean("DatabaseManager",DatabaseManager.class);
+
+ 	Not: Bean Factory'nin az kullanılma sebebi içinde close metodu olmamasıdır. XML dosyasının okunduktan sonra kapatılması önemlidir
+
+
+4- Oluşan nesnelerin field değerlerini de xml dosyasından verebiliyoruz ve spring bunu okuyarak değer veriyor yani biz burada setter ile uğraşmıyoruz
+   XML içinde oluşturmak içinde şu şekilde tanımlanır .
+
+	<bean id="isim" class"class dosyası">
+
+ 		<property name="field ismi" value="değeri">
+	
+		</property>
+	
+	</bean>
+
+  Not: Aynı şeyi class içinde oluşturup method içinde değerleri set edebiliriz. getBean Methodunu çalıştırdığımızda sistem kodumuzda @Bean anotasyonuna sahip bir veri arıyor
+
+
+5- Eğer bean'leri oluşturacağımız nesnenin Constructor'ı ile çalışmak istersek XML dosyasında <constructor-arg name="dİsmi" value="değer"></constructor-arg> elementlerini kullanırız
+
+	Bunun dışında kullanılan İndexYöntemi ise <constructor-arg index="0" value="değer"></constructor-arg> constructor içindeki elemanlara sıra ile değer verir ve index olarak artar
+
+	Eğer biz bunu class içinde kullanmak istersek sadece fieldlar ile constructor ayarlarız
+Not: Bir class'ın birden fazla Bean'i oluşabilir ve bu bean dosyaları id'si üzerinden ayrılıp değer alır ve çalışır
+
+6- Bean'ler ile object injection yapılabilir .
+
+7-Inner bean'ler bir bean sadece üst bean tarafından görülsün ve kullanılsın istersek uygulanan bir yöntemdir. Diğer Beanler ınner bean'i göremez
+
+
+----Collection-------
+
+1- Koleksiyon veri türleri : 
+ 
+	a.List<type> : XML içinde property üzerinde sadece ismini vererek alt <list></list> tagları arasında <value></value> tagları içinde elemanlarını verebiliriz
+	b.Map<type,type> : XML içinde property'de yine sadece ismini vererek <map></map> ana elementi arasında <entry key="" value=""></entry> tagları içinde key ve value değerlerini veririz
+	c.Properties : Değerlerini yine propert-name>props>prop-key taglarından sonra prop elementleri arasında değerleri verebiliriz
+
+
+2-Alias : Bean'lere verilen takma addır normalde sadece id değeri ile çağırırken artık alias ile de beanler'den nesne oluşturabiliriz
+
+3-Autowiring : XML dosyası içine <bean> tagında id ve class değerlerinden sonra belirtilir
+		ByName ile autowire : Sadece değişke isimleri uyuşursa autowire eder
+		Bytype ile autowire : Karar yapısı biraz daha ilkeldir. Sadece istenilen veri tipinde bir değer görürse autowire eder
+		Constructor ile autowire : Eğer autowire edilecek constructor içindeki değer kodda varsa direkt enjekte ediyor
+
+4-İnheritance : Oluşturduğumuz bir bean'in diğer bean'lerin içine değerlerini aktarmak istiyorsak alt bean'lerin içine tanımlarken id ve class dışında parent="beanid" vererek inherit etmiş oluyoruz
+		ve eğer base bean'in nesnesini oluşturmak istemiyor isek abstract="true" diyerek onu soyutlayıp nesne oluşturmasını yasaklayabiliriz
+
+	Not: Child bean'lerde liste gibi değişkenlerimizi override edebiliriz ve list override ederken de listenin diğer elemanlarının kalıtılması için <list merge="true"> deriz
+
+	Not: İnheritance'ın anatasyonu yoktur
+
+5-Initialization : Bir bean oluştururken çalışmasını istediğimiz bir method varsa  @Bean(initMethod = "methodismi") tanımlamasını kullanarak
+		   Kontrol tarzında şeylerimizi Bean'in içi çalışmadan halledebilirz
+
+
+
+6-Destruction : Beanfactory açıldığında çalışan methodları initialization ile tanımladık şimdi ise kapanırken 
+ 		hangi method çalışacak onun için Destruction kullanacağız
+
+		destroy-method(XML)/destroyMethod(Class)="methodismi" ile tanımlanır
+
+7-BeanFactoryPostProcessor : Bir bean oluşturma aşamasında iken implement edilir ve içindeki metodu implement ettiğimizde belirli bilgileri alabiliriz
+			     Config dosyası okunurken çalışır.
+				
+			   Ör: bean sayısı tarzında bilgiler
+
+8-BeanPostProcessor : Bir bean başlamadan önce ve bittikten sonra yapılacak şeyleri yaptırabilir
+		      İmplements edildiğinde after ve before olarak 2 tane method verir ve içini doldururuz.		    
+
+
+
+9- PropertyPlaceHolder : Dışarıdaki properties dosyalarını okur
+	
+	a.XML dosyasında okunurken bean açacağız ve class'ına PropertyPlaceHolderConfigurer değerini vereceğiz
+	  ve property'sine name="location" value olarak da properties yolunu veya ismini verecektik. Eğer birden fazla dosya verecek isek
+	  name'i locations olarak yapıp içine list olarak birden fazla dosya verebiliriz
+
+      Not: Devamında ise bu property'nin içinden dosya çekeceğimiz bean'lerde value'lerine property'lerdeki değeri vereceğiz
+	  Örn: <bean id="database" class="com.proje.model.Database">
+		<property name="url" value"${url}"></property>     ------> Burada süslü parantez içinde verdiğimiz değerler appContext dosyasında tanımlı olan properties dosyasından çekilecek
+			</bean>
+
+	b.Class yoluyla yaparken de @Configuration anatasyonu sonrasında @PropertySource(value="dosya yolu/ismi") anatasyonu vererek hallediyoruz sonrasında ise değişken tanımlarken @Value(${url}) veriyoruz
+	  PropertySources kullanırken de ({arasında @PropertySource(value="dosya yolu/ismi") bunları yazıyoruz })
+
+** :Kullanım amacı bir appContext dosyası çok büyük olduğunda içindeki verileri değiştirmek zor olacağı için biz bu değerleri dışarıda bir properties dosyasında tutup çekerek kodu daha esnek hale getiriyoruz
+
+Not: Classlarda her bir property için değişken tanımlamak sıkıntılı bir süreç olacağı için Springde tanımlı olan Enviroment Interface'ini kullanırız. Bu ınterface üzerinden tanımlanan değişken bütün property değerlerini tutup sonradna çekmemize yardımcı olabiliyor
+	Başında ise @Autowired kullanıyoruz. ve değer atayacağımız zaman this.enviroment.getProperty komutu ile içindeki verileri alıyoruz
+
+
+10- Interface class ilişkisi ve spring : main içinde XMl dosyasından classları okuduktan sonra eğer biz DatabaseManager dManager2 = dManager.getBean(DatabaseManager.class); by tanımlamayı interface üzerinden yaparsak kodumuz çok daha esnek olur
+    OrtakInterface dİsmi= applicationContext.getBean("id değeri",class türü.class); şeklinde yapılıp sadece id değeri ve class türü değiştirlerek tek satırda değişim yakalanır
+
+
+11-Required : Private tanımadığımız durumda bu class'ın set metoduna @Required anatasyonunu ekleyerek zorunlu hale getiririz
+              Girilmediği takdirde ise hata verir. Ek olarak spring dosyasının bunu okuyup hata verebilmesi için bizim ayrı bir bean olarak RequiredAnnotationBeanPostProcessor classını çağırmamız gerek
+
+12-Autowired : Arkada otomatik bağlama yapar 
+
+13-Component : İçinde set edilmeye ihtiyaç duymayan değerler olan classları bean olarak tanımlayıp boş bırakmak yerine başına @Component yazarak o class'ın bean'ini oluşturabiliriz
+		
+		Not: XML Dosyasında her anatasyon için ayrı bir bean oluşturmak yerine context namespace'ini aktif edip <context:annotation-config></context:annotation-config> şeklinde bazı anatasyon kontrollerini yapabiliriz
+		     Component tarzzında anatasyonları tanımak için ise  <context:component-scan base-package="hangi pkaet içinde olduğu"></context:component-scan>
+
+		     Class içinde tanımlamalarda @ComponentScan(value="package ") olarak kullanılır.
+
+		NOt: Component tanımlanan sınıflar Id değeri olarak kendi isimlerini alır 
+
+14- Message source : Dil değişimleri için kullanılır resources içinde txt dosyasına yazılı içindeki mesajlar
+		     Bean içinde ise class olarak ResourceBundleMessageSource kullanılır. ID gelenek olarak messageSource'dur içine propertyler verilir
+		
+		     Main içinde XMl okunduktan sonra mesaj bir değişkene tanımlanır getMessage fonksiyonu ile
+	             Sonrasında mesaj çıktısı alınabilir.
+	
+		     Appconfigde tanımlanırken MessageSource türünde bir fonksiyon tanımlayıp onu RBMS olarak newleyip göndeririz değerlerini set edip
+
+
+15-Event , Publisher , Listener : Event bir olaydır(Email gönderme) ve Event classı tanımlarken sonuna Event ekleriz(UserSendMailEvent) ve springin bunun event olduğunu anlayabilmesi için ApplicationEvent class'ını extend ederiz
+	
+				  Publisher bu eventi yayınlayan kısımdır ve classı tanımlarken sonuna Publisher ekleriz.(UserSendMailPublisher) ve içine ApplicationEventPublisher türünde bir değişkeni tanımlarız.Component anatasyonu kullanılarak bean'i oluşturulmalıdır
+
+				  Listener ise bu eventi dinleyen ve sonuçlarına göre çalışan yapıdır. class tanımlarken sonuna Listener ekleriz(UserSendMailListener) ve springin bunun listener olduğunu anlayabilmesi için ApplicationListener<EventBildirisi> interface'ini implement ederiz. Cmponent anatasyonu kullanılarak bean'i oluşturulmalıdır
+
+16- AOP : Kodda esneklik sağlamak için yapılır eğer bir metod birden fazla metod kullanıyor ise ana görev metodunu tutup diğer metodları AOP ile uzaktan devreye sokabiliriz
+	
+	Not: APPConfigde @EnableAspectJAutoProxy olarak tanımlanır en üstte
+	Not: İki tane dependency var
+	Not: @Aspect anatasyonu ile AOP classlarını springe gösteriririz
+
+
+17- AOP Before : @Before anatasyonu ile öncesinde çalışmasını istediğimiz metodun üstüne tanımlarız.
+		 içine value olarak "execution classYolu,Tipi(public void com.proje.repository.ProductRepository.saveProduct(*))" değerini veririz
+		 ayrıca biz bu tanımlamayı yaparken içine bazı noktalara * koyarak birden fazla yerde çalıştırabiliriz
+
+		 !! * = içine değer alabilir !!
+		 !! .. = içine değer aladabilir almayadabilir!!
+			
+	
+18- AOP After : Before'a benzer olarak tanımlanır her şey geçerlidir sadece sonrasında çalışır metodlar
+
+19- AOP PointCut : Metodlara @Pointcut anatasyonu ile tanımlanır içine value olarak before veya afterdaki value değeri verilir  .
+		   Kullanım amacı before ve after için kullanılan yollar uzun ve veri tekrarı olduğu için bunu pointCut ile bir fonksiyona tanımlayıp oraya gönderiyoruz.Değişken atamak gibi
+
+		 	Ör: @Pointcut("execution (public void com.proje.repository.ProductRepository.saveProduct(*)")	
+			    public void metodİsmi(){}
+
+				after metodunda ise --> @Before("metodismi()") şeklinde kısaca value verebiliriz
+
+	!!!!!NOT: before ve after tanımlarken within metodu ile bir class'daki bütün fonksyionlara tanım yapabiliriz
+		  ör: @Pointcut("within (com.proje.repository.ProductRepository)")
+	
+19- AOP Joinpoint : Advicelar(before after)'a parametre olarak Joinpoint interface türünde bir değişken vererek mesajlarımızda bunun toString metodunu çalıştırırsak bize hangi metodun çalıştığını söyler
+		    Kullanımda hangi metodlar çalıştı onu anlamaya yardımcı olur
+
+		   getKind metodu ile hangi türden işlem yapıldığına bakabiliriz (execution ..)
+		   getSignature metodu ile de adresleri alabilirz metodların
+		   getTarget metodu ile hangi class'daki metod çalıştı onu söyler
+
+20-AOP After Return : @AfterReturning anatasyonu ile tanımlanır genelde return değeri olan metodlarda kullanılır
+		      içine pointcut="execuiton metodYolu" , returning="isim" değerlerini alır returning içine o metodun döndürdüğü tipi alır
+		      ve afterReturn Class'ına joinpoint gibi o class türünde returning'deki isme sahip bir değişken veririz ve metod içinde o veriyle uğraşabiliriz
+
+21-AOP After Throwing : @AfterThrowing anatasyonu ile tanımlanır içine pointcut,throwing="exception" değerlerini alır metoda da en Base hata sınıfı olan RunTimeException değişkeni tanımlarız
+		        Kullanım amacı hata fırlatıldıktan sonra yapılacak şeylerdir
+
+22- AOP Around : @Around anatasyonu ile tanımlanır . içine value olarak pointcut veya execute yolunu veririz
+		 Sonrasında metod içine takibi kolay olsun diye ProceedingJoinPoint tipinde bir değişken verip metod içinde metodlarını çağırabilirz
+		 Bu tipin sahip olduğu .proceed metodu ile direkt olarak before after gibi çalıştırıp try catch içine alıp hatasını da verebiliriz
+		 Özet olarak bütün işi içinde yapabileceğimiz bir kısım
+
+23- AOP Special(Özel) : Kendimiz new Annotation tanımlayıp advice metodlarımıza bu anatosyon yolunu vererek sadece o anatasyonu belirli yerlere tanımlayarak before after işlemlerini ayarlayabilirz
+		        Bu yapacağımız olay bizi sürekli yeni tanım yapmaktan kurtarır
+	
+		 	 Örnek: @Around("@annotation(Yol)")
+
+24- Import : <import /> tagıyla içine resource vererek xml dosyalarını birleştirebiliriz
+
+	     Anatasyon yolu ile yapılması da @Import anatasyonuna value değerlerini vererek hallediyoruz
+
+Not: nesne döndürecek methodlar interface ile tanımlanabilir	
+
+Not: Javada throw new Hataİsmi(String message) komutu ile hata fırlatabiliriz
+
+
+
+-----JDBC--------
+
+1- JDBC bize veritabanına bağlanmak için sunulan pakettir
+   İstenilen databse'e bağlanmak için jdbc'ye bir driver sunulur
+
+
+----API Yazma-------
+
+1-

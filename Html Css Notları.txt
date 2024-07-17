@@ -1,0 +1,244 @@
+15.04.2021
+
+1- <!DOCTYPE html> komutu : html5 ile çalışacağımızı söylüyor dökümana.
+
+2- <html> - </html> : Yazmış olduğumuz kodların istemci tarafından okunabilmesi ve tanınması için kullanılır bütün kodları kapsar.Baş komuttur.
+                       <html lang="en"> komutu bize hangi dili kullanan insanların arama motorlarında öncelikli çıkacağını söyler tr=Türkiye etc.
+
+3- <head> - </head> : Kod yazmadan önce bilgilendirmelerin verildiği yerdir
+
+4- <meta ....> : <meta charset="UTF-8"> komutu bize türkçe rusça arapça vb harflerin kullanılabilmesini sağlar
+                 Ve bu komutu diğer bilgileri vermek için kullanırız.
+
+5-Yorum satırı kullanmak için <!----> komutu kullanılır
+
+6- <title>....</title> : Sekme adının gözüktüğü yerdir sayfada görünmediği için head etiketi altında bulunur.
+
+7- <body> - </body> : Sayfada görünmesini istediğimiz her şey bu alanın içerisinde yazılır
+
+Örnek taslak:
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+
+</body>
+
+</html>
+            
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+8- <h1,2,3,4,5,6> - </h1,2,3,4,5,6> : Sayfada kuallnılan başlıkların ayarlanması için kullanılır. h1'den h6'ya gittikçe baaşlık küçülür.
+   Not: h1 etiketi arama motorlarının sonuçlarında bulunması için de kullanılır
+
+9- <p> - </p> : Paragraf etiketidir. Yazacağımız yazıları genelde bu etiket içinde yazarız
+
+10- <a href="herhangibirlink" (komut) > ... </a> : Komutu içine yazacağımız yazının üstüne tıkladığımızda o sayfaya gönderen bir etikettir.
+     Not: target=".." fonksiyonu ise bu etikette sekmenin nerede açılacağını belirtir. Komut ile belirtilen noktaya yazılır. _blank komutu ile yeni sekmede açılır.
+
+11- <br> : Break Row -->Bir satır atlamak için kullanılır. (endl; gibi bir şey sanırım)
+
+12- <img src="" width= "" height="" alt="" title=""> : Fotoğraf koymak için kullanılır. Src kaynak ister , width genişlik ayarlaması , height yükseklik ayarlaması sağlayan komuttur.
+                                              alt komutu ise (alternative) fotoğraf bulunamadığında onun yerine fotoğrafı açıklamak için yazılan yazıdır.
+                                              title komutu bize fotoğrafın üzerine geldiğimizde ekrana çıkacak yazıyı veren komuttur
+
+  Not: genişliği kaç oranında arttırır veya azaltırsak boyu da o oranda otomatik olarak artar veya azalır manuel olarak ayarlanması çoğunlukla gerekmez
+       aynı durumun tersi yükseklik ayarlandığında da geçerlidir.
+ 
+  Not: Eğer kaynak index dosyası ile aynı dosyada değil ise bir önceki klasöre git demek için "../images/sdhsakjd.jpg" tarzında bir komut verebiliriz
+       .. komutu bir önceki dosyaya gider.
+
+  Önemli Not: index.html dosyası default olarak ilk okunur. bir url'ye gidildiğinde okunacak ilk sayfadır.
+  Bayağı önemli not: Bu kaynak kodları başka bir sunucuya ya da bilgisayara taşınabileceği için direkt olarak fotoğraf yolunu C:\Users\Bilal\YandexDisk\Ekran görüntüleri tarzında yazmayıp
+                     ../images/skdjas.jpg tarzında yazarız.
+
+
+13- Absolute path = Mutlak yoldur değişmez. Örnek: <a href="www.google.com"> - </a>
+    Relative path = Değişken bir yoldur değişikliklere uyması için tasarlanır. Örnek: <img src="../images/asdfg.jpg>
+
+
+14- <hr> : boydan boya bir çizgi oluşturur.
+
+15- <pre> - </pre> : Bu etiket içinde yazılan şey nasıl görünüyorsa siteye o şekilde aktarır içerisinde <br> kullanılması gerekmez.
+
+16- Etiket içinde stil değişimi yapmak için style="" komutunu kullanırız. 
+    Örnek <a style"color:red;background-color:yellow;">
+    Örnek <p style="font-size: 32px;font-family: Verdana;">
+    style="text-align:center;": Bu komut etikette arasına aldığımız resimleri ve yazıları ortalar
+    style="border:3px" tarzında bir komut etiketin etrafına çizgi çeker
+
+Not: font-family'de default olarak serif fontu kullanılır
+
+
+17- Tablo oluştururken içinde kullanılabilecek komutlar:
+
+border:Dış kenar çizgi kalınlğını belirler
+
+width:Tablonun piksel olarak genişliğini belirler.
+
+heigth:Tablonun piksel olarak yüksekliğini belirler.
+
+bordercolor:Tablonun  çizgi rengini belirler.
+
+bgcolor:Tablonun arkaplan rengini belirler
+
+align: Veriyi yatay olarak hizalamak için kullanılır. left:sola , right: sağa , center:ortaya hizalar.
+
+valign:Veriyi dikey olarak hizalamak için kullanılır.top:üste , bottom:alta , middle:ortaya hizalar.
+
+align ve valign birarada kullanılabilir.Mesela üste sağa hizalamak için <td align=”right” valign=”top”>.....</td> kullanılır.
+
+Satır birleştirmek için colspan özelliği kullanılır. ör: colspan=”3″ i yanyana olan üç hücreyi birleştirir.Sütun birleştirmek  için rowspan özelliği kullanılır. ör: rowspan="5" i altalta olan beş hücreyi birleştirir.
+
+Tablo oluştururken hücre verilerini başlık olarak yazmak için th etiketi kullanılır.<th></th> etiketi arasına yazılan hücreler başlık olarak yazılır.
+
+Tablonun üstüne başlık eklemek için thead etiketi kullanılır.Tablonun altına veya üstüne ikinci bir başlık eklemek için caption etiketi kullanılır.
+
+Tabloda hücreler ile dış kenarlık arasında boşluk bırakmak istiyorsak cellspacing özelliğini kullanabiliriz.
+
+Tabloda hücreler verileri  ile kenarlık arasında boşluk bırakmak istiyorsak cellpadding özelliğini kullanabiliriz.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+
+18- <link> : Sekme kısmında görünecek şeyleri ve link kısmını değiştirmeye sağlar 
+    örnek: <link rel="shortcut icon" type="image/x-icon" href="fotoğrafKonumu" >
+
+
+19- <span> - </span> : Default olarak boştur ama belirli bir kısımda değişikilik yapmak için kullanırız
+
+20- <b> - </b> ve <strong> - </strong> : Arasındaki yerleri kalın yazan iki etikettir. Farkları ise strong arama motorlarının ilgisini çeken bir etikettir.
+
+21- <i> - </i> ve <em> - </em> : İtalik yazı yazar.Farkları <em> SEO'ya daha uygundur.
+
+21-<mark> - </mark> : İçindeki yazıyı highlight eder.
+
+22- <small> - </small> : Yazıyı küçültür.
+
+23- <del> - </del> : Arasındaki yazının üstüne enine bir çizgi atar
+
+24- <ins> - </ins> : Bu etiket içindeki yazının değişken olduğunu ve güncellendiğini anlatır.
+
+Not: style="text-decoration:none;" komutu etiketlerin görünen etkilerini kaldırır
+
+25- <sup> : x^2'yi düzgün yazar.
+
+26- <sub> : H2O'yu düzgün yazar.
+
+26.b- <q> </q> : Arasındaki yazıyı " " arasına alır
+
+26.c- <blockquote cite="url"> </blockquote> : İçine yazılan paragrafın hangi siteden alıntılandığını belli eder
+
+26.d - <bdo dir="rtl"> </bdo> : Arasındaki yazıyı soldan sağa yazar
+Not: style ile renk vermek için rgb değerlerini kullanabiliriz (x,y,z) hepsi 0 ve 255 arasında değer alır ve sıra ile kırmızı yeşil mavi renklerini temsil eder.
+
+--------------------------------------------------------------------
+
+27-Yazıya stil vermenin 3 yolu :
+  
+   a. etiket içinde vermek. Örn: <p style="color: red;">...</p> (İnline style)
+
+   b. style etiketi içinde vermek. Örn: <style>  p{ color:green; } </style>(Açılacak bütün <p> etiketlerindeki yazılar özel olarak belirtilmediği sürece yeşildir.) (internal style)
+
+   c. Dışarıdan aktarma
+
+28- <code> - </code> : Bu etiket altında kodsal bir görünüm sağlanır. Ve Motorlara burada kod var mesajı verir.
+
+
+29- <kbd> - </kbd> : Klavye girişlerini burada belli ederiz. Vurgu için kullanılır. Kullanmasak da olur boş iş gibi duruyor.
+
+30- <samp> - </samp> : Bir kod çıktısı var burda diyor Arama motorlarına (Tıklanma kasmak için yollar kullanıladabilir sanki xd)
+
+
+31- <table> </table> : Tablo oluşturur yukarıdaki 30 tane özellik bunun içine yazılabiliyor (Madde 17)
+
+32- <tr> </tr> : Tablo içinde satır oluşturur.
+
+33- <th> </th> : Tablo başlığı almamızı sağlar
+
+34- <td> </td> : Satırlara girdi girer.
+
+Not: Tablo oluştururken eğer bir başlığın diğerlerinden daha fazla bölüme sahip olmasını istersek o <th> içine colspan="x" komutu ile x kadar boşluk yaratırız ( sütun birleştirir )
+     Aynısını rowspan="x" ile yaparsak da satır birleştirir
+
+35- <a> etiketinin href komutunda href="mailto:xsdasdsad@gmail.com" ile bu kişiye mail gönderilmesini sağlayan yere yönlendirebiliriz.
+
+---Listeler---
+
+36- <ul> </ul> : Noktalı liste oluşturur.
+37- <ol> </ol> : Sayılı liste oluşturur.
+38- <li> </li> : açılan listeye eleman tanımayı bu etikette yaparız
+
+
+---Formlar---
+
+39- <form> </form> : Form oluşturur 
+  Not: <form action="link" kısmında gireceğimiz linke bu formlardan gelen datalar gider ve biz backend kısmında bu verileri alırız
+
+40 - <input> : Formun çıkışını sağlamaya yarar Örn: <input type="submit" value="Gönder">
+             Örn: <input type="text" id="ad" name="ad" placeholder="Adınızı giriniz.."> ( isim ister)
+             Örn: <input type="radio" id="erkek" name="cinsiyet" value="erkek"> (Cinsiyet ister)
+             Örn: <input type="checkbox" id="ders1" name="ders1" value="Matematik">
+                      . 
+                      .
+                      . 
+               ile devam ederek bir checkbox oluştururuz.
+
+Not: input etiketine required komutunu girersek orayı doldurmak zorunlu olur.
+
+41- <label> </label> : etiketi, form kontrolleri için tanımlayıcı etiket oluşturulmasını sağlar. 
+                       <LABEL> etiketi ile oluşturulan tanımlayıcı etiketin herhangi bir form kontrolü ile ilişkilendirilmesi için for özelliğine ilgili elementin id özelliği atanmalıdır.
+
+
+42- <div> </div> : Sayfayı bölmemizi sağlar. Paragrag içinde paragraf kullanılamayağı için bu konuda yardımcı olur.
+                   
+43- <abbr> </abbr> : İçine yazılan yazının üstüne gelindiğinde detaylı bilgi verir 
+                     Ör: The <abbr title="World Wide Web"> WWW </abbr>
+
+44- <caption>Names</caption>: Etiketi açılan tabloya başlık verirken kullanılır.
+
+45- <p>A simple math equation:<var>x</var>= 3 + 2; </p> : Bunun ne olduğunu sonra çözersin ama kullanılır belki diye göz önünde olsun
+
+----------------------------------
+
+45-CSS sınıf atamaları .değişken şeklinde yapılır ve birden fazla kez kullanılabilir
+
+46- Bu oluşturduğumuz sınıfları ise <p class="değişken"> şeklinde atarız.
+
+ Not: Aynı anda birden fazla sınıf tanımlamak istiyor isek bunu şöyle yaparız: class="intro special"
+
+47-Idler ise tekildir. Bir id birden fazla etiket ile kullanılamaz ataması #değişken şeklinde olur
+
+48-<iframe> </iframe> : Bu etiket dieğr sitelerden parçaları kendi sitemize getirip çalıştırmamıza yardımcı olur.
+                        Ör:<iframe src="https://www.w3schools.com"></iframe>
+
+49- <button> -</button : Arasına yazılan yazılarla bir buton oluşturur
+
+50- <canvas> : js ile grafiksel içerik eklemeyi sağlar	
+
+--------------------CSS--------------------
+
+1- css dosyası içinde yazdığımız koda !important komutunu eklersek o kısım için yazılan diğer bütün style kısımlarını görmezden gelir.
+
+2-Css'in belirli bir sıra ile etkinleşmesi nchild ile yapılır
+
+3-psudeo classlar etiketlerin detaylı ayarlarını yapmak için kullanılır style içinde etiket:ayarismi{} şeklinde kullanılır (ardarda da kullanılabilir örn: a:hover,active{}) 
+
+4-display:none komutu ve visibilty:hidden içindeki içerikleri gizler. tek farkları visibility kullanıldığında orada var olur yer kaplar ama görünmez. Displayde ise yer kaplamaz ve kaybolur.
+Not: İnternal style CSS önemli. Dışarıdan aktarımdan önce çalış.
+
+
+Not: Alt tuşuna basılı tutarak tıkladığımız her yerde yazabiliriz aynı anda
+     Ctrl tuşuna basıp yön tuşları ile kelime arasında atlama yapılabilir
+     Ctrl tuşuna basılı tutup silme işlemi yaparsak kelime kelime siler
+     Ctrl+D tuşu da klonlama yapar
+
