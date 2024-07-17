@@ -1,4 +1,4 @@
-15.04.2021
+
 
 1- <!DOCTYPE html> komutu : html5 ile çalışacağımızı söylüyor dökümana.
 
