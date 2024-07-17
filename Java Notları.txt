@@ -357,33 +357,3 @@ Not: this(); komutu o class'da bulunan parametresiz bir constructor'ı çalışt
  Not: String veri tipi Char dizisidir
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-1-Kullanıcıya seçenek sundu 
-2-Kullanıcıdan değer aldı 
-3-ilk seçenekle sorunsuz bir şekilde müşteri ekledi 
-4-İkinci seçenekle önceden girilen müşteri bilgilerini döndürüp ekrana çıkartacak
-5-Müşteri silme seçeneği ile de girilen herhangi bir müşterinin verilerini silecek
